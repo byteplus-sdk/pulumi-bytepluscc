@@ -6,11 +6,13 @@ package com.byteplus.bytepluscc.mongodb;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.mongodb.InstanceArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceState;
+import com.byteplus.bytepluscc.mongodb.outputs.InstanceBackup;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceConfigServer;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceInstanceParameter;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceMongo;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceNode;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceNodeAvailabilityZone;
+import com.byteplus.bytepluscc.mongodb.outputs.InstanceRecoverableTime;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceShard;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceTag;
 import com.pulumi.core.Output;
@@ -124,6 +126,50 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
+    }
+    /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    @Export(name="backupId", refs={String.class}, tree="[0]")
+    private Output<String> backupId;
+
+    /**
+     * @return Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    public Output<String> backupId() {
+        return this.backupId;
+    }
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    @Export(name="backupType", refs={String.class}, tree="[0]")
+    private Output<String> backupType;
+
+    /**
+     * @return Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    public Output<String> backupType() {
+        return this.backupType;
+    }
+    /**
+     * Backup file list information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="backups", refs={List.class,InstanceBackup.class}, tree="[0,1]")
+    private Output<List<InstanceBackup>> backups;
+
+    /**
+     * @return Backup file list information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<InstanceBackup>> backups() {
+        return this.backups;
     }
     /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
@@ -584,6 +630,36 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.reclaimTime;
     }
     /**
+     * List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="recoverableTimes", refs={List.class,InstanceRecoverableTime.class}, tree="[0,1]")
+    private Output<List<InstanceRecoverableTime>> recoverableTimes;
+
+    /**
+     * @return List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<InstanceRecoverableTime>> recoverableTimes() {
+        return this.recoverableTimes;
+    }
+    /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    @Export(name="restoreTime", refs={String.class}, tree="[0]")
+    private Output<String> restoreTime;
+
+    /**
+     * @return When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    public Output<String> restoreTime() {
+        return this.restoreTime;
+    }
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
@@ -612,6 +688,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceShard>> shards() {
         return this.shards;
+    }
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    @Export(name="srcDbInstanceId", refs={String.class}, tree="[0]")
+    private Output<String> srcDbInstanceId;
+
+    /**
+     * @return Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    public Output<String> srcDbInstanceId() {
+        return this.srcDbInstanceId;
     }
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.

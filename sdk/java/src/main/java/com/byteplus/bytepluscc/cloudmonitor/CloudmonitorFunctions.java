@@ -4,20 +4,28 @@
 package com.byteplus.bytepluscc.cloudmonitor;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAlertTemplateArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAlertTemplatePlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetEventRuleArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetEventRulePlainArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetObjectGroupArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetObjectGroupPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAlertTemplateResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAlertTemplatesResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupsResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactsResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetEventRuleResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetEventRulesResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupsResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRuleResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRulesResult;
 import com.pulumi.core.Output;
@@ -29,6 +37,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudmonitorFunctions {
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args) {
+        return getAlertTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplateResult> getAlertTemplatePlain(GetAlertTemplatePlainArgs args) {
+        return getAlertTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplateResult> getAlertTemplate(GetAlertTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplateResult> getAlertTemplatePlain(GetAlertTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getAlertTemplate:getAlertTemplate", TypeShape.of(GetAlertTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates() {
+        return getAlertTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain() {
+        return getAlertTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args) {
+        return getAlertTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain(InvokeArgs args) {
+        return getAlertTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static Output<GetAlertTemplatesResult> getAlertTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AlertTemplate
+     * 
+     */
+    public static CompletableFuture<GetAlertTemplatesResult> getAlertTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getAlertTemplates:getAlertTemplates", TypeShape.of(GetAlertTemplatesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CloudMonitor::Contact
      * 
@@ -280,6 +372,90 @@ public final class CloudmonitorFunctions {
      */
     public static CompletableFuture<GetEventRulesResult> getEventRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getEventRules:getEventRules", TypeShape.of(GetEventRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args) {
+        return getObjectGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupResult> getObjectGroupPlain(GetObjectGroupPlainArgs args) {
+        return getObjectGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupResult> getObjectGroup(GetObjectGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupResult> getObjectGroupPlain(GetObjectGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getObjectGroup:getObjectGroup", TypeShape.of(GetObjectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups() {
+        return getObjectGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain() {
+        return getObjectGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args) {
+        return getObjectGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain(InvokeArgs args) {
+        return getObjectGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static Output<GetObjectGroupsResult> getObjectGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ObjectGroup
+     * 
+     */
+    public static CompletableFuture<GetObjectGroupsResult> getObjectGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getObjectGroups:getObjectGroups", TypeShape.of(GetObjectGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::CloudMonitor::Rule

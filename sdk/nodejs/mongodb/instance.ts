@@ -90,6 +90,19 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly autoRenew: pulumi.Output<boolean>;
     /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     */
+    declare public readonly backupId: pulumi.Output<string>;
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     */
+    declare public readonly backupType: pulumi.Output<string>;
+    /**
+     * Backup file list information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public /*out*/ readonly backups: pulumi.Output<outputs.mongodb.InstanceBackup[]>;
+    /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
     declare public /*out*/ readonly chargeStatus: pulumi.Output<string>;
@@ -223,6 +236,15 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly reclaimTime: pulumi.Output<string>;
     /**
+     * List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public /*out*/ readonly recoverableTimes: pulumi.Output<outputs.mongodb.InstanceRecoverableTime[]>;
+    /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     */
+    declare public readonly restoreTime: pulumi.Output<string>;
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      */
     declare public readonly shardNumber: pulumi.Output<number>;
@@ -231,6 +253,10 @@ export class Instance extends pulumi.CustomResource {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     declare public /*out*/ readonly shards: pulumi.Output<outputs.mongodb.InstanceShard[]>;
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     */
+    declare public readonly srcDbInstanceId: pulumi.Output<string>;
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
@@ -284,6 +310,9 @@ export class Instance extends pulumi.CustomResource {
             const state = argsOrState as InstanceState | undefined;
             resourceInputs["allowListIds"] = state?.allowListIds;
             resourceInputs["autoRenew"] = state?.autoRenew;
+            resourceInputs["backupId"] = state?.backupId;
+            resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["backups"] = state?.backups;
             resourceInputs["chargeStatus"] = state?.chargeStatus;
             resourceInputs["chargeType"] = state?.chargeType;
             resourceInputs["closedTime"] = state?.closedTime;
@@ -316,8 +345,11 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["projectName"] = state?.projectName;
             resourceInputs["readOnlyNodeNumber"] = state?.readOnlyNodeNumber;
             resourceInputs["reclaimTime"] = state?.reclaimTime;
+            resourceInputs["recoverableTimes"] = state?.recoverableTimes;
+            resourceInputs["restoreTime"] = state?.restoreTime;
             resourceInputs["shardNumber"] = state?.shardNumber;
             resourceInputs["shards"] = state?.shards;
+            resourceInputs["srcDbInstanceId"] = state?.srcDbInstanceId;
             resourceInputs["storageSpaceGb"] = state?.storageSpaceGb;
             resourceInputs["storageType"] = state?.storageType;
             resourceInputs["subnetId"] = state?.subnetId;
@@ -346,6 +378,8 @@ export class Instance extends pulumi.CustomResource {
             }
             resourceInputs["allowListIds"] = args?.allowListIds;
             resourceInputs["autoRenew"] = args?.autoRenew;
+            resourceInputs["backupId"] = args?.backupId;
+            resourceInputs["backupType"] = args?.backupType;
             resourceInputs["chargeType"] = args?.chargeType;
             resourceInputs["configServerNodeSpec"] = args?.configServerNodeSpec;
             resourceInputs["configServerStorageSpaceGb"] = args?.configServerStorageSpaceGb;
@@ -363,7 +397,9 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["period"] = args?.period;
             resourceInputs["periodUnit"] = args?.periodUnit;
             resourceInputs["projectName"] = args?.projectName;
+            resourceInputs["restoreTime"] = args?.restoreTime;
             resourceInputs["shardNumber"] = args?.shardNumber;
+            resourceInputs["srcDbInstanceId"] = args?.srcDbInstanceId;
             resourceInputs["storageSpaceGb"] = args?.storageSpaceGb;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["superAccountName"] = args?.superAccountName;
@@ -371,6 +407,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["tags"] = args?.tags;
             resourceInputs["vpcId"] = args?.vpcId;
             resourceInputs["zoneId"] = args?.zoneId;
+            resourceInputs["backups"] = undefined /*out*/;
             resourceInputs["chargeStatus"] = undefined /*out*/;
             resourceInputs["closedTime"] = undefined /*out*/;
             resourceInputs["configServers"] = undefined /*out*/;
@@ -386,6 +423,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["privateEndpoint"] = undefined /*out*/;
             resourceInputs["readOnlyNodeNumber"] = undefined /*out*/;
             resourceInputs["reclaimTime"] = undefined /*out*/;
+            resourceInputs["recoverableTimes"] = undefined /*out*/;
             resourceInputs["shards"] = undefined /*out*/;
             resourceInputs["storageType"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
@@ -407,6 +445,19 @@ export interface InstanceState {
      * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     autoRenew?: pulumi.Input<boolean | undefined>;
+    /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     */
+    backupId?: pulumi.Input<string | undefined>;
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     */
+    backupType?: pulumi.Input<string | undefined>;
+    /**
+     * Backup file list information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    backups?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceBackup>[] | undefined>;
     /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
@@ -541,6 +592,15 @@ export interface InstanceState {
      */
     reclaimTime?: pulumi.Input<string | undefined>;
     /**
+     * List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    recoverableTimes?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceRecoverableTime>[] | undefined>;
+    /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     */
+    restoreTime?: pulumi.Input<string | undefined>;
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      */
     shardNumber?: pulumi.Input<number | undefined>;
@@ -549,6 +609,10 @@ export interface InstanceState {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     shards?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceShard>[] | undefined>;
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     */
+    srcDbInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
@@ -600,6 +664,14 @@ export interface InstanceArgs {
      * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     autoRenew?: pulumi.Input<boolean | undefined>;
+    /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     */
+    backupId?: pulumi.Input<string | undefined>;
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     */
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      */
@@ -671,9 +743,17 @@ export interface InstanceArgs {
      */
     projectName?: pulumi.Input<string | undefined>;
     /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     */
+    restoreTime?: pulumi.Input<string | undefined>;
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      */
     shardNumber?: pulumi.Input<number | undefined>;
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     */
+    srcDbInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */

@@ -16,14 +16,14 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
     public static final NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs Empty = new NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs();
 
     /**
-     * Enable local vertical Pod autoscaling feature toggle
+     * Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     @Import(name="inPlacePodVerticalScaling")
     private @Nullable Output<Boolean> inPlacePodVerticalScaling;
 
     /**
-     * @return Enable local vertical Pod autoscaling feature toggle
+     * @return Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     public Optional<Output<Boolean>> inPlacePodVerticalScaling() {
@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
     }
 
     /**
-     * Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     @Import(name="qoSResourceManager")
     private @Nullable Output<Boolean> qoSResourceManager;
 
     /**
-     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * @return Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     public Optional<Output<Boolean>> qoSResourceManager() {
@@ -71,7 +71,7 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
         }
 
         /**
-         * @param inPlacePodVerticalScaling Enable local vertical Pod autoscaling feature toggle
+         * @param inPlacePodVerticalScaling Enable Pod vertical scaling. Options: true: enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
         }
 
         /**
-         * @param inPlacePodVerticalScaling Enable local vertical Pod autoscaling feature toggle
+         * @param inPlacePodVerticalScaling Enable Pod vertical scaling. Options: true: enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
         }
 
         /**
-         * @param qoSResourceManager Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+         * @param qoSResourceManager Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs extends
         }
 
         /**
-         * @param qoSResourceManager Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+         * @param qoSResourceManager Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
          * 
          * @return builder
          * 

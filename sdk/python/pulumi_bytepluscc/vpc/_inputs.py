@@ -39,6 +39,8 @@ __all__ = [
     'IpPoolTagArgsDict',
     'IpamPoolTagArgs',
     'IpamPoolTagArgsDict',
+    'IpamResourceDiscoveryTagArgs',
+    'IpamResourceDiscoveryTagArgsDict',
     'IpamScopeTagArgs',
     'IpamScopeTagArgsDict',
     'IpamTagArgs',
@@ -679,6 +681,55 @@ class IpamPoolTagArgs:
     def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class IpamResourceDiscoveryTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag key.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag value.
+    """
+
+@pulumi.input_type
+class IpamResourceDiscoveryTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Tag key.
+        :param pulumi.Input[_builtins.str] value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 

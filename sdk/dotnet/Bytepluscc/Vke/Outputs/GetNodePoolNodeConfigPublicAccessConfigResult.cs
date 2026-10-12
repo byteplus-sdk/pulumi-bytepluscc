@@ -19,11 +19,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly int Bandwidth;
         /// <summary>
-        /// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        /// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
         /// </summary>
         public readonly int BillingType;
         /// <summary>
-        /// Public IP line type. Parameter description: BGP: BGP (multi-line)
+        /// Public IP line type. Parameter value description: BGP: BGP (multi-line).
         /// </summary>
         public readonly string Isp;
 

@@ -382,9 +382,6 @@ type instanceArgs struct {
 	EnableAuth *bool `pulumi:"enableAuth"`
 	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage *bool `pulumi:"enableCloudStorage"`
-	// Connection address information list
-	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-	Endpoints []InstanceEndpoint `pulumi:"endpoints"`
 	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion string `pulumi:"engineVersion"`
 	// Instance name
@@ -434,9 +431,6 @@ type InstanceArgs struct {
 	EnableAuth pulumi.BoolPtrInput
 	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage pulumi.BoolPtrInput
-	// Connection address information list
-	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-	Endpoints InstanceEndpointArrayInput
 	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion pulumi.StringInput
 	// Instance name

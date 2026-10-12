@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolManagementRemedyConfig {
     /**
-     * @return Enable self-healing check
+     * @return Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return Self-healing rule ID
+     * @return Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     private @Nullable String remedyId;
 
     private NodePoolManagementRemedyConfig() {}
     /**
-     * @return Enable self-healing check
+     * @return Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return Self-healing rule ID
+     * @return Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     public Optional<String> remedyId() {

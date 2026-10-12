@@ -791,6 +791,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * IAM role name bound to the instance.
+     * 
+     */
+    @Import(name="showRoleNames")
+    private @Nullable Output<List<String>> showRoleNames;
+
+    /**
+     * @return IAM role name bound to the instance.
+     * 
+     */
+    public Optional<Output<List<String>>> showRoleNames() {
+        return Optional.ofNullable(this.showRoleNames);
+    }
+
+    /**
      * Maximum hourly price for spot instances.
      *     - Supports up to three decimal places.
      *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -1035,6 +1050,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.renewInfo = $.renewInfo;
         this.roleNames = $.roleNames;
         this.secondaryNetworkInterfaces = $.secondaryNetworkInterfaces;
+        this.showRoleNames = $.showRoleNames;
         this.spotPriceLimit = $.spotPriceLimit;
         this.spotStrategy = $.spotStrategy;
         this.status = $.status;
@@ -2135,6 +2151,37 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secondaryNetworkInterfaces(InstanceSecondaryNetworkInterfaceArgs... secondaryNetworkInterfaces) {
             return secondaryNetworkInterfaces(List.of(secondaryNetworkInterfaces));
+        }
+
+        /**
+         * @param showRoleNames IAM role name bound to the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder showRoleNames(@Nullable Output<List<String>> showRoleNames) {
+            $.showRoleNames = showRoleNames;
+            return this;
+        }
+
+        /**
+         * @param showRoleNames IAM role name bound to the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder showRoleNames(List<String> showRoleNames) {
+            return showRoleNames(Output.of(showRoleNames));
+        }
+
+        /**
+         * @param showRoleNames IAM role name bound to the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder showRoleNames(String... showRoleNames) {
+            return showRoleNames(List.of(showRoleNames));
         }
 
         /**

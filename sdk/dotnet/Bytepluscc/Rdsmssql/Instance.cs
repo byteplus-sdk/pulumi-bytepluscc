@@ -81,6 +81,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<string>> AllowListIds { get; private set; } = null!;
 
         /// <summary>
+        /// List of cross-region backup destination regions.
+        /// </summary>
+        [Output("availableCrossRegions")]
+        public Output<ImmutableArray<string>> AvailableCrossRegions { get; private set; } = null!;
+
+        /// <summary>
         /// Used backup space for the instance, in GiB.
         /// </summary>
         [Output("backupUse")]
@@ -104,6 +110,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
+
+        /// <summary>
+        /// Cross-region backup policy.
+        /// </summary>
+        [Output("crossBackupPolicy")]
+        public Output<Outputs.InstanceCrossBackupPolicy> CrossBackupPolicy { get; private set; } = null!;
 
         /// <summary>
         /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -258,6 +270,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
+        /// Instance TDE configuration.
+        /// </summary>
+        [Output("tdeConfig")]
+        public Output<Outputs.InstanceTdeConfig> TdeConfig { get; private set; } = null!;
+
+        /// <summary>
         /// Time zone.
         /// </summary>
         [Output("timeZone")]
@@ -359,6 +377,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Input<Inputs.InstanceChargeInfoArgs>? ChargeInfo { get; set; }
 
         /// <summary>
+        /// Cross-region backup policy.
+        /// </summary>
+        [Input("crossBackupPolicy")]
+        public Input<Inputs.InstanceCrossBackupPolicyArgs>? CrossBackupPolicy { get; set; }
+
+        /// <summary>
         /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         /// </summary>
         [Input("dbEngineVersion", required: true)]
@@ -438,6 +462,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
+        /// Instance TDE configuration.
+        /// </summary>
+        [Input("tdeConfig")]
+        public Input<Inputs.InstanceTdeConfigArgs>? TdeConfig { get; set; }
+
+        /// <summary>
         /// Time zone.
         /// </summary>
         [Input("timeZone", required: true)]
@@ -481,6 +511,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
             set => _allowListIds = value;
         }
 
+        [Input("availableCrossRegions")]
+        private InputList<string>? _availableCrossRegions;
+
+        /// <summary>
+        /// List of cross-region backup destination regions.
+        /// </summary>
+        public InputList<string> AvailableCrossRegions
+        {
+            get => _availableCrossRegions ?? (_availableCrossRegions = new InputList<string>());
+            set => _availableCrossRegions = value;
+        }
+
         /// <summary>
         /// Used backup space for the instance, in GiB.
         /// </summary>
@@ -511,6 +553,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
+
+        /// <summary>
+        /// Cross-region backup policy.
+        /// </summary>
+        [Input("crossBackupPolicy")]
+        public Input<Inputs.InstanceCrossBackupPolicyGetArgs>? CrossBackupPolicy { get; set; }
 
         /// <summary>
         /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -675,6 +723,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
             get => _tags ?? (_tags = new InputList<Inputs.InstanceTagGetArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Instance TDE configuration.
+        /// </summary>
+        [Input("tdeConfig")]
+        public Input<Inputs.InstanceTdeConfigGetArgs>? TdeConfig { get; set; }
 
         /// <summary>
         /// Time zone.

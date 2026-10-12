@@ -17,14 +17,14 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
     public static final NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs Empty = new NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs();
 
     /**
-     * Proxy address.
+     * Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
      * 
      */
     @Import(name="proxyEndpoints")
     private @Nullable Output<List<String>> proxyEndpoints;
 
     /**
-     * @return Proxy address.
+     * @return Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
      * 
      */
     public Optional<Output<List<String>>> proxyEndpoints() {
@@ -32,14 +32,14 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
     }
 
     /**
-     * Container image repository address.
+     * Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
      * 
      */
     @Import(name="registry")
     private @Nullable Output<String> registry;
 
     /**
-     * @return Container image repository address.
+     * @return Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
      * 
      */
     public Optional<Output<String>> registry() {
@@ -72,7 +72,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints Proxy address.
+         * @param proxyEndpoints Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints Proxy address.
+         * @param proxyEndpoints Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints Proxy address.
+         * @param proxyEndpoints Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param registry Container image repository address.
+         * @param registry Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param registry Container image repository address.
+         * @param registry Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
          * 
          * @return builder
          * 

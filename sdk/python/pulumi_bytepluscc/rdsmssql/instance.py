@@ -33,12 +33,14 @@ class InstanceArgs:
                  advanced_features: pulumi.Input[Optional[_builtins.str]] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  charge_info: pulumi.Input[Optional['InstanceChargeInfoArgs']] = None,
+                 cross_backup_policy: pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_time: pulumi.Input[Optional[_builtins.str]] = None,
                  master_node_id: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  server_collation: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_config: pulumi.Input[Optional['InstanceTdeConfigArgs']] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -54,6 +56,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] advanced_features: Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list permitted for access.
         :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Payment method.
+        :param pulumi.Input['InstanceCrossBackupPolicyArgs'] cross_backup_policy: Cross-region backup policy.
         :param pulumi.Input[_builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         :param pulumi.Input[_builtins.str] maintenance_time: Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
         :param pulumi.Input[_builtins.str] master_node_id: Primary node ID. This parameter is required when manually switching master and standby nodes.
@@ -61,6 +64,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] server_collation: Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input['InstanceTdeConfigArgs'] tde_config: Instance TDE configuration.
         """
         pulumi.set(__self__, "db_engine_version", db_engine_version)
         pulumi.set(__self__, "instance_type", instance_type)
@@ -77,6 +81,8 @@ class InstanceArgs:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if charge_info is not None:
             pulumi.set(__self__, "charge_info", charge_info)
+        if cross_backup_policy is not None:
+            pulumi.set(__self__, "cross_backup_policy", cross_backup_policy)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
         if maintenance_time is not None:
@@ -89,6 +95,8 @@ class InstanceArgs:
             pulumi.set(__self__, "server_collation", server_collation)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_config is not None:
+            pulumi.set(__self__, "tde_config", tde_config)
 
     @_builtins.property
     @pulumi.getter(name="dbEngineVersion")
@@ -235,6 +243,18 @@ class InstanceArgs:
         pulumi.set(self, "charge_info", value)
 
     @_builtins.property
+    @pulumi.getter(name="crossBackupPolicy")
+    def cross_backup_policy(self) -> pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']]:
+        """
+        Cross-region backup policy.
+        """
+        return pulumi.get(self, "cross_backup_policy")
+
+    @cross_backup_policy.setter
+    def cross_backup_policy(self, value: pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']]):
+        pulumi.set(self, "cross_backup_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -307,16 +327,30 @@ class InstanceArgs:
     def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Input[Optional['InstanceTdeConfigArgs']]:
+        """
+        Instance TDE configuration.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @tde_config.setter
+    def tde_config(self, value: pulumi.Input[Optional['InstanceTdeConfigArgs']]):
+        pulumi.set(self, "tde_config", value)
+
 
 @pulumi.input_type
 class _InstanceState:
     def __init__(__self__, *,
                  advanced_features: pulumi.Input[Optional[_builtins.str]] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 available_cross_regions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_use: pulumi.Input[Optional[_builtins.float]] = None,
                  charge_info: pulumi.Input[Optional['InstanceChargeInfoArgs']] = None,
                  connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConnectionInfoArgs']]]] = None,
                  created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_backup_policy: pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']] = None,
                  db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  inner_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_category: pulumi.Input[Optional[_builtins.str]] = None,
@@ -342,6 +376,7 @@ class _InstanceState:
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_config: pulumi.Input[Optional['InstanceTdeConfigArgs']] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  updated_time: pulumi.Input[Optional[_builtins.str]] = None,
                  vcpu: pulumi.Input[Optional[_builtins.int]] = None,
@@ -352,11 +387,13 @@ class _InstanceState:
 
         :param pulumi.Input[_builtins.str] advanced_features: Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list permitted for access.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_cross_regions: List of cross-region backup destination regions.
         :param pulumi.Input[_builtins.float] backup_use: Used backup space for the instance, in GiB.
         :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Payment method.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConnectionInfoArgs']]] connection_infos: Connection information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] created_time: Creation time.
+        :param pulumi.Input['InstanceCrossBackupPolicyArgs'] cross_backup_policy: Cross-region backup policy.
         :param pulumi.Input[_builtins.str] db_engine_version: Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         :param pulumi.Input[_builtins.str] inner_version: Kernel version number.
         :param pulumi.Input[_builtins.str] instance_category: Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
@@ -384,6 +421,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] super_account_password: Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input['InstanceTdeConfigArgs'] tde_config: Instance TDE configuration.
         :param pulumi.Input[_builtins.str] time_zone: Time zone.
         :param pulumi.Input[_builtins.str] updated_time: Update time.
         :param pulumi.Input[_builtins.int] vcpu: CPU size. For example: 1 means 1 core.
@@ -394,6 +432,8 @@ class _InstanceState:
             pulumi.set(__self__, "advanced_features", advanced_features)
         if allow_list_ids is not None:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
+        if available_cross_regions is not None:
+            pulumi.set(__self__, "available_cross_regions", available_cross_regions)
         if backup_use is not None:
             pulumi.set(__self__, "backup_use", backup_use)
         if charge_info is not None:
@@ -402,6 +442,8 @@ class _InstanceState:
             pulumi.set(__self__, "connection_infos", connection_infos)
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
+        if cross_backup_policy is not None:
+            pulumi.set(__self__, "cross_backup_policy", cross_backup_policy)
         if db_engine_version is not None:
             pulumi.set(__self__, "db_engine_version", db_engine_version)
         if inner_version is not None:
@@ -452,6 +494,8 @@ class _InstanceState:
             pulumi.set(__self__, "super_account_password", super_account_password)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_config is not None:
+            pulumi.set(__self__, "tde_config", tde_config)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if updated_time is not None:
@@ -486,6 +530,18 @@ class _InstanceState:
     @allow_list_ids.setter
     def allow_list_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allow_list_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableCrossRegions")
+    def available_cross_regions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of cross-region backup destination regions.
+        """
+        return pulumi.get(self, "available_cross_regions")
+
+    @available_cross_regions.setter
+    def available_cross_regions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "available_cross_regions", value)
 
     @_builtins.property
     @pulumi.getter(name="backupUse")
@@ -535,6 +591,18 @@ class _InstanceState:
     @created_time.setter
     def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="crossBackupPolicy")
+    def cross_backup_policy(self) -> pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']]:
+        """
+        Cross-region backup policy.
+        """
+        return pulumi.get(self, "cross_backup_policy")
+
+    @cross_backup_policy.setter
+    def cross_backup_policy(self, value: pulumi.Input[Optional['InstanceCrossBackupPolicyArgs']]):
+        pulumi.set(self, "cross_backup_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="dbEngineVersion")
@@ -839,6 +907,18 @@ class _InstanceState:
         pulumi.set(self, "tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Input[Optional['InstanceTdeConfigArgs']]:
+        """
+        Instance TDE configuration.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @tde_config.setter
+    def tde_config(self, value: pulumi.Input[Optional['InstanceTdeConfigArgs']]):
+        pulumi.set(self, "tde_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -908,6 +988,7 @@ class Instance(pulumi.CustomResource):
                  advanced_features: pulumi.Input[Optional[_builtins.str]] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  charge_info: pulumi.Input[Optional[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']]] = None,
+                 cross_backup_policy: pulumi.Input[Optional[Union['InstanceCrossBackupPolicyArgs', 'InstanceCrossBackupPolicyArgsDict']]] = None,
                  db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -920,6 +1001,7 @@ class Instance(pulumi.CustomResource):
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  zone_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -969,6 +1051,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] advanced_features: Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list permitted for access.
         :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Payment method.
+        :param pulumi.Input[Union['InstanceCrossBackupPolicyArgs', 'InstanceCrossBackupPolicyArgsDict']] cross_backup_policy: Cross-region backup policy.
         :param pulumi.Input[_builtins.str] db_engine_version: Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         :param pulumi.Input[_builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         :param pulumi.Input[_builtins.str] instance_type: Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
@@ -982,6 +1065,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] super_account_password: Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']] tde_config: Instance TDE configuration.
         :param pulumi.Input[_builtins.str] time_zone: Time zone.
         :param pulumi.Input[_builtins.str] vpc_id: VPC ID
         :param pulumi.Input[_builtins.str] zone_id: Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
@@ -1050,6 +1134,7 @@ class Instance(pulumi.CustomResource):
                  advanced_features: pulumi.Input[Optional[_builtins.str]] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  charge_info: pulumi.Input[Optional[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']]] = None,
+                 cross_backup_policy: pulumi.Input[Optional[Union['InstanceCrossBackupPolicyArgs', 'InstanceCrossBackupPolicyArgsDict']]] = None,
                  db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1062,6 +1147,7 @@ class Instance(pulumi.CustomResource):
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  zone_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1077,6 +1163,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["advanced_features"] = advanced_features
             __props__.__dict__["allow_list_ids"] = allow_list_ids
             __props__.__dict__["charge_info"] = charge_info
+            __props__.__dict__["cross_backup_policy"] = cross_backup_policy
             if db_engine_version is None and not opts.urn:
                 raise TypeError("Missing required property 'db_engine_version'")
             __props__.__dict__["db_engine_version"] = db_engine_version
@@ -1101,6 +1188,7 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'super_account_password'")
             __props__.__dict__["super_account_password"] = super_account_password
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["tde_config"] = tde_config
             if time_zone is None and not opts.urn:
                 raise TypeError("Missing required property 'time_zone'")
             __props__.__dict__["time_zone"] = time_zone
@@ -1110,6 +1198,7 @@ class Instance(pulumi.CustomResource):
             if zone_id is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_id'")
             __props__.__dict__["zone_id"] = zone_id
+            __props__.__dict__["available_cross_regions"] = None
             __props__.__dict__["backup_use"] = None
             __props__.__dict__["connection_infos"] = None
             __props__.__dict__["created_time"] = None
@@ -1140,10 +1229,12 @@ class Instance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             advanced_features: pulumi.Input[Optional[_builtins.str]] = None,
             allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            available_cross_regions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             backup_use: pulumi.Input[Optional[_builtins.float]] = None,
             charge_info: pulumi.Input[Optional[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']]] = None,
             connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceConnectionInfoArgs', 'InstanceConnectionInfoArgsDict']]]]] = None,
             created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            cross_backup_policy: pulumi.Input[Optional[Union['InstanceCrossBackupPolicyArgs', 'InstanceCrossBackupPolicyArgsDict']]] = None,
             db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
             inner_version: pulumi.Input[Optional[_builtins.str]] = None,
             instance_category: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1169,6 +1260,7 @@ class Instance(pulumi.CustomResource):
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+            tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             vcpu: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1183,11 +1275,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] advanced_features: Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list permitted for access.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_cross_regions: List of cross-region backup destination regions.
         :param pulumi.Input[_builtins.float] backup_use: Used backup space for the instance, in GiB.
         :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Payment method.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceConnectionInfoArgs', 'InstanceConnectionInfoArgsDict']]]] connection_infos: Connection information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] created_time: Creation time.
+        :param pulumi.Input[Union['InstanceCrossBackupPolicyArgs', 'InstanceCrossBackupPolicyArgsDict']] cross_backup_policy: Cross-region backup policy.
         :param pulumi.Input[_builtins.str] db_engine_version: Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         :param pulumi.Input[_builtins.str] inner_version: Kernel version number.
         :param pulumi.Input[_builtins.str] instance_category: Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
@@ -1215,6 +1309,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] super_account_password: Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']] tde_config: Instance TDE configuration.
         :param pulumi.Input[_builtins.str] time_zone: Time zone.
         :param pulumi.Input[_builtins.str] updated_time: Update time.
         :param pulumi.Input[_builtins.int] vcpu: CPU size. For example: 1 means 1 core.
@@ -1227,10 +1322,12 @@ class Instance(pulumi.CustomResource):
 
         __props__.__dict__["advanced_features"] = advanced_features
         __props__.__dict__["allow_list_ids"] = allow_list_ids
+        __props__.__dict__["available_cross_regions"] = available_cross_regions
         __props__.__dict__["backup_use"] = backup_use
         __props__.__dict__["charge_info"] = charge_info
         __props__.__dict__["connection_infos"] = connection_infos
         __props__.__dict__["created_time"] = created_time
+        __props__.__dict__["cross_backup_policy"] = cross_backup_policy
         __props__.__dict__["db_engine_version"] = db_engine_version
         __props__.__dict__["inner_version"] = inner_version
         __props__.__dict__["instance_category"] = instance_category
@@ -1256,6 +1353,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["super_account_password"] = super_account_password
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["tde_config"] = tde_config
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["updated_time"] = updated_time
         __props__.__dict__["vcpu"] = vcpu
@@ -1278,6 +1376,14 @@ class Instance(pulumi.CustomResource):
         Allowlist ID list permitted for access.
         """
         return pulumi.get(self, "allow_list_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="availableCrossRegions")
+    def available_cross_regions(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of cross-region backup destination regions.
+        """
+        return pulumi.get(self, "available_cross_regions")
 
     @_builtins.property
     @pulumi.getter(name="backupUse")
@@ -1311,6 +1417,14 @@ class Instance(pulumi.CustomResource):
         Creation time.
         """
         return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="crossBackupPolicy")
+    def cross_backup_policy(self) -> pulumi.Output['outputs.InstanceCrossBackupPolicy']:
+        """
+        Cross-region backup policy.
+        """
+        return pulumi.get(self, "cross_backup_policy")
 
     @_builtins.property
     @pulumi.getter(name="dbEngineVersion")
@@ -1513,6 +1627,14 @@ class Instance(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Output['outputs.InstanceTdeConfig']:
+        """
+        Instance TDE configuration.
+        """
+        return pulumi.get(self, "tde_config")
 
     @_builtins.property
     @pulumi.getter(name="timeZone")

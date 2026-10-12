@@ -17,6 +17,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -473,6 +474,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
+    }
+    /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    @Export(name="tdeEnable", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> tdeEnable;
+
+    /**
+     * @return Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    public Output<Boolean> tdeEnable() {
+        return this.tdeEnable;
     }
     /**
      * Instance update time

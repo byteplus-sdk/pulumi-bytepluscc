@@ -15,6 +15,8 @@ import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterAttachmentTo
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterAttachmentToRouteTablePlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterBandwidthPackageArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterBandwidthPackagePlainArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterForwardPolicyEntryArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterForwardPolicyEntryPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterForwardPolicyTableArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterForwardPolicyTablePlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterMulticastDomainArgs;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterMulticastDom
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryPlainArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRoutePolicyTableArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRoutePolicyTablePlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteTableArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteTableAssociationArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteTableAssociationPlainArgs;
@@ -48,6 +52,8 @@ import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterAttachmentT
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterAttachmentToRouteTablesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterBandwidthPackageResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterBandwidthPackagesResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterForwardPolicyEntriesResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterForwardPolicyEntryResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterForwardPolicyTableResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterForwardPolicyTablesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterMulticastDomainResult;
@@ -55,6 +61,8 @@ import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterMulticastDo
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntriesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntryResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRoutePolicyTableResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRoutePolicyTablesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteTableAssociationResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteTableAssociationsResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteTableResult;
@@ -537,6 +545,90 @@ public final class TransitrouterFunctions {
         return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterBandwidthPackages:getTransitRouterBandwidthPackages", TypeShape.of(GetTransitRouterBandwidthPackagesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntries() {
+        return getTransitRouterForwardPolicyEntries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntriesPlain() {
+        return getTransitRouterForwardPolicyEntriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntries(InvokeArgs args) {
+        return getTransitRouterForwardPolicyEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntriesPlain(InvokeArgs args) {
+        return getTransitRouterForwardPolicyEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntries:getTransitRouterForwardPolicyEntries", TypeShape.of(GetTransitRouterForwardPolicyEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntries:getTransitRouterForwardPolicyEntries", TypeShape.of(GetTransitRouterForwardPolicyEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterForwardPolicyEntriesResult> getTransitRouterForwardPolicyEntriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntries:getTransitRouterForwardPolicyEntries", TypeShape.of(GetTransitRouterForwardPolicyEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntryResult> getTransitRouterForwardPolicyEntry(GetTransitRouterForwardPolicyEntryArgs args) {
+        return getTransitRouterForwardPolicyEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterForwardPolicyEntryResult> getTransitRouterForwardPolicyEntryPlain(GetTransitRouterForwardPolicyEntryPlainArgs args) {
+        return getTransitRouterForwardPolicyEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntryResult> getTransitRouterForwardPolicyEntry(GetTransitRouterForwardPolicyEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntry:getTransitRouterForwardPolicyEntry", TypeShape.of(GetTransitRouterForwardPolicyEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static Output<GetTransitRouterForwardPolicyEntryResult> getTransitRouterForwardPolicyEntry(GetTransitRouterForwardPolicyEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntry:getTransitRouterForwardPolicyEntry", TypeShape.of(GetTransitRouterForwardPolicyEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyEntry
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterForwardPolicyEntryResult> getTransitRouterForwardPolicyEntryPlain(GetTransitRouterForwardPolicyEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterForwardPolicyEntry:getTransitRouterForwardPolicyEntry", TypeShape.of(GetTransitRouterForwardPolicyEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Data Source schema for Byteplus::TransitRouter::TransitRouterForwardPolicyTable
      * 
      */
@@ -787,6 +879,90 @@ public final class TransitrouterFunctions {
      */
     public static CompletableFuture<GetTransitRouterRouteEntryResult> getTransitRouterRouteEntryPlain(GetTransitRouterRouteEntryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterRouteEntry:getTransitRouterRouteEntry", TypeShape.of(GetTransitRouterRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTableResult> getTransitRouterRoutePolicyTable(GetTransitRouterRoutePolicyTableArgs args) {
+        return getTransitRouterRoutePolicyTable(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterRoutePolicyTableResult> getTransitRouterRoutePolicyTablePlain(GetTransitRouterRoutePolicyTablePlainArgs args) {
+        return getTransitRouterRoutePolicyTablePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTableResult> getTransitRouterRoutePolicyTable(GetTransitRouterRoutePolicyTableArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterRoutePolicyTable:getTransitRouterRoutePolicyTable", TypeShape.of(GetTransitRouterRoutePolicyTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTableResult> getTransitRouterRoutePolicyTable(GetTransitRouterRoutePolicyTableArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterRoutePolicyTable:getTransitRouterRoutePolicyTable", TypeShape.of(GetTransitRouterRoutePolicyTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterRoutePolicyTableResult> getTransitRouterRoutePolicyTablePlain(GetTransitRouterRoutePolicyTablePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterRoutePolicyTable:getTransitRouterRoutePolicyTable", TypeShape.of(GetTransitRouterRoutePolicyTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTables() {
+        return getTransitRouterRoutePolicyTables(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTablesPlain() {
+        return getTransitRouterRoutePolicyTablesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTables(InvokeArgs args) {
+        return getTransitRouterRoutePolicyTables(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTablesPlain(InvokeArgs args) {
+        return getTransitRouterRoutePolicyTablesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTables(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterRoutePolicyTables:getTransitRouterRoutePolicyTables", TypeShape.of(GetTransitRouterRoutePolicyTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static Output<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTables(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getTransitRouterRoutePolicyTables:getTransitRouterRoutePolicyTables", TypeShape.of(GetTransitRouterRoutePolicyTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::TransitRouterRoutePolicyTable
+     * 
+     */
+    public static CompletableFuture<GetTransitRouterRoutePolicyTablesResult> getTransitRouterRoutePolicyTablesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouterRoutePolicyTables:getTransitRouterRoutePolicyTables", TypeShape.of(GetTransitRouterRoutePolicyTablesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TransitRouter::TransitRouterRouteTable

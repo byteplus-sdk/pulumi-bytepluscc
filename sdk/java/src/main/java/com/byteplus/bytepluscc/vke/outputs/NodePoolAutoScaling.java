@@ -14,32 +14,32 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolAutoScaling {
     /**
-     * @return Configure the expected number of nodes in the node pool
+     * @return Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     private @Nullable Integer desiredReplicas;
     /**
-     * @return Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * @return Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return Configure the maximum number of nodes in the node pool
+     * @return Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     private @Nullable Integer maxReplicas;
     /**
-     * @return Minimum number of nodes configured for the node pool
+     * @return Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     private @Nullable Integer minReplicas;
     /**
-     * @return Priority
+     * @return Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     private @Nullable Integer priority;
     /**
-     * @return Scaling group ID
+     * @return Scaling group ID associated with the node pool.
      * 
      */
     private @Nullable String scalingGroupId;
@@ -51,42 +51,42 @@ public final class NodePoolAutoScaling {
 
     private NodePoolAutoScaling() {}
     /**
-     * @return Configure the expected number of nodes in the node pool
+     * @return Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     public Optional<Integer> desiredReplicas() {
         return Optional.ofNullable(this.desiredReplicas);
     }
     /**
-     * @return Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * @return Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return Configure the maximum number of nodes in the node pool
+     * @return Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     public Optional<Integer> maxReplicas() {
         return Optional.ofNullable(this.maxReplicas);
     }
     /**
-     * @return Minimum number of nodes configured for the node pool
+     * @return Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     public Optional<Integer> minReplicas() {
         return Optional.ofNullable(this.minReplicas);
     }
     /**
-     * @return Priority
+     * @return Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     public Optional<Integer> priority() {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return Scaling group ID
+     * @return Scaling group ID associated with the node pool.
      * 
      */
     public Optional<String> scalingGroupId() {

@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolManagement {
     /**
-     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
+     * @return Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     private Boolean enabled;
     /**
-     * @return Check self-healing configuration.
+     * @return Node pool health check and self-healing rule configuration.
      * 
      */
     private GetNodePoolManagementRemedyConfig remedyConfig;
 
     private GetNodePoolManagement() {}
     /**
-     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
+     * @return Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return Check self-healing configuration.
+     * @return Node pool health check and self-healing rule configuration.
      * 
      */
     public GetNodePoolManagementRemedyConfig remedyConfig() {

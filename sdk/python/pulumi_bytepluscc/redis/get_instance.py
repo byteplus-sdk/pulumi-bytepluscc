@@ -27,13 +27,16 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, backup_restore=None, backups=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, continuous_backup=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, restart_instance=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_plan=None, backup_point_name=None, backup_restore=None, backups=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, continuous_backup=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, restart_instance=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if auto_renew and not isinstance(auto_renew, bool):
             raise TypeError("Expected argument 'auto_renew' to be a bool")
         pulumi.set(__self__, "auto_renew", auto_renew)
+        if backup_plan and not isinstance(backup_plan, dict):
+            raise TypeError("Expected argument 'backup_plan' to be a dict")
+        pulumi.set(__self__, "backup_plan", backup_plan)
         if backup_point_name and not isinstance(backup_point_name, str):
             raise TypeError("Expected argument 'backup_point_name' to be a str")
         pulumi.set(__self__, "backup_point_name", backup_point_name)
@@ -191,6 +194,14 @@ class GetInstanceResult:
         Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         """
         return pulumi.get(self, "auto_renew")
+
+    @_builtins.property
+    @pulumi.getter(name="backupPlan")
+    def backup_plan(self) -> 'outputs.GetInstanceBackupPlanResult':
+        """
+        Automatic backup policy for the instance.
+        """
+        return pulumi.get(self, "backup_plan")
 
     @_builtins.property
     @pulumi.getter(name="backupPointName")
@@ -577,6 +588,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
         return GetInstanceResult(
             allow_list_ids=self.allow_list_ids,
             auto_renew=self.auto_renew,
+            backup_plan=self.backup_plan,
             backup_point_name=self.backup_point_name,
             backup_restore=self.backup_restore,
             backups=self.backups,
@@ -642,6 +654,7 @@ def get_instance(id: Optional[_builtins.str] = None,
     return AwaitableGetInstanceResult(
         allow_list_ids=pulumi.get(__ret__, 'allow_list_ids'),
         auto_renew=pulumi.get(__ret__, 'auto_renew'),
+        backup_plan=pulumi.get(__ret__, 'backup_plan'),
         backup_point_name=pulumi.get(__ret__, 'backup_point_name'),
         backup_restore=pulumi.get(__ret__, 'backup_restore'),
         backups=pulumi.get(__ret__, 'backups'),
@@ -704,6 +717,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetInstanceResult(
         allow_list_ids=pulumi.get(__response__, 'allow_list_ids'),
         auto_renew=pulumi.get(__response__, 'auto_renew'),
+        backup_plan=pulumi.get(__response__, 'backup_plan'),
         backup_point_name=pulumi.get(__response__, 'backup_point_name'),
         backup_restore=pulumi.get(__response__, 'backup_restore'),
         backups=pulumi.get(__response__, 'backups'),

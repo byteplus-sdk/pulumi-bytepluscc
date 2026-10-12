@@ -417,6 +417,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.InstanceSecondaryNetworkInterface>> SecondaryNetworkInterfaces { get; private set; } = null!;
 
         /// <summary>
+        /// IAM role name bound to the instance.
+        /// </summary>
+        [Output("showRoleNames")]
+        public Output<ImmutableArray<string>> ShowRoleNames { get; private set; } = null!;
+
+        /// <summary>
         /// Maximum hourly price for spot instances.
         ///     - Supports up to three decimal places.
         ///     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -1255,6 +1261,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         {
             get => _secondaryNetworkInterfaces ?? (_secondaryNetworkInterfaces = new InputList<Inputs.InstanceSecondaryNetworkInterfaceGetArgs>());
             set => _secondaryNetworkInterfaces = value;
+        }
+
+        [Input("showRoleNames")]
+        private InputList<string>? _showRoleNames;
+
+        /// <summary>
+        /// IAM role name bound to the instance.
+        /// </summary>
+        public InputList<string> ShowRoleNames
+        {
+            get => _showRoleNames ?? (_showRoleNames = new InputList<string>());
+            set => _showRoleNames = value;
         }
 
         /// <summary>

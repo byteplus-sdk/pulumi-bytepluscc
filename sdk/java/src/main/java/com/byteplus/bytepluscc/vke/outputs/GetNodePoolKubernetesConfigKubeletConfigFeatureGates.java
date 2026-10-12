@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
     /**
-     * @return Enable local vertical Pod autoscaling feature toggle
+     * @return Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     private Boolean inPlacePodVerticalScaling;
     /**
-     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * @return Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     private Boolean qoSResourceManager;
 
     private GetNodePoolKubernetesConfigKubeletConfigFeatureGates() {}
     /**
-     * @return Enable local vertical Pod autoscaling feature toggle
+     * @return Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     public Boolean inPlacePodVerticalScaling() {
         return this.inPlacePodVerticalScaling;
     }
     /**
-     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * @return Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     public Boolean qoSResourceManager() {

@@ -69,7 +69,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly Outputs.GetNodePoolAutoScalingResult AutoScaling;
         /// <summary>
-        /// ID of the cluster where the node pool is located
+        /// ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
@@ -89,7 +89,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly Outputs.GetNodePoolManagementResult Management;
         /// <summary>
-        /// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        /// Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -113,7 +113,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly Outputs.GetNodePoolStatusResult Status;
         /// <summary>
-        /// Node pool tag information
+        /// Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolTagResult> Tags;
         /// <summary>

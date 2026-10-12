@@ -17,14 +17,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     public static final NodePoolNodeConfigDataVolumeArgs Empty = new NodePoolNodeConfigDataVolumeArgs();
 
     /**
-     * File system. Options:   - Ext4 (default)   - Xfs
+     * [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
      * 
      */
     @Import(name="fileSystem")
     private @Nullable Output<String> fileSystem;
 
     /**
-     * @return File system. Options:   - Ext4 (default)   - Xfs
+     * @return [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
      * 
      */
     public Optional<Output<String>> fileSystem() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * Placement group ID
+     * Storage placement group ID to which the data disk belongs.
      * 
      */
     @Import(name="placementGroupId")
     private @Nullable Output<String> placementGroupId;
 
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID to which the data disk belongs.
      * 
      */
     public Optional<Output<String>> placementGroupId() {
@@ -77,14 +77,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+     * Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+     * @return Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -92,14 +92,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * Placement subgroup
+     * Storage sub-placement group number of the data disk.
      * 
      */
     @Import(name="subgroupNumber")
     private @Nullable Output<Integer> subgroupNumber;
 
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number of the data disk.
      * 
      */
     public Optional<Output<Integer>> subgroupNumber() {
@@ -107,14 +107,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+     * Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+     * @return Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
      * 
      */
     public Optional<Output<String>> type() {
@@ -152,7 +152,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fileSystem File system. Options:   - Ext4 (default)   - Xfs
+         * @param fileSystem [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fileSystem File system. Options:   - Ext4 (default)   - Xfs
+         * @param fileSystem [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param placementGroupId Placement group ID
+         * @param placementGroupId Storage placement group ID to which the data disk belongs.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param placementGroupId Placement group ID
+         * @param placementGroupId Storage placement group ID to which the data disk belongs.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param snapshotId Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+         * @param snapshotId Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param snapshotId Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+         * @param snapshotId Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subgroupNumber Placement subgroup
+         * @param subgroupNumber Storage sub-placement group number of the data disk.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subgroupNumber Placement subgroup
+         * @param subgroupNumber Storage sub-placement group number of the data disk.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+         * @param type Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+         * @param type Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
          * 
          * @return builder
          * 

@@ -85,6 +85,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Output<bool> AutoRenew { get; private set; } = null!;
 
         /// <summary>
+        /// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        /// </summary>
+        [Output("backupId")]
+        public Output<string> BackupId { get; private set; } = null!;
+
+        /// <summary>
+        /// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        /// </summary>
+        [Output("backupType")]
+        public Output<string> BackupType { get; private set; } = null!;
+
+        /// <summary>
+        /// Backup file list information for the instance.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        [Output("backups")]
+        public Output<ImmutableArray<Outputs.InstanceBackup>> Backups { get; private set; } = null!;
+
+        /// <summary>
         /// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         /// </summary>
         [Output("chargeStatus")]
@@ -282,6 +301,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Output<string> ReclaimTime { get; private set; } = null!;
 
         /// <summary>
+        /// List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        [Output("recoverableTimes")]
+        public Output<ImmutableArray<Outputs.InstanceRecoverableTime>> RecoverableTimes { get; private set; } = null!;
+
+        /// <summary>
+        /// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        /// </summary>
+        [Output("restoreTime")]
+        public Output<string> RestoreTime { get; private set; } = null!;
+
+        /// <summary>
         /// Number of shards in the sharded cluster. Range: 2–32.
         /// </summary>
         [Output("shardNumber")]
@@ -293,6 +325,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         [Output("shards")]
         public Output<ImmutableArray<Outputs.InstanceShard>> Shards { get; private set; } = null!;
+
+        /// <summary>
+        /// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        /// </summary>
+        [Output("srcDbInstanceId")]
+        public Output<string> SrcDbInstanceId { get; private set; } = null!;
 
         /// <summary>
         /// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
@@ -415,6 +453,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
+        /// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        /// </summary>
+        [Input("backupId")]
+        public Input<string>? BackupId { get; set; }
+
+        /// <summary>
+        /// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        /// </summary>
+        [Input("backupType")]
+        public Input<string>? BackupType { get; set; }
+
+        /// <summary>
         /// Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         /// </summary>
         [Input("chargeType")]
@@ -531,10 +581,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
+        /// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        /// </summary>
+        [Input("restoreTime")]
+        public Input<string>? RestoreTime { get; set; }
+
+        /// <summary>
         /// Number of shards in the sharded cluster. Range: 2–32.
         /// </summary>
         [Input("shardNumber")]
         public Input<int>? ShardNumber { get; set; }
+
+        /// <summary>
+        /// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        /// </summary>
+        [Input("srcDbInstanceId")]
+        public Input<string>? SrcDbInstanceId { get; set; }
 
         /// <summary>
         /// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
@@ -610,6 +672,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
+
+        /// <summary>
+        /// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        /// </summary>
+        [Input("backupId")]
+        public Input<string>? BackupId { get; set; }
+
+        /// <summary>
+        /// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        /// </summary>
+        [Input("backupType")]
+        public Input<string>? BackupType { get; set; }
+
+        [Input("backups")]
+        private InputList<Inputs.InstanceBackupGetArgs>? _backups;
+
+        /// <summary>
+        /// Backup file list information for the instance.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.InstanceBackupGetArgs> Backups
+        {
+            get => _backups ?? (_backups = new InputList<Inputs.InstanceBackupGetArgs>());
+            set => _backups = value;
+        }
 
         /// <summary>
         /// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
@@ -838,6 +925,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         [Input("reclaimTime")]
         public Input<string>? ReclaimTime { get; set; }
 
+        [Input("recoverableTimes")]
+        private InputList<Inputs.InstanceRecoverableTimeGetArgs>? _recoverableTimes;
+
+        /// <summary>
+        /// List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.InstanceRecoverableTimeGetArgs> RecoverableTimes
+        {
+            get => _recoverableTimes ?? (_recoverableTimes = new InputList<Inputs.InstanceRecoverableTimeGetArgs>());
+            set => _recoverableTimes = value;
+        }
+
+        /// <summary>
+        /// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        /// </summary>
+        [Input("restoreTime")]
+        public Input<string>? RestoreTime { get; set; }
+
         /// <summary>
         /// Number of shards in the sharded cluster. Range: 2–32.
         /// </summary>
@@ -856,6 +962,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
             get => _shards ?? (_shards = new InputList<Inputs.InstanceShardGetArgs>());
             set => _shards = value;
         }
+
+        /// <summary>
+        /// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        /// </summary>
+        [Input("srcDbInstanceId")]
+        public Input<string>? SrcDbInstanceId { get; set; }
 
         /// <summary>
         /// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.

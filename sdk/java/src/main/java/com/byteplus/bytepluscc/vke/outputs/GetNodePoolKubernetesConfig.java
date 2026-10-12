@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfig {
     /**
-     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
      * 
      */
     private Boolean autoSyncDisabled;
@@ -27,22 +27,22 @@ public final class GetNodePoolKubernetesConfig {
      */
     private GetNodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
-     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
+     * @return Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
      * 
      */
     private Boolean cordon;
     /**
-     * @return Kubelet component configuration
+     * @return Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
      * 
      */
     private GetNodePoolKubernetesConfigKubeletConfig kubeletConfig;
     /**
-     * @return Kubernetes label information for node pools/nodes
+     * @return Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
      * 
      */
     private List<GetNodePoolKubernetesConfigLabel> labels;
     /**
-     * @return Prefix for node object metadata name in Kubernetes
+     * @return Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
      * 
      */
     private String namePrefix;
@@ -52,19 +52,19 @@ public final class GetNodePoolKubernetesConfig {
      */
     private String nameSuffix;
     /**
-     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+     * @return Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
      * 
      */
     private Boolean nameUseHostname;
     /**
-     * @return Kubernetes taint information for node pools/nodes
+     * @return Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
      * 
      */
     private List<GetNodePoolKubernetesConfigTaint> taints;
 
     private GetNodePoolKubernetesConfig() {}
     /**
-     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
      * 
      */
     public Boolean autoSyncDisabled() {
@@ -78,28 +78,28 @@ public final class GetNodePoolKubernetesConfig {
         return this.containerdConfig;
     }
     /**
-     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
+     * @return Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
      * 
      */
     public Boolean cordon() {
         return this.cordon;
     }
     /**
-     * @return Kubelet component configuration
+     * @return Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
      * 
      */
     public GetNodePoolKubernetesConfigKubeletConfig kubeletConfig() {
         return this.kubeletConfig;
     }
     /**
-     * @return Kubernetes label information for node pools/nodes
+     * @return Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
      * 
      */
     public List<GetNodePoolKubernetesConfigLabel> labels() {
         return this.labels;
     }
     /**
-     * @return Prefix for node object metadata name in Kubernetes
+     * @return Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
      * 
      */
     public String namePrefix() {
@@ -113,14 +113,14 @@ public final class GetNodePoolKubernetesConfig {
         return this.nameSuffix;
     }
     /**
-     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+     * @return Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
      * 
      */
     public Boolean nameUseHostname() {
         return this.nameUseHostname;
     }
     /**
-     * @return Kubernetes taint information for node pools/nodes
+     * @return Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
      * 
      */
     public List<GetNodePoolKubernetesConfigTaint> taints() {

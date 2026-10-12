@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigContainerdConfig
     {
         /// <summary>
-        /// Specify the container image repository address to skip certificate verification.
+        /// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
         /// </summary>
         public readonly ImmutableArray<string> InsecureRegistries;
         /// <summary>

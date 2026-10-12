@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolManagementResult
     {
         /// <summary>
-        /// Enable managed mode for node pool. Options:   - true: on   - false: off
+        /// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Check self-healing configuration.
+        /// Node pool health check and self-healing rule configuration.
         /// </summary>
         public readonly Outputs.GetNodePoolManagementRemedyConfigResult RemedyConfig;
 

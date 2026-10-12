@@ -5,8 +5,10 @@ package com.byteplus.bytepluscc.rdsmssql.inputs;
 
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceChargeInfoArgs;
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceConnectionInfoArgs;
+import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceCrossBackupPolicyArgs;
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceNodeDetailInfoArgs;
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceTagArgs;
+import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceTdeConfigArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -51,6 +53,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> allowListIds() {
         return Optional.ofNullable(this.allowListIds);
+    }
+
+    /**
+     * List of cross-region backup destination regions.
+     * 
+     */
+    @Import(name="availableCrossRegions")
+    private @Nullable Output<List<String>> availableCrossRegions;
+
+    /**
+     * @return List of cross-region backup destination regions.
+     * 
+     */
+    public Optional<Output<List<String>>> availableCrossRegions() {
+        return Optional.ofNullable(this.availableCrossRegions);
     }
 
     /**
@@ -113,6 +130,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
+    }
+
+    /**
+     * Cross-region backup policy.
+     * 
+     */
+    @Import(name="crossBackupPolicy")
+    private @Nullable Output<InstanceCrossBackupPolicyArgs> crossBackupPolicy;
+
+    /**
+     * @return Cross-region backup policy.
+     * 
+     */
+    public Optional<Output<InstanceCrossBackupPolicyArgs>> crossBackupPolicy() {
+        return Optional.ofNullable(this.crossBackupPolicy);
     }
 
     /**
@@ -495,6 +527,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Instance TDE configuration.
+     * 
+     */
+    @Import(name="tdeConfig")
+    private @Nullable Output<InstanceTdeConfigArgs> tdeConfig;
+
+    /**
+     * @return Instance TDE configuration.
+     * 
+     */
+    public Optional<Output<InstanceTdeConfigArgs>> tdeConfig() {
+        return Optional.ofNullable(this.tdeConfig);
+    }
+
+    /**
      * Time zone.
      * 
      */
@@ -574,10 +621,12 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     private InstanceState(InstanceState $) {
         this.advancedFeatures = $.advancedFeatures;
         this.allowListIds = $.allowListIds;
+        this.availableCrossRegions = $.availableCrossRegions;
         this.backupUse = $.backupUse;
         this.chargeInfo = $.chargeInfo;
         this.connectionInfos = $.connectionInfos;
         this.createdTime = $.createdTime;
+        this.crossBackupPolicy = $.crossBackupPolicy;
         this.dbEngineVersion = $.dbEngineVersion;
         this.innerVersion = $.innerVersion;
         this.instanceCategory = $.instanceCategory;
@@ -603,6 +652,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.subnetId = $.subnetId;
         this.superAccountPassword = $.superAccountPassword;
         this.tags = $.tags;
+        this.tdeConfig = $.tdeConfig;
         this.timeZone = $.timeZone;
         this.updatedTime = $.updatedTime;
         this.vcpu = $.vcpu;
@@ -678,6 +728,37 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
+        }
+
+        /**
+         * @param availableCrossRegions List of cross-region backup destination regions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableCrossRegions(@Nullable Output<List<String>> availableCrossRegions) {
+            $.availableCrossRegions = availableCrossRegions;
+            return this;
+        }
+
+        /**
+         * @param availableCrossRegions List of cross-region backup destination regions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableCrossRegions(List<String> availableCrossRegions) {
+            return availableCrossRegions(Output.of(availableCrossRegions));
+        }
+
+        /**
+         * @param availableCrossRegions List of cross-region backup destination regions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableCrossRegions(String... availableCrossRegions) {
+            return availableCrossRegions(List.of(availableCrossRegions));
         }
 
         /**
@@ -775,6 +856,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
+        }
+
+        /**
+         * @param crossBackupPolicy Cross-region backup policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossBackupPolicy(@Nullable Output<InstanceCrossBackupPolicyArgs> crossBackupPolicy) {
+            $.crossBackupPolicy = crossBackupPolicy;
+            return this;
+        }
+
+        /**
+         * @param crossBackupPolicy Cross-region backup policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossBackupPolicy(InstanceCrossBackupPolicyArgs crossBackupPolicy) {
+            return crossBackupPolicy(Output.of(crossBackupPolicy));
         }
 
         /**
@@ -1326,6 +1428,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tdeConfig Instance TDE configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(@Nullable Output<InstanceTdeConfigArgs> tdeConfig) {
+            $.tdeConfig = tdeConfig;
+            return this;
+        }
+
+        /**
+         * @param tdeConfig Instance TDE configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(InstanceTdeConfigArgs tdeConfig) {
+            return tdeConfig(Output.of(tdeConfig));
         }
 
         /**

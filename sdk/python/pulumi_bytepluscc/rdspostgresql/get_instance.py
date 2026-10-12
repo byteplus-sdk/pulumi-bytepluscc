@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, replication_slots=None, restore_to_existed_instance=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, replication_slots=None, restore_to_existed_instance=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, tde_enable=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -112,6 +112,9 @@ class GetInstanceResult:
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
+        if tde_enable and not isinstance(tde_enable, bool):
+            raise TypeError("Expected argument 'tde_enable' to be a bool")
+        pulumi.set(__self__, "tde_enable", tde_enable)
         if update_time and not isinstance(update_time, str):
             raise TypeError("Expected argument 'update_time' to be a str")
         pulumi.set(__self__, "update_time", update_time)
@@ -350,6 +353,14 @@ class GetInstanceResult:
         return pulumi.get(self, "tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeEnable")
+    def tde_enable(self) -> _builtins.bool:
+        """
+        Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_enable")
+
+    @_builtins.property
     @pulumi.getter(name="updateTime")
     def update_time(self) -> _builtins.str:
         """
@@ -416,6 +427,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             storage_wal_use=self.storage_wal_use,
             subnet_id=self.subnet_id,
             tags=self.tags,
+            tde_enable=self.tde_enable,
             update_time=self.update_time,
             vcpu=self.vcpu,
             vpc_id=self.vpc_id,
@@ -464,6 +476,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         storage_wal_use=pulumi.get(__ret__, 'storage_wal_use'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         tags=pulumi.get(__ret__, 'tags'),
+        tde_enable=pulumi.get(__ret__, 'tde_enable'),
         update_time=pulumi.get(__ret__, 'update_time'),
         vcpu=pulumi.get(__ret__, 'vcpu'),
         vpc_id=pulumi.get(__ret__, 'vpc_id'),
@@ -509,6 +522,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         storage_wal_use=pulumi.get(__response__, 'storage_wal_use'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         tags=pulumi.get(__response__, 'tags'),
+        tde_enable=pulumi.get(__response__, 'tde_enable'),
         update_time=pulumi.get(__response__, 'update_time'),
         vcpu=pulumi.get(__response__, 'vcpu'),
         vpc_id=pulumi.get(__response__, 'vpc_id'),

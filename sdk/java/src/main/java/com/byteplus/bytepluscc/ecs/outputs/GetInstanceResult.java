@@ -72,6 +72,7 @@ public final class GetInstanceResult {
     private GetInstanceRenewInfo renewInfo;
     private List<String> roleNames;
     private List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces;
+    private List<String> showRoleNames;
     private Double spotPriceLimit;
     private String spotStrategy;
     private String status;
@@ -213,6 +214,9 @@ public final class GetInstanceResult {
     public List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces() {
         return this.secondaryNetworkInterfaces;
     }
+    public List<String> showRoleNames() {
+        return this.showRoleNames;
+    }
     public Double spotPriceLimit() {
         return this.spotPriceLimit;
     }
@@ -296,6 +300,7 @@ public final class GetInstanceResult {
         private GetInstanceRenewInfo renewInfo;
         private List<String> roleNames;
         private List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces;
+        private List<String> showRoleNames;
         private Double spotPriceLimit;
         private String spotStrategy;
         private String status;
@@ -352,6 +357,7 @@ public final class GetInstanceResult {
     	      this.renewInfo = defaults.renewInfo;
     	      this.roleNames = defaults.roleNames;
     	      this.secondaryNetworkInterfaces = defaults.secondaryNetworkInterfaces;
+    	      this.showRoleNames = defaults.showRoleNames;
     	      this.spotPriceLimit = defaults.spotPriceLimit;
     	      this.spotStrategy = defaults.spotStrategy;
     	      this.status = defaults.status;
@@ -727,6 +733,17 @@ public final class GetInstanceResult {
             return secondaryNetworkInterfaces(List.of(secondaryNetworkInterfaces));
         }
         @CustomType.Setter
+        public Builder showRoleNames(List<String> showRoleNames) {
+            if (showRoleNames == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "showRoleNames");
+            }
+            this.showRoleNames = showRoleNames;
+            return this;
+        }
+        public Builder showRoleNames(String... showRoleNames) {
+            return showRoleNames(List.of(showRoleNames));
+        }
+        @CustomType.Setter
         public Builder spotPriceLimit(Double spotPriceLimit) {
             if (spotPriceLimit == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "spotPriceLimit");
@@ -854,6 +871,7 @@ public final class GetInstanceResult {
             _resultValue.renewInfo = renewInfo;
             _resultValue.roleNames = roleNames;
             _resultValue.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
+            _resultValue.showRoleNames = showRoleNames;
             _resultValue.spotPriceLimit = spotPriceLimit;
             _resultValue.spotStrategy = spotStrategy;
             _resultValue.status = status;

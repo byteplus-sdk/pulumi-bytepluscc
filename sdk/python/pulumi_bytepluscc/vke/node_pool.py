@@ -32,14 +32,14 @@ class NodePoolArgs:
         """
         The set of arguments for constructing a NodePool resource.
 
-        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: Node pool scaling policy configuration.
         :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
         :param pulumi.Input['NodePoolManagementArgs'] management: Managed node pool configuration
-        :param pulumi.Input[_builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[_builtins.str] name: Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolTagArgs']]] tags: Node pool tag information
+        :param pulumi.Input[Sequence[pulumi.Input['NodePoolTagArgs']]] tags: Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -62,7 +62,7 @@ class NodePoolArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[_builtins.str]:
         """
-        ID of the cluster where the node pool is located
+        ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -110,7 +110,7 @@ class NodePoolArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -146,7 +146,7 @@ class NodePoolArgs:
     @pulumi.getter
     def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolTagArgs']]]]:
         """
-        Node pool tag information
+        Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
@@ -176,17 +176,17 @@ class _NodePoolState:
         Input properties used for looking up and filtering NodePool resources.
 
         :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: Node pool scaling policy configuration.
-        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         :param pulumi.Input[_builtins.str] created_time: Node pool creation time
         :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
         :param pulumi.Input['NodePoolManagementArgs'] management: Managed node pool configuration
-        :param pulumi.Input[_builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[_builtins.str] name: Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
         :param pulumi.Input[_builtins.str] node_pool_id: Node pool ID
         :param pulumi.Input['NodePoolNodeStatisticsArgs'] node_statistics: Node statistics in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         :param pulumi.Input['NodePoolStatusArgs'] status: Node pool status
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolTagArgs']]] tags: Node pool tag information
+        :param pulumi.Input[Sequence[pulumi.Input['NodePoolTagArgs']]] tags: Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] updated_time: Node pool update time
         """
@@ -233,7 +233,7 @@ class _NodePoolState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        ID of the cluster where the node pool is located
+        ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -281,7 +281,7 @@ class _NodePoolState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -353,7 +353,7 @@ class _NodePoolState:
     @pulumi.getter
     def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolTagArgs']]]]:
         """
-        Node pool tag information
+        Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
@@ -528,13 +528,13 @@ class NodePool(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: Node pool scaling policy configuration.
-        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
         :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: Managed node pool configuration
-        :param pulumi.Input[_builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[_builtins.str] name: Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolTagArgs', 'NodePoolTagArgsDict']]]] tags: Node pool tag information
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolTagArgs', 'NodePoolTagArgsDict']]]] tags: Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         ...
@@ -756,17 +756,17 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: Node pool scaling policy configuration.
-        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[_builtins.str] cluster_id: ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         :param pulumi.Input[_builtins.str] created_time: Node pool creation time
         :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
         :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: Managed node pool configuration
-        :param pulumi.Input[_builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[_builtins.str] name: Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
         :param pulumi.Input[_builtins.str] node_pool_id: Node pool ID
         :param pulumi.Input[Union['NodePoolNodeStatisticsArgs', 'NodePoolNodeStatisticsArgsDict']] node_statistics: Node statistics in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         :param pulumi.Input[Union['NodePoolStatusArgs', 'NodePoolStatusArgsDict']] status: Node pool status
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolTagArgs', 'NodePoolTagArgsDict']]]] tags: Node pool tag information
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolTagArgs', 'NodePoolTagArgsDict']]]] tags: Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] updated_time: Node pool update time
         """
@@ -801,7 +801,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[_builtins.str]:
         """
-        ID of the cluster where the node pool is located
+        ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -833,7 +833,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -881,7 +881,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def tags(self) -> pulumi.Output[Sequence['outputs.NodePoolTag']]:
         """
-        Node pool tag information
+        Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")

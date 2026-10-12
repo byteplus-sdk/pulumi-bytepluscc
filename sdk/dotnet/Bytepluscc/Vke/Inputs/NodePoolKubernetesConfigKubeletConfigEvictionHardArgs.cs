@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// Hard threshold value.
+        /// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigInstancesDistribution {
     /**
-     * @return Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+     * @return Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
      * 
      */
     private @Nullable Boolean capacityRebalance;
     /**
-     * @return On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+     * @return Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
      * 
      */
     private @Nullable Boolean compensateWithOnDemand;
     /**
-     * @return Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+     * @return Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
      * 
      */
     private @Nullable Integer onDemandBaseCapacity;
     /**
-     * @return Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+     * @return Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
      * 
      */
     private @Nullable Integer onDemandPercentageAboveBaseCapacity;
 
     private NodePoolNodeConfigInstancesDistribution() {}
     /**
-     * @return Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+     * @return Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
      * 
      */
     public Optional<Boolean> capacityRebalance() {
         return Optional.ofNullable(this.capacityRebalance);
     }
     /**
-     * @return On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+     * @return Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
      * 
      */
     public Optional<Boolean> compensateWithOnDemand() {
         return Optional.ofNullable(this.compensateWithOnDemand);
     }
     /**
-     * @return Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+     * @return Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
      * 
      */
     public Optional<Integer> onDemandBaseCapacity() {
         return Optional.ofNullable(this.onDemandBaseCapacity);
     }
     /**
-     * @return Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+     * @return Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
      * 
      */
     public Optional<Integer> onDemandPercentageAboveBaseCapacity() {

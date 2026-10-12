@@ -12,17 +12,17 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolNodeConfigSystemVolume {
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID of the system disk.
      * 
      */
     private String placementGroupId;
     /**
-     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * @return Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     private Integer size;
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number for the system disk.
      * 
      */
     private Integer subgroupNumber;
@@ -34,21 +34,21 @@ public final class GetNodePoolNodeConfigSystemVolume {
 
     private GetNodePoolNodeConfigSystemVolume() {}
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID of the system disk.
      * 
      */
     public String placementGroupId() {
         return this.placementGroupId;
     }
     /**
-     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * @return Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number for the system disk.
      * 
      */
     public Integer subgroupNumber() {

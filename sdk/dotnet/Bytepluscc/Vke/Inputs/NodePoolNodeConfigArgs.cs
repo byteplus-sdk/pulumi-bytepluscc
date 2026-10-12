@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolNodeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+        /// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
         /// </summary>
         [Input("additionalContainerStorageEnabled")]
         public Input<bool>? AdditionalContainerStorageEnabled { get; set; }
 
         /// <summary>
-        /// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        /// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+        /// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
         /// </summary>
         [Input("autoRenewPeriod")]
         public Input<int>? AutoRenewPeriod { get; set; }
@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<Inputs.NodePoolNodeConfigDataVolumeArgs>? _dataVolumes;
 
         /// <summary>
-        /// Node data disk configuration.
+        /// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
         public InputList<Inputs.NodePoolNodeConfigDataVolumeArgs> DataVolumes
@@ -45,19 +45,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Group number of the instance in the deployment set; 0 means not set
+        /// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
         /// </summary>
         [Input("deploymentSetGroupNumber")]
         public Input<int>? DeploymentSetGroupNumber { get; set; }
 
         /// <summary>
-        /// Deployment Set ID to be added to the instance
+        /// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
         /// </summary>
         [Input("deploymentSetId")]
         public Input<string>? DeploymentSetId { get; set; }
 
         /// <summary>
-        /// The host name corresponding to the node.
+        /// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
         /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
@@ -66,7 +66,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _hpcClusterIds;
 
         /// <summary>
-        /// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        /// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances &amp; Images &gt; High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
         /// </summary>
         public InputList<string> HpcClusterIds
         {
@@ -75,25 +75,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Image ID used by the cloud server corresponding to the node
+        /// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+        /// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         /// </summary>
         [Input("initializeScript")]
         public Input<string>? InitializeScript { get; set; }
 
         /// <summary>
-        /// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        /// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
         /// </summary>
         [Input("instanceChargeType")]
         public Input<string>? InstanceChargeType { get; set; }
 
         /// <summary>
-        /// Node (instance) name
+        /// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
@@ -102,7 +102,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _instanceTypeIds;
 
         /// <summary>
-        /// List of cloud server instance type IDs corresponding to the nodes
+        /// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
         /// </summary>
         public InputList<string> InstanceTypeIds
         {
@@ -111,49 +111,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        /// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
         /// </summary>
         [Input("instancesDistribution")]
         public Input<Inputs.NodePoolNodeConfigInstancesDistributionArgs>? InstancesDistribution { get; set; }
 
         /// <summary>
-        /// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+        /// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
         /// </summary>
         [Input("namePrefix")]
         public Input<string>? NamePrefix { get; set; }
 
         /// <summary>
-        /// Network communication mode between nodes
+        /// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
         /// </summary>
         [Input("networkTrafficMode")]
         public Input<string>? NetworkTrafficMode { get; set; }
 
         /// <summary>
-        /// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        /// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// Script to execute before deploying the node
+        /// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         /// </summary>
         [Input("preScript")]
         public Input<string>? PreScript { get; set; }
 
         /// <summary>
-        /// Project to which the ECS belongs. Each ECS can only belong to one project.
+        /// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// Configuration for automatic public network access for nodes
+        /// Configuration information for automatically binding EIP to nodes.
         /// </summary>
         [Input("publicAccessConfig")]
         public Input<Inputs.NodePoolNodeConfigPublicAccessConfigArgs>? PublicAccessConfig { get; set; }
 
         /// <summary>
-        /// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        /// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
         /// </summary>
         [Input("publicAccessEnabled")]
         public Input<bool>? PublicAccessEnabled { get; set; }
@@ -165,7 +165,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<Inputs.NodePoolNodeConfigSecurityArgs>? Security { get; set; }
 
         /// <summary>
-        /// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+        /// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
         /// </summary>
         [Input("spotStrategy")]
         public Input<string>? SpotStrategy { get; set; }
@@ -174,7 +174,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// List of subnet IDs for the node network.
+        /// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -183,7 +183,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// System disk configuration for the node
+        /// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
         /// </summary>
         [Input("systemVolume")]
         public Input<Inputs.NodePoolNodeConfigSystemVolumeArgs>? SystemVolume { get; set; }
@@ -192,7 +192,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<Inputs.NodePoolNodeConfigTagArgs>? _tags;
 
         /// <summary>
-        /// Label information configured for the node pool
+        /// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
         public InputList<Inputs.NodePoolNodeConfigTagArgs> Tags

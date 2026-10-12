@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigDataVolume {
     /**
-     * @return File system. Options:   - Ext4 (default)   - Xfs
+     * @return [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
      * 
      */
     private @Nullable String fileSystem;
@@ -23,7 +23,7 @@ public final class NodePoolNodeConfigDataVolume {
      */
     private @Nullable String mountPoint;
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID to which the data disk belongs.
      * 
      */
     private @Nullable String placementGroupId;
@@ -33,24 +33,24 @@ public final class NodePoolNodeConfigDataVolume {
      */
     private @Nullable Integer size;
     /**
-     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+     * @return Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
      * 
      */
     private @Nullable String snapshotId;
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number of the data disk.
      * 
      */
     private @Nullable Integer subgroupNumber;
     /**
-     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+     * @return Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
      * 
      */
     private @Nullable String type;
 
     private NodePoolNodeConfigDataVolume() {}
     /**
-     * @return File system. Options:   - Ext4 (default)   - Xfs
+     * @return [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
      * 
      */
     public Optional<String> fileSystem() {
@@ -64,7 +64,7 @@ public final class NodePoolNodeConfigDataVolume {
         return Optional.ofNullable(this.mountPoint);
     }
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID to which the data disk belongs.
      * 
      */
     public Optional<String> placementGroupId() {
@@ -78,21 +78,21 @@ public final class NodePoolNodeConfigDataVolume {
         return Optional.ofNullable(this.size);
     }
     /**
-     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
+     * @return Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the &#39;available&#39; state can be used to create new cloud disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; states cannot be used to create new cloud disks.
      * 
      */
     public Optional<String> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
     }
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number of the data disk.
      * 
      */
     public Optional<Integer> subgroupNumber() {
         return Optional.ofNullable(this.subgroupNumber);
     }
     /**
-     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+     * @return Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
      * 
      */
     public Optional<String> type() {

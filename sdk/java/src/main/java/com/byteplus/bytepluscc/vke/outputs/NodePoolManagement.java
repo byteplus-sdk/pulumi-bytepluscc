@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolManagement {
     /**
-     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
+     * @return Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return Check self-healing configuration.
+     * @return Node pool health check and self-healing rule configuration.
      * 
      */
     private @Nullable NodePoolManagementRemedyConfig remedyConfig;
 
     private NodePoolManagement() {}
     /**
-     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
+     * @return Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return Check self-healing configuration.
+     * @return Node pool health check and self-healing rule configuration.
      * 
      */
     public Optional<NodePoolManagementRemedyConfig> remedyConfig() {

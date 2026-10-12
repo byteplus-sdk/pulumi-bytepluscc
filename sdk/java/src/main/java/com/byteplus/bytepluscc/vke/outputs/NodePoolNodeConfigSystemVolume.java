@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigSystemVolume {
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID of the system disk.
      * 
      */
     private @Nullable String placementGroupId;
     /**
-     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * @return Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     private @Nullable Integer size;
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number for the system disk.
      * 
      */
     private @Nullable Integer subgroupNumber;
@@ -35,21 +35,21 @@ public final class NodePoolNodeConfigSystemVolume {
 
     private NodePoolNodeConfigSystemVolume() {}
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID of the system disk.
      * 
      */
     public Optional<String> placementGroupId() {
         return Optional.ofNullable(this.placementGroupId);
     }
     /**
-     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * @return Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     public Optional<Integer> size() {
         return Optional.ofNullable(this.size);
     }
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number for the system disk.
      * 
      */
     public Optional<Integer> subgroupNumber() {

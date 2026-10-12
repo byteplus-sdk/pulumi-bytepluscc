@@ -19,59 +19,59 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigKubeletConfig {
     /**
-     * @return Configure kubelet CpuManagerPolicy. Supports none and static policies
+     * @return CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
      * 
      */
     private @Nullable String cpuManagerPolicy;
     /**
-     * @return Set of hard thresholds for triggering Pod eviction
+     * @return A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
     private @Nullable List<NodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards;
     /**
-     * @return Feature gate
+     * @return Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
      * 
      */
     private @Nullable NodePoolKubernetesConfigKubeletConfigFeatureGates featureGates;
     /**
-     * @return Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+     * @return Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
      * 
      */
     private @Nullable Integer kubeApiBurst;
     /**
-     * @return Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+     * @return Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
      * 
      */
     private @Nullable Integer kubeApiQps;
     /**
-     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * @return Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
     private @Nullable List<NodePoolKubernetesConfigKubeletConfigKubeReserved> kubeReserveds;
     /**
-     * @return Configure the maximum number of Pods supported by kubelet
+     * @return Maximum number of Pods supported by the node. Default is 110.
      * 
      */
     private @Nullable Integer maxPods;
     /**
-     * @return Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+     * @return Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
      * 
      */
     private @Nullable Integer registryBurst;
     /**
-     * @return Used to limit the QPS cap for the image repository
+     * @return QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
      * 
      */
     private @Nullable Integer registryPullQps;
     /**
-     * @return Pull images sequentially
+     * @return Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
      * 
      */
     private @Nullable Boolean serializeImagePulls;
     /**
-     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -89,14 +89,14 @@ public final class NodePoolKubernetesConfigKubeletConfig {
 
     private NodePoolKubernetesConfigKubeletConfig() {}
     /**
-     * @return Configure kubelet CpuManagerPolicy. Supports none and static policies
+     * @return CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
      * 
      */
     public Optional<String> cpuManagerPolicy() {
         return Optional.ofNullable(this.cpuManagerPolicy);
     }
     /**
-     * @return Set of hard thresholds for triggering Pod eviction
+     * @return A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -104,28 +104,28 @@ public final class NodePoolKubernetesConfigKubeletConfig {
         return this.evictionHards == null ? List.of() : this.evictionHards;
     }
     /**
-     * @return Feature gate
+     * @return Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
      * 
      */
     public Optional<NodePoolKubernetesConfigKubeletConfigFeatureGates> featureGates() {
         return Optional.ofNullable(this.featureGates);
     }
     /**
-     * @return Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+     * @return Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
      * 
      */
     public Optional<Integer> kubeApiBurst() {
         return Optional.ofNullable(this.kubeApiBurst);
     }
     /**
-     * @return Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+     * @return Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
      * 
      */
     public Optional<Integer> kubeApiQps() {
         return Optional.ofNullable(this.kubeApiQps);
     }
     /**
-     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * @return Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -133,35 +133,35 @@ public final class NodePoolKubernetesConfigKubeletConfig {
         return this.kubeReserveds == null ? List.of() : this.kubeReserveds;
     }
     /**
-     * @return Configure the maximum number of Pods supported by kubelet
+     * @return Maximum number of Pods supported by the node. Default is 110.
      * 
      */
     public Optional<Integer> maxPods() {
         return Optional.ofNullable(this.maxPods);
     }
     /**
-     * @return Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+     * @return Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
      * 
      */
     public Optional<Integer> registryBurst() {
         return Optional.ofNullable(this.registryBurst);
     }
     /**
-     * @return Used to limit the QPS cap for the image repository
+     * @return QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
      * 
      */
     public Optional<Integer> registryPullQps() {
         return Optional.ofNullable(this.registryPullQps);
     }
     /**
-     * @return Pull images sequentially
+     * @return Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
      * 
      */
     public Optional<Boolean> serializeImagePulls() {
         return Optional.ofNullable(this.serializeImagePulls);
     }
     /**
-     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */

@@ -185,6 +185,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly tags: pulumi.Output<outputs.rdspostgresql.InstanceTag[]>;
     /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     */
+    declare public readonly tdeEnable: pulumi.Output<boolean>;
+    /**
      * Instance update time
      */
     declare public /*out*/ readonly updateTime: pulumi.Output<string>;
@@ -241,6 +245,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["storageWalUse"] = state?.storageWalUse;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["tags"] = state?.tags;
+            resourceInputs["tdeEnable"] = state?.tdeEnable;
             resourceInputs["updateTime"] = state?.updateTime;
             resourceInputs["vcpu"] = state?.vcpu;
             resourceInputs["vpcId"] = state?.vpcId;
@@ -278,6 +283,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["storageType"] = args?.storageType;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["tdeEnable"] = args?.tdeEnable;
             resourceInputs["vpcId"] = args?.vpcId;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["dataSyncMode"] = undefined /*out*/;
@@ -419,6 +425,10 @@ export interface InstanceState {
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceTag>[] | undefined>;
     /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     */
+    tdeEnable?: pulumi.Input<boolean | undefined>;
+    /**
      * Instance update time
      */
     updateTime?: pulumi.Input<string | undefined>;
@@ -495,6 +505,10 @@ export interface InstanceArgs {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceTag>[] | undefined>;
+    /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     */
+    tdeEnable?: pulumi.Input<boolean | undefined>;
     /**
      * Use this parameter to specify the private network for the instance
      */

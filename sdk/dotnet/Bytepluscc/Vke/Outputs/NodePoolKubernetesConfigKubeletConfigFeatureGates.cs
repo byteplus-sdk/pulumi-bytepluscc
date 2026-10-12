@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigKubeletConfigFeatureGates
     {
         /// <summary>
-        /// Enable local vertical Pod autoscaling feature toggle
+        /// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
         /// </summary>
         public readonly bool? InPlacePodVerticalScaling;
         /// <summary>
-        /// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+        /// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
         /// </summary>
         public readonly bool? QoSResourceManager;
 

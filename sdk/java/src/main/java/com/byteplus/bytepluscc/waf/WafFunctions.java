@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.waf;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.waf.inputs.GetBotAnalyseProtectRuleArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetBotAnalyseProtectRulePlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetCcRuleArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetCcRulePlainArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetCustomBotArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetCustomBotPlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetCustomPageArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetCustomPagePlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetDomainArgs;
@@ -16,8 +20,12 @@ import com.byteplus.bytepluscc.waf.inputs.GetIpGroupArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetIpGroupPlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetSystemBotArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetSystemBotPlainArgs;
+import com.byteplus.bytepluscc.waf.outputs.GetBotAnalyseProtectRuleResult;
+import com.byteplus.bytepluscc.waf.outputs.GetBotAnalyseProtectRulesResult;
 import com.byteplus.bytepluscc.waf.outputs.GetCcRuleResult;
 import com.byteplus.bytepluscc.waf.outputs.GetCcRulesResult;
+import com.byteplus.bytepluscc.waf.outputs.GetCustomBotResult;
+import com.byteplus.bytepluscc.waf.outputs.GetCustomBotsResult;
 import com.byteplus.bytepluscc.waf.outputs.GetCustomPageResult;
 import com.byteplus.bytepluscc.waf.outputs.GetCustomPagesResult;
 import com.byteplus.bytepluscc.waf.outputs.GetDomainResult;
@@ -37,6 +45,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class WafFunctions {
+    /**
+     * Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args) {
+        return getBotAnalyseProtectRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRulePlain(GetBotAnalyseProtectRulePlainArgs args) {
+        return getBotAnalyseProtectRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRule(GetBotAnalyseProtectRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRuleResult> getBotAnalyseProtectRulePlain(GetBotAnalyseProtectRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getBotAnalyseProtectRule:getBotAnalyseProtectRule", TypeShape.of(GetBotAnalyseProtectRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules() {
+        return getBotAnalyseProtectRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain() {
+        return getBotAnalyseProtectRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args) {
+        return getBotAnalyseProtectRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain(InvokeArgs args) {
+        return getBotAnalyseProtectRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static Output<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::BotAnalyseProtectRule
+     * 
+     */
+    public static CompletableFuture<GetBotAnalyseProtectRulesResult> getBotAnalyseProtectRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getBotAnalyseProtectRules:getBotAnalyseProtectRules", TypeShape.of(GetBotAnalyseProtectRulesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::WAF::CcRule
      * 
@@ -120,6 +212,90 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args) {
+        return getCustomBot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotResult> getCustomBotPlain(GetCustomBotPlainArgs args) {
+        return getCustomBotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotResult> getCustomBot(GetCustomBotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotResult> getCustomBotPlain(GetCustomBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCustomBot:getCustomBot", TypeShape.of(GetCustomBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots() {
+        return getCustomBots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain() {
+        return getCustomBotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args) {
+        return getCustomBots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain(InvokeArgs args) {
+        return getCustomBotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static Output<GetCustomBotsResult> getCustomBots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomBot
+     * 
+     */
+    public static CompletableFuture<GetCustomBotsResult> getCustomBotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCustomBots:getCustomBots", TypeShape.of(GetCustomBotsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::CustomPage

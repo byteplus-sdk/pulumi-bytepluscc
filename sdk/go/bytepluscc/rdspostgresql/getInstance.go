@@ -86,6 +86,8 @@ type LookupInstanceResult struct {
 	SubnetId string `pulumi:"subnetId"`
 	// Tag information of the cloud disk
 	Tags []GetInstanceTag `pulumi:"tags"`
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable bool `pulumi:"tdeEnable"`
 	// Instance update time
 	UpdateTime string `pulumi:"updateTime"`
 	// CPU size. For example: 1 means 1U
@@ -268,6 +270,11 @@ func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
 // Tag information of the cloud disk
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
+}
+
+// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+func (o LookupInstanceResultOutput) TdeEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.TdeEnable }).(pulumi.BoolOutput)
 }
 
 // Instance update time

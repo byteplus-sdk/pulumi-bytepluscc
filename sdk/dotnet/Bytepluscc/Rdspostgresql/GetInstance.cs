@@ -177,6 +177,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
+        /// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        /// </summary>
+        public readonly bool TdeEnable;
+        /// <summary>
         /// Instance update time
         /// </summary>
         public readonly string UpdateTime;
@@ -251,6 +255,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             ImmutableArray<Outputs.GetInstanceTagResult> tags,
 
+            bool tdeEnable,
+
             string updateTime,
 
             double vcpu,
@@ -287,6 +293,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             StorageWalUse = storageWalUse;
             SubnetId = subnetId;
             Tags = tags;
+            TdeEnable = tdeEnable;
             UpdateTime = updateTime;
             Vcpu = vcpu;
             VpcId = vpcId;

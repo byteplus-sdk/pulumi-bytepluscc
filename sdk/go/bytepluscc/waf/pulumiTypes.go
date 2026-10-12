@@ -13,6 +13,454 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type BotAnalyseProtectRuleAccurateGroup struct {
+	// Priority of advanced condition group. Not required for create/update; used only for list display.
+	AccurateGroupPriority *int `pulumi:"accurateGroupPriority"`
+	// Sub-rule list in advanced conditions.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules []BotAnalyseProtectRuleAccurateGroupAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update operations; used only for list display.
+	Id *int `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic *int `pulumi:"logic"`
+}
+
+// BotAnalyseProtectRuleAccurateGroupInput is an input type that accepts BotAnalyseProtectRuleAccurateGroupArgs and BotAnalyseProtectRuleAccurateGroupOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleAccurateGroupInput` via:
+//
+//	BotAnalyseProtectRuleAccurateGroupArgs{...}
+type BotAnalyseProtectRuleAccurateGroupInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleAccurateGroupOutput() BotAnalyseProtectRuleAccurateGroupOutput
+	ToBotAnalyseProtectRuleAccurateGroupOutputWithContext(context.Context) BotAnalyseProtectRuleAccurateGroupOutput
+}
+
+type BotAnalyseProtectRuleAccurateGroupArgs struct {
+	// Priority of advanced condition group. Not required for create/update; used only for list display.
+	AccurateGroupPriority pulumi.IntPtrInput `pulumi:"accurateGroupPriority"`
+	// Sub-rule list in advanced conditions.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update operations; used only for list display.
+	Id pulumi.IntPtrInput `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic pulumi.IntPtrInput `pulumi:"logic"`
+}
+
+func (BotAnalyseProtectRuleAccurateGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupArgs) ToBotAnalyseProtectRuleAccurateGroupOutput() BotAnalyseProtectRuleAccurateGroupOutput {
+	return i.ToBotAnalyseProtectRuleAccurateGroupOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupArgs) ToBotAnalyseProtectRuleAccurateGroupOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleAccurateGroupOutput)
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupArgs) ToBotAnalyseProtectRuleAccurateGroupPtrOutput() BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return i.ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupArgs) ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleAccurateGroupOutput).ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(ctx)
+}
+
+// BotAnalyseProtectRuleAccurateGroupPtrInput is an input type that accepts BotAnalyseProtectRuleAccurateGroupArgs, BotAnalyseProtectRuleAccurateGroupPtr and BotAnalyseProtectRuleAccurateGroupPtrOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleAccurateGroupPtrInput` via:
+//
+//	        BotAnalyseProtectRuleAccurateGroupArgs{...}
+//
+//	or:
+//
+//	        nil
+type BotAnalyseProtectRuleAccurateGroupPtrInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleAccurateGroupPtrOutput() BotAnalyseProtectRuleAccurateGroupPtrOutput
+	ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(context.Context) BotAnalyseProtectRuleAccurateGroupPtrOutput
+}
+
+type botAnalyseProtectRuleAccurateGroupPtrType BotAnalyseProtectRuleAccurateGroupArgs
+
+func BotAnalyseProtectRuleAccurateGroupPtr(v *BotAnalyseProtectRuleAccurateGroupArgs) BotAnalyseProtectRuleAccurateGroupPtrInput {
+	return (*botAnalyseProtectRuleAccurateGroupPtrType)(v)
+}
+
+func (*botAnalyseProtectRuleAccurateGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i *botAnalyseProtectRuleAccurateGroupPtrType) ToBotAnalyseProtectRuleAccurateGroupPtrOutput() BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return i.ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *botAnalyseProtectRuleAccurateGroupPtrType) ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleAccurateGroupPtrOutput)
+}
+
+type BotAnalyseProtectRuleAccurateGroupOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleAccurateGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupOutput) ToBotAnalyseProtectRuleAccurateGroupOutput() BotAnalyseProtectRuleAccurateGroupOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupOutput) ToBotAnalyseProtectRuleAccurateGroupOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupOutput) ToBotAnalyseProtectRuleAccurateGroupPtrOutput() BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return o.ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupOutput) ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BotAnalyseProtectRuleAccurateGroup) *BotAnalyseProtectRuleAccurateGroup {
+		return &v
+	}).(BotAnalyseProtectRuleAccurateGroupPtrOutput)
+}
+
+// Priority of advanced condition group. Not required for create/update; used only for list display.
+func (o BotAnalyseProtectRuleAccurateGroupOutput) AccurateGroupPriority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroup) *int { return v.AccurateGroupPriority }).(pulumi.IntPtrOutput)
+}
+
+// Sub-rule list in advanced conditions.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o BotAnalyseProtectRuleAccurateGroupOutput) AccurateRules() BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroup) []BotAnalyseProtectRuleAccurateGroupAccurateRule {
+		return v.AccurateRules
+	}).(BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update operations; used only for list display.
+func (o BotAnalyseProtectRuleAccurateGroupOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroup) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o BotAnalyseProtectRuleAccurateGroupOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroup) *int { return v.Logic }).(pulumi.IntPtrOutput)
+}
+
+type BotAnalyseProtectRuleAccurateGroupPtrOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleAccurateGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) ToBotAnalyseProtectRuleAccurateGroupPtrOutput() BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) ToBotAnalyseProtectRuleAccurateGroupPtrOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupPtrOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) Elem() BotAnalyseProtectRuleAccurateGroupOutput {
+	return o.ApplyT(func(v *BotAnalyseProtectRuleAccurateGroup) BotAnalyseProtectRuleAccurateGroup {
+		if v != nil {
+			return *v
+		}
+		var ret BotAnalyseProtectRuleAccurateGroup
+		return ret
+	}).(BotAnalyseProtectRuleAccurateGroupOutput)
+}
+
+// Priority of advanced condition group. Not required for create/update; used only for list display.
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) AccurateGroupPriority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BotAnalyseProtectRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateGroupPriority
+	}).(pulumi.IntPtrOutput)
+}
+
+// Sub-rule list in advanced conditions.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) AccurateRules() BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v *BotAnalyseProtectRuleAccurateGroup) []BotAnalyseProtectRuleAccurateGroupAccurateRule {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateRules
+	}).(BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update operations; used only for list display.
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BotAnalyseProtectRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o BotAnalyseProtectRuleAccurateGroupPtrOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BotAnalyseProtectRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Logic
+	}).(pulumi.IntPtrOutput)
+}
+
+type BotAnalyseProtectRuleAccurateGroupAccurateRule struct {
+	// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj *string `pulumi:"httpObj"`
+	// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+	ObjType *int `pulumi:"objType"`
+	// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+	Opretar *int `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+	Property *int `pulumi:"property"`
+	// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+	ValueString *string `pulumi:"valueString"`
+}
+
+// BotAnalyseProtectRuleAccurateGroupAccurateRuleInput is an input type that accepts BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs and BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleAccurateGroupAccurateRuleInput` via:
+//
+//	BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{...}
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput
+	ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput
+}
+
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs struct {
+	// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj pulumi.StringPtrInput `pulumi:"httpObj"`
+	// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+	ObjType pulumi.IntPtrInput `pulumi:"objType"`
+	// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+	Opretar pulumi.IntPtrInput `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+	Property pulumi.IntPtrInput `pulumi:"property"`
+	// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+	ValueString pulumi.StringPtrInput `pulumi:"valueString"`
+}
+
+func (BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return i.ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput)
+}
+
+// BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput is an input type that accepts BotAnalyseProtectRuleAccurateGroupAccurateRuleArray and BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput` via:
+//
+//	BotAnalyseProtectRuleAccurateGroupAccurateRuleArray{ BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{...} }
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput
+	ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput
+}
+
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleArray []BotAnalyseProtectRuleAccurateGroupAccurateRuleInput
+
+func (BotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return i.ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) HttpObj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroupAccurateRule) *string { return v.HttpObj }).(pulumi.StringPtrOutput)
+}
+
+// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ObjType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroupAccurateRule) *int { return v.ObjType }).(pulumi.IntPtrOutput)
+}
+
+// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) Opretar() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroupAccurateRule) *int { return v.Opretar }).(pulumi.IntPtrOutput)
+}
+
+// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) Property() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroupAccurateRule) *int { return v.Property }).(pulumi.IntPtrOutput)
+}
+
+// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ValueString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleAccurateGroupAccurateRule) *string { return v.ValueString }).(pulumi.StringPtrOutput)
+}
+
+type BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ToBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) Index(i pulumi.IntInput) BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BotAnalyseProtectRuleAccurateGroupAccurateRule {
+		return vs[0].([]BotAnalyseProtectRuleAccurateGroupAccurateRule)[vs[1].(int)]
+	}).(BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput)
+}
+
+type BotAnalyseProtectRuleCronConf struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab *string `pulumi:"crontab"`
+	// Total path threshold during the specified period. Value range: 1~300000.
+	PathThreshold *int `pulumi:"pathThreshold"`
+	// Threshold for a single object during the specified period. Value range: 1~300000.
+	SingleThreshold *int `pulumi:"singleThreshold"`
+}
+
+// BotAnalyseProtectRuleCronConfInput is an input type that accepts BotAnalyseProtectRuleCronConfArgs and BotAnalyseProtectRuleCronConfOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleCronConfInput` via:
+//
+//	BotAnalyseProtectRuleCronConfArgs{...}
+type BotAnalyseProtectRuleCronConfInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleCronConfOutput() BotAnalyseProtectRuleCronConfOutput
+	ToBotAnalyseProtectRuleCronConfOutputWithContext(context.Context) BotAnalyseProtectRuleCronConfOutput
+}
+
+type BotAnalyseProtectRuleCronConfArgs struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab pulumi.StringPtrInput `pulumi:"crontab"`
+	// Total path threshold during the specified period. Value range: 1~300000.
+	PathThreshold pulumi.IntPtrInput `pulumi:"pathThreshold"`
+	// Threshold for a single object during the specified period. Value range: 1~300000.
+	SingleThreshold pulumi.IntPtrInput `pulumi:"singleThreshold"`
+}
+
+func (BotAnalyseProtectRuleCronConfArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (i BotAnalyseProtectRuleCronConfArgs) ToBotAnalyseProtectRuleCronConfOutput() BotAnalyseProtectRuleCronConfOutput {
+	return i.ToBotAnalyseProtectRuleCronConfOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleCronConfArgs) ToBotAnalyseProtectRuleCronConfOutputWithContext(ctx context.Context) BotAnalyseProtectRuleCronConfOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleCronConfOutput)
+}
+
+// BotAnalyseProtectRuleCronConfArrayInput is an input type that accepts BotAnalyseProtectRuleCronConfArray and BotAnalyseProtectRuleCronConfArrayOutput values.
+// You can construct a concrete instance of `BotAnalyseProtectRuleCronConfArrayInput` via:
+//
+//	BotAnalyseProtectRuleCronConfArray{ BotAnalyseProtectRuleCronConfArgs{...} }
+type BotAnalyseProtectRuleCronConfArrayInput interface {
+	pulumi.Input
+
+	ToBotAnalyseProtectRuleCronConfArrayOutput() BotAnalyseProtectRuleCronConfArrayOutput
+	ToBotAnalyseProtectRuleCronConfArrayOutputWithContext(context.Context) BotAnalyseProtectRuleCronConfArrayOutput
+}
+
+type BotAnalyseProtectRuleCronConfArray []BotAnalyseProtectRuleCronConfInput
+
+func (BotAnalyseProtectRuleCronConfArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (i BotAnalyseProtectRuleCronConfArray) ToBotAnalyseProtectRuleCronConfArrayOutput() BotAnalyseProtectRuleCronConfArrayOutput {
+	return i.ToBotAnalyseProtectRuleCronConfArrayOutputWithContext(context.Background())
+}
+
+func (i BotAnalyseProtectRuleCronConfArray) ToBotAnalyseProtectRuleCronConfArrayOutputWithContext(ctx context.Context) BotAnalyseProtectRuleCronConfArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BotAnalyseProtectRuleCronConfArrayOutput)
+}
+
+type BotAnalyseProtectRuleCronConfOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleCronConfOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleCronConfOutput) ToBotAnalyseProtectRuleCronConfOutput() BotAnalyseProtectRuleCronConfOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleCronConfOutput) ToBotAnalyseProtectRuleCronConfOutputWithContext(ctx context.Context) BotAnalyseProtectRuleCronConfOutput {
+	return o
+}
+
+// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+func (o BotAnalyseProtectRuleCronConfOutput) Crontab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleCronConf) *string { return v.Crontab }).(pulumi.StringPtrOutput)
+}
+
+// Total path threshold during the specified period. Value range: 1~300000.
+func (o BotAnalyseProtectRuleCronConfOutput) PathThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleCronConf) *int { return v.PathThreshold }).(pulumi.IntPtrOutput)
+}
+
+// Threshold for a single object during the specified period. Value range: 1~300000.
+func (o BotAnalyseProtectRuleCronConfOutput) SingleThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BotAnalyseProtectRuleCronConf) *int { return v.SingleThreshold }).(pulumi.IntPtrOutput)
+}
+
+type BotAnalyseProtectRuleCronConfArrayOutput struct{ *pulumi.OutputState }
+
+func (BotAnalyseProtectRuleCronConfArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (o BotAnalyseProtectRuleCronConfArrayOutput) ToBotAnalyseProtectRuleCronConfArrayOutput() BotAnalyseProtectRuleCronConfArrayOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleCronConfArrayOutput) ToBotAnalyseProtectRuleCronConfArrayOutputWithContext(ctx context.Context) BotAnalyseProtectRuleCronConfArrayOutput {
+	return o
+}
+
+func (o BotAnalyseProtectRuleCronConfArrayOutput) Index(i pulumi.IntInput) BotAnalyseProtectRuleCronConfOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BotAnalyseProtectRuleCronConf {
+		return vs[0].([]BotAnalyseProtectRuleCronConf)[vs[1].(int)]
+	}).(BotAnalyseProtectRuleCronConfOutput)
+}
+
 type CcRuleAccurateGroup struct {
 	// Advanced condition group priority. Not required when creating/updating, used only for list display.
 	AccurateGroupPriority *int `pulumi:"accurateGroupPriority"`
@@ -457,6 +905,299 @@ func (o CcRuleCronConfArrayOutput) Index(i pulumi.IntInput) CcRuleCronConfOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CcRuleCronConf {
 		return vs[0].([]CcRuleCronConf)[vs[1].(int)]
 	}).(CcRuleCronConfOutput)
+}
+
+type CustomBotAccurate struct {
+	// Advanced condition subrule list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules []CustomBotAccurateAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group logical relationship. 1: AND; 2: OR
+	Logic *int `pulumi:"logic"`
+}
+
+// CustomBotAccurateInput is an input type that accepts CustomBotAccurateArgs and CustomBotAccurateOutput values.
+// You can construct a concrete instance of `CustomBotAccurateInput` via:
+//
+//	CustomBotAccurateArgs{...}
+type CustomBotAccurateInput interface {
+	pulumi.Input
+
+	ToCustomBotAccurateOutput() CustomBotAccurateOutput
+	ToCustomBotAccurateOutputWithContext(context.Context) CustomBotAccurateOutput
+}
+
+type CustomBotAccurateArgs struct {
+	// Advanced condition subrule list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules CustomBotAccurateAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group logical relationship. 1: AND; 2: OR
+	Logic pulumi.IntPtrInput `pulumi:"logic"`
+}
+
+func (CustomBotAccurateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomBotAccurate)(nil)).Elem()
+}
+
+func (i CustomBotAccurateArgs) ToCustomBotAccurateOutput() CustomBotAccurateOutput {
+	return i.ToCustomBotAccurateOutputWithContext(context.Background())
+}
+
+func (i CustomBotAccurateArgs) ToCustomBotAccurateOutputWithContext(ctx context.Context) CustomBotAccurateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomBotAccurateOutput)
+}
+
+func (i CustomBotAccurateArgs) ToCustomBotAccuratePtrOutput() CustomBotAccuratePtrOutput {
+	return i.ToCustomBotAccuratePtrOutputWithContext(context.Background())
+}
+
+func (i CustomBotAccurateArgs) ToCustomBotAccuratePtrOutputWithContext(ctx context.Context) CustomBotAccuratePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomBotAccurateOutput).ToCustomBotAccuratePtrOutputWithContext(ctx)
+}
+
+// CustomBotAccuratePtrInput is an input type that accepts CustomBotAccurateArgs, CustomBotAccuratePtr and CustomBotAccuratePtrOutput values.
+// You can construct a concrete instance of `CustomBotAccuratePtrInput` via:
+//
+//	        CustomBotAccurateArgs{...}
+//
+//	or:
+//
+//	        nil
+type CustomBotAccuratePtrInput interface {
+	pulumi.Input
+
+	ToCustomBotAccuratePtrOutput() CustomBotAccuratePtrOutput
+	ToCustomBotAccuratePtrOutputWithContext(context.Context) CustomBotAccuratePtrOutput
+}
+
+type customBotAccuratePtrType CustomBotAccurateArgs
+
+func CustomBotAccuratePtr(v *CustomBotAccurateArgs) CustomBotAccuratePtrInput {
+	return (*customBotAccuratePtrType)(v)
+}
+
+func (*customBotAccuratePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CustomBotAccurate)(nil)).Elem()
+}
+
+func (i *customBotAccuratePtrType) ToCustomBotAccuratePtrOutput() CustomBotAccuratePtrOutput {
+	return i.ToCustomBotAccuratePtrOutputWithContext(context.Background())
+}
+
+func (i *customBotAccuratePtrType) ToCustomBotAccuratePtrOutputWithContext(ctx context.Context) CustomBotAccuratePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomBotAccuratePtrOutput)
+}
+
+type CustomBotAccurateOutput struct{ *pulumi.OutputState }
+
+func (CustomBotAccurateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomBotAccurate)(nil)).Elem()
+}
+
+func (o CustomBotAccurateOutput) ToCustomBotAccurateOutput() CustomBotAccurateOutput {
+	return o
+}
+
+func (o CustomBotAccurateOutput) ToCustomBotAccurateOutputWithContext(ctx context.Context) CustomBotAccurateOutput {
+	return o
+}
+
+func (o CustomBotAccurateOutput) ToCustomBotAccuratePtrOutput() CustomBotAccuratePtrOutput {
+	return o.ToCustomBotAccuratePtrOutputWithContext(context.Background())
+}
+
+func (o CustomBotAccurateOutput) ToCustomBotAccuratePtrOutputWithContext(ctx context.Context) CustomBotAccuratePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CustomBotAccurate) *CustomBotAccurate {
+		return &v
+	}).(CustomBotAccuratePtrOutput)
+}
+
+// Advanced condition subrule list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CustomBotAccurateOutput) AccurateRules() CustomBotAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v CustomBotAccurate) []CustomBotAccurateAccurateRule { return v.AccurateRules }).(CustomBotAccurateAccurateRuleArrayOutput)
+}
+
+// Advanced condition group logical relationship. 1: AND; 2: OR
+func (o CustomBotAccurateOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurate) *int { return v.Logic }).(pulumi.IntPtrOutput)
+}
+
+type CustomBotAccuratePtrOutput struct{ *pulumi.OutputState }
+
+func (CustomBotAccuratePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CustomBotAccurate)(nil)).Elem()
+}
+
+func (o CustomBotAccuratePtrOutput) ToCustomBotAccuratePtrOutput() CustomBotAccuratePtrOutput {
+	return o
+}
+
+func (o CustomBotAccuratePtrOutput) ToCustomBotAccuratePtrOutputWithContext(ctx context.Context) CustomBotAccuratePtrOutput {
+	return o
+}
+
+func (o CustomBotAccuratePtrOutput) Elem() CustomBotAccurateOutput {
+	return o.ApplyT(func(v *CustomBotAccurate) CustomBotAccurate {
+		if v != nil {
+			return *v
+		}
+		var ret CustomBotAccurate
+		return ret
+	}).(CustomBotAccurateOutput)
+}
+
+// Advanced condition subrule list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CustomBotAccuratePtrOutput) AccurateRules() CustomBotAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v *CustomBotAccurate) []CustomBotAccurateAccurateRule {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateRules
+	}).(CustomBotAccurateAccurateRuleArrayOutput)
+}
+
+// Advanced condition group logical relationship. 1: AND; 2: OR
+func (o CustomBotAccuratePtrOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CustomBotAccurate) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Logic
+	}).(pulumi.IntPtrOutput)
+}
+
+type CustomBotAccurateAccurateRule struct {
+	// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+	HttpObj *string `pulumi:"httpObj"`
+	// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+	ObjType *int `pulumi:"objType"`
+	// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+	Opretar *int `pulumi:"opretar"`
+	// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+	Property *int `pulumi:"property"`
+	// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+	ValueString *string `pulumi:"valueString"`
+}
+
+// CustomBotAccurateAccurateRuleInput is an input type that accepts CustomBotAccurateAccurateRuleArgs and CustomBotAccurateAccurateRuleOutput values.
+// You can construct a concrete instance of `CustomBotAccurateAccurateRuleInput` via:
+//
+//	CustomBotAccurateAccurateRuleArgs{...}
+type CustomBotAccurateAccurateRuleInput interface {
+	pulumi.Input
+
+	ToCustomBotAccurateAccurateRuleOutput() CustomBotAccurateAccurateRuleOutput
+	ToCustomBotAccurateAccurateRuleOutputWithContext(context.Context) CustomBotAccurateAccurateRuleOutput
+}
+
+type CustomBotAccurateAccurateRuleArgs struct {
+	// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+	HttpObj pulumi.StringPtrInput `pulumi:"httpObj"`
+	// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+	ObjType pulumi.IntPtrInput `pulumi:"objType"`
+	// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+	Opretar pulumi.IntPtrInput `pulumi:"opretar"`
+	// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+	Property pulumi.IntPtrInput `pulumi:"property"`
+	// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+	ValueString pulumi.StringPtrInput `pulumi:"valueString"`
+}
+
+func (CustomBotAccurateAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i CustomBotAccurateAccurateRuleArgs) ToCustomBotAccurateAccurateRuleOutput() CustomBotAccurateAccurateRuleOutput {
+	return i.ToCustomBotAccurateAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i CustomBotAccurateAccurateRuleArgs) ToCustomBotAccurateAccurateRuleOutputWithContext(ctx context.Context) CustomBotAccurateAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomBotAccurateAccurateRuleOutput)
+}
+
+// CustomBotAccurateAccurateRuleArrayInput is an input type that accepts CustomBotAccurateAccurateRuleArray and CustomBotAccurateAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `CustomBotAccurateAccurateRuleArrayInput` via:
+//
+//	CustomBotAccurateAccurateRuleArray{ CustomBotAccurateAccurateRuleArgs{...} }
+type CustomBotAccurateAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToCustomBotAccurateAccurateRuleArrayOutput() CustomBotAccurateAccurateRuleArrayOutput
+	ToCustomBotAccurateAccurateRuleArrayOutputWithContext(context.Context) CustomBotAccurateAccurateRuleArrayOutput
+}
+
+type CustomBotAccurateAccurateRuleArray []CustomBotAccurateAccurateRuleInput
+
+func (CustomBotAccurateAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i CustomBotAccurateAccurateRuleArray) ToCustomBotAccurateAccurateRuleArrayOutput() CustomBotAccurateAccurateRuleArrayOutput {
+	return i.ToCustomBotAccurateAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i CustomBotAccurateAccurateRuleArray) ToCustomBotAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) CustomBotAccurateAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomBotAccurateAccurateRuleArrayOutput)
+}
+
+type CustomBotAccurateAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (CustomBotAccurateAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o CustomBotAccurateAccurateRuleOutput) ToCustomBotAccurateAccurateRuleOutput() CustomBotAccurateAccurateRuleOutput {
+	return o
+}
+
+func (o CustomBotAccurateAccurateRuleOutput) ToCustomBotAccurateAccurateRuleOutputWithContext(ctx context.Context) CustomBotAccurateAccurateRuleOutput {
+	return o
+}
+
+// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+func (o CustomBotAccurateAccurateRuleOutput) HttpObj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurateAccurateRule) *string { return v.HttpObj }).(pulumi.StringPtrOutput)
+}
+
+// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+func (o CustomBotAccurateAccurateRuleOutput) ObjType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurateAccurateRule) *int { return v.ObjType }).(pulumi.IntPtrOutput)
+}
+
+// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+func (o CustomBotAccurateAccurateRuleOutput) Opretar() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurateAccurateRule) *int { return v.Opretar }).(pulumi.IntPtrOutput)
+}
+
+// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+func (o CustomBotAccurateAccurateRuleOutput) Property() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurateAccurateRule) *int { return v.Property }).(pulumi.IntPtrOutput)
+}
+
+// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+func (o CustomBotAccurateAccurateRuleOutput) ValueString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomBotAccurateAccurateRule) *string { return v.ValueString }).(pulumi.StringPtrOutput)
+}
+
+type CustomBotAccurateAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (CustomBotAccurateAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o CustomBotAccurateAccurateRuleArrayOutput) ToCustomBotAccurateAccurateRuleArrayOutput() CustomBotAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CustomBotAccurateAccurateRuleArrayOutput) ToCustomBotAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) CustomBotAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CustomBotAccurateAccurateRuleArrayOutput) Index(i pulumi.IntInput) CustomBotAccurateAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CustomBotAccurateAccurateRule {
+		return vs[0].([]CustomBotAccurateAccurateRule)[vs[1].(int)]
+	}).(CustomBotAccurateAccurateRuleOutput)
 }
 
 type CustomPageAccurate struct {
@@ -2008,6 +2749,335 @@ func (o IpGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) IpGroupRelatedRu
 	}).(IpGroupRelatedRuleOutput)
 }
 
+type GetBotAnalyseProtectRuleAccurateGroup struct {
+	// Priority of advanced condition group. Not required for create/update; used only for list display.
+	AccurateGroupPriority int `pulumi:"accurateGroupPriority"`
+	// Sub-rule list in advanced conditions.
+	AccurateRules []GetBotAnalyseProtectRuleAccurateGroupAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update operations; used only for list display.
+	Id int `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic int `pulumi:"logic"`
+}
+
+// GetBotAnalyseProtectRuleAccurateGroupInput is an input type that accepts GetBotAnalyseProtectRuleAccurateGroupArgs and GetBotAnalyseProtectRuleAccurateGroupOutput values.
+// You can construct a concrete instance of `GetBotAnalyseProtectRuleAccurateGroupInput` via:
+//
+//	GetBotAnalyseProtectRuleAccurateGroupArgs{...}
+type GetBotAnalyseProtectRuleAccurateGroupInput interface {
+	pulumi.Input
+
+	ToGetBotAnalyseProtectRuleAccurateGroupOutput() GetBotAnalyseProtectRuleAccurateGroupOutput
+	ToGetBotAnalyseProtectRuleAccurateGroupOutputWithContext(context.Context) GetBotAnalyseProtectRuleAccurateGroupOutput
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupArgs struct {
+	// Priority of advanced condition group. Not required for create/update; used only for list display.
+	AccurateGroupPriority pulumi.IntInput `pulumi:"accurateGroupPriority"`
+	// Sub-rule list in advanced conditions.
+	AccurateRules GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update operations; used only for list display.
+	Id pulumi.IntInput `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic pulumi.IntInput `pulumi:"logic"`
+}
+
+func (GetBotAnalyseProtectRuleAccurateGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupArgs) ToGetBotAnalyseProtectRuleAccurateGroupOutput() GetBotAnalyseProtectRuleAccurateGroupOutput {
+	return i.ToGetBotAnalyseProtectRuleAccurateGroupOutputWithContext(context.Background())
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupArgs) ToGetBotAnalyseProtectRuleAccurateGroupOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBotAnalyseProtectRuleAccurateGroupOutput)
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupOutput struct{ *pulumi.OutputState }
+
+func (GetBotAnalyseProtectRuleAccurateGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) ToGetBotAnalyseProtectRuleAccurateGroupOutput() GetBotAnalyseProtectRuleAccurateGroupOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) ToGetBotAnalyseProtectRuleAccurateGroupOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupOutput {
+	return o
+}
+
+// Priority of advanced condition group. Not required for create/update; used only for list display.
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) AccurateGroupPriority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroup) int { return v.AccurateGroupPriority }).(pulumi.IntOutput)
+}
+
+// Sub-rule list in advanced conditions.
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) AccurateRules() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroup) []GetBotAnalyseProtectRuleAccurateGroupAccurateRule {
+		return v.AccurateRules
+	}).(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update operations; used only for list display.
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroup) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o GetBotAnalyseProtectRuleAccurateGroupOutput) Logic() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroup) int { return v.Logic }).(pulumi.IntOutput)
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRule struct {
+	// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj string `pulumi:"httpObj"`
+	// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+	ObjType int `pulumi:"objType"`
+	// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+	Opretar int `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+	Property int `pulumi:"property"`
+	// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+	ValueString string `pulumi:"valueString"`
+}
+
+// GetBotAnalyseProtectRuleAccurateGroupAccurateRuleInput is an input type that accepts GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs and GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput values.
+// You can construct a concrete instance of `GetBotAnalyseProtectRuleAccurateGroupAccurateRuleInput` via:
+//
+//	GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{...}
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleInput interface {
+	pulumi.Input
+
+	ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput
+	ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs struct {
+	// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj pulumi.StringInput `pulumi:"httpObj"`
+	// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+	ObjType pulumi.IntInput `pulumi:"objType"`
+	// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+	Opretar pulumi.IntInput `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+	Property pulumi.IntInput `pulumi:"property"`
+	// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+	ValueString pulumi.StringInput `pulumi:"valueString"`
+}
+
+func (GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return i.ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput)
+}
+
+// GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput is an input type that accepts GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray and GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput` via:
+//
+//	GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray{ GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{...} }
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput
+	ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray []GetBotAnalyseProtectRuleAccurateGroupAccurateRuleInput
+
+func (GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return i.ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+// Match object. Fixed objects automatically generate HttpObj by ObjType. Custom objects require specifying the Key in HttpObj, e.g., request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) HttpObj() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroupAccurateRule) string { return v.HttpObj }).(pulumi.StringOutput)
+}
+
+// Enumeration of match object types. 0: request protocol; 1: request URI; 2: request method; 3: request path; 4: request parameters; 5: request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: request body length; 10: request body format; 11: X-Forwarded-For; 12: client IP; 13: custom Args; 14: custom Header; 15: custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: client fingerprint.
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ObjType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroupAccurateRule) int { return v.ObjType }).(pulumi.IntOutput)
+}
+
+// Enumeration of match operators. 0~5: size comparison; 6~11: substring match; 12~15: set match; 16: regex; 17~21: IP identification (only for request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude geographic location; 27: include IP intelligence; 28/29: AS number belongs/does not belong.
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) Opretar() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroupAccurateRule) int { return v.Opretar }).(pulumi.IntOutput)
+}
+
+// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (used only for Operator=17~21); 6: Country.
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) Property() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroupAccurateRule) int { return v.Property }).(pulumi.IntOutput)
+}
+
+// Match value. IP identification operations with Operator=17~21 do not involve match content and can be an empty string. For Operator=23~29, fill in according to the corresponding format (IP address group ID/region code/IP intelligence tag/ASN). For other operators, enter the actual match value.
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput) ValueString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleAccurateGroupAccurateRule) string { return v.ValueString }).(pulumi.StringOutput)
+}
+
+type GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBotAnalyseProtectRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput() GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) ToGetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput) Index(i pulumi.IntInput) GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBotAnalyseProtectRuleAccurateGroupAccurateRule {
+		return vs[0].([]GetBotAnalyseProtectRuleAccurateGroupAccurateRule)[vs[1].(int)]
+	}).(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput)
+}
+
+type GetBotAnalyseProtectRuleCronConf struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab string `pulumi:"crontab"`
+	// Total path threshold during the specified period. Value range: 1~300000.
+	PathThreshold int `pulumi:"pathThreshold"`
+	// Threshold for a single object during the specified period. Value range: 1~300000.
+	SingleThreshold int `pulumi:"singleThreshold"`
+}
+
+// GetBotAnalyseProtectRuleCronConfInput is an input type that accepts GetBotAnalyseProtectRuleCronConfArgs and GetBotAnalyseProtectRuleCronConfOutput values.
+// You can construct a concrete instance of `GetBotAnalyseProtectRuleCronConfInput` via:
+//
+//	GetBotAnalyseProtectRuleCronConfArgs{...}
+type GetBotAnalyseProtectRuleCronConfInput interface {
+	pulumi.Input
+
+	ToGetBotAnalyseProtectRuleCronConfOutput() GetBotAnalyseProtectRuleCronConfOutput
+	ToGetBotAnalyseProtectRuleCronConfOutputWithContext(context.Context) GetBotAnalyseProtectRuleCronConfOutput
+}
+
+type GetBotAnalyseProtectRuleCronConfArgs struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab pulumi.StringInput `pulumi:"crontab"`
+	// Total path threshold during the specified period. Value range: 1~300000.
+	PathThreshold pulumi.IntInput `pulumi:"pathThreshold"`
+	// Threshold for a single object during the specified period. Value range: 1~300000.
+	SingleThreshold pulumi.IntInput `pulumi:"singleThreshold"`
+}
+
+func (GetBotAnalyseProtectRuleCronConfArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (i GetBotAnalyseProtectRuleCronConfArgs) ToGetBotAnalyseProtectRuleCronConfOutput() GetBotAnalyseProtectRuleCronConfOutput {
+	return i.ToGetBotAnalyseProtectRuleCronConfOutputWithContext(context.Background())
+}
+
+func (i GetBotAnalyseProtectRuleCronConfArgs) ToGetBotAnalyseProtectRuleCronConfOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleCronConfOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBotAnalyseProtectRuleCronConfOutput)
+}
+
+// GetBotAnalyseProtectRuleCronConfArrayInput is an input type that accepts GetBotAnalyseProtectRuleCronConfArray and GetBotAnalyseProtectRuleCronConfArrayOutput values.
+// You can construct a concrete instance of `GetBotAnalyseProtectRuleCronConfArrayInput` via:
+//
+//	GetBotAnalyseProtectRuleCronConfArray{ GetBotAnalyseProtectRuleCronConfArgs{...} }
+type GetBotAnalyseProtectRuleCronConfArrayInput interface {
+	pulumi.Input
+
+	ToGetBotAnalyseProtectRuleCronConfArrayOutput() GetBotAnalyseProtectRuleCronConfArrayOutput
+	ToGetBotAnalyseProtectRuleCronConfArrayOutputWithContext(context.Context) GetBotAnalyseProtectRuleCronConfArrayOutput
+}
+
+type GetBotAnalyseProtectRuleCronConfArray []GetBotAnalyseProtectRuleCronConfInput
+
+func (GetBotAnalyseProtectRuleCronConfArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (i GetBotAnalyseProtectRuleCronConfArray) ToGetBotAnalyseProtectRuleCronConfArrayOutput() GetBotAnalyseProtectRuleCronConfArrayOutput {
+	return i.ToGetBotAnalyseProtectRuleCronConfArrayOutputWithContext(context.Background())
+}
+
+func (i GetBotAnalyseProtectRuleCronConfArray) ToGetBotAnalyseProtectRuleCronConfArrayOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleCronConfArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBotAnalyseProtectRuleCronConfArrayOutput)
+}
+
+type GetBotAnalyseProtectRuleCronConfOutput struct{ *pulumi.OutputState }
+
+func (GetBotAnalyseProtectRuleCronConfOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (o GetBotAnalyseProtectRuleCronConfOutput) ToGetBotAnalyseProtectRuleCronConfOutput() GetBotAnalyseProtectRuleCronConfOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleCronConfOutput) ToGetBotAnalyseProtectRuleCronConfOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleCronConfOutput {
+	return o
+}
+
+// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+func (o GetBotAnalyseProtectRuleCronConfOutput) Crontab() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleCronConf) string { return v.Crontab }).(pulumi.StringOutput)
+}
+
+// Total path threshold during the specified period. Value range: 1~300000.
+func (o GetBotAnalyseProtectRuleCronConfOutput) PathThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleCronConf) int { return v.PathThreshold }).(pulumi.IntOutput)
+}
+
+// Threshold for a single object during the specified period. Value range: 1~300000.
+func (o GetBotAnalyseProtectRuleCronConfOutput) SingleThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBotAnalyseProtectRuleCronConf) int { return v.SingleThreshold }).(pulumi.IntOutput)
+}
+
+type GetBotAnalyseProtectRuleCronConfArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBotAnalyseProtectRuleCronConfArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBotAnalyseProtectRuleCronConf)(nil)).Elem()
+}
+
+func (o GetBotAnalyseProtectRuleCronConfArrayOutput) ToGetBotAnalyseProtectRuleCronConfArrayOutput() GetBotAnalyseProtectRuleCronConfArrayOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleCronConfArrayOutput) ToGetBotAnalyseProtectRuleCronConfArrayOutputWithContext(ctx context.Context) GetBotAnalyseProtectRuleCronConfArrayOutput {
+	return o
+}
+
+func (o GetBotAnalyseProtectRuleCronConfArrayOutput) Index(i pulumi.IntInput) GetBotAnalyseProtectRuleCronConfOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBotAnalyseProtectRuleCronConf {
+		return vs[0].([]GetBotAnalyseProtectRuleCronConf)[vs[1].(int)]
+	}).(GetBotAnalyseProtectRuleCronConfOutput)
+}
+
 type GetCcRuleAccurateGroup struct {
 	// Advanced condition group priority. Not required when creating/updating, used only for list display.
 	AccurateGroupPriority int `pulumi:"accurateGroupPriority"`
@@ -2333,6 +3403,200 @@ func (o GetCcRuleCronConfArrayOutput) Index(i pulumi.IntInput) GetCcRuleCronConf
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCcRuleCronConf {
 		return vs[0].([]GetCcRuleCronConf)[vs[1].(int)]
 	}).(GetCcRuleCronConfOutput)
+}
+
+type GetCustomBotAccurate struct {
+	// Advanced condition subrule list
+	AccurateRules []GetCustomBotAccurateAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group logical relationship. 1: AND; 2: OR
+	Logic int `pulumi:"logic"`
+}
+
+// GetCustomBotAccurateInput is an input type that accepts GetCustomBotAccurateArgs and GetCustomBotAccurateOutput values.
+// You can construct a concrete instance of `GetCustomBotAccurateInput` via:
+//
+//	GetCustomBotAccurateArgs{...}
+type GetCustomBotAccurateInput interface {
+	pulumi.Input
+
+	ToGetCustomBotAccurateOutput() GetCustomBotAccurateOutput
+	ToGetCustomBotAccurateOutputWithContext(context.Context) GetCustomBotAccurateOutput
+}
+
+type GetCustomBotAccurateArgs struct {
+	// Advanced condition subrule list
+	AccurateRules GetCustomBotAccurateAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group logical relationship. 1: AND; 2: OR
+	Logic pulumi.IntInput `pulumi:"logic"`
+}
+
+func (GetCustomBotAccurateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomBotAccurate)(nil)).Elem()
+}
+
+func (i GetCustomBotAccurateArgs) ToGetCustomBotAccurateOutput() GetCustomBotAccurateOutput {
+	return i.ToGetCustomBotAccurateOutputWithContext(context.Background())
+}
+
+func (i GetCustomBotAccurateArgs) ToGetCustomBotAccurateOutputWithContext(ctx context.Context) GetCustomBotAccurateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomBotAccurateOutput)
+}
+
+type GetCustomBotAccurateOutput struct{ *pulumi.OutputState }
+
+func (GetCustomBotAccurateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomBotAccurate)(nil)).Elem()
+}
+
+func (o GetCustomBotAccurateOutput) ToGetCustomBotAccurateOutput() GetCustomBotAccurateOutput {
+	return o
+}
+
+func (o GetCustomBotAccurateOutput) ToGetCustomBotAccurateOutputWithContext(ctx context.Context) GetCustomBotAccurateOutput {
+	return o
+}
+
+// Advanced condition subrule list
+func (o GetCustomBotAccurateOutput) AccurateRules() GetCustomBotAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v GetCustomBotAccurate) []GetCustomBotAccurateAccurateRule { return v.AccurateRules }).(GetCustomBotAccurateAccurateRuleArrayOutput)
+}
+
+// Advanced condition group logical relationship. 1: AND; 2: OR
+func (o GetCustomBotAccurateOutput) Logic() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomBotAccurate) int { return v.Logic }).(pulumi.IntOutput)
+}
+
+type GetCustomBotAccurateAccurateRule struct {
+	// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+	HttpObj string `pulumi:"httpObj"`
+	// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+	ObjType int `pulumi:"objType"`
+	// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+	Opretar int `pulumi:"opretar"`
+	// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+	Property int `pulumi:"property"`
+	// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+	ValueString string `pulumi:"valueString"`
+}
+
+// GetCustomBotAccurateAccurateRuleInput is an input type that accepts GetCustomBotAccurateAccurateRuleArgs and GetCustomBotAccurateAccurateRuleOutput values.
+// You can construct a concrete instance of `GetCustomBotAccurateAccurateRuleInput` via:
+//
+//	GetCustomBotAccurateAccurateRuleArgs{...}
+type GetCustomBotAccurateAccurateRuleInput interface {
+	pulumi.Input
+
+	ToGetCustomBotAccurateAccurateRuleOutput() GetCustomBotAccurateAccurateRuleOutput
+	ToGetCustomBotAccurateAccurateRuleOutputWithContext(context.Context) GetCustomBotAccurateAccurateRuleOutput
+}
+
+type GetCustomBotAccurateAccurateRuleArgs struct {
+	// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+	HttpObj pulumi.StringInput `pulumi:"httpObj"`
+	// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+	ObjType pulumi.IntInput `pulumi:"objType"`
+	// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+	Opretar pulumi.IntInput `pulumi:"opretar"`
+	// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+	Property pulumi.IntInput `pulumi:"property"`
+	// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+	ValueString pulumi.StringInput `pulumi:"valueString"`
+}
+
+func (GetCustomBotAccurateAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i GetCustomBotAccurateAccurateRuleArgs) ToGetCustomBotAccurateAccurateRuleOutput() GetCustomBotAccurateAccurateRuleOutput {
+	return i.ToGetCustomBotAccurateAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i GetCustomBotAccurateAccurateRuleArgs) ToGetCustomBotAccurateAccurateRuleOutputWithContext(ctx context.Context) GetCustomBotAccurateAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomBotAccurateAccurateRuleOutput)
+}
+
+// GetCustomBotAccurateAccurateRuleArrayInput is an input type that accepts GetCustomBotAccurateAccurateRuleArray and GetCustomBotAccurateAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `GetCustomBotAccurateAccurateRuleArrayInput` via:
+//
+//	GetCustomBotAccurateAccurateRuleArray{ GetCustomBotAccurateAccurateRuleArgs{...} }
+type GetCustomBotAccurateAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetCustomBotAccurateAccurateRuleArrayOutput() GetCustomBotAccurateAccurateRuleArrayOutput
+	ToGetCustomBotAccurateAccurateRuleArrayOutputWithContext(context.Context) GetCustomBotAccurateAccurateRuleArrayOutput
+}
+
+type GetCustomBotAccurateAccurateRuleArray []GetCustomBotAccurateAccurateRuleInput
+
+func (GetCustomBotAccurateAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i GetCustomBotAccurateAccurateRuleArray) ToGetCustomBotAccurateAccurateRuleArrayOutput() GetCustomBotAccurateAccurateRuleArrayOutput {
+	return i.ToGetCustomBotAccurateAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetCustomBotAccurateAccurateRuleArray) ToGetCustomBotAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) GetCustomBotAccurateAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomBotAccurateAccurateRuleArrayOutput)
+}
+
+type GetCustomBotAccurateAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (GetCustomBotAccurateAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o GetCustomBotAccurateAccurateRuleOutput) ToGetCustomBotAccurateAccurateRuleOutput() GetCustomBotAccurateAccurateRuleOutput {
+	return o
+}
+
+func (o GetCustomBotAccurateAccurateRuleOutput) ToGetCustomBotAccurateAccurateRuleOutputWithContext(ctx context.Context) GetCustomBotAccurateAccurateRuleOutput {
+	return o
+}
+
+// HTTP objects. Supported match objects are as follows: request.schema: request protocol; request.uri: request URI; request.method: request method; request.path: request path; request.queryargs: request parameters; request.header: request headers; request.header.ua: request User-Agent; request.header.refer: request referer; request.header.cookie: request Cookie header; request.header.content-length: request body length; request.header.content-type: request body format; request.header.x-forwarded-for: X-Forwarded-For; request.header.clientip: client IP; request.queryargs.{Key}: custom request parameter (replace {Key} with the specific parameter name); request.header.{Key}: custom request header (replace {Key} with the specific header name); request.cookie.{Key}: custom Cookie (replace {Key} with the specific Cookie name); response.header: response headers; response.body: response body; response.code: response status code; response.header.content-type: response header content-type; response.header.{Key}: custom response header (replace {Key} with the specific header name); response.body.{Key}: response body field (replace {Key} with the specific field name); request.ja3-hash: JA3 Hash (applicable only to byteplus-global region). You cannot directly pass generalized forms such as request.queryargs.*, request.header.*, request.cookie.*, response.header.*, response.body.*; you must provide a specific Key.
+func (o GetCustomBotAccurateAccurateRuleOutput) HttpObj() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomBotAccurateAccurateRule) string { return v.HttpObj }).(pulumi.StringOutput)
+}
+
+// Enumeration value for the match object type, used to specify the match object type for subrules in advanced conditions. Supported values are as follows: 0: request.schema; 1: request.uri; 2: request.method; 3: request.path; 4: request.queryargs; 5: request.header; 6: request.header.ua; 7: request.header.refer; 8: request.header.cookie; 9: request.header.content-length; 10: request.header.content-type; 11: request.header.x-forwarded-for; 12: request.header.clientip; 13: request.queryargs.{Key}; 14: request.header.{Key}; 15: request.cookie.{Key}; 17: response.header; 18: response.body; 19: response.code; 20: response.header.content-type; 21: response.header.{Key}; 22: response.body.{Key}; 23: request.ja3-hash (applicable only to byteplus-global regions)
+func (o GetCustomBotAccurateAccurateRuleOutput) ObjType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomBotAccurateAccurateRule) int { return v.ObjType }).(pulumi.IntOutput)
+}
+
+// Enumeration values for match operators, used to specify how subrules are matched in advanced conditions. Supported values are as follows: 0: greater than; 1: greater than or equal to; 2: equal to; 3: less than; 4: less than or equal to; 5: not equal to; 6: contains substring; 7: does not contain substring; 8: prefix match; 9: prefix does not match; 10: suffix match; 11: suffix does not match; 12: contains all match sets; 13: does not contain all match sets; 14: belongs to match set; 15: does not belong to match set; 16: regex match; 17: recognized as IP; 18: recognized as IPv4; 19: recognized as IPv6; 20: recognized as private IP; 21: recognized as public IP; 22: reserved value; 23: belongs to IP group; 24: does not belong to IP group; 25: belongs to IP location; 26: does not belong to IP location; 27: contains IP intelligence; 28: belongs to ASN; 29: does not belong to ASN.
+func (o GetCustomBotAccurateAccurateRuleOutput) Opretar() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomBotAccurateAccurateRule) int { return v.Opretar }).(pulumi.IntOutput)
+}
+
+// Enumeration value for the match attribute type. Default is 0 (except for special IP recognition scenarios). Supported values are as follows: 0: Value, applicable to most match object scenarios, such as request protocol, URI, method, request header, client IP, JA3 Hash, etc.; 5: IP, only used for the following IP recognition operations: 17 (recognize as IP), 18 (recognize as IPv4), 19 (recognize as IPv6), 20 (recognize as private IP), 21 (recognize as public IP)
+func (o GetCustomBotAccurateAccurateRuleOutput) Property() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomBotAccurateAccurateRule) int { return v.Property }).(pulumi.IntOutput)
+}
+
+// Specific value corresponding to the match rule. When the match object is a generalized object such as request.header.{Key}, request.queryargs.{Key}, or request.cookie.{Key}, this field indicates the match value for the corresponding Key. Special note: When the operator (Operator) is 17, 18, 19, 20, or 21 and the match object (HttpObj) is request.header.clientip, this field does not need to be filled in; for all other operator scenarios, fill in the actual match value as required
+func (o GetCustomBotAccurateAccurateRuleOutput) ValueString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomBotAccurateAccurateRule) string { return v.ValueString }).(pulumi.StringOutput)
+}
+
+type GetCustomBotAccurateAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCustomBotAccurateAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomBotAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o GetCustomBotAccurateAccurateRuleArrayOutput) ToGetCustomBotAccurateAccurateRuleArrayOutput() GetCustomBotAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCustomBotAccurateAccurateRuleArrayOutput) ToGetCustomBotAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) GetCustomBotAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCustomBotAccurateAccurateRuleArrayOutput) Index(i pulumi.IntInput) GetCustomBotAccurateAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomBotAccurateAccurateRule {
+		return vs[0].([]GetCustomBotAccurateAccurateRule)[vs[1].(int)]
+	}).(GetCustomBotAccurateAccurateRuleOutput)
 }
 
 type GetCustomPageAccurate struct {
@@ -3499,12 +4763,22 @@ func (o GetIpGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) GetIpGroupRel
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupInput)(nil)).Elem(), BotAnalyseProtectRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupPtrInput)(nil)).Elem(), BotAnalyseProtectRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), BotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), BotAnalyseProtectRuleAccurateGroupAccurateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleCronConfInput)(nil)).Elem(), BotAnalyseProtectRuleCronConfArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BotAnalyseProtectRuleCronConfArrayInput)(nil)).Elem(), BotAnalyseProtectRuleCronConfArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupPtrInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), CcRuleAccurateGroupAccurateRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), CcRuleAccurateGroupAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfInput)(nil)).Elem(), CcRuleCronConfArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfArrayInput)(nil)).Elem(), CcRuleCronConfArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomBotAccurateInput)(nil)).Elem(), CustomBotAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomBotAccuratePtrInput)(nil)).Elem(), CustomBotAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomBotAccurateAccurateRuleInput)(nil)).Elem(), CustomBotAccurateAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomBotAccurateAccurateRuleArrayInput)(nil)).Elem(), CustomBotAccurateAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccurateInput)(nil)).Elem(), CustomPageAccurateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccuratePtrInput)(nil)).Elem(), CustomPageAccurateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccurateAccurateRuleInput)(nil)).Elem(), CustomPageAccurateAccurateRuleArgs{})
@@ -3527,11 +4801,19 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleArrayInput)(nil)).Elem(), HostGroupRelatedRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpGroupRelatedRuleInput)(nil)).Elem(), IpGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpGroupRelatedRuleArrayInput)(nil)).Elem(), IpGroupRelatedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroupInput)(nil)).Elem(), GetBotAnalyseProtectRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBotAnalyseProtectRuleCronConfInput)(nil)).Elem(), GetBotAnalyseProtectRuleCronConfArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBotAnalyseProtectRuleCronConfArrayInput)(nil)).Elem(), GetBotAnalyseProtectRuleCronConfArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupInput)(nil)).Elem(), GetCcRuleAccurateGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfInput)(nil)).Elem(), GetCcRuleCronConfArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfArrayInput)(nil)).Elem(), GetCcRuleCronConfArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomBotAccurateInput)(nil)).Elem(), GetCustomBotAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomBotAccurateAccurateRuleInput)(nil)).Elem(), GetCustomBotAccurateAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomBotAccurateAccurateRuleArrayInput)(nil)).Elem(), GetCustomBotAccurateAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateInput)(nil)).Elem(), GetCustomPageAccurateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateAccurateRuleInput)(nil)).Elem(), GetCustomPageAccurateAccurateRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateAccurateRuleArrayInput)(nil)).Elem(), GetCustomPageAccurateAccurateRuleArray{})
@@ -3550,12 +4832,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleArrayInput)(nil)).Elem(), GetHostGroupRelatedRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpGroupRelatedRuleInput)(nil)).Elem(), GetIpGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpGroupRelatedRuleArrayInput)(nil)).Elem(), GetIpGroupRelatedRuleArray{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleAccurateGroupOutput{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleAccurateGroupPtrOutput{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleAccurateGroupAccurateRuleOutput{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleCronConfOutput{})
+	pulumi.RegisterOutputType(BotAnalyseProtectRuleCronConfArrayOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupPtrOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(CcRuleCronConfOutput{})
 	pulumi.RegisterOutputType(CcRuleCronConfArrayOutput{})
+	pulumi.RegisterOutputType(CustomBotAccurateOutput{})
+	pulumi.RegisterOutputType(CustomBotAccuratePtrOutput{})
+	pulumi.RegisterOutputType(CustomBotAccurateAccurateRuleOutput{})
+	pulumi.RegisterOutputType(CustomBotAccurateAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(CustomPageAccurateOutput{})
 	pulumi.RegisterOutputType(CustomPageAccuratePtrOutput{})
 	pulumi.RegisterOutputType(CustomPageAccurateAccurateRuleOutput{})
@@ -3578,11 +4870,19 @@ func init() {
 	pulumi.RegisterOutputType(HostGroupRelatedRuleArrayOutput{})
 	pulumi.RegisterOutputType(IpGroupRelatedRuleOutput{})
 	pulumi.RegisterOutputType(IpGroupRelatedRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetBotAnalyseProtectRuleAccurateGroupOutput{})
+	pulumi.RegisterOutputType(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleOutput{})
+	pulumi.RegisterOutputType(GetBotAnalyseProtectRuleAccurateGroupAccurateRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetBotAnalyseProtectRuleCronConfOutput{})
+	pulumi.RegisterOutputType(GetBotAnalyseProtectRuleCronConfArrayOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCcRuleCronConfOutput{})
 	pulumi.RegisterOutputType(GetCcRuleCronConfArrayOutput{})
+	pulumi.RegisterOutputType(GetCustomBotAccurateOutput{})
+	pulumi.RegisterOutputType(GetCustomBotAccurateAccurateRuleOutput{})
+	pulumi.RegisterOutputType(GetCustomBotAccurateAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCustomPageAccurateOutput{})
 	pulumi.RegisterOutputType(GetCustomPageAccurateAccurateRuleOutput{})
 	pulumi.RegisterOutputType(GetCustomPageAccurateAccurateRuleArrayOutput{})

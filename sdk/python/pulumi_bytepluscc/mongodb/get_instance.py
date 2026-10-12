@@ -27,13 +27,22 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, charge_status=None, charge_type=None, closed_time=None, config_server_node_spec=None, config_server_storage_space_gb=None, config_servers=None, config_servers_id=None, created_time=None, db_engine=None, db_engine_version=None, db_engine_version_str=None, expired_time=None, id=None, instance_count=None, instance_id=None, instance_name=None, instance_parameters=None, instance_status=None, instance_type=None, mongos=None, mongos_id=None, mongos_node_number=None, mongos_node_spec=None, node_availability_zones=None, node_number=None, node_spec=None, nodes=None, period=None, period_unit=None, private_endpoint=None, project_name=None, read_only_node_number=None, reclaim_time=None, shard_number=None, shards=None, storage_space_gb=None, storage_type=None, subnet_id=None, super_account_name=None, super_account_password=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_id=None, backup_type=None, backups=None, charge_status=None, charge_type=None, closed_time=None, config_server_node_spec=None, config_server_storage_space_gb=None, config_servers=None, config_servers_id=None, created_time=None, db_engine=None, db_engine_version=None, db_engine_version_str=None, expired_time=None, id=None, instance_count=None, instance_id=None, instance_name=None, instance_parameters=None, instance_status=None, instance_type=None, mongos=None, mongos_id=None, mongos_node_number=None, mongos_node_spec=None, node_availability_zones=None, node_number=None, node_spec=None, nodes=None, period=None, period_unit=None, private_endpoint=None, project_name=None, read_only_node_number=None, reclaim_time=None, recoverable_times=None, restore_time=None, shard_number=None, shards=None, src_db_instance_id=None, storage_space_gb=None, storage_type=None, subnet_id=None, super_account_name=None, super_account_password=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if auto_renew and not isinstance(auto_renew, bool):
             raise TypeError("Expected argument 'auto_renew' to be a bool")
         pulumi.set(__self__, "auto_renew", auto_renew)
+        if backup_id and not isinstance(backup_id, str):
+            raise TypeError("Expected argument 'backup_id' to be a str")
+        pulumi.set(__self__, "backup_id", backup_id)
+        if backup_type and not isinstance(backup_type, str):
+            raise TypeError("Expected argument 'backup_type' to be a str")
+        pulumi.set(__self__, "backup_type", backup_type)
+        if backups and not isinstance(backups, list):
+            raise TypeError("Expected argument 'backups' to be a list")
+        pulumi.set(__self__, "backups", backups)
         if charge_status and not isinstance(charge_status, str):
             raise TypeError("Expected argument 'charge_status' to be a str")
         pulumi.set(__self__, "charge_status", charge_status)
@@ -133,12 +142,21 @@ class GetInstanceResult:
         if reclaim_time and not isinstance(reclaim_time, str):
             raise TypeError("Expected argument 'reclaim_time' to be a str")
         pulumi.set(__self__, "reclaim_time", reclaim_time)
+        if recoverable_times and not isinstance(recoverable_times, list):
+            raise TypeError("Expected argument 'recoverable_times' to be a list")
+        pulumi.set(__self__, "recoverable_times", recoverable_times)
+        if restore_time and not isinstance(restore_time, str):
+            raise TypeError("Expected argument 'restore_time' to be a str")
+        pulumi.set(__self__, "restore_time", restore_time)
         if shard_number and not isinstance(shard_number, int):
             raise TypeError("Expected argument 'shard_number' to be a int")
         pulumi.set(__self__, "shard_number", shard_number)
         if shards and not isinstance(shards, list):
             raise TypeError("Expected argument 'shards' to be a list")
         pulumi.set(__self__, "shards", shards)
+        if src_db_instance_id and not isinstance(src_db_instance_id, str):
+            raise TypeError("Expected argument 'src_db_instance_id' to be a str")
+        pulumi.set(__self__, "src_db_instance_id", src_db_instance_id)
         if storage_space_gb and not isinstance(storage_space_gb, int):
             raise TypeError("Expected argument 'storage_space_gb' to be a int")
         pulumi.set(__self__, "storage_space_gb", storage_space_gb)
@@ -182,6 +200,30 @@ class GetInstanceResult:
         Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> _builtins.str:
+        """
+        Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> _builtins.str:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def backups(self) -> Sequence['outputs.GetInstanceBackupResult']:
+        """
+        Backup file list information for the instance.
+        """
+        return pulumi.get(self, "backups")
 
     @_builtins.property
     @pulumi.getter(name="chargeStatus")
@@ -448,6 +490,22 @@ class GetInstanceResult:
         return pulumi.get(self, "reclaim_time")
 
     @_builtins.property
+    @pulumi.getter(name="recoverableTimes")
+    def recoverable_times(self) -> Sequence['outputs.GetInstanceRecoverableTimeResult']:
+        """
+        List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        """
+        return pulumi.get(self, "recoverable_times")
+
+    @_builtins.property
+    @pulumi.getter(name="restoreTime")
+    def restore_time(self) -> _builtins.str:
+        """
+        When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        """
+        return pulumi.get(self, "restore_time")
+
+    @_builtins.property
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> _builtins.int:
         """
@@ -462,6 +520,14 @@ class GetInstanceResult:
         Shard information list
         """
         return pulumi.get(self, "shards")
+
+    @_builtins.property
+    @pulumi.getter(name="srcDbInstanceId")
+    def src_db_instance_id(self) -> _builtins.str:
+        """
+        Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        """
+        return pulumi.get(self, "src_db_instance_id")
 
     @_builtins.property
     @pulumi.getter(name="storageSpaceGb")
@@ -544,6 +610,9 @@ class AwaitableGetInstanceResult(GetInstanceResult):
         return GetInstanceResult(
             allow_list_ids=self.allow_list_ids,
             auto_renew=self.auto_renew,
+            backup_id=self.backup_id,
+            backup_type=self.backup_type,
+            backups=self.backups,
             charge_status=self.charge_status,
             charge_type=self.charge_type,
             closed_time=self.closed_time,
@@ -577,8 +646,11 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             project_name=self.project_name,
             read_only_node_number=self.read_only_node_number,
             reclaim_time=self.reclaim_time,
+            recoverable_times=self.recoverable_times,
+            restore_time=self.restore_time,
             shard_number=self.shard_number,
             shards=self.shards,
+            src_db_instance_id=self.src_db_instance_id,
             storage_space_gb=self.storage_space_gb,
             storage_type=self.storage_type,
             subnet_id=self.subnet_id,
@@ -606,6 +678,9 @@ def get_instance(id: Optional[_builtins.str] = None,
     return AwaitableGetInstanceResult(
         allow_list_ids=pulumi.get(__ret__, 'allow_list_ids'),
         auto_renew=pulumi.get(__ret__, 'auto_renew'),
+        backup_id=pulumi.get(__ret__, 'backup_id'),
+        backup_type=pulumi.get(__ret__, 'backup_type'),
+        backups=pulumi.get(__ret__, 'backups'),
         charge_status=pulumi.get(__ret__, 'charge_status'),
         charge_type=pulumi.get(__ret__, 'charge_type'),
         closed_time=pulumi.get(__ret__, 'closed_time'),
@@ -639,8 +714,11 @@ def get_instance(id: Optional[_builtins.str] = None,
         project_name=pulumi.get(__ret__, 'project_name'),
         read_only_node_number=pulumi.get(__ret__, 'read_only_node_number'),
         reclaim_time=pulumi.get(__ret__, 'reclaim_time'),
+        recoverable_times=pulumi.get(__ret__, 'recoverable_times'),
+        restore_time=pulumi.get(__ret__, 'restore_time'),
         shard_number=pulumi.get(__ret__, 'shard_number'),
         shards=pulumi.get(__ret__, 'shards'),
+        src_db_instance_id=pulumi.get(__ret__, 'src_db_instance_id'),
         storage_space_gb=pulumi.get(__ret__, 'storage_space_gb'),
         storage_type=pulumi.get(__ret__, 'storage_type'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -665,6 +743,9 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetInstanceResult(
         allow_list_ids=pulumi.get(__response__, 'allow_list_ids'),
         auto_renew=pulumi.get(__response__, 'auto_renew'),
+        backup_id=pulumi.get(__response__, 'backup_id'),
+        backup_type=pulumi.get(__response__, 'backup_type'),
+        backups=pulumi.get(__response__, 'backups'),
         charge_status=pulumi.get(__response__, 'charge_status'),
         charge_type=pulumi.get(__response__, 'charge_type'),
         closed_time=pulumi.get(__response__, 'closed_time'),
@@ -698,8 +779,11 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         project_name=pulumi.get(__response__, 'project_name'),
         read_only_node_number=pulumi.get(__response__, 'read_only_node_number'),
         reclaim_time=pulumi.get(__response__, 'reclaim_time'),
+        recoverable_times=pulumi.get(__response__, 'recoverable_times'),
+        restore_time=pulumi.get(__response__, 'restore_time'),
         shard_number=pulumi.get(__response__, 'shard_number'),
         shards=pulumi.get(__response__, 'shards'),
+        src_db_instance_id=pulumi.get(__response__, 'src_db_instance_id'),
         storage_space_gb=pulumi.get(__response__, 'storage_space_gb'),
         storage_type=pulumi.get(__response__, 'storage_type'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

@@ -5,10 +5,20 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BotAnalyseProtectRuleArgs, BotAnalyseProtectRuleState } from "./botAnalyseProtectRule";
+export type BotAnalyseProtectRule = import("./botAnalyseProtectRule").BotAnalyseProtectRule;
+export const BotAnalyseProtectRule: typeof import("./botAnalyseProtectRule").BotAnalyseProtectRule = null as any;
+utilities.lazyLoad(exports, ["BotAnalyseProtectRule"], () => require("./botAnalyseProtectRule"));
+
 export { CcRuleArgs, CcRuleState } from "./ccRule";
 export type CcRule = import("./ccRule").CcRule;
 export const CcRule: typeof import("./ccRule").CcRule = null as any;
 utilities.lazyLoad(exports, ["CcRule"], () => require("./ccRule"));
+
+export { CustomBotArgs, CustomBotState } from "./customBot";
+export type CustomBot = import("./customBot").CustomBot;
+export const CustomBot: typeof import("./customBot").CustomBot = null as any;
+utilities.lazyLoad(exports, ["CustomBot"], () => require("./customBot"));
 
 export { CustomPageArgs, CustomPageState } from "./customPage";
 export type CustomPage = import("./customPage").CustomPage;
@@ -20,6 +30,16 @@ export type Domain = import("./domain").Domain;
 export const Domain: typeof import("./domain").Domain = null as any;
 utilities.lazyLoad(exports, ["Domain"], () => require("./domain"));
 
+export { GetBotAnalyseProtectRuleArgs, GetBotAnalyseProtectRuleResult, GetBotAnalyseProtectRuleOutputArgs } from "./getBotAnalyseProtectRule";
+export const getBotAnalyseProtectRule: typeof import("./getBotAnalyseProtectRule").getBotAnalyseProtectRule = null as any;
+export const getBotAnalyseProtectRuleOutput: typeof import("./getBotAnalyseProtectRule").getBotAnalyseProtectRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getBotAnalyseProtectRule","getBotAnalyseProtectRuleOutput"], () => require("./getBotAnalyseProtectRule"));
+
+export { GetBotAnalyseProtectRulesResult } from "./getBotAnalyseProtectRules";
+export const getBotAnalyseProtectRules: typeof import("./getBotAnalyseProtectRules").getBotAnalyseProtectRules = null as any;
+export const getBotAnalyseProtectRulesOutput: typeof import("./getBotAnalyseProtectRules").getBotAnalyseProtectRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getBotAnalyseProtectRules","getBotAnalyseProtectRulesOutput"], () => require("./getBotAnalyseProtectRules"));
+
 export { GetCcRuleArgs, GetCcRuleResult, GetCcRuleOutputArgs } from "./getCcRule";
 export const getCcRule: typeof import("./getCcRule").getCcRule = null as any;
 export const getCcRuleOutput: typeof import("./getCcRule").getCcRuleOutput = null as any;
@@ -29,6 +49,16 @@ export { GetCcRulesResult } from "./getCcRules";
 export const getCcRules: typeof import("./getCcRules").getCcRules = null as any;
 export const getCcRulesOutput: typeof import("./getCcRules").getCcRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getCcRules","getCcRulesOutput"], () => require("./getCcRules"));
+
+export { GetCustomBotArgs, GetCustomBotResult, GetCustomBotOutputArgs } from "./getCustomBot";
+export const getCustomBot: typeof import("./getCustomBot").getCustomBot = null as any;
+export const getCustomBotOutput: typeof import("./getCustomBot").getCustomBotOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomBot","getCustomBotOutput"], () => require("./getCustomBot"));
+
+export { GetCustomBotsResult } from "./getCustomBots";
+export const getCustomBots: typeof import("./getCustomBots").getCustomBots = null as any;
+export const getCustomBotsOutput: typeof import("./getCustomBots").getCustomBotsOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomBots","getCustomBotsOutput"], () => require("./getCustomBots"));
 
 export { GetCustomPageArgs, GetCustomPageResult, GetCustomPageOutputArgs } from "./getCustomPage";
 export const getCustomPage: typeof import("./getCustomPage").getCustomPage = null as any;
@@ -100,8 +130,12 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:waf/botAnalyseProtectRule:BotAnalyseProtectRule":
+                return new BotAnalyseProtectRule(name, <any>undefined, { urn })
             case "bytepluscc:waf/ccRule:CcRule":
                 return new CcRule(name, <any>undefined, { urn })
+            case "bytepluscc:waf/customBot:CustomBot":
+                return new CustomBot(name, <any>undefined, { urn })
             case "bytepluscc:waf/customPage:CustomPage":
                 return new CustomPage(name, <any>undefined, { urn })
             case "bytepluscc:waf/domain:Domain":
@@ -117,7 +151,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/botAnalyseProtectRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/ccRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/customBot", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/customPage", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/domain", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/hostGroup", _module)

@@ -16,7 +16,24 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AlertTemplateNoData',
+    'AlertTemplateObjectGroup',
+    'AlertTemplateObjectGroupNotifyTemplate',
+    'AlertTemplateRecoveryNotify',
+    'AlertTemplateTemplateRule',
+    'AlertTemplateTemplateRuleAppliedRule',
+    'AlertTemplateTemplateRuleLevelCondition',
+    'AlertTemplateTemplateRuleLevelConditionCondition',
+    'AlertTemplateTemplateRuleNoData',
     'ContactGroupContact',
+    'ObjectGroupObject',
+    'ObjectGroupObjectDimensionConditions',
+    'ObjectGroupObjectDimensionConditionsMetaCondition',
+    'ObjectGroupObjectDimensionConditionsMetaConditionMeta',
+    'ObjectGroupObjectDimensionConditionsProjectCondition',
+    'ObjectGroupObjectDimensionConditionsTagCondition',
+    'ObjectGroupObjectDimensionConditionsTagConditionTag',
+    'ObjectGroupObjectDimensions',
     'RuleCondition',
     'RuleDimensionConditions',
     'RuleDimensionConditionsMetaCondition',
@@ -31,7 +48,24 @@ __all__ = [
     'RuleOriginalDimensions',
     'RuleRecoveryNotify',
     'RuleTag',
+    'GetAlertTemplateNoDataResult',
+    'GetAlertTemplateObjectGroupResult',
+    'GetAlertTemplateObjectGroupNotifyTemplateResult',
+    'GetAlertTemplateRecoveryNotifyResult',
+    'GetAlertTemplateTemplateRuleResult',
+    'GetAlertTemplateTemplateRuleAppliedRuleResult',
+    'GetAlertTemplateTemplateRuleLevelConditionResult',
+    'GetAlertTemplateTemplateRuleLevelConditionConditionResult',
+    'GetAlertTemplateTemplateRuleNoDataResult',
     'GetContactGroupContactResult',
+    'GetObjectGroupObjectResult',
+    'GetObjectGroupObjectDimensionConditionsResult',
+    'GetObjectGroupObjectDimensionConditionsMetaConditionResult',
+    'GetObjectGroupObjectDimensionConditionsMetaConditionMetaResult',
+    'GetObjectGroupObjectDimensionConditionsProjectConditionResult',
+    'GetObjectGroupObjectDimensionConditionsTagConditionResult',
+    'GetObjectGroupObjectDimensionConditionsTagConditionTagResult',
+    'GetObjectGroupObjectDimensionsResult',
     'GetRuleConditionResult',
     'GetRuleDimensionConditionsResult',
     'GetRuleDimensionConditionsMetaConditionResult',
@@ -47,6 +81,740 @@ __all__ = [
     'GetRuleRecoveryNotifyResult',
     'GetRuleTagResult',
 ]
+
+@pulumi.output_type
+class AlertTemplateNoData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "evaluationCount":
+            suggest = "evaluation_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateNoData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateNoData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateNoData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable: Optional[_builtins.bool] = None,
+                 evaluation_count: Optional[_builtins.int] = None,
+                 level: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool enable: Enable no data alert
+        :param _builtins.int evaluation_count: Number of evaluation periods for no data determination
+        :param _builtins.str level: Alert severity when triggered by no data
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if evaluation_count is not None:
+            pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> Optional[_builtins.bool]:
+        """
+        Enable no data alert
+        """
+        return pulumi.get(self, "enable")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> Optional[_builtins.int]:
+        """
+        Number of evaluation periods for no data determination
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> Optional[_builtins.str]:
+        """
+        Alert severity when triggered by no data
+        """
+        return pulumi.get(self, "level")
+
+
+@pulumi.output_type
+class AlertTemplateObjectGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "alertMethods":
+            suggest = "alert_methods"
+        elif key == "contactGroupIds":
+            suggest = "contact_group_ids"
+        elif key == "effectEndAt":
+            suggest = "effect_end_at"
+        elif key == "effectStartAt":
+            suggest = "effect_start_at"
+        elif key == "notificationId":
+            suggest = "notification_id"
+        elif key == "notifyTemplates":
+            suggest = "notify_templates"
+        elif key == "objectGroupId":
+            suggest = "object_group_id"
+        elif key == "objectGroupName":
+            suggest = "object_group_name"
+        elif key == "webhookIds":
+            suggest = "webhook_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateObjectGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateObjectGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateObjectGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 alert_methods: Optional[Sequence[_builtins.str]] = None,
+                 contact_group_ids: Optional[Sequence[_builtins.str]] = None,
+                 effect_end_at: Optional[_builtins.str] = None,
+                 effect_start_at: Optional[_builtins.str] = None,
+                 notification_id: Optional[_builtins.str] = None,
+                 notify_templates: Optional[Sequence['outputs.AlertTemplateObjectGroupNotifyTemplate']] = None,
+                 object_group_id: Optional[_builtins.str] = None,
+                 object_group_name: Optional[_builtins.str] = None,
+                 webhook: Optional[_builtins.str] = None,
+                 webhook_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] alert_methods: Alert notification method list
+        :param Sequence[_builtins.str] contact_group_ids: Contact Group ID List
+        :param _builtins.str effect_end_at: Effective end time
+        :param _builtins.str effect_start_at: Effective start time
+        :param _builtins.str notification_id: Notification policy ID
+        :param Sequence['AlertTemplateObjectGroupNotifyTemplateArgs'] notify_templates: Notification template list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param _builtins.str object_group_id: Object group ID
+        :param _builtins.str object_group_name: Object group name, returned by the service side
+        :param _builtins.str webhook: Webhook address
+        :param Sequence[_builtins.str] webhook_ids: Webhook ID list
+        """
+        if alert_methods is not None:
+            pulumi.set(__self__, "alert_methods", alert_methods)
+        if contact_group_ids is not None:
+            pulumi.set(__self__, "contact_group_ids", contact_group_ids)
+        if effect_end_at is not None:
+            pulumi.set(__self__, "effect_end_at", effect_end_at)
+        if effect_start_at is not None:
+            pulumi.set(__self__, "effect_start_at", effect_start_at)
+        if notification_id is not None:
+            pulumi.set(__self__, "notification_id", notification_id)
+        if notify_templates is not None:
+            pulumi.set(__self__, "notify_templates", notify_templates)
+        if object_group_id is not None:
+            pulumi.set(__self__, "object_group_id", object_group_id)
+        if object_group_name is not None:
+            pulumi.set(__self__, "object_group_name", object_group_name)
+        if webhook is not None:
+            pulumi.set(__self__, "webhook", webhook)
+        if webhook_ids is not None:
+            pulumi.set(__self__, "webhook_ids", webhook_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="alertMethods")
+    def alert_methods(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Alert notification method list
+        """
+        return pulumi.get(self, "alert_methods")
+
+    @_builtins.property
+    @pulumi.getter(name="contactGroupIds")
+    def contact_group_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Contact Group ID List
+        """
+        return pulumi.get(self, "contact_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="effectEndAt")
+    def effect_end_at(self) -> Optional[_builtins.str]:
+        """
+        Effective end time
+        """
+        return pulumi.get(self, "effect_end_at")
+
+    @_builtins.property
+    @pulumi.getter(name="effectStartAt")
+    def effect_start_at(self) -> Optional[_builtins.str]:
+        """
+        Effective start time
+        """
+        return pulumi.get(self, "effect_start_at")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationId")
+    def notification_id(self) -> Optional[_builtins.str]:
+        """
+        Notification policy ID
+        """
+        return pulumi.get(self, "notification_id")
+
+    @_builtins.property
+    @pulumi.getter(name="notifyTemplates")
+    def notify_templates(self) -> Optional[Sequence['outputs.AlertTemplateObjectGroupNotifyTemplate']]:
+        """
+        Notification template list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "notify_templates")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> Optional[_builtins.str]:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupName")
+    def object_group_name(self) -> Optional[_builtins.str]:
+        """
+        Object group name, returned by the service side
+        """
+        return pulumi.get(self, "object_group_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def webhook(self) -> Optional[_builtins.str]:
+        """
+        Webhook address
+        """
+        return pulumi.get(self, "webhook")
+
+    @_builtins.property
+    @pulumi.getter(name="webhookIds")
+    def webhook_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Webhook ID list
+        """
+        return pulumi.get(self, "webhook_ids")
+
+
+@pulumi.output_type
+class AlertTemplateObjectGroupNotifyTemplate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "notifyTemplateId":
+            suggest = "notify_template_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateObjectGroupNotifyTemplate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateObjectGroupNotifyTemplate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateObjectGroupNotifyTemplate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 channel: Optional[_builtins.str] = None,
+                 notify_template_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str channel: Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+        :param _builtins.str notify_template_id: Notification template ID
+        """
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+        if notify_template_id is not None:
+            pulumi.set(__self__, "notify_template_id", notify_template_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[_builtins.str]:
+        """
+        Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="notifyTemplateId")
+    def notify_template_id(self) -> Optional[_builtins.str]:
+        """
+        Notification template ID
+        """
+        return pulumi.get(self, "notify_template_id")
+
+
+@pulumi.output_type
+class AlertTemplateRecoveryNotify(dict):
+    def __init__(__self__, *,
+                 enable: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.bool enable: Enable recovery notification
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> Optional[_builtins.bool]:
+        """
+        Enable recovery notification
+        """
+        return pulumi.get(self, "enable")
+
+
+@pulumi.output_type
+class AlertTemplateTemplateRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appliedRules":
+            suggest = "applied_rules"
+        elif key == "checkInterval":
+            suggest = "check_interval"
+        elif key == "conditionOperator":
+            suggest = "condition_operator"
+        elif key == "evaluationCount":
+            suggest = "evaluation_count"
+        elif key == "evaluationInterval":
+            suggest = "evaluation_interval"
+        elif key == "levelConditions":
+            suggest = "level_conditions"
+        elif key == "multipleConditions":
+            suggest = "multiple_conditions"
+        elif key == "noData":
+            suggest = "no_data"
+        elif key == "subNamespace":
+            suggest = "sub_namespace"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateTemplateRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateTemplateRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateTemplateRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 applied_rules: Optional[Sequence['outputs.AlertTemplateTemplateRuleAppliedRule']] = None,
+                 check_interval: Optional[_builtins.int] = None,
+                 condition_operator: Optional[_builtins.str] = None,
+                 evaluation_count: Optional[_builtins.int] = None,
+                 evaluation_interval: Optional[_builtins.int] = None,
+                 level_conditions: Optional[Sequence['outputs.AlertTemplateTemplateRuleLevelCondition']] = None,
+                 multiple_conditions: Optional[_builtins.bool] = None,
+                 name: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 no_data: Optional['outputs.AlertTemplateTemplateRuleNoData'] = None,
+                 sub_namespace: Optional[_builtins.str] = None):
+        """
+        :param Sequence['AlertTemplateTemplateRuleAppliedRuleArgs'] applied_rules: List of alert rules generated by this rule, returned by the service side
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param _builtins.int check_interval: Evaluation interval (seconds), returned by the service side
+        :param _builtins.str condition_operator: Multi-condition combination method
+        :param _builtins.int evaluation_count: Evaluation Count
+        :param _builtins.int evaluation_interval: Evaluation interval (seconds)
+        :param Sequence['AlertTemplateTemplateRuleLevelConditionArgs'] level_conditions: Tiered alert condition list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param _builtins.bool multiple_conditions: Enable multi-condition mode
+        :param _builtins.str name: Rule name
+        :param _builtins.str namespace: Metric namespace
+        :param 'AlertTemplateTemplateRuleNoDataArgs' no_data: No Data Alert Configuration
+        :param _builtins.str sub_namespace: Metric sub-namespace
+        """
+        if applied_rules is not None:
+            pulumi.set(__self__, "applied_rules", applied_rules)
+        if check_interval is not None:
+            pulumi.set(__self__, "check_interval", check_interval)
+        if condition_operator is not None:
+            pulumi.set(__self__, "condition_operator", condition_operator)
+        if evaluation_count is not None:
+            pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if evaluation_interval is not None:
+            pulumi.set(__self__, "evaluation_interval", evaluation_interval)
+        if level_conditions is not None:
+            pulumi.set(__self__, "level_conditions", level_conditions)
+        if multiple_conditions is not None:
+            pulumi.set(__self__, "multiple_conditions", multiple_conditions)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if no_data is not None:
+            pulumi.set(__self__, "no_data", no_data)
+        if sub_namespace is not None:
+            pulumi.set(__self__, "sub_namespace", sub_namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="appliedRules")
+    def applied_rules(self) -> Optional[Sequence['outputs.AlertTemplateTemplateRuleAppliedRule']]:
+        """
+        List of alert rules generated by this rule, returned by the service side
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "applied_rules")
+
+    @_builtins.property
+    @pulumi.getter(name="checkInterval")
+    def check_interval(self) -> Optional[_builtins.int]:
+        """
+        Evaluation interval (seconds), returned by the service side
+        """
+        return pulumi.get(self, "check_interval")
+
+    @_builtins.property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> Optional[_builtins.str]:
+        """
+        Multi-condition combination method
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> Optional[_builtins.int]:
+        """
+        Evaluation Count
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> Optional[_builtins.int]:
+        """
+        Evaluation interval (seconds)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @_builtins.property
+    @pulumi.getter(name="levelConditions")
+    def level_conditions(self) -> Optional[Sequence['outputs.AlertTemplateTemplateRuleLevelCondition']]:
+        """
+        Tiered alert condition list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "level_conditions")
+
+    @_builtins.property
+    @pulumi.getter(name="multipleConditions")
+    def multiple_conditions(self) -> Optional[_builtins.bool]:
+        """
+        Enable multi-condition mode
+        """
+        return pulumi.get(self, "multiple_conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Rule name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        Metric namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="noData")
+    def no_data(self) -> Optional['outputs.AlertTemplateTemplateRuleNoData']:
+        """
+        No Data Alert Configuration
+        """
+        return pulumi.get(self, "no_data")
+
+    @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> Optional[_builtins.str]:
+        """
+        Metric sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+
+@pulumi.output_type
+class AlertTemplateTemplateRuleAppliedRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectGroupId":
+            suggest = "object_group_id"
+        elif key == "objectId":
+            suggest = "object_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateTemplateRuleAppliedRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateTemplateRuleAppliedRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateTemplateRuleAppliedRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 object_group_id: Optional[_builtins.str] = None,
+                 object_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str id: ID of the issued alert rule
+        :param _builtins.str name: Name of the issued alert rule
+        :param _builtins.str object_group_id: Associated object group ID
+        :param _builtins.str object_id: Associated object ID
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_group_id is not None:
+            pulumi.set(__self__, "object_group_id", object_group_id)
+        if object_id is not None:
+            pulumi.set(__self__, "object_id", object_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        ID of the issued alert rule
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Name of the issued alert rule
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> Optional[_builtins.str]:
+        """
+        Associated object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectId")
+    def object_id(self) -> Optional[_builtins.str]:
+        """
+        Associated object ID
+        """
+        return pulumi.get(self, "object_id")
+
+
+@pulumi.output_type
+class AlertTemplateTemplateRuleLevelCondition(dict):
+    def __init__(__self__, *,
+                 conditions: Optional[Sequence['outputs.AlertTemplateTemplateRuleLevelConditionCondition']] = None,
+                 level: Optional[_builtins.str] = None):
+        """
+        :param Sequence['AlertTemplateTemplateRuleLevelConditionConditionArgs'] conditions: Condition list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param _builtins.str level: Alert severity, options: notice/warning/critical
+        """
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def conditions(self) -> Optional[Sequence['outputs.AlertTemplateTemplateRuleLevelConditionCondition']]:
+        """
+        Condition list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> Optional[_builtins.str]:
+        """
+        Alert severity, options: notice/warning/critical
+        """
+        return pulumi.get(self, "level")
+
+
+@pulumi.output_type
+class AlertTemplateTemplateRuleLevelConditionCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "comparisonOperator":
+            suggest = "comparison_operator"
+        elif key == "evaluationWindow":
+            suggest = "evaluation_window"
+        elif key == "metricName":
+            suggest = "metric_name"
+        elif key == "metricUnit":
+            suggest = "metric_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateTemplateRuleLevelConditionCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateTemplateRuleLevelConditionCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateTemplateRuleLevelConditionCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 comparison_operator: Optional[_builtins.str] = None,
+                 evaluation_window: Optional[_builtins.int] = None,
+                 metric_name: Optional[_builtins.str] = None,
+                 metric_unit: Optional[_builtins.str] = None,
+                 statistics: Optional[_builtins.str] = None,
+                 threshold: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str comparison_operator: Comparison operators, such as >, >=, <, <=, !=, etc.
+        :param _builtins.int evaluation_window: Evaluation window (seconds)
+        :param _builtins.str metric_name: Metric name
+        :param _builtins.str metric_unit: Metric unit
+        :param _builtins.str statistics: Statistic method
+        :param _builtins.str threshold: Trigger threshold
+        """
+        if comparison_operator is not None:
+            pulumi.set(__self__, "comparison_operator", comparison_operator)
+        if evaluation_window is not None:
+            pulumi.set(__self__, "evaluation_window", evaluation_window)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if metric_unit is not None:
+            pulumi.set(__self__, "metric_unit", metric_unit)
+        if statistics is not None:
+            pulumi.set(__self__, "statistics", statistics)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="comparisonOperator")
+    def comparison_operator(self) -> Optional[_builtins.str]:
+        """
+        Comparison operators, such as >, >=, <, <=, !=, etc.
+        """
+        return pulumi.get(self, "comparison_operator")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> Optional[_builtins.int]:
+        """
+        Evaluation window (seconds)
+        """
+        return pulumi.get(self, "evaluation_window")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[_builtins.str]:
+        """
+        Metric name
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricUnit")
+    def metric_unit(self) -> Optional[_builtins.str]:
+        """
+        Metric unit
+        """
+        return pulumi.get(self, "metric_unit")
+
+    @_builtins.property
+    @pulumi.getter
+    def statistics(self) -> Optional[_builtins.str]:
+        """
+        Statistic method
+        """
+        return pulumi.get(self, "statistics")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> Optional[_builtins.str]:
+        """
+        Trigger threshold
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class AlertTemplateTemplateRuleNoData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "evaluationCount":
+            suggest = "evaluation_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertTemplateTemplateRuleNoData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertTemplateTemplateRuleNoData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertTemplateTemplateRuleNoData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable: Optional[_builtins.bool] = None,
+                 evaluation_count: Optional[_builtins.int] = None,
+                 level: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool enable: Enable no data alert
+        :param _builtins.int evaluation_count: Number of evaluation periods for no data determination
+        :param _builtins.str level: Alert severity when triggered by no data
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if evaluation_count is not None:
+            pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> Optional[_builtins.bool]:
+        """
+        Enable no data alert
+        """
+        return pulumi.get(self, "enable")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> Optional[_builtins.int]:
+        """
+        Number of evaluation periods for no data determination
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> Optional[_builtins.str]:
+        """
+        Alert severity when triggered by no data
+        """
+        return pulumi.get(self, "level")
+
 
 @pulumi.output_type
 class ContactGroupContact(dict):
@@ -82,6 +850,414 @@ class ContactGroupContact(dict):
         Contact ID
         """
         return pulumi.get(self, "contact_id")
+
+
+@pulumi.output_type
+class ObjectGroupObject(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dimensionConditions":
+            suggest = "dimension_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ObjectGroupObject. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ObjectGroupObject.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ObjectGroupObject.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension_conditions: Optional['outputs.ObjectGroupObjectDimensionConditions'] = None,
+                 dimensions: Optional['outputs.ObjectGroupObjectDimensions'] = None,
+                 id: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 region: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param 'ObjectGroupObjectDimensionConditionsArgs' dimension_conditions: Dimension filter condition of the monitoring object
+        :param 'ObjectGroupObjectDimensionsArgs' dimensions: Static dimension information of the monitoring object
+        :param _builtins.str id: Unique identifier of the monitoring object in the object group, generated by the server
+        :param _builtins.str namespace: Namespace of the monitoring metric
+        :param _builtins.str region: Region of the monitoring object
+        :param _builtins.str type: Object access method, such as `Dimension` / `DimensionCondition`
+        """
+        if dimension_conditions is not None:
+            pulumi.set(__self__, "dimension_conditions", dimension_conditions)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionConditions")
+    def dimension_conditions(self) -> Optional['outputs.ObjectGroupObjectDimensionConditions']:
+        """
+        Dimension filter condition of the monitoring object
+        """
+        return pulumi.get(self, "dimension_conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Optional['outputs.ObjectGroupObjectDimensions']:
+        """
+        Static dimension information of the monitoring object
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier of the monitoring object in the object group, generated by the server
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        Namespace of the monitoring metric
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> Optional[_builtins.str]:
+        """
+        Region of the monitoring object
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Object access method, such as `Dimension` / `DimensionCondition`
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metaCondition":
+            suggest = "meta_condition"
+        elif key == "projectCondition":
+            suggest = "project_condition"
+        elif key == "tagCondition":
+            suggest = "tag_condition"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ObjectGroupObjectDimensionConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ObjectGroupObjectDimensionConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ObjectGroupObjectDimensionConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 meta_condition: Optional['outputs.ObjectGroupObjectDimensionConditionsMetaCondition'] = None,
+                 project_condition: Optional['outputs.ObjectGroupObjectDimensionConditionsProjectCondition'] = None,
+                 tag_condition: Optional['outputs.ObjectGroupObjectDimensionConditionsTagCondition'] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param 'ObjectGroupObjectDimensionConditionsMetaConditionArgs' meta_condition: Meta dimension condition
+        :param 'ObjectGroupObjectDimensionConditionsProjectConditionArgs' project_condition: Project dimension condition
+        :param 'ObjectGroupObjectDimensionConditionsTagConditionArgs' tag_condition: Tag dimension condition
+        :param _builtins.str type: Dimension filter type
+        """
+        if meta_condition is not None:
+            pulumi.set(__self__, "meta_condition", meta_condition)
+        if project_condition is not None:
+            pulumi.set(__self__, "project_condition", project_condition)
+        if tag_condition is not None:
+            pulumi.set(__self__, "tag_condition", tag_condition)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="metaCondition")
+    def meta_condition(self) -> Optional['outputs.ObjectGroupObjectDimensionConditionsMetaCondition']:
+        """
+        Meta dimension condition
+        """
+        return pulumi.get(self, "meta_condition")
+
+    @_builtins.property
+    @pulumi.getter(name="projectCondition")
+    def project_condition(self) -> Optional['outputs.ObjectGroupObjectDimensionConditionsProjectCondition']:
+        """
+        Project dimension condition
+        """
+        return pulumi.get(self, "project_condition")
+
+    @_builtins.property
+    @pulumi.getter(name="tagCondition")
+    def tag_condition(self) -> Optional['outputs.ObjectGroupObjectDimensionConditionsTagCondition']:
+        """
+        Tag dimension condition
+        """
+        return pulumi.get(self, "tag_condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Dimension filter type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditionsMetaCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allDimensions":
+            suggest = "all_dimensions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ObjectGroupObjectDimensionConditionsMetaCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ObjectGroupObjectDimensionConditionsMetaCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ObjectGroupObjectDimensionConditionsMetaCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 all_dimensions: Optional[_builtins.bool] = None,
+                 condition: Optional[_builtins.str] = None,
+                 metas: Optional[Sequence['outputs.ObjectGroupObjectDimensionConditionsMetaConditionMeta']] = None):
+        """
+        :param _builtins.bool all_dimensions: Whether to match all dimensions
+        :param _builtins.str condition: Condition combination method, such as `And` / `Or`
+        :param Sequence['ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs'] metas: Meta match item list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        if all_dimensions is not None:
+            pulumi.set(__self__, "all_dimensions", all_dimensions)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if metas is not None:
+            pulumi.set(__self__, "metas", metas)
+
+    @_builtins.property
+    @pulumi.getter(name="allDimensions")
+    def all_dimensions(self) -> Optional[_builtins.bool]:
+        """
+        Whether to match all dimensions
+        """
+        return pulumi.get(self, "all_dimensions")
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> Optional[_builtins.str]:
+        """
+        Condition combination method, such as `And` / `Or`
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def metas(self) -> Optional[Sequence['outputs.ObjectGroupObjectDimensionConditionsMetaConditionMeta']]:
+        """
+        Meta match item list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "metas")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditionsMetaConditionMeta(dict):
+    def __init__(__self__, *,
+                 comparator: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str comparator: Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+        :param _builtins.str key: Meta key
+        :param Sequence[_builtins.str] values: Meta value list
+        """
+        if comparator is not None:
+            pulumi.set(__self__, "comparator", comparator)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def comparator(self) -> Optional[_builtins.str]:
+        """
+        Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+        """
+        return pulumi.get(self, "comparator")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Meta key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Meta value list
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditionsProjectCondition(dict):
+    def __init__(__self__, *,
+                 projects: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] projects: List of matched project names
+        """
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of matched project names
+        """
+        return pulumi.get(self, "projects")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditionsTagCondition(dict):
+    def __init__(__self__, *,
+                 condition: Optional[_builtins.str] = None,
+                 tags: Optional[Sequence['outputs.ObjectGroupObjectDimensionConditionsTagConditionTag']] = None):
+        """
+        :param _builtins.str condition: Condition combination method, such as `And` / `Or`
+        :param Sequence['ObjectGroupObjectDimensionConditionsTagConditionTagArgs'] tags: Tag match item list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> Optional[_builtins.str]:
+        """
+        Condition combination method, such as `And` / `Or`
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.ObjectGroupObjectDimensionConditionsTagConditionTag']]:
+        """
+        Tag match item list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensionConditionsTagConditionTag(dict):
+    def __init__(__self__, *,
+                 comparator: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str comparator: Comparator
+        :param _builtins.str key: Tag key
+        :param Sequence[_builtins.str] values: Tag value list
+        """
+        if comparator is not None:
+            pulumi.set(__self__, "comparator", comparator)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def comparator(self) -> Optional[_builtins.str]:
+        """
+        Comparator
+        """
+        return pulumi.get(self, "comparator")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Tag value list
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ObjectGroupObjectDimensions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceIds":
+            suggest = "resource_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ObjectGroupObjectDimensions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ObjectGroupObjectDimensions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ObjectGroupObjectDimensions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] resource_ids: Resource ID list
+        """
+        if resource_ids is not None:
+            pulumi.set(__self__, "resource_ids", resource_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
 
 
 @pulumi.output_type
@@ -839,6 +2015,531 @@ class RuleTag(dict):
 
 
 @pulumi.output_type
+class GetAlertTemplateNoDataResult(dict):
+    def __init__(__self__, *,
+                 enable: _builtins.bool,
+                 evaluation_count: _builtins.int,
+                 level: _builtins.str):
+        """
+        :param _builtins.bool enable: Enable no data alert
+        :param _builtins.int evaluation_count: Number of evaluation periods for no data determination
+        :param _builtins.str level: Alert severity when triggered by no data
+        """
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "evaluation_count", evaluation_count)
+        pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> _builtins.bool:
+        """
+        Enable no data alert
+        """
+        return pulumi.get(self, "enable")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> _builtins.int:
+        """
+        Number of evaluation periods for no data determination
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> _builtins.str:
+        """
+        Alert severity when triggered by no data
+        """
+        return pulumi.get(self, "level")
+
+
+@pulumi.output_type
+class GetAlertTemplateObjectGroupResult(dict):
+    def __init__(__self__, *,
+                 alert_methods: Sequence[_builtins.str],
+                 contact_group_ids: Sequence[_builtins.str],
+                 effect_end_at: _builtins.str,
+                 effect_start_at: _builtins.str,
+                 notification_id: _builtins.str,
+                 notify_templates: Sequence['outputs.GetAlertTemplateObjectGroupNotifyTemplateResult'],
+                 object_group_id: _builtins.str,
+                 object_group_name: _builtins.str,
+                 webhook: _builtins.str,
+                 webhook_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] alert_methods: Alert notification method list
+        :param Sequence[_builtins.str] contact_group_ids: Contact Group ID List
+        :param _builtins.str effect_end_at: Effective end time
+        :param _builtins.str effect_start_at: Effective start time
+        :param _builtins.str notification_id: Notification policy ID
+        :param Sequence['GetAlertTemplateObjectGroupNotifyTemplateArgs'] notify_templates: Notification template list
+        :param _builtins.str object_group_id: Object group ID
+        :param _builtins.str object_group_name: Object group name, returned by the service side
+        :param _builtins.str webhook: Webhook address
+        :param Sequence[_builtins.str] webhook_ids: Webhook ID list
+        """
+        pulumi.set(__self__, "alert_methods", alert_methods)
+        pulumi.set(__self__, "contact_group_ids", contact_group_ids)
+        pulumi.set(__self__, "effect_end_at", effect_end_at)
+        pulumi.set(__self__, "effect_start_at", effect_start_at)
+        pulumi.set(__self__, "notification_id", notification_id)
+        pulumi.set(__self__, "notify_templates", notify_templates)
+        pulumi.set(__self__, "object_group_id", object_group_id)
+        pulumi.set(__self__, "object_group_name", object_group_name)
+        pulumi.set(__self__, "webhook", webhook)
+        pulumi.set(__self__, "webhook_ids", webhook_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="alertMethods")
+    def alert_methods(self) -> Sequence[_builtins.str]:
+        """
+        Alert notification method list
+        """
+        return pulumi.get(self, "alert_methods")
+
+    @_builtins.property
+    @pulumi.getter(name="contactGroupIds")
+    def contact_group_ids(self) -> Sequence[_builtins.str]:
+        """
+        Contact Group ID List
+        """
+        return pulumi.get(self, "contact_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="effectEndAt")
+    def effect_end_at(self) -> _builtins.str:
+        """
+        Effective end time
+        """
+        return pulumi.get(self, "effect_end_at")
+
+    @_builtins.property
+    @pulumi.getter(name="effectStartAt")
+    def effect_start_at(self) -> _builtins.str:
+        """
+        Effective start time
+        """
+        return pulumi.get(self, "effect_start_at")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationId")
+    def notification_id(self) -> _builtins.str:
+        """
+        Notification policy ID
+        """
+        return pulumi.get(self, "notification_id")
+
+    @_builtins.property
+    @pulumi.getter(name="notifyTemplates")
+    def notify_templates(self) -> Sequence['outputs.GetAlertTemplateObjectGroupNotifyTemplateResult']:
+        """
+        Notification template list
+        """
+        return pulumi.get(self, "notify_templates")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> _builtins.str:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupName")
+    def object_group_name(self) -> _builtins.str:
+        """
+        Object group name, returned by the service side
+        """
+        return pulumi.get(self, "object_group_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def webhook(self) -> _builtins.str:
+        """
+        Webhook address
+        """
+        return pulumi.get(self, "webhook")
+
+    @_builtins.property
+    @pulumi.getter(name="webhookIds")
+    def webhook_ids(self) -> Sequence[_builtins.str]:
+        """
+        Webhook ID list
+        """
+        return pulumi.get(self, "webhook_ids")
+
+
+@pulumi.output_type
+class GetAlertTemplateObjectGroupNotifyTemplateResult(dict):
+    def __init__(__self__, *,
+                 channel: _builtins.str,
+                 notify_template_id: _builtins.str):
+        """
+        :param _builtins.str channel: Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+        :param _builtins.str notify_template_id: Notification template ID
+        """
+        pulumi.set(__self__, "channel", channel)
+        pulumi.set(__self__, "notify_template_id", notify_template_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> _builtins.str:
+        """
+        Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="notifyTemplateId")
+    def notify_template_id(self) -> _builtins.str:
+        """
+        Notification template ID
+        """
+        return pulumi.get(self, "notify_template_id")
+
+
+@pulumi.output_type
+class GetAlertTemplateRecoveryNotifyResult(dict):
+    def __init__(__self__, *,
+                 enable: _builtins.bool):
+        """
+        :param _builtins.bool enable: Enable recovery notification
+        """
+        pulumi.set(__self__, "enable", enable)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> _builtins.bool:
+        """
+        Enable recovery notification
+        """
+        return pulumi.get(self, "enable")
+
+
+@pulumi.output_type
+class GetAlertTemplateTemplateRuleResult(dict):
+    def __init__(__self__, *,
+                 applied_rules: Sequence['outputs.GetAlertTemplateTemplateRuleAppliedRuleResult'],
+                 check_interval: _builtins.int,
+                 condition_operator: _builtins.str,
+                 evaluation_count: _builtins.int,
+                 evaluation_interval: _builtins.int,
+                 level_conditions: Sequence['outputs.GetAlertTemplateTemplateRuleLevelConditionResult'],
+                 multiple_conditions: _builtins.bool,
+                 name: _builtins.str,
+                 namespace: _builtins.str,
+                 no_data: 'outputs.GetAlertTemplateTemplateRuleNoDataResult',
+                 sub_namespace: _builtins.str):
+        """
+        :param Sequence['GetAlertTemplateTemplateRuleAppliedRuleArgs'] applied_rules: List of alert rules generated by this rule, returned by the service side
+        :param _builtins.int check_interval: Evaluation interval (seconds), returned by the service side
+        :param _builtins.str condition_operator: Multi-condition combination method
+        :param _builtins.int evaluation_count: Evaluation Count
+        :param _builtins.int evaluation_interval: Evaluation interval (seconds)
+        :param Sequence['GetAlertTemplateTemplateRuleLevelConditionArgs'] level_conditions: Tiered alert condition list
+        :param _builtins.bool multiple_conditions: Enable multi-condition mode
+        :param _builtins.str name: Rule name
+        :param _builtins.str namespace: Metric namespace
+        :param 'GetAlertTemplateTemplateRuleNoDataArgs' no_data: No Data Alert Configuration
+        :param _builtins.str sub_namespace: Metric sub-namespace
+        """
+        pulumi.set(__self__, "applied_rules", applied_rules)
+        pulumi.set(__self__, "check_interval", check_interval)
+        pulumi.set(__self__, "condition_operator", condition_operator)
+        pulumi.set(__self__, "evaluation_count", evaluation_count)
+        pulumi.set(__self__, "evaluation_interval", evaluation_interval)
+        pulumi.set(__self__, "level_conditions", level_conditions)
+        pulumi.set(__self__, "multiple_conditions", multiple_conditions)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "no_data", no_data)
+        pulumi.set(__self__, "sub_namespace", sub_namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="appliedRules")
+    def applied_rules(self) -> Sequence['outputs.GetAlertTemplateTemplateRuleAppliedRuleResult']:
+        """
+        List of alert rules generated by this rule, returned by the service side
+        """
+        return pulumi.get(self, "applied_rules")
+
+    @_builtins.property
+    @pulumi.getter(name="checkInterval")
+    def check_interval(self) -> _builtins.int:
+        """
+        Evaluation interval (seconds), returned by the service side
+        """
+        return pulumi.get(self, "check_interval")
+
+    @_builtins.property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> _builtins.str:
+        """
+        Multi-condition combination method
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> _builtins.int:
+        """
+        Evaluation Count
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> _builtins.int:
+        """
+        Evaluation interval (seconds)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @_builtins.property
+    @pulumi.getter(name="levelConditions")
+    def level_conditions(self) -> Sequence['outputs.GetAlertTemplateTemplateRuleLevelConditionResult']:
+        """
+        Tiered alert condition list
+        """
+        return pulumi.get(self, "level_conditions")
+
+    @_builtins.property
+    @pulumi.getter(name="multipleConditions")
+    def multiple_conditions(self) -> _builtins.bool:
+        """
+        Enable multi-condition mode
+        """
+        return pulumi.get(self, "multiple_conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Rule name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Metric namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="noData")
+    def no_data(self) -> 'outputs.GetAlertTemplateTemplateRuleNoDataResult':
+        """
+        No Data Alert Configuration
+        """
+        return pulumi.get(self, "no_data")
+
+    @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> _builtins.str:
+        """
+        Metric sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+
+@pulumi.output_type
+class GetAlertTemplateTemplateRuleAppliedRuleResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 object_group_id: _builtins.str,
+                 object_id: _builtins.str):
+        """
+        :param _builtins.str id: ID of the issued alert rule
+        :param _builtins.str name: Name of the issued alert rule
+        :param _builtins.str object_group_id: Associated object group ID
+        :param _builtins.str object_id: Associated object ID
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_group_id", object_group_id)
+        pulumi.set(__self__, "object_id", object_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the issued alert rule
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the issued alert rule
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> _builtins.str:
+        """
+        Associated object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectId")
+    def object_id(self) -> _builtins.str:
+        """
+        Associated object ID
+        """
+        return pulumi.get(self, "object_id")
+
+
+@pulumi.output_type
+class GetAlertTemplateTemplateRuleLevelConditionResult(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.GetAlertTemplateTemplateRuleLevelConditionConditionResult'],
+                 level: _builtins.str):
+        """
+        :param Sequence['GetAlertTemplateTemplateRuleLevelConditionConditionArgs'] conditions: Condition list
+        :param _builtins.str level: Alert severity, options: notice/warning/critical
+        """
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.GetAlertTemplateTemplateRuleLevelConditionConditionResult']:
+        """
+        Condition list
+        """
+        return pulumi.get(self, "conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> _builtins.str:
+        """
+        Alert severity, options: notice/warning/critical
+        """
+        return pulumi.get(self, "level")
+
+
+@pulumi.output_type
+class GetAlertTemplateTemplateRuleLevelConditionConditionResult(dict):
+    def __init__(__self__, *,
+                 comparison_operator: _builtins.str,
+                 evaluation_window: _builtins.int,
+                 metric_name: _builtins.str,
+                 metric_unit: _builtins.str,
+                 statistics: _builtins.str,
+                 threshold: _builtins.str):
+        """
+        :param _builtins.str comparison_operator: Comparison operators, such as >, >=, <, <=, !=, etc.
+        :param _builtins.int evaluation_window: Evaluation window (seconds)
+        :param _builtins.str metric_name: Metric name
+        :param _builtins.str metric_unit: Metric unit
+        :param _builtins.str statistics: Statistic method
+        :param _builtins.str threshold: Trigger threshold
+        """
+        pulumi.set(__self__, "comparison_operator", comparison_operator)
+        pulumi.set(__self__, "evaluation_window", evaluation_window)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "metric_unit", metric_unit)
+        pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="comparisonOperator")
+    def comparison_operator(self) -> _builtins.str:
+        """
+        Comparison operators, such as >, >=, <, <=, !=, etc.
+        """
+        return pulumi.get(self, "comparison_operator")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> _builtins.int:
+        """
+        Evaluation window (seconds)
+        """
+        return pulumi.get(self, "evaluation_window")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> _builtins.str:
+        """
+        Metric name
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricUnit")
+    def metric_unit(self) -> _builtins.str:
+        """
+        Metric unit
+        """
+        return pulumi.get(self, "metric_unit")
+
+    @_builtins.property
+    @pulumi.getter
+    def statistics(self) -> _builtins.str:
+        """
+        Statistic method
+        """
+        return pulumi.get(self, "statistics")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.str:
+        """
+        Trigger threshold
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetAlertTemplateTemplateRuleNoDataResult(dict):
+    def __init__(__self__, *,
+                 enable: _builtins.bool,
+                 evaluation_count: _builtins.int,
+                 level: _builtins.str):
+        """
+        :param _builtins.bool enable: Enable no data alert
+        :param _builtins.int evaluation_count: Number of evaluation periods for no data determination
+        :param _builtins.str level: Alert severity when triggered by no data
+        """
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "evaluation_count", evaluation_count)
+        pulumi.set(__self__, "level", level)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> _builtins.bool:
+        """
+        Enable no data alert
+        """
+        return pulumi.get(self, "enable")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationCount")
+    def evaluation_count(self) -> _builtins.int:
+        """
+        Number of evaluation periods for no data determination
+        """
+        return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> _builtins.str:
+        """
+        Alert severity when triggered by no data
+        """
+        return pulumi.get(self, "level")
+
+
+@pulumi.output_type
 class GetContactGroupContactResult(dict):
     def __init__(__self__, *,
                  contact_id: _builtins.str,
@@ -887,6 +2588,315 @@ class GetContactGroupContactResult(dict):
         Contact mobile number
         """
         return pulumi.get(self, "phone")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectResult(dict):
+    def __init__(__self__, *,
+                 dimension_conditions: 'outputs.GetObjectGroupObjectDimensionConditionsResult',
+                 dimensions: 'outputs.GetObjectGroupObjectDimensionsResult',
+                 id: _builtins.str,
+                 namespace: _builtins.str,
+                 region: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param 'GetObjectGroupObjectDimensionConditionsArgs' dimension_conditions: Dimension filter condition of the monitoring object
+        :param 'GetObjectGroupObjectDimensionsArgs' dimensions: Static dimension information of the monitoring object
+        :param _builtins.str id: Unique identifier of the monitoring object in the object group, generated by the server
+        :param _builtins.str namespace: Namespace of the monitoring metric
+        :param _builtins.str region: Region of the monitoring object
+        :param _builtins.str type: Object access method, such as `Dimension` / `DimensionCondition`
+        """
+        pulumi.set(__self__, "dimension_conditions", dimension_conditions)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionConditions")
+    def dimension_conditions(self) -> 'outputs.GetObjectGroupObjectDimensionConditionsResult':
+        """
+        Dimension filter condition of the monitoring object
+        """
+        return pulumi.get(self, "dimension_conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> 'outputs.GetObjectGroupObjectDimensionsResult':
+        """
+        Static dimension information of the monitoring object
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier of the monitoring object in the object group, generated by the server
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace of the monitoring metric
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Region of the monitoring object
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Object access method, such as `Dimension` / `DimensionCondition`
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsResult(dict):
+    def __init__(__self__, *,
+                 meta_condition: 'outputs.GetObjectGroupObjectDimensionConditionsMetaConditionResult',
+                 project_condition: 'outputs.GetObjectGroupObjectDimensionConditionsProjectConditionResult',
+                 tag_condition: 'outputs.GetObjectGroupObjectDimensionConditionsTagConditionResult',
+                 type: _builtins.str):
+        """
+        :param 'GetObjectGroupObjectDimensionConditionsMetaConditionArgs' meta_condition: Meta dimension condition
+        :param 'GetObjectGroupObjectDimensionConditionsProjectConditionArgs' project_condition: Project dimension condition
+        :param 'GetObjectGroupObjectDimensionConditionsTagConditionArgs' tag_condition: Tag dimension condition
+        :param _builtins.str type: Dimension filter type
+        """
+        pulumi.set(__self__, "meta_condition", meta_condition)
+        pulumi.set(__self__, "project_condition", project_condition)
+        pulumi.set(__self__, "tag_condition", tag_condition)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="metaCondition")
+    def meta_condition(self) -> 'outputs.GetObjectGroupObjectDimensionConditionsMetaConditionResult':
+        """
+        Meta dimension condition
+        """
+        return pulumi.get(self, "meta_condition")
+
+    @_builtins.property
+    @pulumi.getter(name="projectCondition")
+    def project_condition(self) -> 'outputs.GetObjectGroupObjectDimensionConditionsProjectConditionResult':
+        """
+        Project dimension condition
+        """
+        return pulumi.get(self, "project_condition")
+
+    @_builtins.property
+    @pulumi.getter(name="tagCondition")
+    def tag_condition(self) -> 'outputs.GetObjectGroupObjectDimensionConditionsTagConditionResult':
+        """
+        Tag dimension condition
+        """
+        return pulumi.get(self, "tag_condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Dimension filter type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsMetaConditionResult(dict):
+    def __init__(__self__, *,
+                 all_dimensions: _builtins.bool,
+                 condition: _builtins.str,
+                 metas: Sequence['outputs.GetObjectGroupObjectDimensionConditionsMetaConditionMetaResult']):
+        """
+        :param _builtins.bool all_dimensions: Whether to match all dimensions
+        :param _builtins.str condition: Condition combination method, such as `And` / `Or`
+        :param Sequence['GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs'] metas: Meta match item list
+        """
+        pulumi.set(__self__, "all_dimensions", all_dimensions)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "metas", metas)
+
+    @_builtins.property
+    @pulumi.getter(name="allDimensions")
+    def all_dimensions(self) -> _builtins.bool:
+        """
+        Whether to match all dimensions
+        """
+        return pulumi.get(self, "all_dimensions")
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        Condition combination method, such as `And` / `Or`
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def metas(self) -> Sequence['outputs.GetObjectGroupObjectDimensionConditionsMetaConditionMetaResult']:
+        """
+        Meta match item list
+        """
+        return pulumi.get(self, "metas")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsMetaConditionMetaResult(dict):
+    def __init__(__self__, *,
+                 comparator: _builtins.str,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str comparator: Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+        :param _builtins.str key: Meta key
+        :param Sequence[_builtins.str] values: Meta value list
+        """
+        pulumi.set(__self__, "comparator", comparator)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def comparator(self) -> _builtins.str:
+        """
+        Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+        """
+        return pulumi.get(self, "comparator")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Meta key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Meta value list
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsProjectConditionResult(dict):
+    def __init__(__self__, *,
+                 projects: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] projects: List of matched project names
+        """
+        pulumi.set(__self__, "projects", projects)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Sequence[_builtins.str]:
+        """
+        List of matched project names
+        """
+        return pulumi.get(self, "projects")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsTagConditionResult(dict):
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 tags: Sequence['outputs.GetObjectGroupObjectDimensionConditionsTagConditionTagResult']):
+        """
+        :param _builtins.str condition: Condition combination method, such as `And` / `Or`
+        :param Sequence['GetObjectGroupObjectDimensionConditionsTagConditionTagArgs'] tags: Tag match item list
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        Condition combination method, such as `And` / `Or`
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetObjectGroupObjectDimensionConditionsTagConditionTagResult']:
+        """
+        Tag match item list
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionConditionsTagConditionTagResult(dict):
+    def __init__(__self__, *,
+                 comparator: _builtins.str,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str comparator: Comparator
+        :param _builtins.str key: Tag key
+        :param Sequence[_builtins.str] values: Tag value list
+        """
+        pulumi.set(__self__, "comparator", comparator)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def comparator(self) -> _builtins.str:
+        """
+        Comparator
+        """
+        return pulumi.get(self, "comparator")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Tag value list
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetObjectGroupObjectDimensionsResult(dict):
+    def __init__(__self__, *,
+                 resource_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] resource_ids: Resource ID list
+        """
+        pulumi.set(__self__, "resource_ids", resource_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> Sequence[_builtins.str]:
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
 
 
 @pulumi.output_type

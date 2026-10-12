@@ -6,17 +6,23 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .alert_template import *
 from .contact import *
 from .contact_group import *
 from .event_rule import *
+from .get_alert_template import *
+from .get_alert_templates import *
 from .get_contact import *
 from .get_contact_group import *
 from .get_contact_groups import *
 from .get_contacts import *
 from .get_event_rule import *
 from .get_event_rules import *
+from .get_object_group import *
+from .get_object_groups import *
 from .get_rule import *
 from .get_rules import *
+from .object_group import *
 from .rule import *
 from ._inputs import *
 from . import outputs

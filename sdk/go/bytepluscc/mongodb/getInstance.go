@@ -34,6 +34,12 @@ type LookupInstanceResult struct {
 	AllowListIds []string `pulumi:"allowListIds"`
 	// Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
 	AutoRenew bool `pulumi:"autoRenew"`
+	// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+	BackupId string `pulumi:"backupId"`
+	// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+	BackupType string `pulumi:"backupType"`
+	// Backup file list information for the instance.
+	Backups []GetInstanceBackup `pulumi:"backups"`
 	// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
 	ChargeStatus string `pulumi:"chargeStatus"`
 	// Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
@@ -100,10 +106,16 @@ type LookupInstanceResult struct {
 	ReadOnlyNodeNumber int `pulumi:"readOnlyNodeNumber"`
 	// Scheduled recycle time for the instance (UTC)
 	ReclaimTime string `pulumi:"reclaimTime"`
+	// List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+	RecoverableTimes []GetInstanceRecoverableTime `pulumi:"recoverableTimes"`
+	// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+	RestoreTime string `pulumi:"restoreTime"`
 	// Number of shards in the sharded cluster. Range: 2–32.
 	ShardNumber int `pulumi:"shardNumber"`
 	// Shard information list
 	Shards []GetInstanceShard `pulumi:"shards"`
+	// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+	SrcDbInstanceId string `pulumi:"srcDbInstanceId"`
 	// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
 	StorageSpaceGb int `pulumi:"storageSpaceGb"`
 	// Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
@@ -166,6 +178,21 @@ func (o LookupInstanceResultOutput) AllowListIds() pulumi.StringArrayOutput {
 // Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
 func (o LookupInstanceResultOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+func (o LookupInstanceResultOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+func (o LookupInstanceResultOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Backup file list information for the instance.
+func (o LookupInstanceResultOutput) Backups() GetInstanceBackupArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceBackup { return v.Backups }).(GetInstanceBackupArrayOutput)
 }
 
 // Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
@@ -333,6 +360,16 @@ func (o LookupInstanceResultOutput) ReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ReclaimTime }).(pulumi.StringOutput)
 }
 
+// List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+func (o LookupInstanceResultOutput) RecoverableTimes() GetInstanceRecoverableTimeArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceRecoverableTime { return v.RecoverableTimes }).(GetInstanceRecoverableTimeArrayOutput)
+}
+
+// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+func (o LookupInstanceResultOutput) RestoreTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.RestoreTime }).(pulumi.StringOutput)
+}
+
 // Number of shards in the sharded cluster. Range: 2–32.
 func (o LookupInstanceResultOutput) ShardNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ShardNumber }).(pulumi.IntOutput)
@@ -341,6 +378,11 @@ func (o LookupInstanceResultOutput) ShardNumber() pulumi.IntOutput {
 // Shard information list
 func (o LookupInstanceResultOutput) Shards() GetInstanceShardArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceShard { return v.Shards }).(GetInstanceShardArrayOutput)
+}
+
+// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+func (o LookupInstanceResultOutput) SrcDbInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.SrcDbInstanceId }).(pulumi.StringOutput)
 }
 
 // Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.

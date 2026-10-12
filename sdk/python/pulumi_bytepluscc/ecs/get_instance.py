@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, cpu_options=None, created_at=None, credit_specification=None, data_volumes=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, cpu_options=None, created_at=None, credit_specification=None, data_volumes=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, show_role_names=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
         if affinity_group_id and not isinstance(affinity_group_id, str):
             raise TypeError("Expected argument 'affinity_group_id' to be a str")
         pulumi.set(__self__, "affinity_group_id", affinity_group_id)
@@ -157,6 +157,9 @@ class GetInstanceResult:
         if secondary_network_interfaces and not isinstance(secondary_network_interfaces, list):
             raise TypeError("Expected argument 'secondary_network_interfaces' to be a list")
         pulumi.set(__self__, "secondary_network_interfaces", secondary_network_interfaces)
+        if show_role_names and not isinstance(show_role_names, list):
+            raise TypeError("Expected argument 'show_role_names' to be a list")
+        pulumi.set(__self__, "show_role_names", show_role_names)
         if spot_price_limit and not isinstance(spot_price_limit, float):
             raise TypeError("Expected argument 'spot_price_limit' to be a float")
         pulumi.set(__self__, "spot_price_limit", spot_price_limit)
@@ -404,6 +407,11 @@ class GetInstanceResult:
         return pulumi.get(self, "secondary_network_interfaces")
 
     @_builtins.property
+    @pulumi.getter(name="showRoleNames")
+    def show_role_names(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "show_role_names")
+
+    @_builtins.property
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> _builtins.float:
         return pulumi.get(self, "spot_price_limit")
@@ -503,6 +511,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             renew_info=self.renew_info,
             role_names=self.role_names,
             secondary_network_interfaces=self.secondary_network_interfaces,
+            show_role_names=self.show_role_names,
             spot_price_limit=self.spot_price_limit,
             spot_strategy=self.spot_strategy,
             status=self.status,
@@ -569,6 +578,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         renew_info=pulumi.get(__ret__, 'renew_info'),
         role_names=pulumi.get(__ret__, 'role_names'),
         secondary_network_interfaces=pulumi.get(__ret__, 'secondary_network_interfaces'),
+        show_role_names=pulumi.get(__ret__, 'show_role_names'),
         spot_price_limit=pulumi.get(__ret__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__ret__, 'spot_strategy'),
         status=pulumi.get(__ret__, 'status'),
@@ -632,6 +642,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         renew_info=pulumi.get(__response__, 'renew_info'),
         role_names=pulumi.get(__response__, 'role_names'),
         secondary_network_interfaces=pulumi.get(__response__, 'secondary_network_interfaces'),
+        show_role_names=pulumi.get(__response__, 'show_role_names'),
         spot_price_limit=pulumi.get(__response__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__response__, 'spot_strategy'),
         status=pulumi.get(__response__, 'status'),

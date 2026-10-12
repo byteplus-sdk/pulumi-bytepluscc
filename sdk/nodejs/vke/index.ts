@@ -75,6 +75,16 @@ export const getNodePools: typeof import("./getNodePools").getNodePools = null a
 export const getNodePoolsOutput: typeof import("./getNodePools").getNodePoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getNodePools","getNodePoolsOutput"], () => require("./getNodePools"));
 
+export { GetNodepoolScalingPoliciesResult } from "./getNodepoolScalingPolicies";
+export const getNodepoolScalingPolicies: typeof import("./getNodepoolScalingPolicies").getNodepoolScalingPolicies = null as any;
+export const getNodepoolScalingPoliciesOutput: typeof import("./getNodepoolScalingPolicies").getNodepoolScalingPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getNodepoolScalingPolicies","getNodepoolScalingPoliciesOutput"], () => require("./getNodepoolScalingPolicies"));
+
+export { GetNodepoolScalingPolicyArgs, GetNodepoolScalingPolicyResult, GetNodepoolScalingPolicyOutputArgs } from "./getNodepoolScalingPolicy";
+export const getNodepoolScalingPolicy: typeof import("./getNodepoolScalingPolicy").getNodepoolScalingPolicy = null as any;
+export const getNodepoolScalingPolicyOutput: typeof import("./getNodepoolScalingPolicy").getNodepoolScalingPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getNodepoolScalingPolicy","getNodepoolScalingPolicyOutput"], () => require("./getNodepoolScalingPolicy"));
+
 export { GetNodesResult } from "./getNodes";
 export const getNodes: typeof import("./getNodes").getNodes = null as any;
 export const getNodesOutput: typeof import("./getNodes").getNodesOutput = null as any;
@@ -105,6 +115,11 @@ export type NodePool = import("./nodePool").NodePool;
 export const NodePool: typeof import("./nodePool").NodePool = null as any;
 utilities.lazyLoad(exports, ["NodePool"], () => require("./nodePool"));
 
+export { NodepoolScalingPolicyArgs, NodepoolScalingPolicyState } from "./nodepoolScalingPolicy";
+export type NodepoolScalingPolicy = import("./nodepoolScalingPolicy").NodepoolScalingPolicy;
+export const NodepoolScalingPolicy: typeof import("./nodepoolScalingPolicy").NodepoolScalingPolicy = null as any;
+utilities.lazyLoad(exports, ["NodepoolScalingPolicy"], () => require("./nodepoolScalingPolicy"));
+
 export { PermissionArgs, PermissionState } from "./permission";
 export type Permission = import("./permission").Permission;
 export const Permission: typeof import("./permission").Permission = null as any;
@@ -127,6 +142,8 @@ const _module = {
                 return new Node(name, <any>undefined, { urn })
             case "bytepluscc:vke/nodePool:NodePool":
                 return new NodePool(name, <any>undefined, { urn })
+            case "bytepluscc:vke/nodepoolScalingPolicy:NodepoolScalingPolicy":
+                return new NodepoolScalingPolicy(name, <any>undefined, { urn })
             case "bytepluscc:vke/permission:Permission":
                 return new Permission(name, <any>undefined, { urn })
             default:
@@ -140,4 +157,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vke/defaultNodePool", _modu
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/kubeconfig", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/node", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/nodePool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/nodepoolScalingPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/permission", _module)

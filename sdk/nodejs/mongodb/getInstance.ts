@@ -39,6 +39,18 @@ export interface GetInstanceResult {
      */
     readonly autoRenew: boolean;
     /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     */
+    readonly backupId: string;
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     */
+    readonly backupType: string;
+    /**
+     * Backup file list information for the instance.
+     */
+    readonly backups: outputs.mongodb.GetInstanceBackup[];
+    /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
     readonly chargeStatus: string;
@@ -171,6 +183,14 @@ export interface GetInstanceResult {
      */
     readonly reclaimTime: string;
     /**
+     * List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     */
+    readonly recoverableTimes: outputs.mongodb.GetInstanceRecoverableTime[];
+    /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     */
+    readonly restoreTime: string;
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      */
     readonly shardNumber: number;
@@ -178,6 +198,10 @@ export interface GetInstanceResult {
      * Shard information list
      */
     readonly shards: outputs.mongodb.GetInstanceShard[];
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     */
+    readonly srcDbInstanceId: string;
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */

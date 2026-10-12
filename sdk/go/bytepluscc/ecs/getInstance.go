@@ -72,6 +72,7 @@ type LookupInstanceResult struct {
 	RenewInfo                    GetInstanceRenewInfo                    `pulumi:"renewInfo"`
 	RoleNames                    []string                                `pulumi:"roleNames"`
 	SecondaryNetworkInterfaces   []GetInstanceSecondaryNetworkInterface  `pulumi:"secondaryNetworkInterfaces"`
+	ShowRoleNames                []string                                `pulumi:"showRoleNames"`
 	SpotPriceLimit               float64                                 `pulumi:"spotPriceLimit"`
 	SpotStrategy                 string                                  `pulumi:"spotStrategy"`
 	Status                       string                                  `pulumi:"status"`
@@ -291,6 +292,10 @@ func (o LookupInstanceResultOutput) SecondaryNetworkInterfaces() GetInstanceSeco
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceSecondaryNetworkInterface {
 		return v.SecondaryNetworkInterfaces
 	}).(GetInstanceSecondaryNetworkInterfaceArrayOutput)
+}
+
+func (o LookupInstanceResultOutput) ShowRoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []string { return v.ShowRoleNames }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupInstanceResultOutput) SpotPriceLimit() pulumi.Float64Output {

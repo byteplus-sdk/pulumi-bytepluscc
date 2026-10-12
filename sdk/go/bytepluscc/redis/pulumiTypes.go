@@ -421,6 +421,257 @@ func (o InstanceBackupArrayOutput) Index(i pulumi.IntInput) InstanceBackupOutput
 	}).(InstanceBackupOutput)
 }
 
+type InstanceBackupPlan struct {
+	// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+	Active *bool `pulumi:"active"`
+	// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+	BackupHour *int `pulumi:"backupHour"`
+	// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+	BackupType *string `pulumi:"backupType"`
+	// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	ExpectNextBackupTime *string `pulumi:"expectNextBackupTime"`
+	// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LastUpdateTime *string `pulumi:"lastUpdateTime"`
+	// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+	Periods []int `pulumi:"periods"`
+	// Backup file retention period, default is 7 days.
+	Ttl *int `pulumi:"ttl"`
+}
+
+// InstanceBackupPlanInput is an input type that accepts InstanceBackupPlanArgs and InstanceBackupPlanOutput values.
+// You can construct a concrete instance of `InstanceBackupPlanInput` via:
+//
+//	InstanceBackupPlanArgs{...}
+type InstanceBackupPlanInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPlanOutput() InstanceBackupPlanOutput
+	ToInstanceBackupPlanOutputWithContext(context.Context) InstanceBackupPlanOutput
+}
+
+type InstanceBackupPlanArgs struct {
+	// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+	Active pulumi.BoolPtrInput `pulumi:"active"`
+	// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+	BackupHour pulumi.IntPtrInput `pulumi:"backupHour"`
+	// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+	BackupType pulumi.StringPtrInput `pulumi:"backupType"`
+	// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	ExpectNextBackupTime pulumi.StringPtrInput `pulumi:"expectNextBackupTime"`
+	// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LastUpdateTime pulumi.StringPtrInput `pulumi:"lastUpdateTime"`
+	// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+	Periods pulumi.IntArrayInput `pulumi:"periods"`
+	// Backup file retention period, default is 7 days.
+	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
+}
+
+func (InstanceBackupPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPlan)(nil)).Elem()
+}
+
+func (i InstanceBackupPlanArgs) ToInstanceBackupPlanOutput() InstanceBackupPlanOutput {
+	return i.ToInstanceBackupPlanOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPlanArgs) ToInstanceBackupPlanOutputWithContext(ctx context.Context) InstanceBackupPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPlanOutput)
+}
+
+func (i InstanceBackupPlanArgs) ToInstanceBackupPlanPtrOutput() InstanceBackupPlanPtrOutput {
+	return i.ToInstanceBackupPlanPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPlanArgs) ToInstanceBackupPlanPtrOutputWithContext(ctx context.Context) InstanceBackupPlanPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPlanOutput).ToInstanceBackupPlanPtrOutputWithContext(ctx)
+}
+
+// InstanceBackupPlanPtrInput is an input type that accepts InstanceBackupPlanArgs, InstanceBackupPlanPtr and InstanceBackupPlanPtrOutput values.
+// You can construct a concrete instance of `InstanceBackupPlanPtrInput` via:
+//
+//	        InstanceBackupPlanArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceBackupPlanPtrInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPlanPtrOutput() InstanceBackupPlanPtrOutput
+	ToInstanceBackupPlanPtrOutputWithContext(context.Context) InstanceBackupPlanPtrOutput
+}
+
+type instanceBackupPlanPtrType InstanceBackupPlanArgs
+
+func InstanceBackupPlanPtr(v *InstanceBackupPlanArgs) InstanceBackupPlanPtrInput {
+	return (*instanceBackupPlanPtrType)(v)
+}
+
+func (*instanceBackupPlanPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPlan)(nil)).Elem()
+}
+
+func (i *instanceBackupPlanPtrType) ToInstanceBackupPlanPtrOutput() InstanceBackupPlanPtrOutput {
+	return i.ToInstanceBackupPlanPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceBackupPlanPtrType) ToInstanceBackupPlanPtrOutputWithContext(ctx context.Context) InstanceBackupPlanPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPlanPtrOutput)
+}
+
+type InstanceBackupPlanOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPlan)(nil)).Elem()
+}
+
+func (o InstanceBackupPlanOutput) ToInstanceBackupPlanOutput() InstanceBackupPlanOutput {
+	return o
+}
+
+func (o InstanceBackupPlanOutput) ToInstanceBackupPlanOutputWithContext(ctx context.Context) InstanceBackupPlanOutput {
+	return o
+}
+
+func (o InstanceBackupPlanOutput) ToInstanceBackupPlanPtrOutput() InstanceBackupPlanPtrOutput {
+	return o.ToInstanceBackupPlanPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceBackupPlanOutput) ToInstanceBackupPlanPtrOutputWithContext(ctx context.Context) InstanceBackupPlanPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceBackupPlan) *InstanceBackupPlan {
+		return &v
+	}).(InstanceBackupPlanPtrOutput)
+}
+
+// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+func (o InstanceBackupPlanOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+func (o InstanceBackupPlanOutput) BackupHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *int { return v.BackupHour }).(pulumi.IntPtrOutput)
+}
+
+// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+func (o InstanceBackupPlanOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *string { return v.BackupType }).(pulumi.StringPtrOutput)
+}
+
+// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupPlanOutput) ExpectNextBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *string { return v.ExpectNextBackupTime }).(pulumi.StringPtrOutput)
+}
+
+// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupPlanOutput) LastUpdateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *string { return v.LastUpdateTime }).(pulumi.StringPtrOutput)
+}
+
+// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+func (o InstanceBackupPlanOutput) Periods() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) []int { return v.Periods }).(pulumi.IntArrayOutput)
+}
+
+// Backup file retention period, default is 7 days.
+func (o InstanceBackupPlanOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPlan) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+type InstanceBackupPlanPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPlanPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPlan)(nil)).Elem()
+}
+
+func (o InstanceBackupPlanPtrOutput) ToInstanceBackupPlanPtrOutput() InstanceBackupPlanPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPlanPtrOutput) ToInstanceBackupPlanPtrOutputWithContext(ctx context.Context) InstanceBackupPlanPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPlanPtrOutput) Elem() InstanceBackupPlanOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) InstanceBackupPlan {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceBackupPlan
+		return ret
+	}).(InstanceBackupPlanOutput)
+}
+
+// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+func (o InstanceBackupPlanPtrOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Active
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+func (o InstanceBackupPlanPtrOutput) BackupHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BackupHour
+	}).(pulumi.IntPtrOutput)
+}
+
+// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+func (o InstanceBackupPlanPtrOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupPlanPtrOutput) ExpectNextBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExpectNextBackupTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupPlanPtrOutput) LastUpdateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastUpdateTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+func (o InstanceBackupPlanPtrOutput) Periods() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) []int {
+		if v == nil {
+			return nil
+		}
+		return v.Periods
+	}).(pulumi.IntArrayOutput)
+}
+
+// Backup file retention period, default is 7 days.
+func (o InstanceBackupPlanPtrOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPlan) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ttl
+	}).(pulumi.IntPtrOutput)
+}
+
 type InstanceBackupRestore struct {
 	// Backup ID, used to specify which backup to use when restoring from a backup set
 	BackupPointId *string `pulumi:"backupPointId"`
@@ -2022,6 +2273,112 @@ func (o GetInstanceBackupArrayOutput) Index(i pulumi.IntInput) GetInstanceBackup
 	}).(GetInstanceBackupOutput)
 }
 
+type GetInstanceBackupPlan struct {
+	// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+	Active bool `pulumi:"active"`
+	// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+	BackupHour int `pulumi:"backupHour"`
+	// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+	BackupType string `pulumi:"backupType"`
+	// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	ExpectNextBackupTime string `pulumi:"expectNextBackupTime"`
+	// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LastUpdateTime string `pulumi:"lastUpdateTime"`
+	// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+	Periods []int `pulumi:"periods"`
+	// Backup file retention period, default is 7 days.
+	Ttl int `pulumi:"ttl"`
+}
+
+// GetInstanceBackupPlanInput is an input type that accepts GetInstanceBackupPlanArgs and GetInstanceBackupPlanOutput values.
+// You can construct a concrete instance of `GetInstanceBackupPlanInput` via:
+//
+//	GetInstanceBackupPlanArgs{...}
+type GetInstanceBackupPlanInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupPlanOutput() GetInstanceBackupPlanOutput
+	ToGetInstanceBackupPlanOutputWithContext(context.Context) GetInstanceBackupPlanOutput
+}
+
+type GetInstanceBackupPlanArgs struct {
+	// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+	Active pulumi.BoolInput `pulumi:"active"`
+	// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+	BackupHour pulumi.IntInput `pulumi:"backupHour"`
+	// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	ExpectNextBackupTime pulumi.StringInput `pulumi:"expectNextBackupTime"`
+	// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LastUpdateTime pulumi.StringInput `pulumi:"lastUpdateTime"`
+	// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+	Periods pulumi.IntArrayInput `pulumi:"periods"`
+	// Backup file retention period, default is 7 days.
+	Ttl pulumi.IntInput `pulumi:"ttl"`
+}
+
+func (GetInstanceBackupPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPlan)(nil)).Elem()
+}
+
+func (i GetInstanceBackupPlanArgs) ToGetInstanceBackupPlanOutput() GetInstanceBackupPlanOutput {
+	return i.ToGetInstanceBackupPlanOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupPlanArgs) ToGetInstanceBackupPlanOutputWithContext(ctx context.Context) GetInstanceBackupPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupPlanOutput)
+}
+
+type GetInstanceBackupPlanOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPlan)(nil)).Elem()
+}
+
+func (o GetInstanceBackupPlanOutput) ToGetInstanceBackupPlanOutput() GetInstanceBackupPlanOutput {
+	return o
+}
+
+func (o GetInstanceBackupPlanOutput) ToGetInstanceBackupPlanOutputWithContext(ctx context.Context) GetInstanceBackupPlanOutput {
+	return o
+}
+
+// Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+func (o GetInstanceBackupPlanOutput) Active() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) bool { return v.Active }).(pulumi.BoolOutput)
+}
+
+// Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+func (o GetInstanceBackupPlanOutput) BackupHour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) int { return v.BackupHour }).(pulumi.IntOutput)
+}
+
+// Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+func (o GetInstanceBackupPlanOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceBackupPlanOutput) ExpectNextBackupTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) string { return v.ExpectNextBackupTime }).(pulumi.StringOutput)
+}
+
+// Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceBackupPlanOutput) LastUpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) string { return v.LastUpdateTime }).(pulumi.StringOutput)
+}
+
+// Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+func (o GetInstanceBackupPlanOutput) Periods() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) []int { return v.Periods }).(pulumi.IntArrayOutput)
+}
+
+// Backup file retention period, default is 7 days.
+func (o GetInstanceBackupPlanOutput) Ttl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPlan) int { return v.Ttl }).(pulumi.IntOutput)
+}
+
 type GetInstanceBackupRestore struct {
 	// Backup ID, used to specify which backup to use when restoring from a backup set
 	BackupPointId string `pulumi:"backupPointId"`
@@ -3001,6 +3358,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupInput)(nil)).Elem(), InstanceBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupArrayInput)(nil)).Elem(), InstanceBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPlanInput)(nil)).Elem(), InstanceBackupPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPlanPtrInput)(nil)).Elem(), InstanceBackupPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupRestoreInput)(nil)).Elem(), InstanceBackupRestoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupRestorePtrInput)(nil)).Elem(), InstanceBackupRestoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInput)(nil)).Elem(), InstanceCapacityArgs{})
@@ -3025,6 +3384,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupInput)(nil)).Elem(), GetInstanceBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupArrayInput)(nil)).Elem(), GetInstanceBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupPlanInput)(nil)).Elem(), GetInstanceBackupPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupRestoreInput)(nil)).Elem(), GetInstanceBackupRestoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInput)(nil)).Elem(), GetInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigureNodeInput)(nil)).Elem(), GetInstanceConfigureNodeArgs{})
@@ -3047,6 +3407,8 @@ func init() {
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceBackupOutput{})
 	pulumi.RegisterOutputType(InstanceBackupArrayOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPlanOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPlanPtrOutput{})
 	pulumi.RegisterOutputType(InstanceBackupRestoreOutput{})
 	pulumi.RegisterOutputType(InstanceBackupRestorePtrOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityOutput{})
@@ -3071,6 +3433,7 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceBackupOutput{})
 	pulumi.RegisterOutputType(GetInstanceBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupPlanOutput{})
 	pulumi.RegisterOutputType(GetInstanceBackupRestoreOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigureNodeOutput{})

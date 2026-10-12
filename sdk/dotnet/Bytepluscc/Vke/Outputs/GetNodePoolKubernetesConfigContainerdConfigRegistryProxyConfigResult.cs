@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult
     {
         /// <summary>
-        /// Proxy address.
+        /// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
         /// </summary>
         public readonly ImmutableArray<string> ProxyEndpoints;
         /// <summary>
-        /// Container image repository address.
+        /// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
         /// </summary>
         public readonly string Registry;
 

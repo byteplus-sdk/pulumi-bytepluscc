@@ -12,6 +12,7 @@ import com.byteplus.bytepluscc.rdspostgresql.inputs.InstanceTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -226,6 +227,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    @Import(name="tdeEnable")
+    private @Nullable Output<Boolean> tdeEnable;
+
+    /**
+     * @return Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> tdeEnable() {
+        return Optional.ofNullable(this.tdeEnable);
+    }
+
+    /**
      * Use this parameter to specify the private network for the instance
      * 
      */
@@ -256,6 +272,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.storageType = $.storageType;
         this.subnetId = $.subnetId;
         this.tags = $.tags;
+        this.tdeEnable = $.tdeEnable;
         this.vpcId = $.vpcId;
     }
 
@@ -597,6 +614,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tdeEnable Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeEnable(@Nullable Output<Boolean> tdeEnable) {
+            $.tdeEnable = tdeEnable;
+            return this;
+        }
+
+        /**
+         * @param tdeEnable Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeEnable(Boolean tdeEnable) {
+            return tdeEnable(Output.of(tdeEnable));
         }
 
         /**

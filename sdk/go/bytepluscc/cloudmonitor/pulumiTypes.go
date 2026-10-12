@@ -13,6 +13,1350 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlertTemplateNoData struct {
+	// Enable no data alert
+	Enable *bool `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount *int `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level *string `pulumi:"level"`
+}
+
+// AlertTemplateNoDataInput is an input type that accepts AlertTemplateNoDataArgs and AlertTemplateNoDataOutput values.
+// You can construct a concrete instance of `AlertTemplateNoDataInput` via:
+//
+//	AlertTemplateNoDataArgs{...}
+type AlertTemplateNoDataInput interface {
+	pulumi.Input
+
+	ToAlertTemplateNoDataOutput() AlertTemplateNoDataOutput
+	ToAlertTemplateNoDataOutputWithContext(context.Context) AlertTemplateNoDataOutput
+}
+
+type AlertTemplateNoDataArgs struct {
+	// Enable no data alert
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level pulumi.StringPtrInput `pulumi:"level"`
+}
+
+func (AlertTemplateNoDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateNoData)(nil)).Elem()
+}
+
+func (i AlertTemplateNoDataArgs) ToAlertTemplateNoDataOutput() AlertTemplateNoDataOutput {
+	return i.ToAlertTemplateNoDataOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateNoDataArgs) ToAlertTemplateNoDataOutputWithContext(ctx context.Context) AlertTemplateNoDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateNoDataOutput)
+}
+
+func (i AlertTemplateNoDataArgs) ToAlertTemplateNoDataPtrOutput() AlertTemplateNoDataPtrOutput {
+	return i.ToAlertTemplateNoDataPtrOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateNoDataArgs) ToAlertTemplateNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateNoDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateNoDataOutput).ToAlertTemplateNoDataPtrOutputWithContext(ctx)
+}
+
+// AlertTemplateNoDataPtrInput is an input type that accepts AlertTemplateNoDataArgs, AlertTemplateNoDataPtr and AlertTemplateNoDataPtrOutput values.
+// You can construct a concrete instance of `AlertTemplateNoDataPtrInput` via:
+//
+//	        AlertTemplateNoDataArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlertTemplateNoDataPtrInput interface {
+	pulumi.Input
+
+	ToAlertTemplateNoDataPtrOutput() AlertTemplateNoDataPtrOutput
+	ToAlertTemplateNoDataPtrOutputWithContext(context.Context) AlertTemplateNoDataPtrOutput
+}
+
+type alertTemplateNoDataPtrType AlertTemplateNoDataArgs
+
+func AlertTemplateNoDataPtr(v *AlertTemplateNoDataArgs) AlertTemplateNoDataPtrInput {
+	return (*alertTemplateNoDataPtrType)(v)
+}
+
+func (*alertTemplateNoDataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateNoData)(nil)).Elem()
+}
+
+func (i *alertTemplateNoDataPtrType) ToAlertTemplateNoDataPtrOutput() AlertTemplateNoDataPtrOutput {
+	return i.ToAlertTemplateNoDataPtrOutputWithContext(context.Background())
+}
+
+func (i *alertTemplateNoDataPtrType) ToAlertTemplateNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateNoDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateNoDataPtrOutput)
+}
+
+type AlertTemplateNoDataOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateNoDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateNoData)(nil)).Elem()
+}
+
+func (o AlertTemplateNoDataOutput) ToAlertTemplateNoDataOutput() AlertTemplateNoDataOutput {
+	return o
+}
+
+func (o AlertTemplateNoDataOutput) ToAlertTemplateNoDataOutputWithContext(ctx context.Context) AlertTemplateNoDataOutput {
+	return o
+}
+
+func (o AlertTemplateNoDataOutput) ToAlertTemplateNoDataPtrOutput() AlertTemplateNoDataPtrOutput {
+	return o.ToAlertTemplateNoDataPtrOutputWithContext(context.Background())
+}
+
+func (o AlertTemplateNoDataOutput) ToAlertTemplateNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateNoDataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertTemplateNoData) *AlertTemplateNoData {
+		return &v
+	}).(AlertTemplateNoDataPtrOutput)
+}
+
+// Enable no data alert
+func (o AlertTemplateNoDataOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlertTemplateNoData) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o AlertTemplateNoDataOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateNoData) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
+}
+
+// Alert severity when triggered by no data
+func (o AlertTemplateNoDataOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateNoData) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateNoDataPtrOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateNoDataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateNoData)(nil)).Elem()
+}
+
+func (o AlertTemplateNoDataPtrOutput) ToAlertTemplateNoDataPtrOutput() AlertTemplateNoDataPtrOutput {
+	return o
+}
+
+func (o AlertTemplateNoDataPtrOutput) ToAlertTemplateNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateNoDataPtrOutput {
+	return o
+}
+
+func (o AlertTemplateNoDataPtrOutput) Elem() AlertTemplateNoDataOutput {
+	return o.ApplyT(func(v *AlertTemplateNoData) AlertTemplateNoData {
+		if v != nil {
+			return *v
+		}
+		var ret AlertTemplateNoData
+		return ret
+	}).(AlertTemplateNoDataOutput)
+}
+
+// Enable no data alert
+func (o AlertTemplateNoDataPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateNoData) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o AlertTemplateNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateNoData) *int {
+		if v == nil {
+			return nil
+		}
+		return v.EvaluationCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Alert severity when triggered by no data
+func (o AlertTemplateNoDataPtrOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateNoData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Level
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateObjectGroup struct {
+	// Alert notification method list
+	AlertMethods []string `pulumi:"alertMethods"`
+	// Contact Group ID List
+	ContactGroupIds []string `pulumi:"contactGroupIds"`
+	// Effective end time
+	EffectEndAt *string `pulumi:"effectEndAt"`
+	// Effective start time
+	EffectStartAt *string `pulumi:"effectStartAt"`
+	// Notification policy ID
+	NotificationId *string `pulumi:"notificationId"`
+	// Notification template list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	NotifyTemplates []AlertTemplateObjectGroupNotifyTemplate `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId *string `pulumi:"objectGroupId"`
+	// Object group name, returned by the service side
+	ObjectGroupName *string `pulumi:"objectGroupName"`
+	// Webhook address
+	Webhook *string `pulumi:"webhook"`
+	// Webhook ID list
+	WebhookIds []string `pulumi:"webhookIds"`
+}
+
+// AlertTemplateObjectGroupInput is an input type that accepts AlertTemplateObjectGroupArgs and AlertTemplateObjectGroupOutput values.
+// You can construct a concrete instance of `AlertTemplateObjectGroupInput` via:
+//
+//	AlertTemplateObjectGroupArgs{...}
+type AlertTemplateObjectGroupInput interface {
+	pulumi.Input
+
+	ToAlertTemplateObjectGroupOutput() AlertTemplateObjectGroupOutput
+	ToAlertTemplateObjectGroupOutputWithContext(context.Context) AlertTemplateObjectGroupOutput
+}
+
+type AlertTemplateObjectGroupArgs struct {
+	// Alert notification method list
+	AlertMethods pulumi.StringArrayInput `pulumi:"alertMethods"`
+	// Contact Group ID List
+	ContactGroupIds pulumi.StringArrayInput `pulumi:"contactGroupIds"`
+	// Effective end time
+	EffectEndAt pulumi.StringPtrInput `pulumi:"effectEndAt"`
+	// Effective start time
+	EffectStartAt pulumi.StringPtrInput `pulumi:"effectStartAt"`
+	// Notification policy ID
+	NotificationId pulumi.StringPtrInput `pulumi:"notificationId"`
+	// Notification template list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	NotifyTemplates AlertTemplateObjectGroupNotifyTemplateArrayInput `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId pulumi.StringPtrInput `pulumi:"objectGroupId"`
+	// Object group name, returned by the service side
+	ObjectGroupName pulumi.StringPtrInput `pulumi:"objectGroupName"`
+	// Webhook address
+	Webhook pulumi.StringPtrInput `pulumi:"webhook"`
+	// Webhook ID list
+	WebhookIds pulumi.StringArrayInput `pulumi:"webhookIds"`
+}
+
+func (AlertTemplateObjectGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (i AlertTemplateObjectGroupArgs) ToAlertTemplateObjectGroupOutput() AlertTemplateObjectGroupOutput {
+	return i.ToAlertTemplateObjectGroupOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateObjectGroupArgs) ToAlertTemplateObjectGroupOutputWithContext(ctx context.Context) AlertTemplateObjectGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateObjectGroupOutput)
+}
+
+// AlertTemplateObjectGroupArrayInput is an input type that accepts AlertTemplateObjectGroupArray and AlertTemplateObjectGroupArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateObjectGroupArrayInput` via:
+//
+//	AlertTemplateObjectGroupArray{ AlertTemplateObjectGroupArgs{...} }
+type AlertTemplateObjectGroupArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateObjectGroupArrayOutput() AlertTemplateObjectGroupArrayOutput
+	ToAlertTemplateObjectGroupArrayOutputWithContext(context.Context) AlertTemplateObjectGroupArrayOutput
+}
+
+type AlertTemplateObjectGroupArray []AlertTemplateObjectGroupInput
+
+func (AlertTemplateObjectGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (i AlertTemplateObjectGroupArray) ToAlertTemplateObjectGroupArrayOutput() AlertTemplateObjectGroupArrayOutput {
+	return i.ToAlertTemplateObjectGroupArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateObjectGroupArray) ToAlertTemplateObjectGroupArrayOutputWithContext(ctx context.Context) AlertTemplateObjectGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateObjectGroupArrayOutput)
+}
+
+type AlertTemplateObjectGroupOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateObjectGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (o AlertTemplateObjectGroupOutput) ToAlertTemplateObjectGroupOutput() AlertTemplateObjectGroupOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupOutput) ToAlertTemplateObjectGroupOutputWithContext(ctx context.Context) AlertTemplateObjectGroupOutput {
+	return o
+}
+
+// Alert notification method list
+func (o AlertTemplateObjectGroupOutput) AlertMethods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) []string { return v.AlertMethods }).(pulumi.StringArrayOutput)
+}
+
+// Contact Group ID List
+func (o AlertTemplateObjectGroupOutput) ContactGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) []string { return v.ContactGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Effective end time
+func (o AlertTemplateObjectGroupOutput) EffectEndAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.EffectEndAt }).(pulumi.StringPtrOutput)
+}
+
+// Effective start time
+func (o AlertTemplateObjectGroupOutput) EffectStartAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.EffectStartAt }).(pulumi.StringPtrOutput)
+}
+
+// Notification policy ID
+func (o AlertTemplateObjectGroupOutput) NotificationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.NotificationId }).(pulumi.StringPtrOutput)
+}
+
+// Notification template list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o AlertTemplateObjectGroupOutput) NotifyTemplates() AlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) []AlertTemplateObjectGroupNotifyTemplate { return v.NotifyTemplates }).(AlertTemplateObjectGroupNotifyTemplateArrayOutput)
+}
+
+// Object group ID
+func (o AlertTemplateObjectGroupOutput) ObjectGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.ObjectGroupId }).(pulumi.StringPtrOutput)
+}
+
+// Object group name, returned by the service side
+func (o AlertTemplateObjectGroupOutput) ObjectGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.ObjectGroupName }).(pulumi.StringPtrOutput)
+}
+
+// Webhook address
+func (o AlertTemplateObjectGroupOutput) Webhook() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) *string { return v.Webhook }).(pulumi.StringPtrOutput)
+}
+
+// Webhook ID list
+func (o AlertTemplateObjectGroupOutput) WebhookIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroup) []string { return v.WebhookIds }).(pulumi.StringArrayOutput)
+}
+
+type AlertTemplateObjectGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateObjectGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (o AlertTemplateObjectGroupArrayOutput) ToAlertTemplateObjectGroupArrayOutput() AlertTemplateObjectGroupArrayOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupArrayOutput) ToAlertTemplateObjectGroupArrayOutputWithContext(ctx context.Context) AlertTemplateObjectGroupArrayOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupArrayOutput) Index(i pulumi.IntInput) AlertTemplateObjectGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateObjectGroup {
+		return vs[0].([]AlertTemplateObjectGroup)[vs[1].(int)]
+	}).(AlertTemplateObjectGroupOutput)
+}
+
+type AlertTemplateObjectGroupNotifyTemplate struct {
+	// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+	Channel *string `pulumi:"channel"`
+	// Notification template ID
+	NotifyTemplateId *string `pulumi:"notifyTemplateId"`
+}
+
+// AlertTemplateObjectGroupNotifyTemplateInput is an input type that accepts AlertTemplateObjectGroupNotifyTemplateArgs and AlertTemplateObjectGroupNotifyTemplateOutput values.
+// You can construct a concrete instance of `AlertTemplateObjectGroupNotifyTemplateInput` via:
+//
+//	AlertTemplateObjectGroupNotifyTemplateArgs{...}
+type AlertTemplateObjectGroupNotifyTemplateInput interface {
+	pulumi.Input
+
+	ToAlertTemplateObjectGroupNotifyTemplateOutput() AlertTemplateObjectGroupNotifyTemplateOutput
+	ToAlertTemplateObjectGroupNotifyTemplateOutputWithContext(context.Context) AlertTemplateObjectGroupNotifyTemplateOutput
+}
+
+type AlertTemplateObjectGroupNotifyTemplateArgs struct {
+	// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+	Channel pulumi.StringPtrInput `pulumi:"channel"`
+	// Notification template ID
+	NotifyTemplateId pulumi.StringPtrInput `pulumi:"notifyTemplateId"`
+}
+
+func (AlertTemplateObjectGroupNotifyTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (i AlertTemplateObjectGroupNotifyTemplateArgs) ToAlertTemplateObjectGroupNotifyTemplateOutput() AlertTemplateObjectGroupNotifyTemplateOutput {
+	return i.ToAlertTemplateObjectGroupNotifyTemplateOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateObjectGroupNotifyTemplateArgs) ToAlertTemplateObjectGroupNotifyTemplateOutputWithContext(ctx context.Context) AlertTemplateObjectGroupNotifyTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateObjectGroupNotifyTemplateOutput)
+}
+
+// AlertTemplateObjectGroupNotifyTemplateArrayInput is an input type that accepts AlertTemplateObjectGroupNotifyTemplateArray and AlertTemplateObjectGroupNotifyTemplateArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateObjectGroupNotifyTemplateArrayInput` via:
+//
+//	AlertTemplateObjectGroupNotifyTemplateArray{ AlertTemplateObjectGroupNotifyTemplateArgs{...} }
+type AlertTemplateObjectGroupNotifyTemplateArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateObjectGroupNotifyTemplateArrayOutput() AlertTemplateObjectGroupNotifyTemplateArrayOutput
+	ToAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(context.Context) AlertTemplateObjectGroupNotifyTemplateArrayOutput
+}
+
+type AlertTemplateObjectGroupNotifyTemplateArray []AlertTemplateObjectGroupNotifyTemplateInput
+
+func (AlertTemplateObjectGroupNotifyTemplateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (i AlertTemplateObjectGroupNotifyTemplateArray) ToAlertTemplateObjectGroupNotifyTemplateArrayOutput() AlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return i.ToAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateObjectGroupNotifyTemplateArray) ToAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(ctx context.Context) AlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateObjectGroupNotifyTemplateArrayOutput)
+}
+
+type AlertTemplateObjectGroupNotifyTemplateOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateObjectGroupNotifyTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (o AlertTemplateObjectGroupNotifyTemplateOutput) ToAlertTemplateObjectGroupNotifyTemplateOutput() AlertTemplateObjectGroupNotifyTemplateOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupNotifyTemplateOutput) ToAlertTemplateObjectGroupNotifyTemplateOutputWithContext(ctx context.Context) AlertTemplateObjectGroupNotifyTemplateOutput {
+	return o
+}
+
+// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+func (o AlertTemplateObjectGroupNotifyTemplateOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroupNotifyTemplate) *string { return v.Channel }).(pulumi.StringPtrOutput)
+}
+
+// Notification template ID
+func (o AlertTemplateObjectGroupNotifyTemplateOutput) NotifyTemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateObjectGroupNotifyTemplate) *string { return v.NotifyTemplateId }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateObjectGroupNotifyTemplateArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateObjectGroupNotifyTemplateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (o AlertTemplateObjectGroupNotifyTemplateArrayOutput) ToAlertTemplateObjectGroupNotifyTemplateArrayOutput() AlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupNotifyTemplateArrayOutput) ToAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(ctx context.Context) AlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o
+}
+
+func (o AlertTemplateObjectGroupNotifyTemplateArrayOutput) Index(i pulumi.IntInput) AlertTemplateObjectGroupNotifyTemplateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateObjectGroupNotifyTemplate {
+		return vs[0].([]AlertTemplateObjectGroupNotifyTemplate)[vs[1].(int)]
+	}).(AlertTemplateObjectGroupNotifyTemplateOutput)
+}
+
+type AlertTemplateRecoveryNotify struct {
+	// Enable recovery notification
+	Enable *bool `pulumi:"enable"`
+}
+
+// AlertTemplateRecoveryNotifyInput is an input type that accepts AlertTemplateRecoveryNotifyArgs and AlertTemplateRecoveryNotifyOutput values.
+// You can construct a concrete instance of `AlertTemplateRecoveryNotifyInput` via:
+//
+//	AlertTemplateRecoveryNotifyArgs{...}
+type AlertTemplateRecoveryNotifyInput interface {
+	pulumi.Input
+
+	ToAlertTemplateRecoveryNotifyOutput() AlertTemplateRecoveryNotifyOutput
+	ToAlertTemplateRecoveryNotifyOutputWithContext(context.Context) AlertTemplateRecoveryNotifyOutput
+}
+
+type AlertTemplateRecoveryNotifyArgs struct {
+	// Enable recovery notification
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+}
+
+func (AlertTemplateRecoveryNotifyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (i AlertTemplateRecoveryNotifyArgs) ToAlertTemplateRecoveryNotifyOutput() AlertTemplateRecoveryNotifyOutput {
+	return i.ToAlertTemplateRecoveryNotifyOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateRecoveryNotifyArgs) ToAlertTemplateRecoveryNotifyOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateRecoveryNotifyOutput)
+}
+
+func (i AlertTemplateRecoveryNotifyArgs) ToAlertTemplateRecoveryNotifyPtrOutput() AlertTemplateRecoveryNotifyPtrOutput {
+	return i.ToAlertTemplateRecoveryNotifyPtrOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateRecoveryNotifyArgs) ToAlertTemplateRecoveryNotifyPtrOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateRecoveryNotifyOutput).ToAlertTemplateRecoveryNotifyPtrOutputWithContext(ctx)
+}
+
+// AlertTemplateRecoveryNotifyPtrInput is an input type that accepts AlertTemplateRecoveryNotifyArgs, AlertTemplateRecoveryNotifyPtr and AlertTemplateRecoveryNotifyPtrOutput values.
+// You can construct a concrete instance of `AlertTemplateRecoveryNotifyPtrInput` via:
+//
+//	        AlertTemplateRecoveryNotifyArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlertTemplateRecoveryNotifyPtrInput interface {
+	pulumi.Input
+
+	ToAlertTemplateRecoveryNotifyPtrOutput() AlertTemplateRecoveryNotifyPtrOutput
+	ToAlertTemplateRecoveryNotifyPtrOutputWithContext(context.Context) AlertTemplateRecoveryNotifyPtrOutput
+}
+
+type alertTemplateRecoveryNotifyPtrType AlertTemplateRecoveryNotifyArgs
+
+func AlertTemplateRecoveryNotifyPtr(v *AlertTemplateRecoveryNotifyArgs) AlertTemplateRecoveryNotifyPtrInput {
+	return (*alertTemplateRecoveryNotifyPtrType)(v)
+}
+
+func (*alertTemplateRecoveryNotifyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (i *alertTemplateRecoveryNotifyPtrType) ToAlertTemplateRecoveryNotifyPtrOutput() AlertTemplateRecoveryNotifyPtrOutput {
+	return i.ToAlertTemplateRecoveryNotifyPtrOutputWithContext(context.Background())
+}
+
+func (i *alertTemplateRecoveryNotifyPtrType) ToAlertTemplateRecoveryNotifyPtrOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateRecoveryNotifyPtrOutput)
+}
+
+type AlertTemplateRecoveryNotifyOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateRecoveryNotifyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (o AlertTemplateRecoveryNotifyOutput) ToAlertTemplateRecoveryNotifyOutput() AlertTemplateRecoveryNotifyOutput {
+	return o
+}
+
+func (o AlertTemplateRecoveryNotifyOutput) ToAlertTemplateRecoveryNotifyOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyOutput {
+	return o
+}
+
+func (o AlertTemplateRecoveryNotifyOutput) ToAlertTemplateRecoveryNotifyPtrOutput() AlertTemplateRecoveryNotifyPtrOutput {
+	return o.ToAlertTemplateRecoveryNotifyPtrOutputWithContext(context.Background())
+}
+
+func (o AlertTemplateRecoveryNotifyOutput) ToAlertTemplateRecoveryNotifyPtrOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertTemplateRecoveryNotify) *AlertTemplateRecoveryNotify {
+		return &v
+	}).(AlertTemplateRecoveryNotifyPtrOutput)
+}
+
+// Enable recovery notification
+func (o AlertTemplateRecoveryNotifyOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlertTemplateRecoveryNotify) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+type AlertTemplateRecoveryNotifyPtrOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateRecoveryNotifyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (o AlertTemplateRecoveryNotifyPtrOutput) ToAlertTemplateRecoveryNotifyPtrOutput() AlertTemplateRecoveryNotifyPtrOutput {
+	return o
+}
+
+func (o AlertTemplateRecoveryNotifyPtrOutput) ToAlertTemplateRecoveryNotifyPtrOutputWithContext(ctx context.Context) AlertTemplateRecoveryNotifyPtrOutput {
+	return o
+}
+
+func (o AlertTemplateRecoveryNotifyPtrOutput) Elem() AlertTemplateRecoveryNotifyOutput {
+	return o.ApplyT(func(v *AlertTemplateRecoveryNotify) AlertTemplateRecoveryNotify {
+		if v != nil {
+			return *v
+		}
+		var ret AlertTemplateRecoveryNotify
+		return ret
+	}).(AlertTemplateRecoveryNotifyOutput)
+}
+
+// Enable recovery notification
+func (o AlertTemplateRecoveryNotifyPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateRecoveryNotify) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+type AlertTemplateTemplateRule struct {
+	// List of alert rules generated by this rule, returned by the service side
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AppliedRules []AlertTemplateTemplateRuleAppliedRule `pulumi:"appliedRules"`
+	// Evaluation interval (seconds), returned by the service side
+	CheckInterval *int `pulumi:"checkInterval"`
+	// Multi-condition combination method
+	ConditionOperator *string `pulumi:"conditionOperator"`
+	// Evaluation Count
+	EvaluationCount *int `pulumi:"evaluationCount"`
+	// Evaluation interval (seconds)
+	EvaluationInterval *int `pulumi:"evaluationInterval"`
+	// Tiered alert condition list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	LevelConditions []AlertTemplateTemplateRuleLevelCondition `pulumi:"levelConditions"`
+	// Enable multi-condition mode
+	MultipleConditions *bool `pulumi:"multipleConditions"`
+	// Rule name
+	Name *string `pulumi:"name"`
+	// Metric namespace
+	Namespace *string `pulumi:"namespace"`
+	// No Data Alert Configuration
+	NoData *AlertTemplateTemplateRuleNoData `pulumi:"noData"`
+	// Metric sub-namespace
+	SubNamespace *string `pulumi:"subNamespace"`
+}
+
+// AlertTemplateTemplateRuleInput is an input type that accepts AlertTemplateTemplateRuleArgs and AlertTemplateTemplateRuleOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleInput` via:
+//
+//	AlertTemplateTemplateRuleArgs{...}
+type AlertTemplateTemplateRuleInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleOutput() AlertTemplateTemplateRuleOutput
+	ToAlertTemplateTemplateRuleOutputWithContext(context.Context) AlertTemplateTemplateRuleOutput
+}
+
+type AlertTemplateTemplateRuleArgs struct {
+	// List of alert rules generated by this rule, returned by the service side
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AppliedRules AlertTemplateTemplateRuleAppliedRuleArrayInput `pulumi:"appliedRules"`
+	// Evaluation interval (seconds), returned by the service side
+	CheckInterval pulumi.IntPtrInput `pulumi:"checkInterval"`
+	// Multi-condition combination method
+	ConditionOperator pulumi.StringPtrInput `pulumi:"conditionOperator"`
+	// Evaluation Count
+	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
+	// Evaluation interval (seconds)
+	EvaluationInterval pulumi.IntPtrInput `pulumi:"evaluationInterval"`
+	// Tiered alert condition list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	LevelConditions AlertTemplateTemplateRuleLevelConditionArrayInput `pulumi:"levelConditions"`
+	// Enable multi-condition mode
+	MultipleConditions pulumi.BoolPtrInput `pulumi:"multipleConditions"`
+	// Rule name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Metric namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// No Data Alert Configuration
+	NoData AlertTemplateTemplateRuleNoDataPtrInput `pulumi:"noData"`
+	// Metric sub-namespace
+	SubNamespace pulumi.StringPtrInput `pulumi:"subNamespace"`
+}
+
+func (AlertTemplateTemplateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleArgs) ToAlertTemplateTemplateRuleOutput() AlertTemplateTemplateRuleOutput {
+	return i.ToAlertTemplateTemplateRuleOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleArgs) ToAlertTemplateTemplateRuleOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleOutput)
+}
+
+// AlertTemplateTemplateRuleArrayInput is an input type that accepts AlertTemplateTemplateRuleArray and AlertTemplateTemplateRuleArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleArrayInput` via:
+//
+//	AlertTemplateTemplateRuleArray{ AlertTemplateTemplateRuleArgs{...} }
+type AlertTemplateTemplateRuleArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleArrayOutput() AlertTemplateTemplateRuleArrayOutput
+	ToAlertTemplateTemplateRuleArrayOutputWithContext(context.Context) AlertTemplateTemplateRuleArrayOutput
+}
+
+type AlertTemplateTemplateRuleArray []AlertTemplateTemplateRuleInput
+
+func (AlertTemplateTemplateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleArray) ToAlertTemplateTemplateRuleArrayOutput() AlertTemplateTemplateRuleArrayOutput {
+	return i.ToAlertTemplateTemplateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleArray) ToAlertTemplateTemplateRuleArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleArrayOutput)
+}
+
+type AlertTemplateTemplateRuleOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleOutput) ToAlertTemplateTemplateRuleOutput() AlertTemplateTemplateRuleOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleOutput) ToAlertTemplateTemplateRuleOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleOutput {
+	return o
+}
+
+// List of alert rules generated by this rule, returned by the service side
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o AlertTemplateTemplateRuleOutput) AppliedRules() AlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) []AlertTemplateTemplateRuleAppliedRule { return v.AppliedRules }).(AlertTemplateTemplateRuleAppliedRuleArrayOutput)
+}
+
+// Evaluation interval (seconds), returned by the service side
+func (o AlertTemplateTemplateRuleOutput) CheckInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *int { return v.CheckInterval }).(pulumi.IntPtrOutput)
+}
+
+// Multi-condition combination method
+func (o AlertTemplateTemplateRuleOutput) ConditionOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *string { return v.ConditionOperator }).(pulumi.StringPtrOutput)
+}
+
+// Evaluation Count
+func (o AlertTemplateTemplateRuleOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
+}
+
+// Evaluation interval (seconds)
+func (o AlertTemplateTemplateRuleOutput) EvaluationInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *int { return v.EvaluationInterval }).(pulumi.IntPtrOutput)
+}
+
+// Tiered alert condition list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o AlertTemplateTemplateRuleOutput) LevelConditions() AlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) []AlertTemplateTemplateRuleLevelCondition { return v.LevelConditions }).(AlertTemplateTemplateRuleLevelConditionArrayOutput)
+}
+
+// Enable multi-condition mode
+func (o AlertTemplateTemplateRuleOutput) MultipleConditions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *bool { return v.MultipleConditions }).(pulumi.BoolPtrOutput)
+}
+
+// Rule name
+func (o AlertTemplateTemplateRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Metric namespace
+func (o AlertTemplateTemplateRuleOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// No Data Alert Configuration
+func (o AlertTemplateTemplateRuleOutput) NoData() AlertTemplateTemplateRuleNoDataPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *AlertTemplateTemplateRuleNoData { return v.NoData }).(AlertTemplateTemplateRuleNoDataPtrOutput)
+}
+
+// Metric sub-namespace
+func (o AlertTemplateTemplateRuleOutput) SubNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRule) *string { return v.SubNamespace }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateTemplateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleArrayOutput) ToAlertTemplateTemplateRuleArrayOutput() AlertTemplateTemplateRuleArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleArrayOutput) ToAlertTemplateTemplateRuleArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleArrayOutput) Index(i pulumi.IntInput) AlertTemplateTemplateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateTemplateRule {
+		return vs[0].([]AlertTemplateTemplateRule)[vs[1].(int)]
+	}).(AlertTemplateTemplateRuleOutput)
+}
+
+type AlertTemplateTemplateRuleAppliedRule struct {
+	// ID of the issued alert rule
+	Id *string `pulumi:"id"`
+	// Name of the issued alert rule
+	Name *string `pulumi:"name"`
+	// Associated object group ID
+	ObjectGroupId *string `pulumi:"objectGroupId"`
+	// Associated object ID
+	ObjectId *string `pulumi:"objectId"`
+}
+
+// AlertTemplateTemplateRuleAppliedRuleInput is an input type that accepts AlertTemplateTemplateRuleAppliedRuleArgs and AlertTemplateTemplateRuleAppliedRuleOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleAppliedRuleInput` via:
+//
+//	AlertTemplateTemplateRuleAppliedRuleArgs{...}
+type AlertTemplateTemplateRuleAppliedRuleInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleAppliedRuleOutput() AlertTemplateTemplateRuleAppliedRuleOutput
+	ToAlertTemplateTemplateRuleAppliedRuleOutputWithContext(context.Context) AlertTemplateTemplateRuleAppliedRuleOutput
+}
+
+type AlertTemplateTemplateRuleAppliedRuleArgs struct {
+	// ID of the issued alert rule
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Name of the issued alert rule
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Associated object group ID
+	ObjectGroupId pulumi.StringPtrInput `pulumi:"objectGroupId"`
+	// Associated object ID
+	ObjectId pulumi.StringPtrInput `pulumi:"objectId"`
+}
+
+func (AlertTemplateTemplateRuleAppliedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleAppliedRuleArgs) ToAlertTemplateTemplateRuleAppliedRuleOutput() AlertTemplateTemplateRuleAppliedRuleOutput {
+	return i.ToAlertTemplateTemplateRuleAppliedRuleOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleAppliedRuleArgs) ToAlertTemplateTemplateRuleAppliedRuleOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleAppliedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleAppliedRuleOutput)
+}
+
+// AlertTemplateTemplateRuleAppliedRuleArrayInput is an input type that accepts AlertTemplateTemplateRuleAppliedRuleArray and AlertTemplateTemplateRuleAppliedRuleArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleAppliedRuleArrayInput` via:
+//
+//	AlertTemplateTemplateRuleAppliedRuleArray{ AlertTemplateTemplateRuleAppliedRuleArgs{...} }
+type AlertTemplateTemplateRuleAppliedRuleArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleAppliedRuleArrayOutput() AlertTemplateTemplateRuleAppliedRuleArrayOutput
+	ToAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(context.Context) AlertTemplateTemplateRuleAppliedRuleArrayOutput
+}
+
+type AlertTemplateTemplateRuleAppliedRuleArray []AlertTemplateTemplateRuleAppliedRuleInput
+
+func (AlertTemplateTemplateRuleAppliedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleAppliedRuleArray) ToAlertTemplateTemplateRuleAppliedRuleArrayOutput() AlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return i.ToAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleAppliedRuleArray) ToAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleAppliedRuleArrayOutput)
+}
+
+type AlertTemplateTemplateRuleAppliedRuleOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleAppliedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) ToAlertTemplateTemplateRuleAppliedRuleOutput() AlertTemplateTemplateRuleAppliedRuleOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) ToAlertTemplateTemplateRuleAppliedRuleOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleAppliedRuleOutput {
+	return o
+}
+
+// ID of the issued alert rule
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleAppliedRule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Name of the issued alert rule
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleAppliedRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Associated object group ID
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) ObjectGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleAppliedRule) *string { return v.ObjectGroupId }).(pulumi.StringPtrOutput)
+}
+
+// Associated object ID
+func (o AlertTemplateTemplateRuleAppliedRuleOutput) ObjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleAppliedRule) *string { return v.ObjectId }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateTemplateRuleAppliedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleAppliedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleAppliedRuleArrayOutput) ToAlertTemplateTemplateRuleAppliedRuleArrayOutput() AlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleAppliedRuleArrayOutput) ToAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleAppliedRuleArrayOutput) Index(i pulumi.IntInput) AlertTemplateTemplateRuleAppliedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateTemplateRuleAppliedRule {
+		return vs[0].([]AlertTemplateTemplateRuleAppliedRule)[vs[1].(int)]
+	}).(AlertTemplateTemplateRuleAppliedRuleOutput)
+}
+
+type AlertTemplateTemplateRuleLevelCondition struct {
+	// Condition list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Conditions []AlertTemplateTemplateRuleLevelConditionCondition `pulumi:"conditions"`
+	// Alert severity, options: notice/warning/critical
+	Level *string `pulumi:"level"`
+}
+
+// AlertTemplateTemplateRuleLevelConditionInput is an input type that accepts AlertTemplateTemplateRuleLevelConditionArgs and AlertTemplateTemplateRuleLevelConditionOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleLevelConditionInput` via:
+//
+//	AlertTemplateTemplateRuleLevelConditionArgs{...}
+type AlertTemplateTemplateRuleLevelConditionInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleLevelConditionOutput() AlertTemplateTemplateRuleLevelConditionOutput
+	ToAlertTemplateTemplateRuleLevelConditionOutputWithContext(context.Context) AlertTemplateTemplateRuleLevelConditionOutput
+}
+
+type AlertTemplateTemplateRuleLevelConditionArgs struct {
+	// Condition list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Conditions AlertTemplateTemplateRuleLevelConditionConditionArrayInput `pulumi:"conditions"`
+	// Alert severity, options: notice/warning/critical
+	Level pulumi.StringPtrInput `pulumi:"level"`
+}
+
+func (AlertTemplateTemplateRuleLevelConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionArgs) ToAlertTemplateTemplateRuleLevelConditionOutput() AlertTemplateTemplateRuleLevelConditionOutput {
+	return i.ToAlertTemplateTemplateRuleLevelConditionOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionArgs) ToAlertTemplateTemplateRuleLevelConditionOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleLevelConditionOutput)
+}
+
+// AlertTemplateTemplateRuleLevelConditionArrayInput is an input type that accepts AlertTemplateTemplateRuleLevelConditionArray and AlertTemplateTemplateRuleLevelConditionArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleLevelConditionArrayInput` via:
+//
+//	AlertTemplateTemplateRuleLevelConditionArray{ AlertTemplateTemplateRuleLevelConditionArgs{...} }
+type AlertTemplateTemplateRuleLevelConditionArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleLevelConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionArrayOutput
+	ToAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(context.Context) AlertTemplateTemplateRuleLevelConditionArrayOutput
+}
+
+type AlertTemplateTemplateRuleLevelConditionArray []AlertTemplateTemplateRuleLevelConditionInput
+
+func (AlertTemplateTemplateRuleLevelConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionArray) ToAlertTemplateTemplateRuleLevelConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return i.ToAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionArray) ToAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleLevelConditionArrayOutput)
+}
+
+type AlertTemplateTemplateRuleLevelConditionOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleLevelConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionOutput) ToAlertTemplateTemplateRuleLevelConditionOutput() AlertTemplateTemplateRuleLevelConditionOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionOutput) ToAlertTemplateTemplateRuleLevelConditionOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionOutput {
+	return o
+}
+
+// Condition list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o AlertTemplateTemplateRuleLevelConditionOutput) Conditions() AlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelCondition) []AlertTemplateTemplateRuleLevelConditionCondition {
+		return v.Conditions
+	}).(AlertTemplateTemplateRuleLevelConditionConditionArrayOutput)
+}
+
+// Alert severity, options: notice/warning/critical
+func (o AlertTemplateTemplateRuleLevelConditionOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelCondition) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateTemplateRuleLevelConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleLevelConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionArrayOutput) ToAlertTemplateTemplateRuleLevelConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionArrayOutput) ToAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionArrayOutput) Index(i pulumi.IntInput) AlertTemplateTemplateRuleLevelConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateTemplateRuleLevelCondition {
+		return vs[0].([]AlertTemplateTemplateRuleLevelCondition)[vs[1].(int)]
+	}).(AlertTemplateTemplateRuleLevelConditionOutput)
+}
+
+type AlertTemplateTemplateRuleLevelConditionCondition struct {
+	// Comparison operators, such as >, >=, <, <=, !=, etc.
+	ComparisonOperator *string `pulumi:"comparisonOperator"`
+	// Evaluation window (seconds)
+	EvaluationWindow *int `pulumi:"evaluationWindow"`
+	// Metric name
+	MetricName *string `pulumi:"metricName"`
+	// Metric unit
+	MetricUnit *string `pulumi:"metricUnit"`
+	// Statistic method
+	Statistics *string `pulumi:"statistics"`
+	// Trigger threshold
+	Threshold *string `pulumi:"threshold"`
+}
+
+// AlertTemplateTemplateRuleLevelConditionConditionInput is an input type that accepts AlertTemplateTemplateRuleLevelConditionConditionArgs and AlertTemplateTemplateRuleLevelConditionConditionOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleLevelConditionConditionInput` via:
+//
+//	AlertTemplateTemplateRuleLevelConditionConditionArgs{...}
+type AlertTemplateTemplateRuleLevelConditionConditionInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleLevelConditionConditionOutput() AlertTemplateTemplateRuleLevelConditionConditionOutput
+	ToAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(context.Context) AlertTemplateTemplateRuleLevelConditionConditionOutput
+}
+
+type AlertTemplateTemplateRuleLevelConditionConditionArgs struct {
+	// Comparison operators, such as >, >=, <, <=, !=, etc.
+	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
+	// Evaluation window (seconds)
+	EvaluationWindow pulumi.IntPtrInput `pulumi:"evaluationWindow"`
+	// Metric name
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
+	// Metric unit
+	MetricUnit pulumi.StringPtrInput `pulumi:"metricUnit"`
+	// Statistic method
+	Statistics pulumi.StringPtrInput `pulumi:"statistics"`
+	// Trigger threshold
+	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
+}
+
+func (AlertTemplateTemplateRuleLevelConditionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionConditionArgs) ToAlertTemplateTemplateRuleLevelConditionConditionOutput() AlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return i.ToAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionConditionArgs) ToAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleLevelConditionConditionOutput)
+}
+
+// AlertTemplateTemplateRuleLevelConditionConditionArrayInput is an input type that accepts AlertTemplateTemplateRuleLevelConditionConditionArray and AlertTemplateTemplateRuleLevelConditionConditionArrayOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleLevelConditionConditionArrayInput` via:
+//
+//	AlertTemplateTemplateRuleLevelConditionConditionArray{ AlertTemplateTemplateRuleLevelConditionConditionArgs{...} }
+type AlertTemplateTemplateRuleLevelConditionConditionArrayInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionConditionArrayOutput
+	ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(context.Context) AlertTemplateTemplateRuleLevelConditionConditionArrayOutput
+}
+
+type AlertTemplateTemplateRuleLevelConditionConditionArray []AlertTemplateTemplateRuleLevelConditionConditionInput
+
+func (AlertTemplateTemplateRuleLevelConditionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionConditionArray) ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return i.ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleLevelConditionConditionArray) ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleLevelConditionConditionArrayOutput)
+}
+
+type AlertTemplateTemplateRuleLevelConditionConditionOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleLevelConditionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) ToAlertTemplateTemplateRuleLevelConditionConditionOutput() AlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) ToAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return o
+}
+
+// Comparison operators, such as >, >=, <, <=, !=, etc.
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
+}
+
+// Evaluation window (seconds)
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) EvaluationWindow() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *int { return v.EvaluationWindow }).(pulumi.IntPtrOutput)
+}
+
+// Metric name
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
+}
+
+// Metric unit
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) MetricUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *string { return v.MetricUnit }).(pulumi.StringPtrOutput)
+}
+
+// Statistic method
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) Statistics() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *string { return v.Statistics }).(pulumi.StringPtrOutput)
+}
+
+// Trigger threshold
+func (o AlertTemplateTemplateRuleLevelConditionConditionOutput) Threshold() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleLevelConditionCondition) *string { return v.Threshold }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateTemplateRuleLevelConditionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() AlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ToAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleLevelConditionConditionArrayOutput) Index(i pulumi.IntInput) AlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTemplateTemplateRuleLevelConditionCondition {
+		return vs[0].([]AlertTemplateTemplateRuleLevelConditionCondition)[vs[1].(int)]
+	}).(AlertTemplateTemplateRuleLevelConditionConditionOutput)
+}
+
+type AlertTemplateTemplateRuleNoData struct {
+	// Enable no data alert
+	Enable *bool `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount *int `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level *string `pulumi:"level"`
+}
+
+// AlertTemplateTemplateRuleNoDataInput is an input type that accepts AlertTemplateTemplateRuleNoDataArgs and AlertTemplateTemplateRuleNoDataOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleNoDataInput` via:
+//
+//	AlertTemplateTemplateRuleNoDataArgs{...}
+type AlertTemplateTemplateRuleNoDataInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleNoDataOutput() AlertTemplateTemplateRuleNoDataOutput
+	ToAlertTemplateTemplateRuleNoDataOutputWithContext(context.Context) AlertTemplateTemplateRuleNoDataOutput
+}
+
+type AlertTemplateTemplateRuleNoDataArgs struct {
+	// Enable no data alert
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level pulumi.StringPtrInput `pulumi:"level"`
+}
+
+func (AlertTemplateTemplateRuleNoDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (i AlertTemplateTemplateRuleNoDataArgs) ToAlertTemplateTemplateRuleNoDataOutput() AlertTemplateTemplateRuleNoDataOutput {
+	return i.ToAlertTemplateTemplateRuleNoDataOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleNoDataArgs) ToAlertTemplateTemplateRuleNoDataOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleNoDataOutput)
+}
+
+func (i AlertTemplateTemplateRuleNoDataArgs) ToAlertTemplateTemplateRuleNoDataPtrOutput() AlertTemplateTemplateRuleNoDataPtrOutput {
+	return i.ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(context.Background())
+}
+
+func (i AlertTemplateTemplateRuleNoDataArgs) ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleNoDataOutput).ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(ctx)
+}
+
+// AlertTemplateTemplateRuleNoDataPtrInput is an input type that accepts AlertTemplateTemplateRuleNoDataArgs, AlertTemplateTemplateRuleNoDataPtr and AlertTemplateTemplateRuleNoDataPtrOutput values.
+// You can construct a concrete instance of `AlertTemplateTemplateRuleNoDataPtrInput` via:
+//
+//	        AlertTemplateTemplateRuleNoDataArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlertTemplateTemplateRuleNoDataPtrInput interface {
+	pulumi.Input
+
+	ToAlertTemplateTemplateRuleNoDataPtrOutput() AlertTemplateTemplateRuleNoDataPtrOutput
+	ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(context.Context) AlertTemplateTemplateRuleNoDataPtrOutput
+}
+
+type alertTemplateTemplateRuleNoDataPtrType AlertTemplateTemplateRuleNoDataArgs
+
+func AlertTemplateTemplateRuleNoDataPtr(v *AlertTemplateTemplateRuleNoDataArgs) AlertTemplateTemplateRuleNoDataPtrInput {
+	return (*alertTemplateTemplateRuleNoDataPtrType)(v)
+}
+
+func (*alertTemplateTemplateRuleNoDataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (i *alertTemplateTemplateRuleNoDataPtrType) ToAlertTemplateTemplateRuleNoDataPtrOutput() AlertTemplateTemplateRuleNoDataPtrOutput {
+	return i.ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(context.Background())
+}
+
+func (i *alertTemplateTemplateRuleNoDataPtrType) ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTemplateTemplateRuleNoDataPtrOutput)
+}
+
+type AlertTemplateTemplateRuleNoDataOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleNoDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleNoDataOutput) ToAlertTemplateTemplateRuleNoDataOutput() AlertTemplateTemplateRuleNoDataOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleNoDataOutput) ToAlertTemplateTemplateRuleNoDataOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleNoDataOutput) ToAlertTemplateTemplateRuleNoDataPtrOutput() AlertTemplateTemplateRuleNoDataPtrOutput {
+	return o.ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(context.Background())
+}
+
+func (o AlertTemplateTemplateRuleNoDataOutput) ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertTemplateTemplateRuleNoData) *AlertTemplateTemplateRuleNoData {
+		return &v
+	}).(AlertTemplateTemplateRuleNoDataPtrOutput)
+}
+
+// Enable no data alert
+func (o AlertTemplateTemplateRuleNoDataOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleNoData) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o AlertTemplateTemplateRuleNoDataOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleNoData) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
+}
+
+// Alert severity when triggered by no data
+func (o AlertTemplateTemplateRuleNoDataOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertTemplateTemplateRuleNoData) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
+type AlertTemplateTemplateRuleNoDataPtrOutput struct{ *pulumi.OutputState }
+
+func (AlertTemplateTemplateRuleNoDataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) ToAlertTemplateTemplateRuleNoDataPtrOutput() AlertTemplateTemplateRuleNoDataPtrOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) ToAlertTemplateTemplateRuleNoDataPtrOutputWithContext(ctx context.Context) AlertTemplateTemplateRuleNoDataPtrOutput {
+	return o
+}
+
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) Elem() AlertTemplateTemplateRuleNoDataOutput {
+	return o.ApplyT(func(v *AlertTemplateTemplateRuleNoData) AlertTemplateTemplateRuleNoData {
+		if v != nil {
+			return *v
+		}
+		var ret AlertTemplateTemplateRuleNoData
+		return ret
+	}).(AlertTemplateTemplateRuleNoDataOutput)
+}
+
+// Enable no data alert
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateTemplateRuleNoData) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateTemplateRuleNoData) *int {
+		if v == nil {
+			return nil
+		}
+		return v.EvaluationCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Alert severity when triggered by no data
+func (o AlertTemplateTemplateRuleNoDataPtrOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertTemplateTemplateRuleNoData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Level
+	}).(pulumi.StringPtrOutput)
+}
+
 type ContactGroupContact struct {
 	// Contact ID
 	ContactId *string `pulumi:"contactId"`
@@ -108,6 +1452,1195 @@ func (o ContactGroupContactArrayOutput) Index(i pulumi.IntInput) ContactGroupCon
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContactGroupContact {
 		return vs[0].([]ContactGroupContact)[vs[1].(int)]
 	}).(ContactGroupContactOutput)
+}
+
+type ObjectGroupObject struct {
+	// Dimension filter condition of the monitoring object
+	DimensionConditions *ObjectGroupObjectDimensionConditions `pulumi:"dimensionConditions"`
+	// Static dimension information of the monitoring object
+	Dimensions *ObjectGroupObjectDimensions `pulumi:"dimensions"`
+	// Unique identifier of the monitoring object in the object group, generated by the server
+	Id *string `pulumi:"id"`
+	// Namespace of the monitoring metric
+	Namespace *string `pulumi:"namespace"`
+	// Region of the monitoring object
+	Region *string `pulumi:"region"`
+	// Object access method, such as `Dimension` / `DimensionCondition`
+	Type *string `pulumi:"type"`
+}
+
+// ObjectGroupObjectInput is an input type that accepts ObjectGroupObjectArgs and ObjectGroupObjectOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectInput` via:
+//
+//	ObjectGroupObjectArgs{...}
+type ObjectGroupObjectInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectOutput() ObjectGroupObjectOutput
+	ToObjectGroupObjectOutputWithContext(context.Context) ObjectGroupObjectOutput
+}
+
+type ObjectGroupObjectArgs struct {
+	// Dimension filter condition of the monitoring object
+	DimensionConditions ObjectGroupObjectDimensionConditionsPtrInput `pulumi:"dimensionConditions"`
+	// Static dimension information of the monitoring object
+	Dimensions ObjectGroupObjectDimensionsPtrInput `pulumi:"dimensions"`
+	// Unique identifier of the monitoring object in the object group, generated by the server
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Namespace of the monitoring metric
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Region of the monitoring object
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// Object access method, such as `Dimension` / `DimensionCondition`
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ObjectGroupObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObject)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectArgs) ToObjectGroupObjectOutput() ObjectGroupObjectOutput {
+	return i.ToObjectGroupObjectOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectArgs) ToObjectGroupObjectOutputWithContext(ctx context.Context) ObjectGroupObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectOutput)
+}
+
+// ObjectGroupObjectArrayInput is an input type that accepts ObjectGroupObjectArray and ObjectGroupObjectArrayOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectArrayInput` via:
+//
+//	ObjectGroupObjectArray{ ObjectGroupObjectArgs{...} }
+type ObjectGroupObjectArrayInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectArrayOutput() ObjectGroupObjectArrayOutput
+	ToObjectGroupObjectArrayOutputWithContext(context.Context) ObjectGroupObjectArrayOutput
+}
+
+type ObjectGroupObjectArray []ObjectGroupObjectInput
+
+func (ObjectGroupObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObject)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectArray) ToObjectGroupObjectArrayOutput() ObjectGroupObjectArrayOutput {
+	return i.ToObjectGroupObjectArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectArray) ToObjectGroupObjectArrayOutputWithContext(ctx context.Context) ObjectGroupObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectArrayOutput)
+}
+
+type ObjectGroupObjectOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObject)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectOutput) ToObjectGroupObjectOutput() ObjectGroupObjectOutput {
+	return o
+}
+
+func (o ObjectGroupObjectOutput) ToObjectGroupObjectOutputWithContext(ctx context.Context) ObjectGroupObjectOutput {
+	return o
+}
+
+// Dimension filter condition of the monitoring object
+func (o ObjectGroupObjectOutput) DimensionConditions() ObjectGroupObjectDimensionConditionsPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *ObjectGroupObjectDimensionConditions { return v.DimensionConditions }).(ObjectGroupObjectDimensionConditionsPtrOutput)
+}
+
+// Static dimension information of the monitoring object
+func (o ObjectGroupObjectOutput) Dimensions() ObjectGroupObjectDimensionsPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *ObjectGroupObjectDimensions { return v.Dimensions }).(ObjectGroupObjectDimensionsPtrOutput)
+}
+
+// Unique identifier of the monitoring object in the object group, generated by the server
+func (o ObjectGroupObjectOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Namespace of the monitoring metric
+func (o ObjectGroupObjectOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Region of the monitoring object
+func (o ObjectGroupObjectOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// Object access method, such as `Dimension` / `DimensionCondition`
+func (o ObjectGroupObjectOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObject) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ObjectGroupObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObject)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectArrayOutput) ToObjectGroupObjectArrayOutput() ObjectGroupObjectArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectArrayOutput) ToObjectGroupObjectArrayOutputWithContext(ctx context.Context) ObjectGroupObjectArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectArrayOutput) Index(i pulumi.IntInput) ObjectGroupObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectGroupObject {
+		return vs[0].([]ObjectGroupObject)[vs[1].(int)]
+	}).(ObjectGroupObjectOutput)
+}
+
+type ObjectGroupObjectDimensionConditions struct {
+	// Meta dimension condition
+	MetaCondition *ObjectGroupObjectDimensionConditionsMetaCondition `pulumi:"metaCondition"`
+	// Project dimension condition
+	ProjectCondition *ObjectGroupObjectDimensionConditionsProjectCondition `pulumi:"projectCondition"`
+	// Tag dimension condition
+	TagCondition *ObjectGroupObjectDimensionConditionsTagCondition `pulumi:"tagCondition"`
+	// Dimension filter type
+	Type *string `pulumi:"type"`
+}
+
+// ObjectGroupObjectDimensionConditionsInput is an input type that accepts ObjectGroupObjectDimensionConditionsArgs and ObjectGroupObjectDimensionConditionsOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsArgs{...}
+type ObjectGroupObjectDimensionConditionsInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsOutput() ObjectGroupObjectDimensionConditionsOutput
+	ToObjectGroupObjectDimensionConditionsOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsOutput
+}
+
+type ObjectGroupObjectDimensionConditionsArgs struct {
+	// Meta dimension condition
+	MetaCondition ObjectGroupObjectDimensionConditionsMetaConditionPtrInput `pulumi:"metaCondition"`
+	// Project dimension condition
+	ProjectCondition ObjectGroupObjectDimensionConditionsProjectConditionPtrInput `pulumi:"projectCondition"`
+	// Tag dimension condition
+	TagCondition ObjectGroupObjectDimensionConditionsTagConditionPtrInput `pulumi:"tagCondition"`
+	// Dimension filter type
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ObjectGroupObjectDimensionConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsArgs) ToObjectGroupObjectDimensionConditionsOutput() ObjectGroupObjectDimensionConditionsOutput {
+	return i.ToObjectGroupObjectDimensionConditionsOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsArgs) ToObjectGroupObjectDimensionConditionsOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsOutput)
+}
+
+func (i ObjectGroupObjectDimensionConditionsArgs) ToObjectGroupObjectDimensionConditionsPtrOutput() ObjectGroupObjectDimensionConditionsPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsArgs) ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsOutput).ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(ctx)
+}
+
+// ObjectGroupObjectDimensionConditionsPtrInput is an input type that accepts ObjectGroupObjectDimensionConditionsArgs, ObjectGroupObjectDimensionConditionsPtr and ObjectGroupObjectDimensionConditionsPtrOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsPtrInput` via:
+//
+//	        ObjectGroupObjectDimensionConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectGroupObjectDimensionConditionsPtrInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsPtrOutput() ObjectGroupObjectDimensionConditionsPtrOutput
+	ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsPtrOutput
+}
+
+type objectGroupObjectDimensionConditionsPtrType ObjectGroupObjectDimensionConditionsArgs
+
+func ObjectGroupObjectDimensionConditionsPtr(v *ObjectGroupObjectDimensionConditionsArgs) ObjectGroupObjectDimensionConditionsPtrInput {
+	return (*objectGroupObjectDimensionConditionsPtrType)(v)
+}
+
+func (*objectGroupObjectDimensionConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (i *objectGroupObjectDimensionConditionsPtrType) ToObjectGroupObjectDimensionConditionsPtrOutput() ObjectGroupObjectDimensionConditionsPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *objectGroupObjectDimensionConditionsPtrType) ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsOutput) ToObjectGroupObjectDimensionConditionsOutput() ObjectGroupObjectDimensionConditionsOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsOutput) ToObjectGroupObjectDimensionConditionsOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsOutput) ToObjectGroupObjectDimensionConditionsPtrOutput() ObjectGroupObjectDimensionConditionsPtrOutput {
+	return o.ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectGroupObjectDimensionConditionsOutput) ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditions {
+		return &v
+	}).(ObjectGroupObjectDimensionConditionsPtrOutput)
+}
+
+// Meta dimension condition
+func (o ObjectGroupObjectDimensionConditionsOutput) MetaCondition() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsMetaCondition {
+		return v.MetaCondition
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput)
+}
+
+// Project dimension condition
+func (o ObjectGroupObjectDimensionConditionsOutput) ProjectCondition() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsProjectCondition {
+		return v.ProjectCondition
+	}).(ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput)
+}
+
+// Tag dimension condition
+func (o ObjectGroupObjectDimensionConditionsOutput) TagCondition() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsTagCondition {
+		return v.TagCondition
+	}).(ObjectGroupObjectDimensionConditionsTagConditionPtrOutput)
+}
+
+// Dimension filter type
+func (o ObjectGroupObjectDimensionConditionsOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditions) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) ToObjectGroupObjectDimensionConditionsPtrOutput() ObjectGroupObjectDimensionConditionsPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) ToObjectGroupObjectDimensionConditionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) Elem() ObjectGroupObjectDimensionConditionsOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditions) ObjectGroupObjectDimensionConditions {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectGroupObjectDimensionConditions
+		return ret
+	}).(ObjectGroupObjectDimensionConditionsOutput)
+}
+
+// Meta dimension condition
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) MetaCondition() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsMetaCondition {
+		if v == nil {
+			return nil
+		}
+		return v.MetaCondition
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput)
+}
+
+// Project dimension condition
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) ProjectCondition() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsProjectCondition {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectCondition
+	}).(ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput)
+}
+
+// Tag dimension condition
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) TagCondition() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditions) *ObjectGroupObjectDimensionConditionsTagCondition {
+		if v == nil {
+			return nil
+		}
+		return v.TagCondition
+	}).(ObjectGroupObjectDimensionConditionsTagConditionPtrOutput)
+}
+
+// Dimension filter type
+func (o ObjectGroupObjectDimensionConditionsPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditions) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaCondition struct {
+	// Whether to match all dimensions
+	AllDimensions *bool `pulumi:"allDimensions"`
+	// Condition combination method, such as `And` / `Or`
+	Condition *string `pulumi:"condition"`
+	// Meta match item list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Metas []ObjectGroupObjectDimensionConditionsMetaConditionMeta `pulumi:"metas"`
+}
+
+// ObjectGroupObjectDimensionConditionsMetaConditionInput is an input type that accepts ObjectGroupObjectDimensionConditionsMetaConditionArgs and ObjectGroupObjectDimensionConditionsMetaConditionOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsMetaConditionInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsMetaConditionArgs{...}
+type ObjectGroupObjectDimensionConditionsMetaConditionInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsMetaConditionOutput() ObjectGroupObjectDimensionConditionsMetaConditionOutput
+	ToObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsMetaConditionOutput
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionArgs struct {
+	// Whether to match all dimensions
+	AllDimensions pulumi.BoolPtrInput `pulumi:"allDimensions"`
+	// Condition combination method, such as `And` / `Or`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// Meta match item list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Metas ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput `pulumi:"metas"`
+}
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionArgs) ToObjectGroupObjectDimensionConditionsMetaConditionOutput() ObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return i.ToObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionArgs) ToObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsMetaConditionOutput)
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionArgs) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutput() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionArgs) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsMetaConditionOutput).ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(ctx)
+}
+
+// ObjectGroupObjectDimensionConditionsMetaConditionPtrInput is an input type that accepts ObjectGroupObjectDimensionConditionsMetaConditionArgs, ObjectGroupObjectDimensionConditionsMetaConditionPtr and ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsMetaConditionPtrInput` via:
+//
+//	        ObjectGroupObjectDimensionConditionsMetaConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectGroupObjectDimensionConditionsMetaConditionPtrInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutput() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput
+	ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput
+}
+
+type objectGroupObjectDimensionConditionsMetaConditionPtrType ObjectGroupObjectDimensionConditionsMetaConditionArgs
+
+func ObjectGroupObjectDimensionConditionsMetaConditionPtr(v *ObjectGroupObjectDimensionConditionsMetaConditionArgs) ObjectGroupObjectDimensionConditionsMetaConditionPtrInput {
+	return (*objectGroupObjectDimensionConditionsMetaConditionPtrType)(v)
+}
+
+func (*objectGroupObjectDimensionConditionsMetaConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (i *objectGroupObjectDimensionConditionsMetaConditionPtrType) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutput() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *objectGroupObjectDimensionConditionsMetaConditionPtrType) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) ToObjectGroupObjectDimensionConditionsMetaConditionOutput() ObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) ToObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutput() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o.ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectGroupObjectDimensionConditionsMetaCondition) *ObjectGroupObjectDimensionConditionsMetaCondition {
+		return &v
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput)
+}
+
+// Whether to match all dimensions
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) AllDimensions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaCondition) *bool { return v.AllDimensions }).(pulumi.BoolPtrOutput)
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// Meta match item list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupObjectDimensionConditionsMetaConditionOutput) Metas() ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaCondition) []ObjectGroupObjectDimensionConditionsMetaConditionMeta {
+		return v.Metas
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutput() ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) ToObjectGroupObjectDimensionConditionsMetaConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) Elem() ObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsMetaCondition) ObjectGroupObjectDimensionConditionsMetaCondition {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectGroupObjectDimensionConditionsMetaCondition
+		return ret
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionOutput)
+}
+
+// Whether to match all dimensions
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) AllDimensions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsMetaCondition) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AllDimensions
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsMetaCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(pulumi.StringPtrOutput)
+}
+
+// Meta match item list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput) Metas() ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsMetaCondition) []ObjectGroupObjectDimensionConditionsMetaConditionMeta {
+		if v == nil {
+			return nil
+		}
+		return v.Metas
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionMeta struct {
+	// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+	Comparator *string `pulumi:"comparator"`
+	// Meta key
+	Key *string `pulumi:"key"`
+	// Meta value list
+	Values []string `pulumi:"values"`
+}
+
+// ObjectGroupObjectDimensionConditionsMetaConditionMetaInput is an input type that accepts ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs and ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsMetaConditionMetaInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{...}
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput
+	ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs struct {
+	// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
+	// Meta key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Meta value list
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return i.ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput)
+}
+
+// ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput is an input type that accepts ObjectGroupObjectDimensionConditionsMetaConditionMetaArray and ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsMetaConditionMetaArray{ ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{...} }
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput
+	ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaArray []ObjectGroupObjectDimensionConditionsMetaConditionMetaInput
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return i.ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ToObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return o
+}
+
+// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaConditionMeta) *string { return v.Comparator }).(pulumi.StringPtrOutput)
+}
+
+// Meta key
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaConditionMeta) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Meta value list
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsMetaConditionMeta) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ToObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) Index(i pulumi.IntInput) ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectGroupObjectDimensionConditionsMetaConditionMeta {
+		return vs[0].([]ObjectGroupObjectDimensionConditionsMetaConditionMeta)[vs[1].(int)]
+	}).(ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsProjectCondition struct {
+	// List of matched project names
+	Projects []string `pulumi:"projects"`
+}
+
+// ObjectGroupObjectDimensionConditionsProjectConditionInput is an input type that accepts ObjectGroupObjectDimensionConditionsProjectConditionArgs and ObjectGroupObjectDimensionConditionsProjectConditionOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsProjectConditionInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsProjectConditionArgs{...}
+type ObjectGroupObjectDimensionConditionsProjectConditionInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsProjectConditionOutput() ObjectGroupObjectDimensionConditionsProjectConditionOutput
+	ToObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsProjectConditionOutput
+}
+
+type ObjectGroupObjectDimensionConditionsProjectConditionArgs struct {
+	// List of matched project names
+	Projects pulumi.StringArrayInput `pulumi:"projects"`
+}
+
+func (ObjectGroupObjectDimensionConditionsProjectConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsProjectConditionArgs) ToObjectGroupObjectDimensionConditionsProjectConditionOutput() ObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return i.ToObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsProjectConditionArgs) ToObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsProjectConditionOutput)
+}
+
+func (i ObjectGroupObjectDimensionConditionsProjectConditionArgs) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutput() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsProjectConditionArgs) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsProjectConditionOutput).ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(ctx)
+}
+
+// ObjectGroupObjectDimensionConditionsProjectConditionPtrInput is an input type that accepts ObjectGroupObjectDimensionConditionsProjectConditionArgs, ObjectGroupObjectDimensionConditionsProjectConditionPtr and ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsProjectConditionPtrInput` via:
+//
+//	        ObjectGroupObjectDimensionConditionsProjectConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectGroupObjectDimensionConditionsProjectConditionPtrInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutput() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput
+	ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput
+}
+
+type objectGroupObjectDimensionConditionsProjectConditionPtrType ObjectGroupObjectDimensionConditionsProjectConditionArgs
+
+func ObjectGroupObjectDimensionConditionsProjectConditionPtr(v *ObjectGroupObjectDimensionConditionsProjectConditionArgs) ObjectGroupObjectDimensionConditionsProjectConditionPtrInput {
+	return (*objectGroupObjectDimensionConditionsProjectConditionPtrType)(v)
+}
+
+func (*objectGroupObjectDimensionConditionsProjectConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (i *objectGroupObjectDimensionConditionsProjectConditionPtrType) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutput() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *objectGroupObjectDimensionConditionsProjectConditionPtrType) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsProjectConditionOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsProjectConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionOutput) ToObjectGroupObjectDimensionConditionsProjectConditionOutput() ObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionOutput) ToObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionOutput) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutput() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o.ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionOutput) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectGroupObjectDimensionConditionsProjectCondition) *ObjectGroupObjectDimensionConditionsProjectCondition {
+		return &v
+	}).(ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput)
+}
+
+// List of matched project names
+func (o ObjectGroupObjectDimensionConditionsProjectConditionOutput) Projects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsProjectCondition) []string { return v.Projects }).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutput() ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput) ToObjectGroupObjectDimensionConditionsProjectConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput) Elem() ObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsProjectCondition) ObjectGroupObjectDimensionConditionsProjectCondition {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectGroupObjectDimensionConditionsProjectCondition
+		return ret
+	}).(ObjectGroupObjectDimensionConditionsProjectConditionOutput)
+}
+
+// List of matched project names
+func (o ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput) Projects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsProjectCondition) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Projects
+	}).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagCondition struct {
+	// Condition combination method, such as `And` / `Or`
+	Condition *string `pulumi:"condition"`
+	// Tag match item list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Tags []ObjectGroupObjectDimensionConditionsTagConditionTag `pulumi:"tags"`
+}
+
+// ObjectGroupObjectDimensionConditionsTagConditionInput is an input type that accepts ObjectGroupObjectDimensionConditionsTagConditionArgs and ObjectGroupObjectDimensionConditionsTagConditionOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsTagConditionInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsTagConditionArgs{...}
+type ObjectGroupObjectDimensionConditionsTagConditionInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsTagConditionOutput() ObjectGroupObjectDimensionConditionsTagConditionOutput
+	ToObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsTagConditionOutput
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionArgs struct {
+	// Condition combination method, such as `And` / `Or`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// Tag match item list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Tags ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput `pulumi:"tags"`
+}
+
+func (ObjectGroupObjectDimensionConditionsTagConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionArgs) ToObjectGroupObjectDimensionConditionsTagConditionOutput() ObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return i.ToObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionArgs) ToObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsTagConditionOutput)
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionArgs) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutput() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionArgs) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsTagConditionOutput).ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(ctx)
+}
+
+// ObjectGroupObjectDimensionConditionsTagConditionPtrInput is an input type that accepts ObjectGroupObjectDimensionConditionsTagConditionArgs, ObjectGroupObjectDimensionConditionsTagConditionPtr and ObjectGroupObjectDimensionConditionsTagConditionPtrOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsTagConditionPtrInput` via:
+//
+//	        ObjectGroupObjectDimensionConditionsTagConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectGroupObjectDimensionConditionsTagConditionPtrInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsTagConditionPtrOutput() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput
+	ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsTagConditionPtrOutput
+}
+
+type objectGroupObjectDimensionConditionsTagConditionPtrType ObjectGroupObjectDimensionConditionsTagConditionArgs
+
+func ObjectGroupObjectDimensionConditionsTagConditionPtr(v *ObjectGroupObjectDimensionConditionsTagConditionArgs) ObjectGroupObjectDimensionConditionsTagConditionPtrInput {
+	return (*objectGroupObjectDimensionConditionsTagConditionPtrType)(v)
+}
+
+func (*objectGroupObjectDimensionConditionsTagConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (i *objectGroupObjectDimensionConditionsTagConditionPtrType) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutput() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return i.ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *objectGroupObjectDimensionConditionsTagConditionPtrType) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsTagConditionPtrOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsTagConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) ToObjectGroupObjectDimensionConditionsTagConditionOutput() ObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) ToObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutput() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o.ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectGroupObjectDimensionConditionsTagCondition) *ObjectGroupObjectDimensionConditionsTagCondition {
+		return &v
+	}).(ObjectGroupObjectDimensionConditionsTagConditionPtrOutput)
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsTagCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// Tag match item list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupObjectDimensionConditionsTagConditionOutput) Tags() ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsTagCondition) []ObjectGroupObjectDimensionConditionsTagConditionTag {
+		return v.Tags
+	}).(ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutput() ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) ToObjectGroupObjectDimensionConditionsTagConditionPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) Elem() ObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsTagCondition) ObjectGroupObjectDimensionConditionsTagCondition {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectGroupObjectDimensionConditionsTagCondition
+		return ret
+	}).(ObjectGroupObjectDimensionConditionsTagConditionOutput)
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsTagCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(pulumi.StringPtrOutput)
+}
+
+// Tag match item list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupObjectDimensionConditionsTagConditionPtrOutput) Tags() ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensionConditionsTagCondition) []ObjectGroupObjectDimensionConditionsTagConditionTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionTag struct {
+	// Comparator
+	Comparator *string `pulumi:"comparator"`
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value list
+	Values []string `pulumi:"values"`
+}
+
+// ObjectGroupObjectDimensionConditionsTagConditionTagInput is an input type that accepts ObjectGroupObjectDimensionConditionsTagConditionTagArgs and ObjectGroupObjectDimensionConditionsTagConditionTagOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsTagConditionTagInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsTagConditionTagArgs{...}
+type ObjectGroupObjectDimensionConditionsTagConditionTagInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsTagConditionTagOutput() ObjectGroupObjectDimensionConditionsTagConditionTagOutput
+	ToObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagOutput
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionTagArgs struct {
+	// Comparator
+	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value list
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (ObjectGroupObjectDimensionConditionsTagConditionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionTagArgs) ToObjectGroupObjectDimensionConditionsTagConditionTagOutput() ObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return i.ToObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionTagArgs) ToObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsTagConditionTagOutput)
+}
+
+// ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput is an input type that accepts ObjectGroupObjectDimensionConditionsTagConditionTagArray and ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput` via:
+//
+//	ObjectGroupObjectDimensionConditionsTagConditionTagArray{ ObjectGroupObjectDimensionConditionsTagConditionTagArgs{...} }
+type ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput
+	ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionTagArray []ObjectGroupObjectDimensionConditionsTagConditionTagInput
+
+func (ObjectGroupObjectDimensionConditionsTagConditionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionTagArray) ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return i.ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionConditionsTagConditionTagArray) ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionTagOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsTagConditionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagOutput) ToObjectGroupObjectDimensionConditionsTagConditionTagOutput() ObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagOutput) ToObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return o
+}
+
+// Comparator
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsTagConditionTag) *string { return v.Comparator }).(pulumi.StringPtrOutput)
+}
+
+// Tag key
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsTagConditionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value list
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensionConditionsTagConditionTag) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ToObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) Index(i pulumi.IntInput) ObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectGroupObjectDimensionConditionsTagConditionTag {
+		return vs[0].([]ObjectGroupObjectDimensionConditionsTagConditionTag)[vs[1].(int)]
+	}).(ObjectGroupObjectDimensionConditionsTagConditionTagOutput)
+}
+
+type ObjectGroupObjectDimensions struct {
+	// Resource ID list
+	ResourceIds []string `pulumi:"resourceIds"`
+}
+
+// ObjectGroupObjectDimensionsInput is an input type that accepts ObjectGroupObjectDimensionsArgs and ObjectGroupObjectDimensionsOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionsInput` via:
+//
+//	ObjectGroupObjectDimensionsArgs{...}
+type ObjectGroupObjectDimensionsInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionsOutput() ObjectGroupObjectDimensionsOutput
+	ToObjectGroupObjectDimensionsOutputWithContext(context.Context) ObjectGroupObjectDimensionsOutput
+}
+
+type ObjectGroupObjectDimensionsArgs struct {
+	// Resource ID list
+	ResourceIds pulumi.StringArrayInput `pulumi:"resourceIds"`
+}
+
+func (ObjectGroupObjectDimensionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectDimensionsArgs) ToObjectGroupObjectDimensionsOutput() ObjectGroupObjectDimensionsOutput {
+	return i.ToObjectGroupObjectDimensionsOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionsArgs) ToObjectGroupObjectDimensionsOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionsOutput)
+}
+
+func (i ObjectGroupObjectDimensionsArgs) ToObjectGroupObjectDimensionsPtrOutput() ObjectGroupObjectDimensionsPtrOutput {
+	return i.ToObjectGroupObjectDimensionsPtrOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectDimensionsArgs) ToObjectGroupObjectDimensionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionsOutput).ToObjectGroupObjectDimensionsPtrOutputWithContext(ctx)
+}
+
+// ObjectGroupObjectDimensionsPtrInput is an input type that accepts ObjectGroupObjectDimensionsArgs, ObjectGroupObjectDimensionsPtr and ObjectGroupObjectDimensionsPtrOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectDimensionsPtrInput` via:
+//
+//	        ObjectGroupObjectDimensionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ObjectGroupObjectDimensionsPtrInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectDimensionsPtrOutput() ObjectGroupObjectDimensionsPtrOutput
+	ToObjectGroupObjectDimensionsPtrOutputWithContext(context.Context) ObjectGroupObjectDimensionsPtrOutput
+}
+
+type objectGroupObjectDimensionsPtrType ObjectGroupObjectDimensionsArgs
+
+func ObjectGroupObjectDimensionsPtr(v *ObjectGroupObjectDimensionsArgs) ObjectGroupObjectDimensionsPtrInput {
+	return (*objectGroupObjectDimensionsPtrType)(v)
+}
+
+func (*objectGroupObjectDimensionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (i *objectGroupObjectDimensionsPtrType) ToObjectGroupObjectDimensionsPtrOutput() ObjectGroupObjectDimensionsPtrOutput {
+	return i.ToObjectGroupObjectDimensionsPtrOutputWithContext(context.Background())
+}
+
+func (i *objectGroupObjectDimensionsPtrType) ToObjectGroupObjectDimensionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectDimensionsPtrOutput)
+}
+
+type ObjectGroupObjectDimensionsOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionsOutput) ToObjectGroupObjectDimensionsOutput() ObjectGroupObjectDimensionsOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionsOutput) ToObjectGroupObjectDimensionsOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionsOutput) ToObjectGroupObjectDimensionsPtrOutput() ObjectGroupObjectDimensionsPtrOutput {
+	return o.ToObjectGroupObjectDimensionsPtrOutputWithContext(context.Background())
+}
+
+func (o ObjectGroupObjectDimensionsOutput) ToObjectGroupObjectDimensionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectGroupObjectDimensions) *ObjectGroupObjectDimensions {
+		return &v
+	}).(ObjectGroupObjectDimensionsPtrOutput)
+}
+
+// Resource ID list
+func (o ObjectGroupObjectDimensionsOutput) ResourceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObjectDimensions) []string { return v.ResourceIds }).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectDimensionsPtrOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectDimensionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectDimensionsPtrOutput) ToObjectGroupObjectDimensionsPtrOutput() ObjectGroupObjectDimensionsPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionsPtrOutput) ToObjectGroupObjectDimensionsPtrOutputWithContext(ctx context.Context) ObjectGroupObjectDimensionsPtrOutput {
+	return o
+}
+
+func (o ObjectGroupObjectDimensionsPtrOutput) Elem() ObjectGroupObjectDimensionsOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensions) ObjectGroupObjectDimensions {
+		if v != nil {
+			return *v
+		}
+		var ret ObjectGroupObjectDimensions
+		return ret
+	}).(ObjectGroupObjectDimensionsOutput)
+}
+
+// Resource ID list
+func (o ObjectGroupObjectDimensionsPtrOutput) ResourceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ObjectGroupObjectDimensions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceIds
+	}).(pulumi.StringArrayOutput)
 }
 
 type RuleCondition struct {
@@ -2121,6 +4654,1047 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 	}).(RuleTagOutput)
 }
 
+type GetAlertTemplateNoData struct {
+	// Enable no data alert
+	Enable bool `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount int `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level string `pulumi:"level"`
+}
+
+// GetAlertTemplateNoDataInput is an input type that accepts GetAlertTemplateNoDataArgs and GetAlertTemplateNoDataOutput values.
+// You can construct a concrete instance of `GetAlertTemplateNoDataInput` via:
+//
+//	GetAlertTemplateNoDataArgs{...}
+type GetAlertTemplateNoDataInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateNoDataOutput() GetAlertTemplateNoDataOutput
+	ToGetAlertTemplateNoDataOutputWithContext(context.Context) GetAlertTemplateNoDataOutput
+}
+
+type GetAlertTemplateNoDataArgs struct {
+	// Enable no data alert
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level pulumi.StringInput `pulumi:"level"`
+}
+
+func (GetAlertTemplateNoDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateNoData)(nil)).Elem()
+}
+
+func (i GetAlertTemplateNoDataArgs) ToGetAlertTemplateNoDataOutput() GetAlertTemplateNoDataOutput {
+	return i.ToGetAlertTemplateNoDataOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateNoDataArgs) ToGetAlertTemplateNoDataOutputWithContext(ctx context.Context) GetAlertTemplateNoDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateNoDataOutput)
+}
+
+type GetAlertTemplateNoDataOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateNoDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateNoData)(nil)).Elem()
+}
+
+func (o GetAlertTemplateNoDataOutput) ToGetAlertTemplateNoDataOutput() GetAlertTemplateNoDataOutput {
+	return o
+}
+
+func (o GetAlertTemplateNoDataOutput) ToGetAlertTemplateNoDataOutputWithContext(ctx context.Context) GetAlertTemplateNoDataOutput {
+	return o
+}
+
+// Enable no data alert
+func (o GetAlertTemplateNoDataOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertTemplateNoData) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o GetAlertTemplateNoDataOutput) EvaluationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateNoData) int { return v.EvaluationCount }).(pulumi.IntOutput)
+}
+
+// Alert severity when triggered by no data
+func (o GetAlertTemplateNoDataOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateNoData) string { return v.Level }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateObjectGroup struct {
+	// Alert notification method list
+	AlertMethods []string `pulumi:"alertMethods"`
+	// Contact Group ID List
+	ContactGroupIds []string `pulumi:"contactGroupIds"`
+	// Effective end time
+	EffectEndAt string `pulumi:"effectEndAt"`
+	// Effective start time
+	EffectStartAt string `pulumi:"effectStartAt"`
+	// Notification policy ID
+	NotificationId string `pulumi:"notificationId"`
+	// Notification template list
+	NotifyTemplates []GetAlertTemplateObjectGroupNotifyTemplate `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId string `pulumi:"objectGroupId"`
+	// Object group name, returned by the service side
+	ObjectGroupName string `pulumi:"objectGroupName"`
+	// Webhook address
+	Webhook string `pulumi:"webhook"`
+	// Webhook ID list
+	WebhookIds []string `pulumi:"webhookIds"`
+}
+
+// GetAlertTemplateObjectGroupInput is an input type that accepts GetAlertTemplateObjectGroupArgs and GetAlertTemplateObjectGroupOutput values.
+// You can construct a concrete instance of `GetAlertTemplateObjectGroupInput` via:
+//
+//	GetAlertTemplateObjectGroupArgs{...}
+type GetAlertTemplateObjectGroupInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateObjectGroupOutput() GetAlertTemplateObjectGroupOutput
+	ToGetAlertTemplateObjectGroupOutputWithContext(context.Context) GetAlertTemplateObjectGroupOutput
+}
+
+type GetAlertTemplateObjectGroupArgs struct {
+	// Alert notification method list
+	AlertMethods pulumi.StringArrayInput `pulumi:"alertMethods"`
+	// Contact Group ID List
+	ContactGroupIds pulumi.StringArrayInput `pulumi:"contactGroupIds"`
+	// Effective end time
+	EffectEndAt pulumi.StringInput `pulumi:"effectEndAt"`
+	// Effective start time
+	EffectStartAt pulumi.StringInput `pulumi:"effectStartAt"`
+	// Notification policy ID
+	NotificationId pulumi.StringInput `pulumi:"notificationId"`
+	// Notification template list
+	NotifyTemplates GetAlertTemplateObjectGroupNotifyTemplateArrayInput `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId pulumi.StringInput `pulumi:"objectGroupId"`
+	// Object group name, returned by the service side
+	ObjectGroupName pulumi.StringInput `pulumi:"objectGroupName"`
+	// Webhook address
+	Webhook pulumi.StringInput `pulumi:"webhook"`
+	// Webhook ID list
+	WebhookIds pulumi.StringArrayInput `pulumi:"webhookIds"`
+}
+
+func (GetAlertTemplateObjectGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (i GetAlertTemplateObjectGroupArgs) ToGetAlertTemplateObjectGroupOutput() GetAlertTemplateObjectGroupOutput {
+	return i.ToGetAlertTemplateObjectGroupOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateObjectGroupArgs) ToGetAlertTemplateObjectGroupOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateObjectGroupOutput)
+}
+
+// GetAlertTemplateObjectGroupArrayInput is an input type that accepts GetAlertTemplateObjectGroupArray and GetAlertTemplateObjectGroupArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateObjectGroupArrayInput` via:
+//
+//	GetAlertTemplateObjectGroupArray{ GetAlertTemplateObjectGroupArgs{...} }
+type GetAlertTemplateObjectGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateObjectGroupArrayOutput() GetAlertTemplateObjectGroupArrayOutput
+	ToGetAlertTemplateObjectGroupArrayOutputWithContext(context.Context) GetAlertTemplateObjectGroupArrayOutput
+}
+
+type GetAlertTemplateObjectGroupArray []GetAlertTemplateObjectGroupInput
+
+func (GetAlertTemplateObjectGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (i GetAlertTemplateObjectGroupArray) ToGetAlertTemplateObjectGroupArrayOutput() GetAlertTemplateObjectGroupArrayOutput {
+	return i.ToGetAlertTemplateObjectGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateObjectGroupArray) ToGetAlertTemplateObjectGroupArrayOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateObjectGroupArrayOutput)
+}
+
+type GetAlertTemplateObjectGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateObjectGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (o GetAlertTemplateObjectGroupOutput) ToGetAlertTemplateObjectGroupOutput() GetAlertTemplateObjectGroupOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupOutput) ToGetAlertTemplateObjectGroupOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupOutput {
+	return o
+}
+
+// Alert notification method list
+func (o GetAlertTemplateObjectGroupOutput) AlertMethods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) []string { return v.AlertMethods }).(pulumi.StringArrayOutput)
+}
+
+// Contact Group ID List
+func (o GetAlertTemplateObjectGroupOutput) ContactGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) []string { return v.ContactGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Effective end time
+func (o GetAlertTemplateObjectGroupOutput) EffectEndAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.EffectEndAt }).(pulumi.StringOutput)
+}
+
+// Effective start time
+func (o GetAlertTemplateObjectGroupOutput) EffectStartAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.EffectStartAt }).(pulumi.StringOutput)
+}
+
+// Notification policy ID
+func (o GetAlertTemplateObjectGroupOutput) NotificationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.NotificationId }).(pulumi.StringOutput)
+}
+
+// Notification template list
+func (o GetAlertTemplateObjectGroupOutput) NotifyTemplates() GetAlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) []GetAlertTemplateObjectGroupNotifyTemplate {
+		return v.NotifyTemplates
+	}).(GetAlertTemplateObjectGroupNotifyTemplateArrayOutput)
+}
+
+// Object group ID
+func (o GetAlertTemplateObjectGroupOutput) ObjectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.ObjectGroupId }).(pulumi.StringOutput)
+}
+
+// Object group name, returned by the service side
+func (o GetAlertTemplateObjectGroupOutput) ObjectGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.ObjectGroupName }).(pulumi.StringOutput)
+}
+
+// Webhook address
+func (o GetAlertTemplateObjectGroupOutput) Webhook() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) string { return v.Webhook }).(pulumi.StringOutput)
+}
+
+// Webhook ID list
+func (o GetAlertTemplateObjectGroupOutput) WebhookIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroup) []string { return v.WebhookIds }).(pulumi.StringArrayOutput)
+}
+
+type GetAlertTemplateObjectGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateObjectGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateObjectGroup)(nil)).Elem()
+}
+
+func (o GetAlertTemplateObjectGroupArrayOutput) ToGetAlertTemplateObjectGroupArrayOutput() GetAlertTemplateObjectGroupArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupArrayOutput) ToGetAlertTemplateObjectGroupArrayOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateObjectGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateObjectGroup {
+		return vs[0].([]GetAlertTemplateObjectGroup)[vs[1].(int)]
+	}).(GetAlertTemplateObjectGroupOutput)
+}
+
+type GetAlertTemplateObjectGroupNotifyTemplate struct {
+	// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+	Channel string `pulumi:"channel"`
+	// Notification template ID
+	NotifyTemplateId string `pulumi:"notifyTemplateId"`
+}
+
+// GetAlertTemplateObjectGroupNotifyTemplateInput is an input type that accepts GetAlertTemplateObjectGroupNotifyTemplateArgs and GetAlertTemplateObjectGroupNotifyTemplateOutput values.
+// You can construct a concrete instance of `GetAlertTemplateObjectGroupNotifyTemplateInput` via:
+//
+//	GetAlertTemplateObjectGroupNotifyTemplateArgs{...}
+type GetAlertTemplateObjectGroupNotifyTemplateInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateObjectGroupNotifyTemplateOutput() GetAlertTemplateObjectGroupNotifyTemplateOutput
+	ToGetAlertTemplateObjectGroupNotifyTemplateOutputWithContext(context.Context) GetAlertTemplateObjectGroupNotifyTemplateOutput
+}
+
+type GetAlertTemplateObjectGroupNotifyTemplateArgs struct {
+	// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+	Channel pulumi.StringInput `pulumi:"channel"`
+	// Notification template ID
+	NotifyTemplateId pulumi.StringInput `pulumi:"notifyTemplateId"`
+}
+
+func (GetAlertTemplateObjectGroupNotifyTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (i GetAlertTemplateObjectGroupNotifyTemplateArgs) ToGetAlertTemplateObjectGroupNotifyTemplateOutput() GetAlertTemplateObjectGroupNotifyTemplateOutput {
+	return i.ToGetAlertTemplateObjectGroupNotifyTemplateOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateObjectGroupNotifyTemplateArgs) ToGetAlertTemplateObjectGroupNotifyTemplateOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupNotifyTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateObjectGroupNotifyTemplateOutput)
+}
+
+// GetAlertTemplateObjectGroupNotifyTemplateArrayInput is an input type that accepts GetAlertTemplateObjectGroupNotifyTemplateArray and GetAlertTemplateObjectGroupNotifyTemplateArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateObjectGroupNotifyTemplateArrayInput` via:
+//
+//	GetAlertTemplateObjectGroupNotifyTemplateArray{ GetAlertTemplateObjectGroupNotifyTemplateArgs{...} }
+type GetAlertTemplateObjectGroupNotifyTemplateArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutput() GetAlertTemplateObjectGroupNotifyTemplateArrayOutput
+	ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(context.Context) GetAlertTemplateObjectGroupNotifyTemplateArrayOutput
+}
+
+type GetAlertTemplateObjectGroupNotifyTemplateArray []GetAlertTemplateObjectGroupNotifyTemplateInput
+
+func (GetAlertTemplateObjectGroupNotifyTemplateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (i GetAlertTemplateObjectGroupNotifyTemplateArray) ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutput() GetAlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return i.ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateObjectGroupNotifyTemplateArray) ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateObjectGroupNotifyTemplateArrayOutput)
+}
+
+type GetAlertTemplateObjectGroupNotifyTemplateOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateObjectGroupNotifyTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (o GetAlertTemplateObjectGroupNotifyTemplateOutput) ToGetAlertTemplateObjectGroupNotifyTemplateOutput() GetAlertTemplateObjectGroupNotifyTemplateOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupNotifyTemplateOutput) ToGetAlertTemplateObjectGroupNotifyTemplateOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupNotifyTemplateOutput {
+	return o
+}
+
+// Notification channel, options: email/sms/phone/lark/dingtalk/wecom/slack/api
+func (o GetAlertTemplateObjectGroupNotifyTemplateOutput) Channel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroupNotifyTemplate) string { return v.Channel }).(pulumi.StringOutput)
+}
+
+// Notification template ID
+func (o GetAlertTemplateObjectGroupNotifyTemplateOutput) NotifyTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateObjectGroupNotifyTemplate) string { return v.NotifyTemplateId }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateObjectGroupNotifyTemplateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateObjectGroupNotifyTemplateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateObjectGroupNotifyTemplate)(nil)).Elem()
+}
+
+func (o GetAlertTemplateObjectGroupNotifyTemplateArrayOutput) ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutput() GetAlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupNotifyTemplateArrayOutput) ToGetAlertTemplateObjectGroupNotifyTemplateArrayOutputWithContext(ctx context.Context) GetAlertTemplateObjectGroupNotifyTemplateArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateObjectGroupNotifyTemplateArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateObjectGroupNotifyTemplateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateObjectGroupNotifyTemplate {
+		return vs[0].([]GetAlertTemplateObjectGroupNotifyTemplate)[vs[1].(int)]
+	}).(GetAlertTemplateObjectGroupNotifyTemplateOutput)
+}
+
+type GetAlertTemplateRecoveryNotify struct {
+	// Enable recovery notification
+	Enable bool `pulumi:"enable"`
+}
+
+// GetAlertTemplateRecoveryNotifyInput is an input type that accepts GetAlertTemplateRecoveryNotifyArgs and GetAlertTemplateRecoveryNotifyOutput values.
+// You can construct a concrete instance of `GetAlertTemplateRecoveryNotifyInput` via:
+//
+//	GetAlertTemplateRecoveryNotifyArgs{...}
+type GetAlertTemplateRecoveryNotifyInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateRecoveryNotifyOutput() GetAlertTemplateRecoveryNotifyOutput
+	ToGetAlertTemplateRecoveryNotifyOutputWithContext(context.Context) GetAlertTemplateRecoveryNotifyOutput
+}
+
+type GetAlertTemplateRecoveryNotifyArgs struct {
+	// Enable recovery notification
+	Enable pulumi.BoolInput `pulumi:"enable"`
+}
+
+func (GetAlertTemplateRecoveryNotifyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (i GetAlertTemplateRecoveryNotifyArgs) ToGetAlertTemplateRecoveryNotifyOutput() GetAlertTemplateRecoveryNotifyOutput {
+	return i.ToGetAlertTemplateRecoveryNotifyOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateRecoveryNotifyArgs) ToGetAlertTemplateRecoveryNotifyOutputWithContext(ctx context.Context) GetAlertTemplateRecoveryNotifyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateRecoveryNotifyOutput)
+}
+
+type GetAlertTemplateRecoveryNotifyOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateRecoveryNotifyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateRecoveryNotify)(nil)).Elem()
+}
+
+func (o GetAlertTemplateRecoveryNotifyOutput) ToGetAlertTemplateRecoveryNotifyOutput() GetAlertTemplateRecoveryNotifyOutput {
+	return o
+}
+
+func (o GetAlertTemplateRecoveryNotifyOutput) ToGetAlertTemplateRecoveryNotifyOutputWithContext(ctx context.Context) GetAlertTemplateRecoveryNotifyOutput {
+	return o
+}
+
+// Enable recovery notification
+func (o GetAlertTemplateRecoveryNotifyOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertTemplateRecoveryNotify) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+type GetAlertTemplateTemplateRule struct {
+	// List of alert rules generated by this rule, returned by the service side
+	AppliedRules []GetAlertTemplateTemplateRuleAppliedRule `pulumi:"appliedRules"`
+	// Evaluation interval (seconds), returned by the service side
+	CheckInterval int `pulumi:"checkInterval"`
+	// Multi-condition combination method
+	ConditionOperator string `pulumi:"conditionOperator"`
+	// Evaluation Count
+	EvaluationCount int `pulumi:"evaluationCount"`
+	// Evaluation interval (seconds)
+	EvaluationInterval int `pulumi:"evaluationInterval"`
+	// Tiered alert condition list
+	LevelConditions []GetAlertTemplateTemplateRuleLevelCondition `pulumi:"levelConditions"`
+	// Enable multi-condition mode
+	MultipleConditions bool `pulumi:"multipleConditions"`
+	// Rule name
+	Name string `pulumi:"name"`
+	// Metric namespace
+	Namespace string `pulumi:"namespace"`
+	// No Data Alert Configuration
+	NoData GetAlertTemplateTemplateRuleNoData `pulumi:"noData"`
+	// Metric sub-namespace
+	SubNamespace string `pulumi:"subNamespace"`
+}
+
+// GetAlertTemplateTemplateRuleInput is an input type that accepts GetAlertTemplateTemplateRuleArgs and GetAlertTemplateTemplateRuleOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleInput` via:
+//
+//	GetAlertTemplateTemplateRuleArgs{...}
+type GetAlertTemplateTemplateRuleInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleOutput() GetAlertTemplateTemplateRuleOutput
+	ToGetAlertTemplateTemplateRuleOutputWithContext(context.Context) GetAlertTemplateTemplateRuleOutput
+}
+
+type GetAlertTemplateTemplateRuleArgs struct {
+	// List of alert rules generated by this rule, returned by the service side
+	AppliedRules GetAlertTemplateTemplateRuleAppliedRuleArrayInput `pulumi:"appliedRules"`
+	// Evaluation interval (seconds), returned by the service side
+	CheckInterval pulumi.IntInput `pulumi:"checkInterval"`
+	// Multi-condition combination method
+	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	// Evaluation Count
+	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
+	// Evaluation interval (seconds)
+	EvaluationInterval pulumi.IntInput `pulumi:"evaluationInterval"`
+	// Tiered alert condition list
+	LevelConditions GetAlertTemplateTemplateRuleLevelConditionArrayInput `pulumi:"levelConditions"`
+	// Enable multi-condition mode
+	MultipleConditions pulumi.BoolInput `pulumi:"multipleConditions"`
+	// Rule name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Metric namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// No Data Alert Configuration
+	NoData GetAlertTemplateTemplateRuleNoDataInput `pulumi:"noData"`
+	// Metric sub-namespace
+	SubNamespace pulumi.StringInput `pulumi:"subNamespace"`
+}
+
+func (GetAlertTemplateTemplateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleArgs) ToGetAlertTemplateTemplateRuleOutput() GetAlertTemplateTemplateRuleOutput {
+	return i.ToGetAlertTemplateTemplateRuleOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleArgs) ToGetAlertTemplateTemplateRuleOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleOutput)
+}
+
+// GetAlertTemplateTemplateRuleArrayInput is an input type that accepts GetAlertTemplateTemplateRuleArray and GetAlertTemplateTemplateRuleArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleArrayInput` via:
+//
+//	GetAlertTemplateTemplateRuleArray{ GetAlertTemplateTemplateRuleArgs{...} }
+type GetAlertTemplateTemplateRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleArrayOutput() GetAlertTemplateTemplateRuleArrayOutput
+	ToGetAlertTemplateTemplateRuleArrayOutputWithContext(context.Context) GetAlertTemplateTemplateRuleArrayOutput
+}
+
+type GetAlertTemplateTemplateRuleArray []GetAlertTemplateTemplateRuleInput
+
+func (GetAlertTemplateTemplateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleArray) ToGetAlertTemplateTemplateRuleArrayOutput() GetAlertTemplateTemplateRuleArrayOutput {
+	return i.ToGetAlertTemplateTemplateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleArray) ToGetAlertTemplateTemplateRuleArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleArrayOutput)
+}
+
+type GetAlertTemplateTemplateRuleOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleOutput) ToGetAlertTemplateTemplateRuleOutput() GetAlertTemplateTemplateRuleOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleOutput) ToGetAlertTemplateTemplateRuleOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleOutput {
+	return o
+}
+
+// List of alert rules generated by this rule, returned by the service side
+func (o GetAlertTemplateTemplateRuleOutput) AppliedRules() GetAlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) []GetAlertTemplateTemplateRuleAppliedRule { return v.AppliedRules }).(GetAlertTemplateTemplateRuleAppliedRuleArrayOutput)
+}
+
+// Evaluation interval (seconds), returned by the service side
+func (o GetAlertTemplateTemplateRuleOutput) CheckInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) int { return v.CheckInterval }).(pulumi.IntOutput)
+}
+
+// Multi-condition combination method
+func (o GetAlertTemplateTemplateRuleOutput) ConditionOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) string { return v.ConditionOperator }).(pulumi.StringOutput)
+}
+
+// Evaluation Count
+func (o GetAlertTemplateTemplateRuleOutput) EvaluationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) int { return v.EvaluationCount }).(pulumi.IntOutput)
+}
+
+// Evaluation interval (seconds)
+func (o GetAlertTemplateTemplateRuleOutput) EvaluationInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) int { return v.EvaluationInterval }).(pulumi.IntOutput)
+}
+
+// Tiered alert condition list
+func (o GetAlertTemplateTemplateRuleOutput) LevelConditions() GetAlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) []GetAlertTemplateTemplateRuleLevelCondition {
+		return v.LevelConditions
+	}).(GetAlertTemplateTemplateRuleLevelConditionArrayOutput)
+}
+
+// Enable multi-condition mode
+func (o GetAlertTemplateTemplateRuleOutput) MultipleConditions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) bool { return v.MultipleConditions }).(pulumi.BoolOutput)
+}
+
+// Rule name
+func (o GetAlertTemplateTemplateRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Metric namespace
+func (o GetAlertTemplateTemplateRuleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// No Data Alert Configuration
+func (o GetAlertTemplateTemplateRuleOutput) NoData() GetAlertTemplateTemplateRuleNoDataOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) GetAlertTemplateTemplateRuleNoData { return v.NoData }).(GetAlertTemplateTemplateRuleNoDataOutput)
+}
+
+// Metric sub-namespace
+func (o GetAlertTemplateTemplateRuleOutput) SubNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRule) string { return v.SubNamespace }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateTemplateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRule)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleArrayOutput) ToGetAlertTemplateTemplateRuleArrayOutput() GetAlertTemplateTemplateRuleArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleArrayOutput) ToGetAlertTemplateTemplateRuleArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateTemplateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateTemplateRule {
+		return vs[0].([]GetAlertTemplateTemplateRule)[vs[1].(int)]
+	}).(GetAlertTemplateTemplateRuleOutput)
+}
+
+type GetAlertTemplateTemplateRuleAppliedRule struct {
+	// ID of the issued alert rule
+	Id string `pulumi:"id"`
+	// Name of the issued alert rule
+	Name string `pulumi:"name"`
+	// Associated object group ID
+	ObjectGroupId string `pulumi:"objectGroupId"`
+	// Associated object ID
+	ObjectId string `pulumi:"objectId"`
+}
+
+// GetAlertTemplateTemplateRuleAppliedRuleInput is an input type that accepts GetAlertTemplateTemplateRuleAppliedRuleArgs and GetAlertTemplateTemplateRuleAppliedRuleOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleAppliedRuleInput` via:
+//
+//	GetAlertTemplateTemplateRuleAppliedRuleArgs{...}
+type GetAlertTemplateTemplateRuleAppliedRuleInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleAppliedRuleOutput() GetAlertTemplateTemplateRuleAppliedRuleOutput
+	ToGetAlertTemplateTemplateRuleAppliedRuleOutputWithContext(context.Context) GetAlertTemplateTemplateRuleAppliedRuleOutput
+}
+
+type GetAlertTemplateTemplateRuleAppliedRuleArgs struct {
+	// ID of the issued alert rule
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the issued alert rule
+	Name pulumi.StringInput `pulumi:"name"`
+	// Associated object group ID
+	ObjectGroupId pulumi.StringInput `pulumi:"objectGroupId"`
+	// Associated object ID
+	ObjectId pulumi.StringInput `pulumi:"objectId"`
+}
+
+func (GetAlertTemplateTemplateRuleAppliedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleAppliedRuleArgs) ToGetAlertTemplateTemplateRuleAppliedRuleOutput() GetAlertTemplateTemplateRuleAppliedRuleOutput {
+	return i.ToGetAlertTemplateTemplateRuleAppliedRuleOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleAppliedRuleArgs) ToGetAlertTemplateTemplateRuleAppliedRuleOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleAppliedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleAppliedRuleOutput)
+}
+
+// GetAlertTemplateTemplateRuleAppliedRuleArrayInput is an input type that accepts GetAlertTemplateTemplateRuleAppliedRuleArray and GetAlertTemplateTemplateRuleAppliedRuleArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleAppliedRuleArrayInput` via:
+//
+//	GetAlertTemplateTemplateRuleAppliedRuleArray{ GetAlertTemplateTemplateRuleAppliedRuleArgs{...} }
+type GetAlertTemplateTemplateRuleAppliedRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutput() GetAlertTemplateTemplateRuleAppliedRuleArrayOutput
+	ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(context.Context) GetAlertTemplateTemplateRuleAppliedRuleArrayOutput
+}
+
+type GetAlertTemplateTemplateRuleAppliedRuleArray []GetAlertTemplateTemplateRuleAppliedRuleInput
+
+func (GetAlertTemplateTemplateRuleAppliedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleAppliedRuleArray) ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutput() GetAlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return i.ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleAppliedRuleArray) ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleAppliedRuleArrayOutput)
+}
+
+type GetAlertTemplateTemplateRuleAppliedRuleOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleAppliedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) ToGetAlertTemplateTemplateRuleAppliedRuleOutput() GetAlertTemplateTemplateRuleAppliedRuleOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) ToGetAlertTemplateTemplateRuleAppliedRuleOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleAppliedRuleOutput {
+	return o
+}
+
+// ID of the issued alert rule
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleAppliedRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the issued alert rule
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleAppliedRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Associated object group ID
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) ObjectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleAppliedRule) string { return v.ObjectGroupId }).(pulumi.StringOutput)
+}
+
+// Associated object ID
+func (o GetAlertTemplateTemplateRuleAppliedRuleOutput) ObjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleAppliedRule) string { return v.ObjectId }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateTemplateRuleAppliedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleAppliedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleAppliedRule)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleAppliedRuleArrayOutput) ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutput() GetAlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleAppliedRuleArrayOutput) ToGetAlertTemplateTemplateRuleAppliedRuleArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleAppliedRuleArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleAppliedRuleArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateTemplateRuleAppliedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateTemplateRuleAppliedRule {
+		return vs[0].([]GetAlertTemplateTemplateRuleAppliedRule)[vs[1].(int)]
+	}).(GetAlertTemplateTemplateRuleAppliedRuleOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelCondition struct {
+	// Condition list
+	Conditions []GetAlertTemplateTemplateRuleLevelConditionCondition `pulumi:"conditions"`
+	// Alert severity, options: notice/warning/critical
+	Level string `pulumi:"level"`
+}
+
+// GetAlertTemplateTemplateRuleLevelConditionInput is an input type that accepts GetAlertTemplateTemplateRuleLevelConditionArgs and GetAlertTemplateTemplateRuleLevelConditionOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleLevelConditionInput` via:
+//
+//	GetAlertTemplateTemplateRuleLevelConditionArgs{...}
+type GetAlertTemplateTemplateRuleLevelConditionInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleLevelConditionOutput() GetAlertTemplateTemplateRuleLevelConditionOutput
+	ToGetAlertTemplateTemplateRuleLevelConditionOutputWithContext(context.Context) GetAlertTemplateTemplateRuleLevelConditionOutput
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionArgs struct {
+	// Condition list
+	Conditions GetAlertTemplateTemplateRuleLevelConditionConditionArrayInput `pulumi:"conditions"`
+	// Alert severity, options: notice/warning/critical
+	Level pulumi.StringInput `pulumi:"level"`
+}
+
+func (GetAlertTemplateTemplateRuleLevelConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionArgs) ToGetAlertTemplateTemplateRuleLevelConditionOutput() GetAlertTemplateTemplateRuleLevelConditionOutput {
+	return i.ToGetAlertTemplateTemplateRuleLevelConditionOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionArgs) ToGetAlertTemplateTemplateRuleLevelConditionOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleLevelConditionOutput)
+}
+
+// GetAlertTemplateTemplateRuleLevelConditionArrayInput is an input type that accepts GetAlertTemplateTemplateRuleLevelConditionArray and GetAlertTemplateTemplateRuleLevelConditionArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleLevelConditionArrayInput` via:
+//
+//	GetAlertTemplateTemplateRuleLevelConditionArray{ GetAlertTemplateTemplateRuleLevelConditionArgs{...} }
+type GetAlertTemplateTemplateRuleLevelConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleLevelConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionArrayOutput
+	ToGetAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(context.Context) GetAlertTemplateTemplateRuleLevelConditionArrayOutput
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionArray []GetAlertTemplateTemplateRuleLevelConditionInput
+
+func (GetAlertTemplateTemplateRuleLevelConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionArray) ToGetAlertTemplateTemplateRuleLevelConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return i.ToGetAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionArray) ToGetAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleLevelConditionArrayOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleLevelConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionOutput) ToGetAlertTemplateTemplateRuleLevelConditionOutput() GetAlertTemplateTemplateRuleLevelConditionOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionOutput) ToGetAlertTemplateTemplateRuleLevelConditionOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionOutput {
+	return o
+}
+
+// Condition list
+func (o GetAlertTemplateTemplateRuleLevelConditionOutput) Conditions() GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelCondition) []GetAlertTemplateTemplateRuleLevelConditionCondition {
+		return v.Conditions
+	}).(GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput)
+}
+
+// Alert severity, options: notice/warning/critical
+func (o GetAlertTemplateTemplateRuleLevelConditionOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelCondition) string { return v.Level }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleLevelConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleLevelCondition)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionArrayOutput) ToGetAlertTemplateTemplateRuleLevelConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionArrayOutput) ToGetAlertTemplateTemplateRuleLevelConditionArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateTemplateRuleLevelConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateTemplateRuleLevelCondition {
+		return vs[0].([]GetAlertTemplateTemplateRuleLevelCondition)[vs[1].(int)]
+	}).(GetAlertTemplateTemplateRuleLevelConditionOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionCondition struct {
+	// Comparison operators, such as >, >=, <, <=, !=, etc.
+	ComparisonOperator string `pulumi:"comparisonOperator"`
+	// Evaluation window (seconds)
+	EvaluationWindow int `pulumi:"evaluationWindow"`
+	// Metric name
+	MetricName string `pulumi:"metricName"`
+	// Metric unit
+	MetricUnit string `pulumi:"metricUnit"`
+	// Statistic method
+	Statistics string `pulumi:"statistics"`
+	// Trigger threshold
+	Threshold string `pulumi:"threshold"`
+}
+
+// GetAlertTemplateTemplateRuleLevelConditionConditionInput is an input type that accepts GetAlertTemplateTemplateRuleLevelConditionConditionArgs and GetAlertTemplateTemplateRuleLevelConditionConditionOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleLevelConditionConditionInput` via:
+//
+//	GetAlertTemplateTemplateRuleLevelConditionConditionArgs{...}
+type GetAlertTemplateTemplateRuleLevelConditionConditionInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleLevelConditionConditionOutput() GetAlertTemplateTemplateRuleLevelConditionConditionOutput
+	ToGetAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionOutput
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionConditionArgs struct {
+	// Comparison operators, such as >, >=, <, <=, !=, etc.
+	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
+	// Evaluation window (seconds)
+	EvaluationWindow pulumi.IntInput `pulumi:"evaluationWindow"`
+	// Metric name
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// Metric unit
+	MetricUnit pulumi.StringInput `pulumi:"metricUnit"`
+	// Statistic method
+	Statistics pulumi.StringInput `pulumi:"statistics"`
+	// Trigger threshold
+	Threshold pulumi.StringInput `pulumi:"threshold"`
+}
+
+func (GetAlertTemplateTemplateRuleLevelConditionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionConditionArgs) ToGetAlertTemplateTemplateRuleLevelConditionConditionOutput() GetAlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return i.ToGetAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionConditionArgs) ToGetAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleLevelConditionConditionOutput)
+}
+
+// GetAlertTemplateTemplateRuleLevelConditionConditionArrayInput is an input type that accepts GetAlertTemplateTemplateRuleLevelConditionConditionArray and GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleLevelConditionConditionArrayInput` via:
+//
+//	GetAlertTemplateTemplateRuleLevelConditionConditionArray{ GetAlertTemplateTemplateRuleLevelConditionConditionArgs{...} }
+type GetAlertTemplateTemplateRuleLevelConditionConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput
+	ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionConditionArray []GetAlertTemplateTemplateRuleLevelConditionConditionInput
+
+func (GetAlertTemplateTemplateRuleLevelConditionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionConditionArray) ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return i.ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleLevelConditionConditionArray) ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleLevelConditionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) ToGetAlertTemplateTemplateRuleLevelConditionConditionOutput() GetAlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) ToGetAlertTemplateTemplateRuleLevelConditionConditionOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return o
+}
+
+// Comparison operators, such as >, >=, <, <=, !=, etc.
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) string { return v.ComparisonOperator }).(pulumi.StringOutput)
+}
+
+// Evaluation window (seconds)
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) EvaluationWindow() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) int { return v.EvaluationWindow }).(pulumi.IntOutput)
+}
+
+// Metric name
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// Metric unit
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) MetricUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) string { return v.MetricUnit }).(pulumi.StringOutput)
+}
+
+// Statistic method
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) Statistics() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) string { return v.Statistics }).(pulumi.StringOutput)
+}
+
+// Trigger threshold
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionOutput) Threshold() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleLevelConditionCondition) string { return v.Threshold }).(pulumi.StringOutput)
+}
+
+type GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertTemplateTemplateRuleLevelConditionCondition)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput() GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput) ToGetAlertTemplateTemplateRuleLevelConditionConditionArrayOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput) Index(i pulumi.IntInput) GetAlertTemplateTemplateRuleLevelConditionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertTemplateTemplateRuleLevelConditionCondition {
+		return vs[0].([]GetAlertTemplateTemplateRuleLevelConditionCondition)[vs[1].(int)]
+	}).(GetAlertTemplateTemplateRuleLevelConditionConditionOutput)
+}
+
+type GetAlertTemplateTemplateRuleNoData struct {
+	// Enable no data alert
+	Enable bool `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount int `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level string `pulumi:"level"`
+}
+
+// GetAlertTemplateTemplateRuleNoDataInput is an input type that accepts GetAlertTemplateTemplateRuleNoDataArgs and GetAlertTemplateTemplateRuleNoDataOutput values.
+// You can construct a concrete instance of `GetAlertTemplateTemplateRuleNoDataInput` via:
+//
+//	GetAlertTemplateTemplateRuleNoDataArgs{...}
+type GetAlertTemplateTemplateRuleNoDataInput interface {
+	pulumi.Input
+
+	ToGetAlertTemplateTemplateRuleNoDataOutput() GetAlertTemplateTemplateRuleNoDataOutput
+	ToGetAlertTemplateTemplateRuleNoDataOutputWithContext(context.Context) GetAlertTemplateTemplateRuleNoDataOutput
+}
+
+type GetAlertTemplateTemplateRuleNoDataArgs struct {
+	// Enable no data alert
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// Number of evaluation periods for no data determination
+	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
+	// Alert severity when triggered by no data
+	Level pulumi.StringInput `pulumi:"level"`
+}
+
+func (GetAlertTemplateTemplateRuleNoDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (i GetAlertTemplateTemplateRuleNoDataArgs) ToGetAlertTemplateTemplateRuleNoDataOutput() GetAlertTemplateTemplateRuleNoDataOutput {
+	return i.ToGetAlertTemplateTemplateRuleNoDataOutputWithContext(context.Background())
+}
+
+func (i GetAlertTemplateTemplateRuleNoDataArgs) ToGetAlertTemplateTemplateRuleNoDataOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleNoDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertTemplateTemplateRuleNoDataOutput)
+}
+
+type GetAlertTemplateTemplateRuleNoDataOutput struct{ *pulumi.OutputState }
+
+func (GetAlertTemplateTemplateRuleNoDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertTemplateTemplateRuleNoData)(nil)).Elem()
+}
+
+func (o GetAlertTemplateTemplateRuleNoDataOutput) ToGetAlertTemplateTemplateRuleNoDataOutput() GetAlertTemplateTemplateRuleNoDataOutput {
+	return o
+}
+
+func (o GetAlertTemplateTemplateRuleNoDataOutput) ToGetAlertTemplateTemplateRuleNoDataOutputWithContext(ctx context.Context) GetAlertTemplateTemplateRuleNoDataOutput {
+	return o
+}
+
+// Enable no data alert
+func (o GetAlertTemplateTemplateRuleNoDataOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleNoData) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// Number of evaluation periods for no data determination
+func (o GetAlertTemplateTemplateRuleNoDataOutput) EvaluationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleNoData) int { return v.EvaluationCount }).(pulumi.IntOutput)
+}
+
+// Alert severity when triggered by no data
+func (o GetAlertTemplateTemplateRuleNoDataOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertTemplateTemplateRuleNoData) string { return v.Level }).(pulumi.StringOutput)
+}
+
 type GetContactGroupContact struct {
 	// Contact ID
 	ContactId string `pulumi:"contactId"`
@@ -2243,6 +5817,702 @@ func (o GetContactGroupContactArrayOutput) Index(i pulumi.IntInput) GetContactGr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContactGroupContact {
 		return vs[0].([]GetContactGroupContact)[vs[1].(int)]
 	}).(GetContactGroupContactOutput)
+}
+
+type GetObjectGroupObject struct {
+	// Dimension filter condition of the monitoring object
+	DimensionConditions GetObjectGroupObjectDimensionConditions `pulumi:"dimensionConditions"`
+	// Static dimension information of the monitoring object
+	Dimensions GetObjectGroupObjectDimensions `pulumi:"dimensions"`
+	// Unique identifier of the monitoring object in the object group, generated by the server
+	Id string `pulumi:"id"`
+	// Namespace of the monitoring metric
+	Namespace string `pulumi:"namespace"`
+	// Region of the monitoring object
+	Region string `pulumi:"region"`
+	// Object access method, such as `Dimension` / `DimensionCondition`
+	Type string `pulumi:"type"`
+}
+
+// GetObjectGroupObjectInput is an input type that accepts GetObjectGroupObjectArgs and GetObjectGroupObjectOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectInput` via:
+//
+//	GetObjectGroupObjectArgs{...}
+type GetObjectGroupObjectInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectOutput() GetObjectGroupObjectOutput
+	ToGetObjectGroupObjectOutputWithContext(context.Context) GetObjectGroupObjectOutput
+}
+
+type GetObjectGroupObjectArgs struct {
+	// Dimension filter condition of the monitoring object
+	DimensionConditions GetObjectGroupObjectDimensionConditionsInput `pulumi:"dimensionConditions"`
+	// Static dimension information of the monitoring object
+	Dimensions GetObjectGroupObjectDimensionsInput `pulumi:"dimensions"`
+	// Unique identifier of the monitoring object in the object group, generated by the server
+	Id pulumi.StringInput `pulumi:"id"`
+	// Namespace of the monitoring metric
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Region of the monitoring object
+	Region pulumi.StringInput `pulumi:"region"`
+	// Object access method, such as `Dimension` / `DimensionCondition`
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetObjectGroupObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObject)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectArgs) ToGetObjectGroupObjectOutput() GetObjectGroupObjectOutput {
+	return i.ToGetObjectGroupObjectOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectArgs) ToGetObjectGroupObjectOutputWithContext(ctx context.Context) GetObjectGroupObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectOutput)
+}
+
+// GetObjectGroupObjectArrayInput is an input type that accepts GetObjectGroupObjectArray and GetObjectGroupObjectArrayOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectArrayInput` via:
+//
+//	GetObjectGroupObjectArray{ GetObjectGroupObjectArgs{...} }
+type GetObjectGroupObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectArrayOutput() GetObjectGroupObjectArrayOutput
+	ToGetObjectGroupObjectArrayOutputWithContext(context.Context) GetObjectGroupObjectArrayOutput
+}
+
+type GetObjectGroupObjectArray []GetObjectGroupObjectInput
+
+func (GetObjectGroupObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObject)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectArray) ToGetObjectGroupObjectArrayOutput() GetObjectGroupObjectArrayOutput {
+	return i.ToGetObjectGroupObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectArray) ToGetObjectGroupObjectArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectArrayOutput)
+}
+
+type GetObjectGroupObjectOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObject)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectOutput) ToGetObjectGroupObjectOutput() GetObjectGroupObjectOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectOutput) ToGetObjectGroupObjectOutputWithContext(ctx context.Context) GetObjectGroupObjectOutput {
+	return o
+}
+
+// Dimension filter condition of the monitoring object
+func (o GetObjectGroupObjectOutput) DimensionConditions() GetObjectGroupObjectDimensionConditionsOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) GetObjectGroupObjectDimensionConditions { return v.DimensionConditions }).(GetObjectGroupObjectDimensionConditionsOutput)
+}
+
+// Static dimension information of the monitoring object
+func (o GetObjectGroupObjectOutput) Dimensions() GetObjectGroupObjectDimensionsOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) GetObjectGroupObjectDimensions { return v.Dimensions }).(GetObjectGroupObjectDimensionsOutput)
+}
+
+// Unique identifier of the monitoring object in the object group, generated by the server
+func (o GetObjectGroupObjectOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Namespace of the monitoring metric
+func (o GetObjectGroupObjectOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Region of the monitoring object
+func (o GetObjectGroupObjectOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Object access method, such as `Dimension` / `DimensionCondition`
+func (o GetObjectGroupObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetObjectGroupObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObject)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectArrayOutput) ToGetObjectGroupObjectArrayOutput() GetObjectGroupObjectArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectArrayOutput) ToGetObjectGroupObjectArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectArrayOutput) Index(i pulumi.IntInput) GetObjectGroupObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectGroupObject {
+		return vs[0].([]GetObjectGroupObject)[vs[1].(int)]
+	}).(GetObjectGroupObjectOutput)
+}
+
+type GetObjectGroupObjectDimensionConditions struct {
+	// Meta dimension condition
+	MetaCondition GetObjectGroupObjectDimensionConditionsMetaCondition `pulumi:"metaCondition"`
+	// Project dimension condition
+	ProjectCondition GetObjectGroupObjectDimensionConditionsProjectCondition `pulumi:"projectCondition"`
+	// Tag dimension condition
+	TagCondition GetObjectGroupObjectDimensionConditionsTagCondition `pulumi:"tagCondition"`
+	// Dimension filter type
+	Type string `pulumi:"type"`
+}
+
+// GetObjectGroupObjectDimensionConditionsInput is an input type that accepts GetObjectGroupObjectDimensionConditionsArgs and GetObjectGroupObjectDimensionConditionsOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsArgs{...}
+type GetObjectGroupObjectDimensionConditionsInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsOutput() GetObjectGroupObjectDimensionConditionsOutput
+	ToGetObjectGroupObjectDimensionConditionsOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsArgs struct {
+	// Meta dimension condition
+	MetaCondition GetObjectGroupObjectDimensionConditionsMetaConditionInput `pulumi:"metaCondition"`
+	// Project dimension condition
+	ProjectCondition GetObjectGroupObjectDimensionConditionsProjectConditionInput `pulumi:"projectCondition"`
+	// Tag dimension condition
+	TagCondition GetObjectGroupObjectDimensionConditionsTagConditionInput `pulumi:"tagCondition"`
+	// Dimension filter type
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsArgs) ToGetObjectGroupObjectDimensionConditionsOutput() GetObjectGroupObjectDimensionConditionsOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsArgs) ToGetObjectGroupObjectDimensionConditionsOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditions)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsOutput) ToGetObjectGroupObjectDimensionConditionsOutput() GetObjectGroupObjectDimensionConditionsOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsOutput) ToGetObjectGroupObjectDimensionConditionsOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsOutput {
+	return o
+}
+
+// Meta dimension condition
+func (o GetObjectGroupObjectDimensionConditionsOutput) MetaCondition() GetObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditions) GetObjectGroupObjectDimensionConditionsMetaCondition {
+		return v.MetaCondition
+	}).(GetObjectGroupObjectDimensionConditionsMetaConditionOutput)
+}
+
+// Project dimension condition
+func (o GetObjectGroupObjectDimensionConditionsOutput) ProjectCondition() GetObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditions) GetObjectGroupObjectDimensionConditionsProjectCondition {
+		return v.ProjectCondition
+	}).(GetObjectGroupObjectDimensionConditionsProjectConditionOutput)
+}
+
+// Tag dimension condition
+func (o GetObjectGroupObjectDimensionConditionsOutput) TagCondition() GetObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditions) GetObjectGroupObjectDimensionConditionsTagCondition {
+		return v.TagCondition
+	}).(GetObjectGroupObjectDimensionConditionsTagConditionOutput)
+}
+
+// Dimension filter type
+func (o GetObjectGroupObjectDimensionConditionsOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditions) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaCondition struct {
+	// Whether to match all dimensions
+	AllDimensions bool `pulumi:"allDimensions"`
+	// Condition combination method, such as `And` / `Or`
+	Condition string `pulumi:"condition"`
+	// Meta match item list
+	Metas []GetObjectGroupObjectDimensionConditionsMetaConditionMeta `pulumi:"metas"`
+}
+
+// GetObjectGroupObjectDimensionConditionsMetaConditionInput is an input type that accepts GetObjectGroupObjectDimensionConditionsMetaConditionArgs and GetObjectGroupObjectDimensionConditionsMetaConditionOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsMetaConditionInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsMetaConditionArgs{...}
+type GetObjectGroupObjectDimensionConditionsMetaConditionInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionOutput() GetObjectGroupObjectDimensionConditionsMetaConditionOutput
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionArgs struct {
+	// Whether to match all dimensions
+	AllDimensions pulumi.BoolInput `pulumi:"allDimensions"`
+	// Condition combination method, such as `And` / `Or`
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Meta match item list
+	Metas GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput `pulumi:"metas"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionArgs) ToGetObjectGroupObjectDimensionConditionsMetaConditionOutput() GetObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionArgs) ToGetObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsMetaConditionOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaCondition)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionOutput() GetObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionOutput {
+	return o
+}
+
+// Whether to match all dimensions
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionOutput) AllDimensions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaCondition) bool { return v.AllDimensions }).(pulumi.BoolOutput)
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaCondition) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// Meta match item list
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionOutput) Metas() GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaCondition) []GetObjectGroupObjectDimensionConditionsMetaConditionMeta {
+		return v.Metas
+	}).(GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionMeta struct {
+	// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+	Comparator string `pulumi:"comparator"`
+	// Meta key
+	Key string `pulumi:"key"`
+	// Meta value list
+	Values []string `pulumi:"values"`
+}
+
+// GetObjectGroupObjectDimensionConditionsMetaConditionMetaInput is an input type that accepts GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs and GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsMetaConditionMetaInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{...}
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs struct {
+	// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+	Comparator pulumi.StringInput `pulumi:"comparator"`
+	// Meta key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Meta value list
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput)
+}
+
+// GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput is an input type that accepts GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray and GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray{ GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{...} }
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput
+	ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray []GetObjectGroupObjectDimensionConditionsMetaConditionMetaInput
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return o
+}
+
+// Comparator, such as `Contain`, `NotContain`, `Equal`, `NotEqual`, etc.
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaConditionMeta) string { return v.Comparator }).(pulumi.StringOutput)
+}
+
+// Meta key
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaConditionMeta) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Meta value list
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsMetaConditionMeta) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectDimensionConditionsMetaConditionMeta)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput() GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) ToGetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput) Index(i pulumi.IntInput) GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectGroupObjectDimensionConditionsMetaConditionMeta {
+		return vs[0].([]GetObjectGroupObjectDimensionConditionsMetaConditionMeta)[vs[1].(int)]
+	}).(GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsProjectCondition struct {
+	// List of matched project names
+	Projects []string `pulumi:"projects"`
+}
+
+// GetObjectGroupObjectDimensionConditionsProjectConditionInput is an input type that accepts GetObjectGroupObjectDimensionConditionsProjectConditionArgs and GetObjectGroupObjectDimensionConditionsProjectConditionOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsProjectConditionInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsProjectConditionArgs{...}
+type GetObjectGroupObjectDimensionConditionsProjectConditionInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsProjectConditionOutput() GetObjectGroupObjectDimensionConditionsProjectConditionOutput
+	ToGetObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsProjectConditionOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsProjectConditionArgs struct {
+	// List of matched project names
+	Projects pulumi.StringArrayInput `pulumi:"projects"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsProjectConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsProjectConditionArgs) ToGetObjectGroupObjectDimensionConditionsProjectConditionOutput() GetObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsProjectConditionArgs) ToGetObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsProjectConditionOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsProjectConditionOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsProjectConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsProjectCondition)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsProjectConditionOutput) ToGetObjectGroupObjectDimensionConditionsProjectConditionOutput() GetObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsProjectConditionOutput) ToGetObjectGroupObjectDimensionConditionsProjectConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsProjectConditionOutput {
+	return o
+}
+
+// List of matched project names
+func (o GetObjectGroupObjectDimensionConditionsProjectConditionOutput) Projects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsProjectCondition) []string { return v.Projects }).(pulumi.StringArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsTagCondition struct {
+	// Condition combination method, such as `And` / `Or`
+	Condition string `pulumi:"condition"`
+	// Tag match item list
+	Tags []GetObjectGroupObjectDimensionConditionsTagConditionTag `pulumi:"tags"`
+}
+
+// GetObjectGroupObjectDimensionConditionsTagConditionInput is an input type that accepts GetObjectGroupObjectDimensionConditionsTagConditionArgs and GetObjectGroupObjectDimensionConditionsTagConditionOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsTagConditionInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsTagConditionArgs{...}
+type GetObjectGroupObjectDimensionConditionsTagConditionInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsTagConditionOutput() GetObjectGroupObjectDimensionConditionsTagConditionOutput
+	ToGetObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsTagConditionOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionArgs struct {
+	// Condition combination method, such as `And` / `Or`
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Tag match item list
+	Tags GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput `pulumi:"tags"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionArgs) ToGetObjectGroupObjectDimensionConditionsTagConditionOutput() GetObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionArgs) ToGetObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsTagConditionOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagCondition)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionOutput() GetObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionOutput {
+	return o
+}
+
+// Condition combination method, such as `And` / `Or`
+func (o GetObjectGroupObjectDimensionConditionsTagConditionOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsTagCondition) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// Tag match item list
+func (o GetObjectGroupObjectDimensionConditionsTagConditionOutput) Tags() GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsTagCondition) []GetObjectGroupObjectDimensionConditionsTagConditionTag {
+		return v.Tags
+	}).(GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionTag struct {
+	// Comparator
+	Comparator string `pulumi:"comparator"`
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value list
+	Values []string `pulumi:"values"`
+}
+
+// GetObjectGroupObjectDimensionConditionsTagConditionTagInput is an input type that accepts GetObjectGroupObjectDimensionConditionsTagConditionTagArgs and GetObjectGroupObjectDimensionConditionsTagConditionTagOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsTagConditionTagInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsTagConditionTagArgs{...}
+type GetObjectGroupObjectDimensionConditionsTagConditionTagInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagOutput
+	ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionTagArgs struct {
+	// Comparator
+	Comparator pulumi.StringInput `pulumi:"comparator"`
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value list
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionTagArgs) ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionTagArgs) ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsTagConditionTagOutput)
+}
+
+// GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput is an input type that accepts GetObjectGroupObjectDimensionConditionsTagConditionTagArray and GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput` via:
+//
+//	GetObjectGroupObjectDimensionConditionsTagConditionTagArray{ GetObjectGroupObjectDimensionConditionsTagConditionTagArgs{...} }
+type GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput
+	ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionTagArray []GetObjectGroupObjectDimensionConditionsTagConditionTagInput
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionTagArray) ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return i.ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionConditionsTagConditionTagArray) ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionTagOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionTagOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return o
+}
+
+// Comparator
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsTagConditionTag) string { return v.Comparator }).(pulumi.StringOutput)
+}
+
+// Tag key
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsTagConditionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value list
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensionConditionsTagConditionTag) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectDimensionConditionsTagConditionTag)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput() GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) ToGetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput) Index(i pulumi.IntInput) GetObjectGroupObjectDimensionConditionsTagConditionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectGroupObjectDimensionConditionsTagConditionTag {
+		return vs[0].([]GetObjectGroupObjectDimensionConditionsTagConditionTag)[vs[1].(int)]
+	}).(GetObjectGroupObjectDimensionConditionsTagConditionTagOutput)
+}
+
+type GetObjectGroupObjectDimensions struct {
+	// Resource ID list
+	ResourceIds []string `pulumi:"resourceIds"`
+}
+
+// GetObjectGroupObjectDimensionsInput is an input type that accepts GetObjectGroupObjectDimensionsArgs and GetObjectGroupObjectDimensionsOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectDimensionsInput` via:
+//
+//	GetObjectGroupObjectDimensionsArgs{...}
+type GetObjectGroupObjectDimensionsInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectDimensionsOutput() GetObjectGroupObjectDimensionsOutput
+	ToGetObjectGroupObjectDimensionsOutputWithContext(context.Context) GetObjectGroupObjectDimensionsOutput
+}
+
+type GetObjectGroupObjectDimensionsArgs struct {
+	// Resource ID list
+	ResourceIds pulumi.StringArrayInput `pulumi:"resourceIds"`
+}
+
+func (GetObjectGroupObjectDimensionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectDimensionsArgs) ToGetObjectGroupObjectDimensionsOutput() GetObjectGroupObjectDimensionsOutput {
+	return i.ToGetObjectGroupObjectDimensionsOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectDimensionsArgs) ToGetObjectGroupObjectDimensionsOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectDimensionsOutput)
+}
+
+type GetObjectGroupObjectDimensionsOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectDimensionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectDimensions)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectDimensionsOutput) ToGetObjectGroupObjectDimensionsOutput() GetObjectGroupObjectDimensionsOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectDimensionsOutput) ToGetObjectGroupObjectDimensionsOutputWithContext(ctx context.Context) GetObjectGroupObjectDimensionsOutput {
+	return o
+}
+
+// Resource ID list
+func (o GetObjectGroupObjectDimensionsOutput) ResourceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectDimensions) []string { return v.ResourceIds }).(pulumi.StringArrayOutput)
 }
 
 type GetRuleCondition struct {
@@ -3583,8 +7853,42 @@ func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateNoDataInput)(nil)).Elem(), AlertTemplateNoDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateNoDataPtrInput)(nil)).Elem(), AlertTemplateNoDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateObjectGroupInput)(nil)).Elem(), AlertTemplateObjectGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateObjectGroupArrayInput)(nil)).Elem(), AlertTemplateObjectGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateObjectGroupNotifyTemplateInput)(nil)).Elem(), AlertTemplateObjectGroupNotifyTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateObjectGroupNotifyTemplateArrayInput)(nil)).Elem(), AlertTemplateObjectGroupNotifyTemplateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateRecoveryNotifyInput)(nil)).Elem(), AlertTemplateRecoveryNotifyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateRecoveryNotifyPtrInput)(nil)).Elem(), AlertTemplateRecoveryNotifyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleInput)(nil)).Elem(), AlertTemplateTemplateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleArrayInput)(nil)).Elem(), AlertTemplateTemplateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleAppliedRuleInput)(nil)).Elem(), AlertTemplateTemplateRuleAppliedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleAppliedRuleArrayInput)(nil)).Elem(), AlertTemplateTemplateRuleAppliedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionInput)(nil)).Elem(), AlertTemplateTemplateRuleLevelConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionArrayInput)(nil)).Elem(), AlertTemplateTemplateRuleLevelConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionConditionInput)(nil)).Elem(), AlertTemplateTemplateRuleLevelConditionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleLevelConditionConditionArrayInput)(nil)).Elem(), AlertTemplateTemplateRuleLevelConditionConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleNoDataInput)(nil)).Elem(), AlertTemplateTemplateRuleNoDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateTemplateRuleNoDataPtrInput)(nil)).Elem(), AlertTemplateTemplateRuleNoDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContactGroupContactInput)(nil)).Elem(), ContactGroupContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContactGroupContactArrayInput)(nil)).Elem(), ContactGroupContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectInput)(nil)).Elem(), ObjectGroupObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectArrayInput)(nil)).Elem(), ObjectGroupObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsMetaConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsMetaConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionMetaInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsMetaConditionMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsProjectConditionInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsProjectConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsProjectConditionPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsProjectConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsTagConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsTagConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionTagInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsTagConditionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsTagConditionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionsInput)(nil)).Elem(), ObjectGroupObjectDimensionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionsPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionInput)(nil)).Elem(), RuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionArrayInput)(nil)).Elem(), RuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleDimensionConditionsInput)(nil)).Elem(), RuleDimensionConditionsArgs{})
@@ -3613,8 +7917,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRecoveryNotifyPtrInput)(nil)).Elem(), RuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagArrayInput)(nil)).Elem(), RuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateNoDataInput)(nil)).Elem(), GetAlertTemplateNoDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupInput)(nil)).Elem(), GetAlertTemplateObjectGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupArrayInput)(nil)).Elem(), GetAlertTemplateObjectGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupNotifyTemplateInput)(nil)).Elem(), GetAlertTemplateObjectGroupNotifyTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupNotifyTemplateArrayInput)(nil)).Elem(), GetAlertTemplateObjectGroupNotifyTemplateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateRecoveryNotifyInput)(nil)).Elem(), GetAlertTemplateRecoveryNotifyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleInput)(nil)).Elem(), GetAlertTemplateTemplateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleArrayInput)(nil)).Elem(), GetAlertTemplateTemplateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleAppliedRuleInput)(nil)).Elem(), GetAlertTemplateTemplateRuleAppliedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleAppliedRuleArrayInput)(nil)).Elem(), GetAlertTemplateTemplateRuleAppliedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionInput)(nil)).Elem(), GetAlertTemplateTemplateRuleLevelConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionArrayInput)(nil)).Elem(), GetAlertTemplateTemplateRuleLevelConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionConditionInput)(nil)).Elem(), GetAlertTemplateTemplateRuleLevelConditionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleLevelConditionConditionArrayInput)(nil)).Elem(), GetAlertTemplateTemplateRuleLevelConditionConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateTemplateRuleNoDataInput)(nil)).Elem(), GetAlertTemplateTemplateRuleNoDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContactGroupContactInput)(nil)).Elem(), GetContactGroupContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContactGroupContactArrayInput)(nil)).Elem(), GetContactGroupContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectInput)(nil)).Elem(), GetObjectGroupObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectArrayInput)(nil)).Elem(), GetObjectGroupObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaConditionInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsMetaConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaConditionMetaInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsMetaConditionMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsMetaConditionMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsProjectConditionInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsProjectConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsTagConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTagInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsTagConditionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsTagConditionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionsInput)(nil)).Elem(), GetObjectGroupObjectDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionInput)(nil)).Elem(), GetRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionArrayInput)(nil)).Elem(), GetRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleDimensionConditionsInput)(nil)).Elem(), GetRuleDimensionConditionsArgs{})
@@ -3636,8 +7966,42 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRecoveryNotifyInput)(nil)).Elem(), GetRuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
+	pulumi.RegisterOutputType(AlertTemplateNoDataOutput{})
+	pulumi.RegisterOutputType(AlertTemplateNoDataPtrOutput{})
+	pulumi.RegisterOutputType(AlertTemplateObjectGroupOutput{})
+	pulumi.RegisterOutputType(AlertTemplateObjectGroupArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateObjectGroupNotifyTemplateOutput{})
+	pulumi.RegisterOutputType(AlertTemplateObjectGroupNotifyTemplateArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateRecoveryNotifyOutput{})
+	pulumi.RegisterOutputType(AlertTemplateRecoveryNotifyPtrOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleAppliedRuleOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleAppliedRuleArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleLevelConditionOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleLevelConditionArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleLevelConditionConditionOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleLevelConditionConditionArrayOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleNoDataOutput{})
+	pulumi.RegisterOutputType(AlertTemplateTemplateRuleNoDataPtrOutput{})
 	pulumi.RegisterOutputType(ContactGroupContactOutput{})
 	pulumi.RegisterOutputType(ContactGroupContactArrayOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectArrayOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsPtrOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsMetaConditionOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsMetaConditionPtrOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsMetaConditionMetaOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsProjectConditionOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsProjectConditionPtrOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsTagConditionOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsTagConditionPtrOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsTagConditionTagOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionsOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(RuleConditionOutput{})
 	pulumi.RegisterOutputType(RuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(RuleDimensionConditionsOutput{})
@@ -3666,8 +8030,34 @@ func init() {
 	pulumi.RegisterOutputType(RuleRecoveryNotifyPtrOutput{})
 	pulumi.RegisterOutputType(RuleTagOutput{})
 	pulumi.RegisterOutputType(RuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateNoDataOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupNotifyTemplateOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupNotifyTemplateArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateRecoveryNotifyOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleAppliedRuleOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleAppliedRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleLevelConditionOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleLevelConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleLevelConditionConditionOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleLevelConditionConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertTemplateTemplateRuleNoDataOutput{})
 	pulumi.RegisterOutputType(GetContactGroupContactOutput{})
 	pulumi.RegisterOutputType(GetContactGroupContactArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsMetaConditionOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsMetaConditionMetaOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsMetaConditionMetaArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsProjectConditionOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsTagConditionOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsTagConditionTagOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionsOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleDimensionConditionsOutput{})

@@ -1445,6 +1445,112 @@ func (o IpamPoolTagArrayOutput) Index(i pulumi.IntInput) IpamPoolTagOutput {
 	}).(IpamPoolTagOutput)
 }
 
+type IpamResourceDiscoveryTag struct {
+	// Tag key.
+	Key *string `pulumi:"key"`
+	// Tag value.
+	Value *string `pulumi:"value"`
+}
+
+// IpamResourceDiscoveryTagInput is an input type that accepts IpamResourceDiscoveryTagArgs and IpamResourceDiscoveryTagOutput values.
+// You can construct a concrete instance of `IpamResourceDiscoveryTagInput` via:
+//
+//	IpamResourceDiscoveryTagArgs{...}
+type IpamResourceDiscoveryTagInput interface {
+	pulumi.Input
+
+	ToIpamResourceDiscoveryTagOutput() IpamResourceDiscoveryTagOutput
+	ToIpamResourceDiscoveryTagOutputWithContext(context.Context) IpamResourceDiscoveryTagOutput
+}
+
+type IpamResourceDiscoveryTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IpamResourceDiscoveryTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (i IpamResourceDiscoveryTagArgs) ToIpamResourceDiscoveryTagOutput() IpamResourceDiscoveryTagOutput {
+	return i.ToIpamResourceDiscoveryTagOutputWithContext(context.Background())
+}
+
+func (i IpamResourceDiscoveryTagArgs) ToIpamResourceDiscoveryTagOutputWithContext(ctx context.Context) IpamResourceDiscoveryTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamResourceDiscoveryTagOutput)
+}
+
+// IpamResourceDiscoveryTagArrayInput is an input type that accepts IpamResourceDiscoveryTagArray and IpamResourceDiscoveryTagArrayOutput values.
+// You can construct a concrete instance of `IpamResourceDiscoveryTagArrayInput` via:
+//
+//	IpamResourceDiscoveryTagArray{ IpamResourceDiscoveryTagArgs{...} }
+type IpamResourceDiscoveryTagArrayInput interface {
+	pulumi.Input
+
+	ToIpamResourceDiscoveryTagArrayOutput() IpamResourceDiscoveryTagArrayOutput
+	ToIpamResourceDiscoveryTagArrayOutputWithContext(context.Context) IpamResourceDiscoveryTagArrayOutput
+}
+
+type IpamResourceDiscoveryTagArray []IpamResourceDiscoveryTagInput
+
+func (IpamResourceDiscoveryTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (i IpamResourceDiscoveryTagArray) ToIpamResourceDiscoveryTagArrayOutput() IpamResourceDiscoveryTagArrayOutput {
+	return i.ToIpamResourceDiscoveryTagArrayOutputWithContext(context.Background())
+}
+
+func (i IpamResourceDiscoveryTagArray) ToIpamResourceDiscoveryTagArrayOutputWithContext(ctx context.Context) IpamResourceDiscoveryTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamResourceDiscoveryTagArrayOutput)
+}
+
+type IpamResourceDiscoveryTagOutput struct{ *pulumi.OutputState }
+
+func (IpamResourceDiscoveryTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (o IpamResourceDiscoveryTagOutput) ToIpamResourceDiscoveryTagOutput() IpamResourceDiscoveryTagOutput {
+	return o
+}
+
+func (o IpamResourceDiscoveryTagOutput) ToIpamResourceDiscoveryTagOutputWithContext(ctx context.Context) IpamResourceDiscoveryTagOutput {
+	return o
+}
+
+// Tag key.
+func (o IpamResourceDiscoveryTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamResourceDiscoveryTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value.
+func (o IpamResourceDiscoveryTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamResourceDiscoveryTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IpamResourceDiscoveryTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IpamResourceDiscoveryTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (o IpamResourceDiscoveryTagArrayOutput) ToIpamResourceDiscoveryTagArrayOutput() IpamResourceDiscoveryTagArrayOutput {
+	return o
+}
+
+func (o IpamResourceDiscoveryTagArrayOutput) ToIpamResourceDiscoveryTagArrayOutputWithContext(ctx context.Context) IpamResourceDiscoveryTagArrayOutput {
+	return o
+}
+
+func (o IpamResourceDiscoveryTagArrayOutput) Index(i pulumi.IntInput) IpamResourceDiscoveryTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpamResourceDiscoveryTag {
+		return vs[0].([]IpamResourceDiscoveryTag)[vs[1].(int)]
+	}).(IpamResourceDiscoveryTagOutput)
+}
+
 type IpamScopeTag struct {
 	// Tag Key
 	Key *string `pulumi:"key"`
@@ -6408,6 +6514,112 @@ func (o GetIpamPoolTagArrayOutput) Index(i pulumi.IntInput) GetIpamPoolTagOutput
 	}).(GetIpamPoolTagOutput)
 }
 
+type GetIpamResourceDiscoveryTag struct {
+	// Tag key.
+	Key string `pulumi:"key"`
+	// Tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetIpamResourceDiscoveryTagInput is an input type that accepts GetIpamResourceDiscoveryTagArgs and GetIpamResourceDiscoveryTagOutput values.
+// You can construct a concrete instance of `GetIpamResourceDiscoveryTagInput` via:
+//
+//	GetIpamResourceDiscoveryTagArgs{...}
+type GetIpamResourceDiscoveryTagInput interface {
+	pulumi.Input
+
+	ToGetIpamResourceDiscoveryTagOutput() GetIpamResourceDiscoveryTagOutput
+	ToGetIpamResourceDiscoveryTagOutputWithContext(context.Context) GetIpamResourceDiscoveryTagOutput
+}
+
+type GetIpamResourceDiscoveryTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpamResourceDiscoveryTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (i GetIpamResourceDiscoveryTagArgs) ToGetIpamResourceDiscoveryTagOutput() GetIpamResourceDiscoveryTagOutput {
+	return i.ToGetIpamResourceDiscoveryTagOutputWithContext(context.Background())
+}
+
+func (i GetIpamResourceDiscoveryTagArgs) ToGetIpamResourceDiscoveryTagOutputWithContext(ctx context.Context) GetIpamResourceDiscoveryTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamResourceDiscoveryTagOutput)
+}
+
+// GetIpamResourceDiscoveryTagArrayInput is an input type that accepts GetIpamResourceDiscoveryTagArray and GetIpamResourceDiscoveryTagArrayOutput values.
+// You can construct a concrete instance of `GetIpamResourceDiscoveryTagArrayInput` via:
+//
+//	GetIpamResourceDiscoveryTagArray{ GetIpamResourceDiscoveryTagArgs{...} }
+type GetIpamResourceDiscoveryTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpamResourceDiscoveryTagArrayOutput() GetIpamResourceDiscoveryTagArrayOutput
+	ToGetIpamResourceDiscoveryTagArrayOutputWithContext(context.Context) GetIpamResourceDiscoveryTagArrayOutput
+}
+
+type GetIpamResourceDiscoveryTagArray []GetIpamResourceDiscoveryTagInput
+
+func (GetIpamResourceDiscoveryTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (i GetIpamResourceDiscoveryTagArray) ToGetIpamResourceDiscoveryTagArrayOutput() GetIpamResourceDiscoveryTagArrayOutput {
+	return i.ToGetIpamResourceDiscoveryTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpamResourceDiscoveryTagArray) ToGetIpamResourceDiscoveryTagArrayOutputWithContext(ctx context.Context) GetIpamResourceDiscoveryTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamResourceDiscoveryTagArrayOutput)
+}
+
+type GetIpamResourceDiscoveryTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpamResourceDiscoveryTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (o GetIpamResourceDiscoveryTagOutput) ToGetIpamResourceDiscoveryTagOutput() GetIpamResourceDiscoveryTagOutput {
+	return o
+}
+
+func (o GetIpamResourceDiscoveryTagOutput) ToGetIpamResourceDiscoveryTagOutputWithContext(ctx context.Context) GetIpamResourceDiscoveryTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetIpamResourceDiscoveryTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamResourceDiscoveryTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value.
+func (o GetIpamResourceDiscoveryTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamResourceDiscoveryTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpamResourceDiscoveryTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpamResourceDiscoveryTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamResourceDiscoveryTag)(nil)).Elem()
+}
+
+func (o GetIpamResourceDiscoveryTagArrayOutput) ToGetIpamResourceDiscoveryTagArrayOutput() GetIpamResourceDiscoveryTagArrayOutput {
+	return o
+}
+
+func (o GetIpamResourceDiscoveryTagArrayOutput) ToGetIpamResourceDiscoveryTagArrayOutputWithContext(ctx context.Context) GetIpamResourceDiscoveryTagArrayOutput {
+	return o
+}
+
+func (o GetIpamResourceDiscoveryTagArrayOutput) Index(i pulumi.IntInput) GetIpamResourceDiscoveryTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpamResourceDiscoveryTag {
+		return vs[0].([]GetIpamResourceDiscoveryTag)[vs[1].(int)]
+	}).(GetIpamResourceDiscoveryTagOutput)
+}
+
 type GetIpamScopeTag struct {
 	// Tag Key
 	Key string `pulumi:"key"`
@@ -10281,6 +10493,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IpPoolTagArrayInput)(nil)).Elem(), IpPoolTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpamPoolTagInput)(nil)).Elem(), IpamPoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpamPoolTagArrayInput)(nil)).Elem(), IpamPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamResourceDiscoveryTagInput)(nil)).Elem(), IpamResourceDiscoveryTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamResourceDiscoveryTagArrayInput)(nil)).Elem(), IpamResourceDiscoveryTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpamScopeTagInput)(nil)).Elem(), IpamScopeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpamScopeTagArrayInput)(nil)).Elem(), IpamScopeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpamTagInput)(nil)).Elem(), IpamTagArgs{})
@@ -10360,6 +10574,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpPoolTagArrayInput)(nil)).Elem(), GetIpPoolTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamPoolTagInput)(nil)).Elem(), GetIpamPoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamPoolTagArrayInput)(nil)).Elem(), GetIpamPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamResourceDiscoveryTagInput)(nil)).Elem(), GetIpamResourceDiscoveryTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamResourceDiscoveryTagArrayInput)(nil)).Elem(), GetIpamResourceDiscoveryTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamScopeTagInput)(nil)).Elem(), GetIpamScopeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamScopeTagArrayInput)(nil)).Elem(), GetIpamScopeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamTagInput)(nil)).Elem(), GetIpamTagArgs{})
@@ -10441,6 +10657,8 @@ func init() {
 	pulumi.RegisterOutputType(IpPoolTagArrayOutput{})
 	pulumi.RegisterOutputType(IpamPoolTagOutput{})
 	pulumi.RegisterOutputType(IpamPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(IpamResourceDiscoveryTagOutput{})
+	pulumi.RegisterOutputType(IpamResourceDiscoveryTagArrayOutput{})
 	pulumi.RegisterOutputType(IpamScopeTagOutput{})
 	pulumi.RegisterOutputType(IpamScopeTagArrayOutput{})
 	pulumi.RegisterOutputType(IpamTagOutput{})
@@ -10520,6 +10738,8 @@ func init() {
 	pulumi.RegisterOutputType(GetIpPoolTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpamPoolTagOutput{})
 	pulumi.RegisterOutputType(GetIpamPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpamResourceDiscoveryTagOutput{})
+	pulumi.RegisterOutputType(GetIpamResourceDiscoveryTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpamScopeTagOutput{})
 	pulumi.RegisterOutputType(GetIpamScopeTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpamTagOutput{})

@@ -70,6 +70,7 @@ export interface GetInstanceResult {
     readonly renewInfo: outputs.ecs.GetInstanceRenewInfo;
     readonly roleNames: string[];
     readonly secondaryNetworkInterfaces: outputs.ecs.GetInstanceSecondaryNetworkInterface[];
+    readonly showRoleNames: string[];
     readonly spotPriceLimit: number;
     readonly spotStrategy: string;
     readonly status: string;

@@ -4,7 +4,9 @@
 package com.byteplus.bytepluscc.rdsmssql;
 
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceChargeInfoArgs;
+import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceCrossBackupPolicyArgs;
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceTagArgs;
+import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceTdeConfigArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -63,6 +65,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<InstanceChargeInfoArgs>> chargeInfo() {
         return Optional.ofNullable(this.chargeInfo);
+    }
+
+    /**
+     * Cross-region backup policy.
+     * 
+     */
+    @Import(name="crossBackupPolicy")
+    private @Nullable Output<InstanceCrossBackupPolicyArgs> crossBackupPolicy;
+
+    /**
+     * @return Cross-region backup policy.
+     * 
+     */
+    public Optional<Output<InstanceCrossBackupPolicyArgs>> crossBackupPolicy() {
+        return Optional.ofNullable(this.crossBackupPolicy);
     }
 
     /**
@@ -248,6 +265,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Instance TDE configuration.
+     * 
+     */
+    @Import(name="tdeConfig")
+    private @Nullable Output<InstanceTdeConfigArgs> tdeConfig;
+
+    /**
+     * @return Instance TDE configuration.
+     * 
+     */
+    public Optional<Output<InstanceTdeConfigArgs>> tdeConfig() {
+        return Optional.ofNullable(this.tdeConfig);
+    }
+
+    /**
      * Time zone.
      * 
      */
@@ -298,6 +330,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.advancedFeatures = $.advancedFeatures;
         this.allowListIds = $.allowListIds;
         this.chargeInfo = $.chargeInfo;
+        this.crossBackupPolicy = $.crossBackupPolicy;
         this.dbEngineVersion = $.dbEngineVersion;
         this.instanceName = $.instanceName;
         this.instanceType = $.instanceType;
@@ -310,6 +343,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.subnetId = $.subnetId;
         this.superAccountPassword = $.superAccountPassword;
         this.tags = $.tags;
+        this.tdeConfig = $.tdeConfig;
         this.timeZone = $.timeZone;
         this.vpcId = $.vpcId;
         this.zoneId = $.zoneId;
@@ -404,6 +438,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder chargeInfo(InstanceChargeInfoArgs chargeInfo) {
             return chargeInfo(Output.of(chargeInfo));
+        }
+
+        /**
+         * @param crossBackupPolicy Cross-region backup policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossBackupPolicy(@Nullable Output<InstanceCrossBackupPolicyArgs> crossBackupPolicy) {
+            $.crossBackupPolicy = crossBackupPolicy;
+            return this;
+        }
+
+        /**
+         * @param crossBackupPolicy Cross-region backup policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossBackupPolicy(InstanceCrossBackupPolicyArgs crossBackupPolicy) {
+            return crossBackupPolicy(Output.of(crossBackupPolicy));
         }
 
         /**
@@ -669,6 +724,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tdeConfig Instance TDE configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(@Nullable Output<InstanceTdeConfigArgs> tdeConfig) {
+            $.tdeConfig = tdeConfig;
+            return this;
+        }
+
+        /**
+         * @param tdeConfig Instance TDE configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(InstanceTdeConfigArgs tdeConfig) {
+            return tdeConfig(Output.of(tdeConfig));
         }
 
         /**

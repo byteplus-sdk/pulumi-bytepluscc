@@ -427,6 +427,184 @@ func (o EndpointDbAddressArrayOutput) Index(i pulumi.IntInput) EndpointDbAddress
 	}).(EndpointDbAddressOutput)
 }
 
+type InstanceBackup struct {
+	// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+	BackupDownloadStatus *string `pulumi:"backupDownloadStatus"`
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupEndTime *string `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName *string `pulumi:"backupFileName"`
+	// Backup file size, unit: Byte.
+	BackupFileSize *int `pulumi:"backupFileSize"`
+	// Backup ID.
+	BackupId *string `pulumi:"backupId"`
+	// Backup target. Valid values: Data: data backup. Log: log backup.
+	BackupObject *string `pulumi:"backupObject"`
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupStartTime *string `pulumi:"backupStartTime"`
+	// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+	BackupStatus *string `pulumi:"backupStatus"`
+	// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+	BackupType *string `pulumi:"backupType"`
+	// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+	Creator *string `pulumi:"creator"`
+}
+
+// InstanceBackupInput is an input type that accepts InstanceBackupArgs and InstanceBackupOutput values.
+// You can construct a concrete instance of `InstanceBackupInput` via:
+//
+//	InstanceBackupArgs{...}
+type InstanceBackupInput interface {
+	pulumi.Input
+
+	ToInstanceBackupOutput() InstanceBackupOutput
+	ToInstanceBackupOutputWithContext(context.Context) InstanceBackupOutput
+}
+
+type InstanceBackupArgs struct {
+	// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+	BackupDownloadStatus pulumi.StringPtrInput `pulumi:"backupDownloadStatus"`
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupEndTime pulumi.StringPtrInput `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName pulumi.StringPtrInput `pulumi:"backupFileName"`
+	// Backup file size, unit: Byte.
+	BackupFileSize pulumi.IntPtrInput `pulumi:"backupFileSize"`
+	// Backup ID.
+	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// Backup target. Valid values: Data: data backup. Log: log backup.
+	BackupObject pulumi.StringPtrInput `pulumi:"backupObject"`
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupStartTime pulumi.StringPtrInput `pulumi:"backupStartTime"`
+	// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+	BackupStatus pulumi.StringPtrInput `pulumi:"backupStatus"`
+	// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+	BackupType pulumi.StringPtrInput `pulumi:"backupType"`
+	// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+	Creator pulumi.StringPtrInput `pulumi:"creator"`
+}
+
+func (InstanceBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackup)(nil)).Elem()
+}
+
+func (i InstanceBackupArgs) ToInstanceBackupOutput() InstanceBackupOutput {
+	return i.ToInstanceBackupOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupArgs) ToInstanceBackupOutputWithContext(ctx context.Context) InstanceBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupOutput)
+}
+
+// InstanceBackupArrayInput is an input type that accepts InstanceBackupArray and InstanceBackupArrayOutput values.
+// You can construct a concrete instance of `InstanceBackupArrayInput` via:
+//
+//	InstanceBackupArray{ InstanceBackupArgs{...} }
+type InstanceBackupArrayInput interface {
+	pulumi.Input
+
+	ToInstanceBackupArrayOutput() InstanceBackupArrayOutput
+	ToInstanceBackupArrayOutputWithContext(context.Context) InstanceBackupArrayOutput
+}
+
+type InstanceBackupArray []InstanceBackupInput
+
+func (InstanceBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceBackup)(nil)).Elem()
+}
+
+func (i InstanceBackupArray) ToInstanceBackupArrayOutput() InstanceBackupArrayOutput {
+	return i.ToInstanceBackupArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupArray) ToInstanceBackupArrayOutputWithContext(ctx context.Context) InstanceBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupArrayOutput)
+}
+
+type InstanceBackupOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackup)(nil)).Elem()
+}
+
+func (o InstanceBackupOutput) ToInstanceBackupOutput() InstanceBackupOutput {
+	return o
+}
+
+func (o InstanceBackupOutput) ToInstanceBackupOutputWithContext(ctx context.Context) InstanceBackupOutput {
+	return o
+}
+
+// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+func (o InstanceBackupOutput) BackupDownloadStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupDownloadStatus }).(pulumi.StringPtrOutput)
+}
+
+// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupOutput) BackupEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupEndTime }).(pulumi.StringPtrOutput)
+}
+
+// Backup file name.
+func (o InstanceBackupOutput) BackupFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupFileName }).(pulumi.StringPtrOutput)
+}
+
+// Backup file size, unit: Byte.
+func (o InstanceBackupOutput) BackupFileSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *int { return v.BackupFileSize }).(pulumi.IntPtrOutput)
+}
+
+// Backup ID.
+func (o InstanceBackupOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupId }).(pulumi.StringPtrOutput)
+}
+
+// Backup target. Valid values: Data: data backup. Log: log backup.
+func (o InstanceBackupOutput) BackupObject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupObject }).(pulumi.StringPtrOutput)
+}
+
+// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceBackupOutput) BackupStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupStartTime }).(pulumi.StringPtrOutput)
+}
+
+// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+func (o InstanceBackupOutput) BackupStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupStatus }).(pulumi.StringPtrOutput)
+}
+
+// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+func (o InstanceBackupOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupType }).(pulumi.StringPtrOutput)
+}
+
+// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+func (o InstanceBackupOutput) Creator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *string { return v.Creator }).(pulumi.StringPtrOutput)
+}
+
+type InstanceBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceBackup)(nil)).Elem()
+}
+
+func (o InstanceBackupArrayOutput) ToInstanceBackupArrayOutput() InstanceBackupArrayOutput {
+	return o
+}
+
+func (o InstanceBackupArrayOutput) ToInstanceBackupArrayOutputWithContext(ctx context.Context) InstanceBackupArrayOutput {
+	return o
+}
+
+func (o InstanceBackupArrayOutput) Index(i pulumi.IntInput) InstanceBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceBackup {
+		return vs[0].([]InstanceBackup)[vs[1].(int)]
+	}).(InstanceBackupOutput)
+}
+
 type InstanceConfigServer struct {
 	// ConfigServer node ID
 	ConfigServerNodeId *string `pulumi:"configServerNodeId"`
@@ -1162,6 +1340,112 @@ func (o InstanceNodeAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) Instan
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceNodeAvailabilityZone {
 		return vs[0].([]InstanceNodeAvailabilityZone)[vs[1].(int)]
 	}).(InstanceNodeAvailabilityZoneOutput)
+}
+
+type InstanceRecoverableTime struct {
+	// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	EarliestRecoverableTime *string `pulumi:"earliestRecoverableTime"`
+	// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LatestRecoverableTime *string `pulumi:"latestRecoverableTime"`
+}
+
+// InstanceRecoverableTimeInput is an input type that accepts InstanceRecoverableTimeArgs and InstanceRecoverableTimeOutput values.
+// You can construct a concrete instance of `InstanceRecoverableTimeInput` via:
+//
+//	InstanceRecoverableTimeArgs{...}
+type InstanceRecoverableTimeInput interface {
+	pulumi.Input
+
+	ToInstanceRecoverableTimeOutput() InstanceRecoverableTimeOutput
+	ToInstanceRecoverableTimeOutputWithContext(context.Context) InstanceRecoverableTimeOutput
+}
+
+type InstanceRecoverableTimeArgs struct {
+	// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	EarliestRecoverableTime pulumi.StringPtrInput `pulumi:"earliestRecoverableTime"`
+	// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LatestRecoverableTime pulumi.StringPtrInput `pulumi:"latestRecoverableTime"`
+}
+
+func (InstanceRecoverableTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRecoverableTime)(nil)).Elem()
+}
+
+func (i InstanceRecoverableTimeArgs) ToInstanceRecoverableTimeOutput() InstanceRecoverableTimeOutput {
+	return i.ToInstanceRecoverableTimeOutputWithContext(context.Background())
+}
+
+func (i InstanceRecoverableTimeArgs) ToInstanceRecoverableTimeOutputWithContext(ctx context.Context) InstanceRecoverableTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRecoverableTimeOutput)
+}
+
+// InstanceRecoverableTimeArrayInput is an input type that accepts InstanceRecoverableTimeArray and InstanceRecoverableTimeArrayOutput values.
+// You can construct a concrete instance of `InstanceRecoverableTimeArrayInput` via:
+//
+//	InstanceRecoverableTimeArray{ InstanceRecoverableTimeArgs{...} }
+type InstanceRecoverableTimeArrayInput interface {
+	pulumi.Input
+
+	ToInstanceRecoverableTimeArrayOutput() InstanceRecoverableTimeArrayOutput
+	ToInstanceRecoverableTimeArrayOutputWithContext(context.Context) InstanceRecoverableTimeArrayOutput
+}
+
+type InstanceRecoverableTimeArray []InstanceRecoverableTimeInput
+
+func (InstanceRecoverableTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRecoverableTime)(nil)).Elem()
+}
+
+func (i InstanceRecoverableTimeArray) ToInstanceRecoverableTimeArrayOutput() InstanceRecoverableTimeArrayOutput {
+	return i.ToInstanceRecoverableTimeArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceRecoverableTimeArray) ToInstanceRecoverableTimeArrayOutputWithContext(ctx context.Context) InstanceRecoverableTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRecoverableTimeArrayOutput)
+}
+
+type InstanceRecoverableTimeOutput struct{ *pulumi.OutputState }
+
+func (InstanceRecoverableTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRecoverableTime)(nil)).Elem()
+}
+
+func (o InstanceRecoverableTimeOutput) ToInstanceRecoverableTimeOutput() InstanceRecoverableTimeOutput {
+	return o
+}
+
+func (o InstanceRecoverableTimeOutput) ToInstanceRecoverableTimeOutputWithContext(ctx context.Context) InstanceRecoverableTimeOutput {
+	return o
+}
+
+// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceRecoverableTimeOutput) EarliestRecoverableTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRecoverableTime) *string { return v.EarliestRecoverableTime }).(pulumi.StringPtrOutput)
+}
+
+// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o InstanceRecoverableTimeOutput) LatestRecoverableTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRecoverableTime) *string { return v.LatestRecoverableTime }).(pulumi.StringPtrOutput)
+}
+
+type InstanceRecoverableTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceRecoverableTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRecoverableTime)(nil)).Elem()
+}
+
+func (o InstanceRecoverableTimeArrayOutput) ToInstanceRecoverableTimeArrayOutput() InstanceRecoverableTimeArrayOutput {
+	return o
+}
+
+func (o InstanceRecoverableTimeArrayOutput) ToInstanceRecoverableTimeArrayOutputWithContext(ctx context.Context) InstanceRecoverableTimeArrayOutput {
+	return o
+}
+
+func (o InstanceRecoverableTimeArrayOutput) Index(i pulumi.IntInput) InstanceRecoverableTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceRecoverableTime {
+		return vs[0].([]InstanceRecoverableTime)[vs[1].(int)]
+	}).(InstanceRecoverableTimeOutput)
 }
 
 type InstanceShard struct {
@@ -1998,6 +2282,184 @@ func (o GetEndpointDbAddressArrayOutput) Index(i pulumi.IntInput) GetEndpointDbA
 	}).(GetEndpointDbAddressOutput)
 }
 
+type GetInstanceBackup struct {
+	// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+	BackupDownloadStatus string `pulumi:"backupDownloadStatus"`
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupEndTime string `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName string `pulumi:"backupFileName"`
+	// Backup file size, unit: Byte.
+	BackupFileSize int `pulumi:"backupFileSize"`
+	// Backup ID.
+	BackupId string `pulumi:"backupId"`
+	// Backup target. Valid values: Data: data backup. Log: log backup.
+	BackupObject string `pulumi:"backupObject"`
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupStartTime string `pulumi:"backupStartTime"`
+	// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+	BackupStatus string `pulumi:"backupStatus"`
+	// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+	BackupType string `pulumi:"backupType"`
+	// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+	Creator string `pulumi:"creator"`
+}
+
+// GetInstanceBackupInput is an input type that accepts GetInstanceBackupArgs and GetInstanceBackupOutput values.
+// You can construct a concrete instance of `GetInstanceBackupInput` via:
+//
+//	GetInstanceBackupArgs{...}
+type GetInstanceBackupInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupOutput() GetInstanceBackupOutput
+	ToGetInstanceBackupOutputWithContext(context.Context) GetInstanceBackupOutput
+}
+
+type GetInstanceBackupArgs struct {
+	// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+	BackupDownloadStatus pulumi.StringInput `pulumi:"backupDownloadStatus"`
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupEndTime pulumi.StringInput `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName pulumi.StringInput `pulumi:"backupFileName"`
+	// Backup file size, unit: Byte.
+	BackupFileSize pulumi.IntInput `pulumi:"backupFileSize"`
+	// Backup ID.
+	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// Backup target. Valid values: Data: data backup. Log: log backup.
+	BackupObject pulumi.StringInput `pulumi:"backupObject"`
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	BackupStartTime pulumi.StringInput `pulumi:"backupStartTime"`
+	// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+	BackupStatus pulumi.StringInput `pulumi:"backupStatus"`
+	// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+	Creator pulumi.StringInput `pulumi:"creator"`
+}
+
+func (GetInstanceBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackup)(nil)).Elem()
+}
+
+func (i GetInstanceBackupArgs) ToGetInstanceBackupOutput() GetInstanceBackupOutput {
+	return i.ToGetInstanceBackupOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupArgs) ToGetInstanceBackupOutputWithContext(ctx context.Context) GetInstanceBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupOutput)
+}
+
+// GetInstanceBackupArrayInput is an input type that accepts GetInstanceBackupArray and GetInstanceBackupArrayOutput values.
+// You can construct a concrete instance of `GetInstanceBackupArrayInput` via:
+//
+//	GetInstanceBackupArray{ GetInstanceBackupArgs{...} }
+type GetInstanceBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupArrayOutput() GetInstanceBackupArrayOutput
+	ToGetInstanceBackupArrayOutputWithContext(context.Context) GetInstanceBackupArrayOutput
+}
+
+type GetInstanceBackupArray []GetInstanceBackupInput
+
+func (GetInstanceBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceBackup)(nil)).Elem()
+}
+
+func (i GetInstanceBackupArray) ToGetInstanceBackupArrayOutput() GetInstanceBackupArrayOutput {
+	return i.ToGetInstanceBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupArray) ToGetInstanceBackupArrayOutputWithContext(ctx context.Context) GetInstanceBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupArrayOutput)
+}
+
+type GetInstanceBackupOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackup)(nil)).Elem()
+}
+
+func (o GetInstanceBackupOutput) ToGetInstanceBackupOutput() GetInstanceBackupOutput {
+	return o
+}
+
+func (o GetInstanceBackupOutput) ToGetInstanceBackupOutputWithContext(ctx context.Context) GetInstanceBackupOutput {
+	return o
+}
+
+// Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+func (o GetInstanceBackupOutput) BackupDownloadStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupDownloadStatus }).(pulumi.StringOutput)
+}
+
+// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceBackupOutput) BackupEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupEndTime }).(pulumi.StringOutput)
+}
+
+// Backup file name.
+func (o GetInstanceBackupOutput) BackupFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupFileName }).(pulumi.StringOutput)
+}
+
+// Backup file size, unit: Byte.
+func (o GetInstanceBackupOutput) BackupFileSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackup) int { return v.BackupFileSize }).(pulumi.IntOutput)
+}
+
+// Backup ID.
+func (o GetInstanceBackupOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// Backup target. Valid values: Data: data backup. Log: log backup.
+func (o GetInstanceBackupOutput) BackupObject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupObject }).(pulumi.StringOutput)
+}
+
+// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceBackupOutput) BackupStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupStartTime }).(pulumi.StringOutput)
+}
+
+// Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+func (o GetInstanceBackupOutput) BackupStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupStatus }).(pulumi.StringOutput)
+}
+
+// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+func (o GetInstanceBackupOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+func (o GetInstanceBackupOutput) Creator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackup) string { return v.Creator }).(pulumi.StringOutput)
+}
+
+type GetInstanceBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceBackup)(nil)).Elem()
+}
+
+func (o GetInstanceBackupArrayOutput) ToGetInstanceBackupArrayOutput() GetInstanceBackupArrayOutput {
+	return o
+}
+
+func (o GetInstanceBackupArrayOutput) ToGetInstanceBackupArrayOutputWithContext(ctx context.Context) GetInstanceBackupArrayOutput {
+	return o
+}
+
+func (o GetInstanceBackupArrayOutput) Index(i pulumi.IntInput) GetInstanceBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceBackup {
+		return vs[0].([]GetInstanceBackup)[vs[1].(int)]
+	}).(GetInstanceBackupOutput)
+}
+
 type GetInstanceConfigServer struct {
 	// ConfigServer node ID
 	ConfigServerNodeId string `pulumi:"configServerNodeId"`
@@ -2789,6 +3251,112 @@ func (o GetInstanceNodeAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetInstanceNodeAvailabilityZoneOutput)
 }
 
+type GetInstanceRecoverableTime struct {
+	// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	EarliestRecoverableTime string `pulumi:"earliestRecoverableTime"`
+	// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LatestRecoverableTime string `pulumi:"latestRecoverableTime"`
+}
+
+// GetInstanceRecoverableTimeInput is an input type that accepts GetInstanceRecoverableTimeArgs and GetInstanceRecoverableTimeOutput values.
+// You can construct a concrete instance of `GetInstanceRecoverableTimeInput` via:
+//
+//	GetInstanceRecoverableTimeArgs{...}
+type GetInstanceRecoverableTimeInput interface {
+	pulumi.Input
+
+	ToGetInstanceRecoverableTimeOutput() GetInstanceRecoverableTimeOutput
+	ToGetInstanceRecoverableTimeOutputWithContext(context.Context) GetInstanceRecoverableTimeOutput
+}
+
+type GetInstanceRecoverableTimeArgs struct {
+	// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	EarliestRecoverableTime pulumi.StringInput `pulumi:"earliestRecoverableTime"`
+	// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+	LatestRecoverableTime pulumi.StringInput `pulumi:"latestRecoverableTime"`
+}
+
+func (GetInstanceRecoverableTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRecoverableTime)(nil)).Elem()
+}
+
+func (i GetInstanceRecoverableTimeArgs) ToGetInstanceRecoverableTimeOutput() GetInstanceRecoverableTimeOutput {
+	return i.ToGetInstanceRecoverableTimeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRecoverableTimeArgs) ToGetInstanceRecoverableTimeOutputWithContext(ctx context.Context) GetInstanceRecoverableTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRecoverableTimeOutput)
+}
+
+// GetInstanceRecoverableTimeArrayInput is an input type that accepts GetInstanceRecoverableTimeArray and GetInstanceRecoverableTimeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceRecoverableTimeArrayInput` via:
+//
+//	GetInstanceRecoverableTimeArray{ GetInstanceRecoverableTimeArgs{...} }
+type GetInstanceRecoverableTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceRecoverableTimeArrayOutput() GetInstanceRecoverableTimeArrayOutput
+	ToGetInstanceRecoverableTimeArrayOutputWithContext(context.Context) GetInstanceRecoverableTimeArrayOutput
+}
+
+type GetInstanceRecoverableTimeArray []GetInstanceRecoverableTimeInput
+
+func (GetInstanceRecoverableTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRecoverableTime)(nil)).Elem()
+}
+
+func (i GetInstanceRecoverableTimeArray) ToGetInstanceRecoverableTimeArrayOutput() GetInstanceRecoverableTimeArrayOutput {
+	return i.ToGetInstanceRecoverableTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRecoverableTimeArray) ToGetInstanceRecoverableTimeArrayOutputWithContext(ctx context.Context) GetInstanceRecoverableTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRecoverableTimeArrayOutput)
+}
+
+type GetInstanceRecoverableTimeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRecoverableTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRecoverableTime)(nil)).Elem()
+}
+
+func (o GetInstanceRecoverableTimeOutput) ToGetInstanceRecoverableTimeOutput() GetInstanceRecoverableTimeOutput {
+	return o
+}
+
+func (o GetInstanceRecoverableTimeOutput) ToGetInstanceRecoverableTimeOutputWithContext(ctx context.Context) GetInstanceRecoverableTimeOutput {
+	return o
+}
+
+// Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceRecoverableTimeOutput) EarliestRecoverableTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRecoverableTime) string { return v.EarliestRecoverableTime }).(pulumi.StringOutput)
+}
+
+// Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+func (o GetInstanceRecoverableTimeOutput) LatestRecoverableTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRecoverableTime) string { return v.LatestRecoverableTime }).(pulumi.StringOutput)
+}
+
+type GetInstanceRecoverableTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRecoverableTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRecoverableTime)(nil)).Elem()
+}
+
+func (o GetInstanceRecoverableTimeArrayOutput) ToGetInstanceRecoverableTimeArrayOutput() GetInstanceRecoverableTimeArrayOutput {
+	return o
+}
+
+func (o GetInstanceRecoverableTimeArrayOutput) ToGetInstanceRecoverableTimeArrayOutputWithContext(ctx context.Context) GetInstanceRecoverableTimeArrayOutput {
+	return o
+}
+
+func (o GetInstanceRecoverableTimeArrayOutput) Index(i pulumi.IntInput) GetInstanceRecoverableTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceRecoverableTime {
+		return vs[0].([]GetInstanceRecoverableTime)[vs[1].(int)]
+	}).(GetInstanceRecoverableTimeOutput)
+}
+
 type GetInstanceShard struct {
 	// List of node information in each Shard.
 	Nodes []GetInstanceShardNode `pulumi:"nodes"`
@@ -3204,6 +3772,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointDbAddressInput)(nil)).Elem(), EndpointDbAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointDbAddressArrayInput)(nil)).Elem(), EndpointDbAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupInput)(nil)).Elem(), InstanceBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupArrayInput)(nil)).Elem(), InstanceBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerInput)(nil)).Elem(), InstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerArrayInput)(nil)).Elem(), InstanceConfigServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceParameterInput)(nil)).Elem(), InstanceInstanceParameterArgs{})
@@ -3214,6 +3784,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeArrayInput)(nil)).Elem(), InstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeAvailabilityZoneInput)(nil)).Elem(), InstanceNodeAvailabilityZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeAvailabilityZoneArrayInput)(nil)).Elem(), InstanceNodeAvailabilityZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRecoverableTimeInput)(nil)).Elem(), InstanceRecoverableTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRecoverableTimeArrayInput)(nil)).Elem(), InstanceRecoverableTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceShardInput)(nil)).Elem(), InstanceShardArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceShardArrayInput)(nil)).Elem(), InstanceShardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceShardNodeInput)(nil)).Elem(), InstanceShardNodeArgs{})
@@ -3226,6 +3798,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointDbAddressInput)(nil)).Elem(), GetEndpointDbAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointDbAddressArrayInput)(nil)).Elem(), GetEndpointDbAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupInput)(nil)).Elem(), GetInstanceBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupArrayInput)(nil)).Elem(), GetInstanceBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerInput)(nil)).Elem(), GetInstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerArrayInput)(nil)).Elem(), GetInstanceConfigServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceParameterInput)(nil)).Elem(), GetInstanceInstanceParameterArgs{})
@@ -3236,6 +3810,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeArrayInput)(nil)).Elem(), GetInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeAvailabilityZoneInput)(nil)).Elem(), GetInstanceNodeAvailabilityZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeAvailabilityZoneArrayInput)(nil)).Elem(), GetInstanceNodeAvailabilityZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRecoverableTimeInput)(nil)).Elem(), GetInstanceRecoverableTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRecoverableTimeArrayInput)(nil)).Elem(), GetInstanceRecoverableTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShardInput)(nil)).Elem(), GetInstanceShardArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShardArrayInput)(nil)).Elem(), GetInstanceShardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShardNodeInput)(nil)).Elem(), GetInstanceShardNodeArgs{})
@@ -3248,6 +3824,8 @@ func init() {
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(EndpointDbAddressOutput{})
 	pulumi.RegisterOutputType(EndpointDbAddressArrayOutput{})
+	pulumi.RegisterOutputType(InstanceBackupOutput{})
+	pulumi.RegisterOutputType(InstanceBackupArrayOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerArrayOutput{})
 	pulumi.RegisterOutputType(InstanceInstanceParameterOutput{})
@@ -3258,6 +3836,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceNodeAvailabilityZoneOutput{})
 	pulumi.RegisterOutputType(InstanceNodeAvailabilityZoneArrayOutput{})
+	pulumi.RegisterOutputType(InstanceRecoverableTimeOutput{})
+	pulumi.RegisterOutputType(InstanceRecoverableTimeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceShardOutput{})
 	pulumi.RegisterOutputType(InstanceShardArrayOutput{})
 	pulumi.RegisterOutputType(InstanceShardNodeOutput{})
@@ -3270,6 +3850,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointDbAddressOutput{})
 	pulumi.RegisterOutputType(GetEndpointDbAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceInstanceParameterOutput{})
@@ -3280,6 +3862,8 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeAvailabilityZoneOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeAvailabilityZoneArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceRecoverableTimeOutput{})
+	pulumi.RegisterOutputType(GetInstanceRecoverableTimeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceShardOutput{})
 	pulumi.RegisterOutputType(GetInstanceShardArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceShardNodeOutput{})

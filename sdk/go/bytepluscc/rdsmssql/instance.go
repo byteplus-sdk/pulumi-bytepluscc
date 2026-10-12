@@ -76,6 +76,8 @@ type Instance struct {
 	AdvancedFeatures pulumi.StringOutput `pulumi:"advancedFeatures"`
 	// Allowlist ID list permitted for access.
 	AllowListIds pulumi.StringArrayOutput `pulumi:"allowListIds"`
+	// List of cross-region backup destination regions.
+	AvailableCrossRegions pulumi.StringArrayOutput `pulumi:"availableCrossRegions"`
 	// Used backup space for the instance, in GiB.
 	BackupUse pulumi.Float64Output `pulumi:"backupUse"`
 	// Payment method.
@@ -85,6 +87,8 @@ type Instance struct {
 	ConnectionInfos InstanceConnectionInfoArrayOutput `pulumi:"connectionInfos"`
 	// Creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
+	// Cross-region backup policy.
+	CrossBackupPolicy InstanceCrossBackupPolicyOutput `pulumi:"crossBackupPolicy"`
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringOutput `pulumi:"dbEngineVersion"`
 	// Kernel version number.
@@ -137,6 +141,8 @@ type Instance struct {
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayOutput `pulumi:"tags"`
+	// Instance TDE configuration.
+	TdeConfig InstanceTdeConfigOutput `pulumi:"tdeConfig"`
 	// Time zone.
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// Update time.
@@ -210,6 +216,8 @@ type instanceState struct {
 	AdvancedFeatures *string `pulumi:"advancedFeatures"`
 	// Allowlist ID list permitted for access.
 	AllowListIds []string `pulumi:"allowListIds"`
+	// List of cross-region backup destination regions.
+	AvailableCrossRegions []string `pulumi:"availableCrossRegions"`
 	// Used backup space for the instance, in GiB.
 	BackupUse *float64 `pulumi:"backupUse"`
 	// Payment method.
@@ -219,6 +227,8 @@ type instanceState struct {
 	ConnectionInfos []InstanceConnectionInfo `pulumi:"connectionInfos"`
 	// Creation time.
 	CreatedTime *string `pulumi:"createdTime"`
+	// Cross-region backup policy.
+	CrossBackupPolicy *InstanceCrossBackupPolicy `pulumi:"crossBackupPolicy"`
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
 	// Kernel version number.
@@ -271,6 +281,8 @@ type instanceState struct {
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Instance TDE configuration.
+	TdeConfig *InstanceTdeConfig `pulumi:"tdeConfig"`
 	// Time zone.
 	TimeZone *string `pulumi:"timeZone"`
 	// Update time.
@@ -288,6 +300,8 @@ type InstanceState struct {
 	AdvancedFeatures pulumi.StringPtrInput
 	// Allowlist ID list permitted for access.
 	AllowListIds pulumi.StringArrayInput
+	// List of cross-region backup destination regions.
+	AvailableCrossRegions pulumi.StringArrayInput
 	// Used backup space for the instance, in GiB.
 	BackupUse pulumi.Float64PtrInput
 	// Payment method.
@@ -297,6 +311,8 @@ type InstanceState struct {
 	ConnectionInfos InstanceConnectionInfoArrayInput
 	// Creation time.
 	CreatedTime pulumi.StringPtrInput
+	// Cross-region backup policy.
+	CrossBackupPolicy InstanceCrossBackupPolicyPtrInput
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringPtrInput
 	// Kernel version number.
@@ -349,6 +365,8 @@ type InstanceState struct {
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Instance TDE configuration.
+	TdeConfig InstanceTdeConfigPtrInput
 	// Time zone.
 	TimeZone pulumi.StringPtrInput
 	// Update time.
@@ -372,6 +390,8 @@ type instanceArgs struct {
 	AllowListIds []string `pulumi:"allowListIds"`
 	// Payment method.
 	ChargeInfo *InstanceChargeInfo `pulumi:"chargeInfo"`
+	// Cross-region backup policy.
+	CrossBackupPolicy *InstanceCrossBackupPolicy `pulumi:"crossBackupPolicy"`
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
 	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
@@ -397,6 +417,8 @@ type instanceArgs struct {
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Instance TDE configuration.
+	TdeConfig *InstanceTdeConfig `pulumi:"tdeConfig"`
 	// Time zone.
 	TimeZone string `pulumi:"timeZone"`
 	// VPC ID
@@ -413,6 +435,8 @@ type InstanceArgs struct {
 	AllowListIds pulumi.StringArrayInput
 	// Payment method.
 	ChargeInfo InstanceChargeInfoPtrInput
+	// Cross-region backup policy.
+	CrossBackupPolicy InstanceCrossBackupPolicyPtrInput
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringInput
 	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
@@ -438,6 +462,8 @@ type InstanceArgs struct {
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Instance TDE configuration.
+	TdeConfig InstanceTdeConfigPtrInput
 	// Time zone.
 	TimeZone pulumi.StringInput
 	// VPC ID
@@ -543,6 +569,11 @@ func (o InstanceOutput) AllowListIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.AllowListIds }).(pulumi.StringArrayOutput)
 }
 
+// List of cross-region backup destination regions.
+func (o InstanceOutput) AvailableCrossRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.AvailableCrossRegions }).(pulumi.StringArrayOutput)
+}
+
 // Used backup space for the instance, in GiB.
 func (o InstanceOutput) BackupUse() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.BackupUse }).(pulumi.Float64Output)
@@ -562,6 +593,11 @@ func (o InstanceOutput) ConnectionInfos() InstanceConnectionInfoArrayOutput {
 // Creation time.
 func (o InstanceOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// Cross-region backup policy.
+func (o InstanceOutput) CrossBackupPolicy() InstanceCrossBackupPolicyOutput {
+	return o.ApplyT(func(v *Instance) InstanceCrossBackupPolicyOutput { return v.CrossBackupPolicy }).(InstanceCrossBackupPolicyOutput)
 }
 
 // Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -689,6 +725,11 @@ func (o InstanceOutput) SuperAccountPassword() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
+}
+
+// Instance TDE configuration.
+func (o InstanceOutput) TdeConfig() InstanceTdeConfigOutput {
+	return o.ApplyT(func(v *Instance) InstanceTdeConfigOutput { return v.TdeConfig }).(InstanceTdeConfigOutput)
 }
 
 // Time zone.

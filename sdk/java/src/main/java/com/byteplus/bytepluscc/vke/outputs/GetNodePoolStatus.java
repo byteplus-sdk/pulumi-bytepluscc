@@ -18,7 +18,7 @@ public final class GetNodePoolStatus {
      */
     private List<GetNodePoolStatusCondition> conditions;
     /**
-     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+     * @return Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
      * 
      */
     private String phase;
@@ -32,7 +32,7 @@ public final class GetNodePoolStatus {
         return this.conditions;
     }
     /**
-     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+     * @return Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
      * 
      */
     public String phase() {

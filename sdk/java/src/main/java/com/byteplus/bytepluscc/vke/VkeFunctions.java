@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.vke.inputs.GetNodeArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePoolArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePoolPlainArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetNodepoolScalingPolicyArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetNodepoolScalingPolicyPlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetPermissionArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetPermissionPlainArgs;
 import com.byteplus.bytepluscc.vke.outputs.GetAddonResult;
@@ -29,6 +31,8 @@ import com.byteplus.bytepluscc.vke.outputs.GetKubeconfigsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodeResult;
+import com.byteplus.bytepluscc.vke.outputs.GetNodepoolScalingPoliciesResult;
+import com.byteplus.bytepluscc.vke.outputs.GetNodepoolScalingPolicyResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodesResult;
 import com.byteplus.bytepluscc.vke.outputs.GetPermissionResult;
 import com.byteplus.bytepluscc.vke.outputs.GetPermissionsResult;
@@ -495,6 +499,90 @@ public final class VkeFunctions {
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies() {
+        return getNodepoolScalingPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain() {
+        return getNodepoolScalingPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args) {
+        return getNodepoolScalingPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain(InvokeArgs args) {
+        return getNodepoolScalingPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPoliciesResult> getNodepoolScalingPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPoliciesResult> getNodepoolScalingPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNodepoolScalingPolicies:getNodepoolScalingPolicies", TypeShape.of(GetNodepoolScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args) {
+        return getNodepoolScalingPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicyPlain(GetNodepoolScalingPolicyPlainArgs args) {
+        return getNodepoolScalingPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static Output<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicy(GetNodepoolScalingPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::NodepoolScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetNodepoolScalingPolicyResult> getNodepoolScalingPolicyPlain(GetNodepoolScalingPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNodepoolScalingPolicy:getNodepoolScalingPolicy", TypeShape.of(GetNodepoolScalingPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::VKE::Node

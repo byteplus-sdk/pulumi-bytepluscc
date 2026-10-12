@@ -368,19 +368,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         [Input("enableCloudStorage")]
         public Input<bool>? EnableCloudStorage { get; set; }
 
-        [Input("endpoints")]
-        private InputList<Inputs.InstanceEndpointArgs>? _endpoints;
-
-        /// <summary>
-        /// Connection address information list
-        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        /// </summary>
-        public InputList<Inputs.InstanceEndpointArgs> Endpoints
-        {
-            get => _endpoints ?? (_endpoints = new InputList<Inputs.InstanceEndpointArgs>());
-            set => _endpoints = value;
-        }
-
         /// <summary>
         /// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         /// </summary>

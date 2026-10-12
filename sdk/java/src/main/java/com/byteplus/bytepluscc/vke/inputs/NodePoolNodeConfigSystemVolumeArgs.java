@@ -17,14 +17,14 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
     public static final NodePoolNodeConfigSystemVolumeArgs Empty = new NodePoolNodeConfigSystemVolumeArgs();
 
     /**
-     * Placement group ID
+     * Storage placement group ID of the system disk.
      * 
      */
     @Import(name="placementGroupId")
     private @Nullable Output<String> placementGroupId;
 
     /**
-     * @return Placement group ID
+     * @return Storage placement group ID of the system disk.
      * 
      */
     public Optional<Output<String>> placementGroupId() {
@@ -32,14 +32,14 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
     }
 
     /**
-     * Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+     * @return Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
     }
 
     /**
-     * Placement subgroup
+     * Storage sub-placement group number for the system disk.
      * 
      */
     @Import(name="subgroupNumber")
     private @Nullable Output<Integer> subgroupNumber;
 
     /**
-     * @return Placement subgroup
+     * @return Storage sub-placement group number for the system disk.
      * 
      */
     public Optional<Output<Integer>> subgroupNumber() {
@@ -104,7 +104,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param placementGroupId Placement group ID
+         * @param placementGroupId Storage placement group ID of the system disk.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param placementGroupId Placement group ID
+         * @param placementGroupId Storage placement group ID of the system disk.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param size Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+         * @param size Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param size Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+         * @param size Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param subgroupNumber Placement subgroup
+         * @param subgroupNumber Storage sub-placement group number for the system disk.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class NodePoolNodeConfigSystemVolumeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param subgroupNumber Placement subgroup
+         * @param subgroupNumber Storage sub-placement group number for the system disk.
          * 
          * @return builder
          * 

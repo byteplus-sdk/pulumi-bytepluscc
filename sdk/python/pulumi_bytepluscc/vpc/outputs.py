@@ -28,6 +28,7 @@ __all__ = [
     'HaVipTag',
     'IpPoolTag',
     'IpamPoolTag',
+    'IpamResourceDiscoveryTag',
     'IpamScopeTag',
     'IpamTag',
     'Ipv6AddressBandwidthTag',
@@ -69,6 +70,7 @@ __all__ = [
     'GetHaVipTagResult',
     'GetIpPoolTagResult',
     'GetIpamPoolTagResult',
+    'GetIpamResourceDiscoveryTagResult',
     'GetIpamScopeTagResult',
     'GetIpamTagResult',
     'GetIpv6AddressBandwidthTagResult',
@@ -561,6 +563,37 @@ class IpamPoolTag(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IpamResourceDiscoveryTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -3089,6 +3122,35 @@ class GetIpamPoolTagResult(dict):
     def value(self) -> _builtins.str:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIpamResourceDiscoveryTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 

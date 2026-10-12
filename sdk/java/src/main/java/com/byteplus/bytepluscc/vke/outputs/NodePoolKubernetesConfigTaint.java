@@ -17,12 +17,12 @@ public final class NodePoolKubernetesConfigTaint {
      */
     private @Nullable String effect;
     /**
-     * @return Taint key.
+     * @return Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     private @Nullable String key;
     /**
-     * @return Taint value
+     * @return Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     private @Nullable String value;
@@ -36,14 +36,14 @@ public final class NodePoolKubernetesConfigTaint {
         return Optional.ofNullable(this.effect);
     }
     /**
-     * @return Taint key.
+     * @return Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return Taint value
+     * @return Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     public Optional<String> value() {

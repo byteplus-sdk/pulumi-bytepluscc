@@ -33,12 +33,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TransitRouterAttachmentToRouteTable{}
 	case "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage":
 		r = &TransitRouterBandwidthPackage{}
+	case "bytepluscc:transitrouter/transitRouterForwardPolicyEntry:TransitRouterForwardPolicyEntry":
+		r = &TransitRouterForwardPolicyEntry{}
 	case "bytepluscc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable":
 		r = &TransitRouterForwardPolicyTable{}
 	case "bytepluscc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain":
 		r = &TransitRouterMulticastDomain{}
 	case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
 		r = &TransitRouterRouteEntry{}
+	case "bytepluscc:transitrouter/transitRouterRoutePolicyTable:TransitRouterRoutePolicyTable":
+		r = &TransitRouterRoutePolicyTable{}
 	case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
 		r = &TransitRouterRouteTable{}
 	case "bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation":
@@ -100,6 +104,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"transitrouter/transitRouterForwardPolicyEntry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"transitrouter/transitRouterForwardPolicyTable",
 		&module{version},
 	)
@@ -111,6 +120,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"transitrouter/transitRouterRouteEntry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/transitRouterRoutePolicyTable",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

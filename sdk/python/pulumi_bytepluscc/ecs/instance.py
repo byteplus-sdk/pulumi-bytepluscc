@@ -878,6 +878,7 @@ class _InstanceState:
                  renew_info: pulumi.Input[Optional['InstanceRenewInfoArgs']] = None,
                  role_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secondary_network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]]] = None,
+                 show_role_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  spot_price_limit: pulumi.Input[Optional[_builtins.float]] = None,
                  spot_strategy: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
@@ -996,6 +997,7 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_names: IAM role name bound to the instance
         :param pulumi.Input[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]] secondary_network_interfaces: Auxiliary network interface card of the instance.
                 Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] show_role_names: IAM role name bound to the instance.
         :param pulumi.Input[_builtins.float] spot_price_limit: Maximum hourly price for spot instances.
                    - Supports up to three decimal places.
                    - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -1116,6 +1118,8 @@ class _InstanceState:
             pulumi.set(__self__, "role_names", role_names)
         if secondary_network_interfaces is not None:
             pulumi.set(__self__, "secondary_network_interfaces", secondary_network_interfaces)
+        if show_role_names is not None:
+            pulumi.set(__self__, "show_role_names", show_role_names)
         if spot_price_limit is not None:
             pulumi.set(__self__, "spot_price_limit", spot_price_limit)
         if spot_strategy is not None:
@@ -1705,6 +1709,18 @@ class _InstanceState:
         pulumi.set(self, "secondary_network_interfaces", value)
 
     @_builtins.property
+    @pulumi.getter(name="showRoleNames")
+    def show_role_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        IAM role name bound to the instance.
+        """
+        return pulumi.get(self, "show_role_names")
+
+    @show_role_names.setter
+    def show_role_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "show_role_names", value)
+
+    @_builtins.property
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
@@ -2288,6 +2304,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["operation_system"] = None
             __props__.__dict__["rdma_ip_addresses"] = None
             __props__.__dict__["rdma_network_interface_details"] = None
+            __props__.__dict__["show_role_names"] = None
             __props__.__dict__["updated_at"] = None
             __props__.__dict__["vpc_id"] = None
         super(Instance, __self__).__init__(
@@ -2342,6 +2359,7 @@ class Instance(pulumi.CustomResource):
             renew_info: pulumi.Input[Optional[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']]] = None,
             role_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             secondary_network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceSecondaryNetworkInterfaceArgs', 'InstanceSecondaryNetworkInterfaceArgsDict']]]]] = None,
+            show_role_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             spot_price_limit: pulumi.Input[Optional[_builtins.float]] = None,
             spot_strategy: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2464,6 +2482,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_names: IAM role name bound to the instance
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceSecondaryNetworkInterfaceArgs', 'InstanceSecondaryNetworkInterfaceArgsDict']]]] secondary_network_interfaces: Auxiliary network interface card of the instance.
                 Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] show_role_names: IAM role name bound to the instance.
         :param pulumi.Input[_builtins.float] spot_price_limit: Maximum hourly price for spot instances.
                    - Supports up to three decimal places.
                    - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -2546,6 +2565,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["renew_info"] = renew_info
         __props__.__dict__["role_names"] = role_names
         __props__.__dict__["secondary_network_interfaces"] = secondary_network_interfaces
+        __props__.__dict__["show_role_names"] = show_role_names
         __props__.__dict__["spot_price_limit"] = spot_price_limit
         __props__.__dict__["spot_strategy"] = spot_strategy
         __props__.__dict__["status"] = status
@@ -2956,6 +2976,14 @@ class Instance(pulumi.CustomResource):
          Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "secondary_network_interfaces")
+
+    @_builtins.property
+    @pulumi.getter(name="showRoleNames")
+    def show_role_names(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        IAM role name bound to the instance.
+        """
+        return pulumi.get(self, "show_role_names")
 
     @_builtins.property
     @pulumi.getter(name="spotPriceLimit")

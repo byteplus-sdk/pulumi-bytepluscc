@@ -21,6 +21,8 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'EndpointDbAddressArgs',
     'EndpointDbAddressArgsDict',
+    'InstanceBackupArgs',
+    'InstanceBackupArgsDict',
     'InstanceConfigServerArgs',
     'InstanceConfigServerArgsDict',
     'InstanceInstanceParameterArgs',
@@ -31,6 +33,8 @@ __all__ = [
     'InstanceNodeArgsDict',
     'InstanceNodeAvailabilityZoneArgs',
     'InstanceNodeAvailabilityZoneArgsDict',
+    'InstanceRecoverableTimeArgs',
+    'InstanceRecoverableTimeArgsDict',
     'InstanceShardArgs',
     'InstanceShardArgsDict',
     'InstanceShardNodeArgs',
@@ -363,6 +367,215 @@ class EndpointDbAddressArgs:
     @zone_id.setter
     def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
+
+
+class InstanceBackupArgsDict(TypedDict):
+    backup_download_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+    """
+    backup_end_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+    backup_file_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup file name.
+    """
+    backup_file_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Backup file size, unit: Byte.
+    """
+    backup_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup ID.
+    """
+    backup_object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup target. Valid values: Data: data backup. Log: log backup.
+    """
+    backup_start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+    backup_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+    """
+    backup_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+    """
+    creator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+    """
+
+@pulumi.input_type
+class InstanceBackupArgs:
+    def __init__(__self__, *,
+                 backup_download_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_file_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_object: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 creator: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_download_status: Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        :param pulumi.Input[_builtins.str] backup_end_time: Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param pulumi.Input[_builtins.str] backup_file_name: Backup file name.
+        :param pulumi.Input[_builtins.int] backup_file_size: Backup file size, unit: Byte.
+        :param pulumi.Input[_builtins.str] backup_id: Backup ID.
+        :param pulumi.Input[_builtins.str] backup_object: Backup target. Valid values: Data: data backup. Log: log backup.
+        :param pulumi.Input[_builtins.str] backup_start_time: Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param pulumi.Input[_builtins.str] backup_status: Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        :param pulumi.Input[_builtins.str] backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        :param pulumi.Input[_builtins.str] creator: Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        if backup_download_status is not None:
+            pulumi.set(__self__, "backup_download_status", backup_download_status)
+        if backup_end_time is not None:
+            pulumi.set(__self__, "backup_end_time", backup_end_time)
+        if backup_file_name is not None:
+            pulumi.set(__self__, "backup_file_name", backup_file_name)
+        if backup_file_size is not None:
+            pulumi.set(__self__, "backup_file_size", backup_file_size)
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if backup_object is not None:
+            pulumi.set(__self__, "backup_object", backup_object)
+        if backup_start_time is not None:
+            pulumi.set(__self__, "backup_start_time", backup_start_time)
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if creator is not None:
+            pulumi.set(__self__, "creator", creator)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDownloadStatus")
+    def backup_download_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        """
+        return pulumi.get(self, "backup_download_status")
+
+    @backup_download_status.setter
+    def backup_download_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_download_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupEndTime")
+    def backup_end_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_end_time")
+
+    @backup_end_time.setter
+    def backup_end_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_end_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileName")
+    def backup_file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup file name.
+        """
+        return pulumi.get(self, "backup_file_name")
+
+    @backup_file_name.setter
+    def backup_file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_file_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileSize")
+    def backup_file_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Backup file size, unit: Byte.
+        """
+        return pulumi.get(self, "backup_file_size")
+
+    @backup_file_size.setter
+    def backup_file_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "backup_file_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup ID.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupObject")
+    def backup_object(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup target. Valid values: Data: data backup. Log: log backup.
+        """
+        return pulumi.get(self, "backup_object")
+
+    @backup_object.setter
+    def backup_object(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_object", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStartTime")
+    def backup_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_start_time")
+
+    @backup_start_time.setter
+    def backup_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_start_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @backup_status.setter
+    def backup_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def creator(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        return pulumi.get(self, "creator")
+
+    @creator.setter
+    def creator(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "creator", value)
 
 
 class InstanceConfigServerArgsDict(TypedDict):
@@ -1068,6 +1281,55 @@ class InstanceNodeAvailabilityZoneArgs:
     @zone_id.setter
     def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
+
+
+class InstanceRecoverableTimeArgsDict(TypedDict):
+    earliest_recoverable_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+    latest_recoverable_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+
+@pulumi.input_type
+class InstanceRecoverableTimeArgs:
+    def __init__(__self__, *,
+                 earliest_recoverable_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_recoverable_time: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] earliest_recoverable_time: Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param pulumi.Input[_builtins.str] latest_recoverable_time: Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        if earliest_recoverable_time is not None:
+            pulumi.set(__self__, "earliest_recoverable_time", earliest_recoverable_time)
+        if latest_recoverable_time is not None:
+            pulumi.set(__self__, "latest_recoverable_time", latest_recoverable_time)
+
+    @_builtins.property
+    @pulumi.getter(name="earliestRecoverableTime")
+    def earliest_recoverable_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "earliest_recoverable_time")
+
+    @earliest_recoverable_time.setter
+    def earliest_recoverable_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "earliest_recoverable_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="latestRecoverableTime")
+    def latest_recoverable_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "latest_recoverable_time")
+
+    @latest_recoverable_time.setter
+    def latest_recoverable_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "latest_recoverable_time", value)
 
 
 class InstanceShardArgsDict(TypedDict):

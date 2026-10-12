@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolManagementRemedyConfig {
     /**
-     * @return Enable self-healing check
+     * @return Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     private Boolean enabled;
     /**
-     * @return Self-healing rule ID
+     * @return Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     private String remedyId;
 
     private GetNodePoolManagementRemedyConfig() {}
     /**
-     * @return Enable self-healing check
+     * @return Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return Self-healing rule ID
+     * @return Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     public String remedyId() {

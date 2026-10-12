@@ -23,14 +23,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     public static final NodePoolKubernetesConfigKubeletConfigArgs Empty = new NodePoolKubernetesConfigKubeletConfigArgs();
 
     /**
-     * Configure kubelet CpuManagerPolicy. Supports none and static policies
+     * CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
      * 
      */
     @Import(name="cpuManagerPolicy")
     private @Nullable Output<String> cpuManagerPolicy;
 
     /**
-     * @return Configure kubelet CpuManagerPolicy. Supports none and static policies
+     * @return CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
      * 
      */
     public Optional<Output<String>> cpuManagerPolicy() {
@@ -38,7 +38,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Set of hard thresholds for triggering Pod eviction
+     * A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -46,7 +46,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigEvictionHardArgs>> evictionHards;
 
     /**
-     * @return Set of hard thresholds for triggering Pod eviction
+     * @return A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -55,14 +55,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Feature gate
+     * Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
      * 
      */
     @Import(name="featureGates")
     private @Nullable Output<NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates;
 
     /**
-     * @return Feature gate
+     * @return Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
      * 
      */
     public Optional<Output<NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs>> featureGates() {
@@ -70,14 +70,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+     * Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
      * 
      */
     @Import(name="kubeApiBurst")
     private @Nullable Output<Integer> kubeApiBurst;
 
     /**
-     * @return Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+     * @return Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
      * 
      */
     public Optional<Output<Integer>> kubeApiBurst() {
@@ -85,14 +85,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+     * Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
      * 
      */
     @Import(name="kubeApiQps")
     private @Nullable Output<Integer> kubeApiQps;
 
     /**
-     * @return Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+     * @return Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
      * 
      */
     public Optional<Output<Integer>> kubeApiQps() {
@@ -100,7 +100,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -108,7 +108,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds;
 
     /**
-     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * @return Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -117,14 +117,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Configure the maximum number of Pods supported by kubelet
+     * Maximum number of Pods supported by the node. Default is 110.
      * 
      */
     @Import(name="maxPods")
     private @Nullable Output<Integer> maxPods;
 
     /**
-     * @return Configure the maximum number of Pods supported by kubelet
+     * @return Maximum number of Pods supported by the node. Default is 110.
      * 
      */
     public Optional<Output<Integer>> maxPods() {
@@ -132,14 +132,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+     * Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
      * 
      */
     @Import(name="registryBurst")
     private @Nullable Output<Integer> registryBurst;
 
     /**
-     * @return Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+     * @return Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
      * 
      */
     public Optional<Output<Integer>> registryBurst() {
@@ -147,14 +147,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Used to limit the QPS cap for the image repository
+     * QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
      * 
      */
     @Import(name="registryPullQps")
     private @Nullable Output<Integer> registryPullQps;
 
     /**
-     * @return Used to limit the QPS cap for the image repository
+     * @return QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
      * 
      */
     public Optional<Output<Integer>> registryPullQps() {
@@ -162,14 +162,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Pull images sequentially
+     * Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
      * 
      */
     @Import(name="serializeImagePulls")
     private @Nullable Output<Boolean> serializeImagePulls;
 
     /**
-     * @return Pull images sequentially
+     * @return Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
      * 
      */
     public Optional<Output<Boolean>> serializeImagePulls() {
@@ -177,7 +177,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     }
 
     /**
-     * Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -185,7 +185,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds;
 
     /**
-     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -260,7 +260,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param cpuManagerPolicy Configure kubelet CpuManagerPolicy. Supports none and static policies
+         * @param cpuManagerPolicy CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param cpuManagerPolicy Configure kubelet CpuManagerPolicy. Supports none and static policies
+         * @param cpuManagerPolicy CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * @param evictionHards A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -293,7 +293,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * @param evictionHards A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -304,7 +304,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * @param evictionHards A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: &#34;100Mi&#34;, nodefs.available: &#34;10%&#34;, nodefs.inodesFree: &#34;5%&#34;, imagefs.available: &#34;15%&#34;.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -315,7 +315,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param featureGates Feature gate
+         * @param featureGates Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param featureGates Feature gate
+         * @param featureGates Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeApiBurst Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+         * @param kubeApiBurst Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeApiBurst Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+         * @param kubeApiBurst Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+         * @param kubeApiQps Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+         * @param kubeApiQps Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -390,7 +390,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -401,7 +401,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -412,7 +412,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param maxPods Configure the maximum number of Pods supported by kubelet
+         * @param maxPods Maximum number of Pods supported by the node. Default is 110.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param maxPods Configure the maximum number of Pods supported by kubelet
+         * @param maxPods Maximum number of Pods supported by the node. Default is 110.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param registryBurst Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+         * @param registryBurst Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param registryBurst Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+         * @param registryBurst Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param registryPullQps Used to limit the QPS cap for the image repository
+         * @param registryPullQps QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param registryPullQps Used to limit the QPS cap for the image repository
+         * @param registryPullQps QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param serializeImagePulls Pull images sequentially
+         * @param serializeImagePulls Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param serializeImagePulls Pull images sequentially
+         * @param serializeImagePulls Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -508,7 +508,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -519,7 +519,7 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder

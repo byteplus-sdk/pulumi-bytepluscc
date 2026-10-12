@@ -18,14 +18,14 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
     public static final NodePoolKubernetesConfigContainerdConfigArgs Empty = new NodePoolKubernetesConfigContainerdConfigArgs();
 
     /**
-     * Specify the container image repository address to skip certificate verification.
+     * Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
      * 
      */
     @Import(name="insecureRegistries")
     private @Nullable Output<List<String>> insecureRegistries;
 
     /**
-     * @return Specify the container image repository address to skip certificate verification.
+     * @return Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
      * 
      */
     public Optional<Output<List<String>>> insecureRegistries() {
@@ -75,7 +75,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
+         * @param insecureRegistries Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
          * 
          * @return builder
          * 
@@ -86,7 +86,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
+         * @param insecureRegistries Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
          * 
          * @return builder
          * 
@@ -96,7 +96,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
+         * @param insecureRegistries Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
          * 
          * @return builder
          * 

@@ -18,14 +18,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     public static final NodePoolAutoScalingArgs Empty = new NodePoolAutoScalingArgs();
 
     /**
-     * Configure the expected number of nodes in the node pool
+     * Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     @Import(name="desiredReplicas")
     private @Nullable Output<Integer> desiredReplicas;
 
     /**
-     * @return Configure the expected number of nodes in the node pool
+     * @return Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     public Optional<Output<Integer>> desiredReplicas() {
@@ -33,14 +33,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * @return Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -48,14 +48,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Configure the maximum number of nodes in the node pool
+     * Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     @Import(name="maxReplicas")
     private @Nullable Output<Integer> maxReplicas;
 
     /**
-     * @return Configure the maximum number of nodes in the node pool
+     * @return Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     public Optional<Output<Integer>> maxReplicas() {
@@ -63,14 +63,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Minimum number of nodes configured for the node pool
+     * Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     @Import(name="minReplicas")
     private @Nullable Output<Integer> minReplicas;
 
     /**
-     * @return Minimum number of nodes configured for the node pool
+     * @return Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     public Optional<Output<Integer>> minReplicas() {
@@ -78,14 +78,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Priority
+     * Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
-     * @return Priority
+     * @return Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -93,14 +93,14 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Scaling group ID
+     * Scaling group ID associated with the node pool.
      * 
      */
     @Import(name="scalingGroupId")
     private @Nullable Output<String> scalingGroupId;
 
     /**
-     * @return Scaling group ID
+     * @return Scaling group ID associated with the node pool.
      * 
      */
     public Optional<Output<String>> scalingGroupId() {
@@ -153,7 +153,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param desiredReplicas Configure the expected number of nodes in the node pool
+         * @param desiredReplicas Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param desiredReplicas Configure the expected number of nodes in the node pool
+         * @param desiredReplicas Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param enabled Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+         * @param enabled Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param enabled Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+         * @param enabled Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param maxReplicas Configure the maximum number of nodes in the node pool
+         * @param maxReplicas Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param maxReplicas Configure the maximum number of nodes in the node pool
+         * @param maxReplicas Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param minReplicas Minimum number of nodes configured for the node pool
+         * @param minReplicas Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param minReplicas Minimum number of nodes configured for the node pool
+         * @param minReplicas Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param priority Priority
+         * @param priority Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param priority Priority
+         * @param priority Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scalingGroupId Scaling group ID
+         * @param scalingGroupId Scaling group ID associated with the node pool.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class NodePoolAutoScalingArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scalingGroupId Scaling group ID
+         * @param scalingGroupId Scaling group ID associated with the node pool.
          * 
          * @return builder
          * 

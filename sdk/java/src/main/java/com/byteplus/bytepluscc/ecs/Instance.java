@@ -846,6 +846,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.secondaryNetworkInterfaces;
     }
     /**
+     * IAM role name bound to the instance.
+     * 
+     */
+    @Export(name="showRoleNames", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> showRoleNames;
+
+    /**
+     * @return IAM role name bound to the instance.
+     * 
+     */
+    public Output<List<String>> showRoleNames() {
+        return this.showRoleNames;
+    }
+    /**
      * Maximum hourly price for spot instances.
      *     - Supports up to three decimal places.
      *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.

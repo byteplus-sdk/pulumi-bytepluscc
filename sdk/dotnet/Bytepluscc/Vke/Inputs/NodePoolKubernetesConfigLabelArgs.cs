@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolKubernetesConfigLabelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tag key.
+        /// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// Label value.
+        /// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

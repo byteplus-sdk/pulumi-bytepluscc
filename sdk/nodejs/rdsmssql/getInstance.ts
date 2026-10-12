@@ -39,6 +39,10 @@ export interface GetInstanceResult {
      */
     readonly allowListIds: string[];
     /**
+     * List of cross-region backup destination regions.
+     */
+    readonly availableCrossRegions: string[];
+    /**
      * Used backup space for the instance, in GiB.
      */
     readonly backupUse: number;
@@ -54,6 +58,10 @@ export interface GetInstanceResult {
      * Creation time.
      */
     readonly createdTime: string;
+    /**
+     * Cross-region backup policy.
+     */
+    readonly crossBackupPolicy: outputs.rdsmssql.GetInstanceCrossBackupPolicy;
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      */
@@ -158,6 +166,10 @@ export interface GetInstanceResult {
      * Tag list.
      */
     readonly tags: outputs.rdsmssql.GetInstanceTag[];
+    /**
+     * Instance TDE configuration.
+     */
+    readonly tdeConfig: outputs.rdsmssql.GetInstanceTdeConfig;
     /**
      * Time zone.
      */

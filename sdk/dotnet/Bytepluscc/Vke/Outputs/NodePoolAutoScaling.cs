@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolAutoScaling
     {
         /// <summary>
-        /// Configure the expected number of nodes in the node pool
+        /// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
         /// </summary>
         public readonly int? DesiredReplicas;
         /// <summary>
-        /// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+        /// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
-        /// Configure the maximum number of nodes in the node pool
+        /// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
         /// </summary>
         public readonly int? MaxReplicas;
         /// <summary>
-        /// Minimum number of nodes configured for the node pool
+        /// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
         /// </summary>
         public readonly int? MinReplicas;
         /// <summary>
-        /// Priority
+        /// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
         /// </summary>
         public readonly int? Priority;
         /// <summary>
-        /// Scaling group ID
+        /// Scaling group ID associated with the node pool.
         /// </summary>
         public readonly string? ScalingGroupId;
         /// <summary>
