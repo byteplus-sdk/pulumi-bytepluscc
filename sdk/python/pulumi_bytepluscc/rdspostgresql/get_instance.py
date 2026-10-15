@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, replication_slots=None, restore_to_existed_instance=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, tde_enable=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, kms_trn=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, replication_slots=None, restore_to_existed_instance=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, tde_enable=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -61,6 +61,9 @@ class GetInstanceResult:
         if instance_type and not isinstance(instance_type, str):
             raise TypeError("Expected argument 'instance_type' to be a str")
         pulumi.set(__self__, "instance_type", instance_type)
+        if kms_trn and not isinstance(kms_trn, str):
+            raise TypeError("Expected argument 'kms_trn' to be a str")
+        pulumi.set(__self__, "kms_trn", kms_trn)
         if maintenance_window and not isinstance(maintenance_window, dict):
             raise TypeError("Expected argument 'maintenance_window' to be a dict")
         pulumi.set(__self__, "maintenance_window", maintenance_window)
@@ -215,6 +218,14 @@ class GetInstanceResult:
         Instance type. Value: HA (high availability edition)
         """
         return pulumi.get(self, "instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsTrn")
+    def kms_trn(self) -> _builtins.str:
+        """
+        KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
+        """
+        return pulumi.get(self, "kms_trn")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
@@ -410,6 +421,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             instance_name=self.instance_name,
             instance_status=self.instance_status,
             instance_type=self.instance_type,
+            kms_trn=self.kms_trn,
             maintenance_window=self.maintenance_window,
             memory=self.memory,
             node_infos=self.node_infos,
@@ -459,6 +471,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         instance_name=pulumi.get(__ret__, 'instance_name'),
         instance_status=pulumi.get(__ret__, 'instance_status'),
         instance_type=pulumi.get(__ret__, 'instance_type'),
+        kms_trn=pulumi.get(__ret__, 'kms_trn'),
         maintenance_window=pulumi.get(__ret__, 'maintenance_window'),
         memory=pulumi.get(__ret__, 'memory'),
         node_infos=pulumi.get(__ret__, 'node_infos'),
@@ -505,6 +518,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         instance_name=pulumi.get(__response__, 'instance_name'),
         instance_status=pulumi.get(__response__, 'instance_status'),
         instance_type=pulumi.get(__response__, 'instance_type'),
+        kms_trn=pulumi.get(__response__, 'kms_trn'),
         maintenance_window=pulumi.get(__response__, 'maintenance_window'),
         memory=pulumi.get(__response__, 'memory'),
         node_infos=pulumi.get(__response__, 'node_infos'),

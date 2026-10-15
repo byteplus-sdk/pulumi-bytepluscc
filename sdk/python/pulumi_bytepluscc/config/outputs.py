@@ -775,17 +775,25 @@ class AssumeRole(dict):
     def __init__(__self__, *,
                  assume_role_trn: _builtins.str,
                  duration_seconds: Optional[_builtins.int] = None,
-                 policy: Optional[_builtins.str] = None):
+                 no_proxy: Optional[_builtins.str] = None,
+                 policy: Optional[_builtins.str] = None,
+                 proxy_url: Optional[_builtins.str] = None):
         """
         :param _builtins.str assume_role_trn: he TRN of the role to assume.
         :param _builtins.int duration_seconds: The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.
+        :param _builtins.str no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level no_proxy and proxy_include_domains.
         :param _builtins.str policy: A more restrictive policy when making the AssumeRole call
+        :param _builtins.str proxy_url: HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or https_proxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
         """
         pulumi.set(__self__, "assume_role_trn", assume_role_trn)
         if duration_seconds is not None:
             pulumi.set(__self__, "duration_seconds", duration_seconds)
+        if no_proxy is not None:
+            pulumi.set(__self__, "no_proxy", no_proxy)
         if policy is not None:
             pulumi.set(__self__, "policy", policy)
+        if proxy_url is not None:
+            pulumi.set(__self__, "proxy_url", proxy_url)
 
     @_builtins.property
     @pulumi.getter(name="assumeRoleTrn")
@@ -804,12 +812,28 @@ class AssumeRole(dict):
         return pulumi.get(self, "duration_seconds")
 
     @_builtins.property
+    @pulumi.getter(name="noProxy")
+    def no_proxy(self) -> Optional[_builtins.str]:
+        """
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level no_proxy and proxy_include_domains.
+        """
+        return pulumi.get(self, "no_proxy")
+
+    @_builtins.property
     @pulumi.getter
     def policy(self) -> Optional[_builtins.str]:
         """
         A more restrictive policy when making the AssumeRole call
         """
         return pulumi.get(self, "policy")
+
+    @_builtins.property
+    @pulumi.getter(name="proxyUrl")
+    def proxy_url(self) -> Optional[_builtins.str]:
+        """
+        HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or https_proxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+        """
+        return pulumi.get(self, "proxy_url")
 
 
 @pulumi.output_type

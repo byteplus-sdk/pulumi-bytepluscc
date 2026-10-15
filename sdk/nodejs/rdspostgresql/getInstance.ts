@@ -75,6 +75,10 @@ export interface GetInstanceResult {
      */
     readonly instanceType: string;
     /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     */
+    readonly kmsTrn: string;
+    /**
      * Instance maintenance window
      */
     readonly maintenanceWindow: outputs.rdspostgresql.GetInstanceMaintenanceWindow;

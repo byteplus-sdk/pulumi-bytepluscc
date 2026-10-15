@@ -29,6 +29,7 @@ class InstanceArgs:
                  vpc_id: pulumi.Input[_builtins.str],
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_trn: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_window: pulumi.Input[Optional['InstanceMaintenanceWindowArgs']] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_slots: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]] = None,
@@ -48,6 +49,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] vpc_id: Use this parameter to specify the private network for the instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
         :param pulumi.Input[_builtins.str] instance_name: Instance name
+        :param pulumi.Input[_builtins.str] kms_trn: KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Instance maintenance window
         :param pulumi.Input[_builtins.str] project_name: Project. Default value: default project
         :param pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]] replication_slots: Replication slot list for the instance
@@ -68,6 +70,8 @@ class InstanceArgs:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if kms_trn is not None:
+            pulumi.set(__self__, "kms_trn", kms_trn)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if project_name is not None:
@@ -181,6 +185,18 @@ class InstanceArgs:
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="kmsTrn")
+    def kms_trn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
+        """
+        return pulumi.get(self, "kms_trn")
+
+    @kms_trn.setter
+    def kms_trn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kms_trn", value)
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> pulumi.Input[Optional['InstanceMaintenanceWindowArgs']]:
         """
@@ -280,6 +296,7 @@ class _InstanceState:
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_status: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_trn: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_window: pulumi.Input[Optional['InstanceMaintenanceWindowArgs']] = None,
                  memory: pulumi.Input[Optional[_builtins.float]] = None,
                  node_infos: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceNodeInfoArgs']]]] = None,
@@ -316,6 +333,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] instance_name: Instance name
         :param pulumi.Input[_builtins.str] instance_status: Instance status
         :param pulumi.Input[_builtins.str] instance_type: Instance type. Value: HA (high availability edition)
+        :param pulumi.Input[_builtins.str] kms_trn: KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Instance maintenance window
         :param pulumi.Input[_builtins.float] memory: Memory size, unit: GB
         :param pulumi.Input[Sequence[pulumi.Input['InstanceNodeInfoArgs']]] node_infos: Instance specification configuration
@@ -362,6 +380,8 @@ class _InstanceState:
             pulumi.set(__self__, "instance_status", instance_status)
         if instance_type is not None:
             pulumi.set(__self__, "instance_type", instance_type)
+        if kms_trn is not None:
+            pulumi.set(__self__, "kms_trn", kms_trn)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if memory is not None:
@@ -527,6 +547,18 @@ class _InstanceState:
     @instance_type.setter
     def instance_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsTrn")
+    def kms_trn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
+        """
+        return pulumi.get(self, "kms_trn")
+
+    @kms_trn.setter
+    def kms_trn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kms_trn", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
@@ -806,6 +838,7 @@ class Instance(pulumi.CustomResource):
                  charge_detail: pulumi.Input[Optional[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']]] = None,
                  db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_trn: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_window: pulumi.Input[Optional[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -862,6 +895,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Payment method
         :param pulumi.Input[_builtins.str] db_engine_version: Compatible version
         :param pulumi.Input[_builtins.str] instance_name: Instance name
+        :param pulumi.Input[_builtins.str] kms_trn: KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Instance maintenance window
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]] node_infos: Instance specification configuration
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -940,6 +974,7 @@ class Instance(pulumi.CustomResource):
                  charge_detail: pulumi.Input[Optional[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']]] = None,
                  db_engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_trn: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_window: pulumi.Input[Optional[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -968,6 +1003,7 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'db_engine_version'")
             __props__.__dict__["db_engine_version"] = db_engine_version
             __props__.__dict__["instance_name"] = instance_name
+            __props__.__dict__["kms_trn"] = kms_trn
             __props__.__dict__["maintenance_window"] = maintenance_window
             if node_infos is None and not opts.urn:
                 raise TypeError("Missing required property 'node_infos'")
@@ -1024,6 +1060,7 @@ class Instance(pulumi.CustomResource):
             instance_name: pulumi.Input[Optional[_builtins.str]] = None,
             instance_status: pulumi.Input[Optional[_builtins.str]] = None,
             instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_trn: pulumi.Input[Optional[_builtins.str]] = None,
             maintenance_window: pulumi.Input[Optional[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
             memory: pulumi.Input[Optional[_builtins.float]] = None,
             node_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]]] = None,
@@ -1064,6 +1101,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_name: Instance name
         :param pulumi.Input[_builtins.str] instance_status: Instance status
         :param pulumi.Input[_builtins.str] instance_type: Instance type. Value: HA (high availability edition)
+        :param pulumi.Input[_builtins.str] kms_trn: KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Instance maintenance window
         :param pulumi.Input[_builtins.float] memory: Memory size, unit: GB
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]] node_infos: Instance specification configuration
@@ -1104,6 +1142,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["instance_name"] = instance_name
         __props__.__dict__["instance_status"] = instance_status
         __props__.__dict__["instance_type"] = instance_type
+        __props__.__dict__["kms_trn"] = kms_trn
         __props__.__dict__["maintenance_window"] = maintenance_window
         __props__.__dict__["memory"] = memory
         __props__.__dict__["node_infos"] = node_infos
@@ -1208,6 +1247,14 @@ class Instance(pulumi.CustomResource):
         Instance type. Value: HA (high availability edition)
         """
         return pulumi.get(self, "instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsTrn")
+    def kms_trn(self) -> pulumi.Output[_builtins.str]:
+        """
+        KMS key ring TRN, format: trn:kms:\\n\\n:\\n\\n:keyrings/\\n\\n/keys/\\n\\n. This parameter is required when TDEEnable is true.
+        """
+        return pulumi.get(self, "kms_trn")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")

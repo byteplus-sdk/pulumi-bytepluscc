@@ -2656,8 +2656,12 @@ type AssumeRole struct {
 	AssumeRoleTrn string `pulumi:"assumeRoleTrn"`
 	// The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.
 	DurationSeconds *int `pulumi:"durationSeconds"`
+	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level noProxy and proxy_include_domains.
+	NoProxy *string `pulumi:"noProxy"`
 	// A more restrictive policy when making the AssumeRole call
 	Policy *string `pulumi:"policy"`
+	// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or httpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+	ProxyUrl *string `pulumi:"proxyUrl"`
 }
 
 // AssumeRoleInput is an input type that accepts AssumeRoleArgs and AssumeRoleOutput values.
@@ -2676,8 +2680,12 @@ type AssumeRoleArgs struct {
 	AssumeRoleTrn pulumi.StringInput `pulumi:"assumeRoleTrn"`
 	// The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.
 	DurationSeconds pulumi.IntPtrInput `pulumi:"durationSeconds"`
+	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level noProxy and proxy_include_domains.
+	NoProxy pulumi.StringPtrInput `pulumi:"noProxy"`
 	// A more restrictive policy when making the AssumeRole call
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
+	// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or httpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+	ProxyUrl pulumi.StringPtrInput `pulumi:"proxyUrl"`
 }
 
 func (AssumeRoleArgs) ElementType() reflect.Type {
@@ -2716,9 +2724,19 @@ func (o AssumeRoleOutput) DurationSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssumeRole) *int { return v.DurationSeconds }).(pulumi.IntPtrOutput)
 }
 
+// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level noProxy and proxy_include_domains.
+func (o AssumeRoleOutput) NoProxy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssumeRole) *string { return v.NoProxy }).(pulumi.StringPtrOutput)
+}
+
 // A more restrictive policy when making the AssumeRole call
 func (o AssumeRoleOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssumeRole) *string { return v.Policy }).(pulumi.StringPtrOutput)
+}
+
+// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or httpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+func (o AssumeRoleOutput) ProxyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssumeRole) *string { return v.ProxyUrl }).(pulumi.StringPtrOutput)
 }
 
 type Endpoints struct {

@@ -52,6 +52,8 @@ type LookupInstanceResult struct {
 	InstanceStatus string `pulumi:"instanceStatus"`
 	// Instance type. Value: HA (high availability edition)
 	InstanceType string `pulumi:"instanceType"`
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn string `pulumi:"kmsTrn"`
 	// Instance maintenance window
 	MaintenanceWindow GetInstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// Memory size, unit: GB
@@ -185,6 +187,11 @@ func (o LookupInstanceResultOutput) InstanceStatus() pulumi.StringOutput {
 // Instance type. Value: HA (high availability edition)
 func (o LookupInstanceResultOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+func (o LookupInstanceResultOutput) KmsTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.KmsTrn }).(pulumi.StringOutput)
 }
 
 // Instance maintenance window

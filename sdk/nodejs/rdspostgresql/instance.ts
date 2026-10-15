@@ -114,6 +114,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly instanceType: pulumi.Output<string>;
     /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     */
+    declare public readonly kmsTrn: pulumi.Output<string>;
+    /**
      * Instance maintenance window
      */
     declare public readonly maintenanceWindow: pulumi.Output<outputs.rdspostgresql.InstanceMaintenanceWindow>;
@@ -228,6 +232,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["instanceName"] = state?.instanceName;
             resourceInputs["instanceStatus"] = state?.instanceStatus;
             resourceInputs["instanceType"] = state?.instanceType;
+            resourceInputs["kmsTrn"] = state?.kmsTrn;
             resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
             resourceInputs["memory"] = state?.memory;
             resourceInputs["nodeInfos"] = state?.nodeInfos;
@@ -274,6 +279,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["chargeDetail"] = args?.chargeDetail;
             resourceInputs["dbEngineVersion"] = args?.dbEngineVersion;
             resourceInputs["instanceName"] = args?.instanceName;
+            resourceInputs["kmsTrn"] = args?.kmsTrn;
             resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
             resourceInputs["nodeInfos"] = args?.nodeInfos;
             resourceInputs["projectName"] = args?.projectName;
@@ -353,6 +359,10 @@ export interface InstanceState {
      * Instance type. Value: HA (high availability edition)
      */
     instanceType?: pulumi.Input<string | undefined>;
+    /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     */
+    kmsTrn?: pulumi.Input<string | undefined>;
     /**
      * Instance maintenance window
      */
@@ -466,6 +476,10 @@ export interface InstanceArgs {
      * Instance name
      */
     instanceName?: pulumi.Input<string | undefined>;
+    /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     */
+    kmsTrn?: pulumi.Input<string | undefined>;
     /**
      * Instance maintenance window
      */

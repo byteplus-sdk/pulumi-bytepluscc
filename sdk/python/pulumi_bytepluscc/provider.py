@@ -43,7 +43,7 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input['ProviderEndpointsArgs'] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
         :param pulumi.Input[_builtins.str] file_path: The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         :param pulumi.Input[_builtins.str] profile: The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         :param pulumi.Input[_builtins.str] proxy_authorization: Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] proxy_include_domains: Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
@@ -175,7 +175,7 @@ class ProviderArgs:
     @pulumi.getter(name="noProxy")
     def no_proxy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         """
         return pulumi.get(self, "no_proxy")
 
@@ -304,7 +304,7 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
         :param pulumi.Input[_builtins.str] file_path: The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         :param pulumi.Input[_builtins.str] profile: The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         :param pulumi.Input[_builtins.str] proxy_authorization: Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] proxy_include_domains: Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
@@ -432,7 +432,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="noProxy")
     def no_proxy(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         """
         return pulumi.get(self, "no_proxy")
 

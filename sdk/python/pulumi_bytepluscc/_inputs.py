@@ -30,9 +30,17 @@ class ProviderAssumeRoleArgsDict(TypedDict):
     """
     The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.
     """
+    no_proxy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level no_proxy and proxy_include_domains.
+    """
     policy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A more restrictive policy when making the AssumeRole call
+    """
+    proxy_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or https_proxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
     """
 
 @pulumi.input_type
@@ -40,17 +48,25 @@ class ProviderAssumeRoleArgs:
     def __init__(__self__, *,
                  assume_role_trn: pulumi.Input[_builtins.str],
                  duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 policy: pulumi.Input[Optional[_builtins.str]] = None):
+                 no_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] assume_role_trn: he TRN of the role to assume.
         :param pulumi.Input[_builtins.int] duration_seconds: The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.
+        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level no_proxy and proxy_include_domains.
         :param pulumi.Input[_builtins.str] policy: A more restrictive policy when making the AssumeRole call
+        :param pulumi.Input[_builtins.str] proxy_url: HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or https_proxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
         """
         pulumi.set(__self__, "assume_role_trn", assume_role_trn)
         if duration_seconds is not None:
             pulumi.set(__self__, "duration_seconds", duration_seconds)
+        if no_proxy is not None:
+            pulumi.set(__self__, "no_proxy", no_proxy)
         if policy is not None:
             pulumi.set(__self__, "policy", policy)
+        if proxy_url is not None:
+            pulumi.set(__self__, "proxy_url", proxy_url)
 
     @_builtins.property
     @pulumi.getter(name="assumeRoleTrn")
@@ -77,6 +93,18 @@ class ProviderAssumeRoleArgs:
         pulumi.set(self, "duration_seconds", value)
 
     @_builtins.property
+    @pulumi.getter(name="noProxy")
+    def no_proxy(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level no_proxy and proxy_include_domains.
+        """
+        return pulumi.get(self, "no_proxy")
+
+    @no_proxy.setter
+    def no_proxy(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "no_proxy", value)
+
+    @_builtins.property
     @pulumi.getter
     def policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -87,6 +115,18 @@ class ProviderAssumeRoleArgs:
     @policy.setter
     def policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="proxyUrl")
+    def proxy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or https_proxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+        """
+        return pulumi.get(self, "proxy_url")
+
+    @proxy_url.setter
+    def proxy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "proxy_url", value)
 
 
 class ProviderEndpointsArgsDict(TypedDict):

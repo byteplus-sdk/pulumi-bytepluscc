@@ -48,6 +48,21 @@ public final class ProviderAssumeRoleArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+     * 
+     */
+    @Import(name="noProxy")
+    private @Nullable Output<String> noProxy;
+
+    /**
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+     * 
+     */
+    public Optional<Output<String>> noProxy() {
+        return Optional.ofNullable(this.noProxy);
+    }
+
+    /**
      * A more restrictive policy when making the AssumeRole call
      * 
      */
@@ -62,12 +77,29 @@ public final class ProviderAssumeRoleArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.policy);
     }
 
+    /**
+     * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+     * 
+     */
+    @Import(name="proxyUrl")
+    private @Nullable Output<String> proxyUrl;
+
+    /**
+     * @return HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+     * 
+     */
+    public Optional<Output<String>> proxyUrl() {
+        return Optional.ofNullable(this.proxyUrl);
+    }
+
     private ProviderAssumeRoleArgs() {}
 
     private ProviderAssumeRoleArgs(ProviderAssumeRoleArgs $) {
         this.assumeRoleTrn = $.assumeRoleTrn;
         this.durationSeconds = $.durationSeconds;
+        this.noProxy = $.noProxy;
         this.policy = $.policy;
+        this.proxyUrl = $.proxyUrl;
     }
 
     public static Builder builder() {
@@ -131,6 +163,27 @@ public final class ProviderAssumeRoleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param noProxy Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noProxy(@Nullable Output<String> noProxy) {
+            $.noProxy = noProxy;
+            return this;
+        }
+
+        /**
+         * @param noProxy Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noProxy(String noProxy) {
+            return noProxy(Output.of(noProxy));
+        }
+
+        /**
          * @param policy A more restrictive policy when making the AssumeRole call
          * 
          * @return builder
@@ -149,6 +202,27 @@ public final class ProviderAssumeRoleArgs extends com.pulumi.resources.ResourceA
          */
         public Builder policy(String policy) {
             return policy(Output.of(policy));
+        }
+
+        /**
+         * @param proxyUrl HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyUrl(@Nullable Output<String> proxyUrl) {
+            $.proxyUrl = proxyUrl;
+            return this;
+        }
+
+        /**
+         * @param proxyUrl HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyUrl(String proxyUrl) {
+            return proxyUrl(Output.of(proxyUrl));
         }
 
         public ProviderAssumeRoleArgs build() {

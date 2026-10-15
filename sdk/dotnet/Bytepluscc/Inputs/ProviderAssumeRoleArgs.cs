@@ -26,10 +26,32 @@ namespace Byteplus.Pulumi.Bytepluscc.Inputs
         public Input<int>? DurationSeconds { get; set; }
 
         /// <summary>
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level NoProxy and proxy_include_domains.
+        /// </summary>
+        [Input("noProxy")]
+        public Input<string>? NoProxy { get; set; }
+
+        /// <summary>
         /// A more restrictive policy when making the AssumeRole call
         /// </summary>
         [Input("policy")]
         public Input<string>? Policy { get; set; }
+
+        [Input("proxyUrl")]
+        private Input<string>? _proxyUrl;
+
+        /// <summary>
+        /// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or HttpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+        /// </summary>
+        public Input<string>? ProxyUrl
+        {
+            get => _proxyUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _proxyUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public ProviderAssumeRoleArgs()
         {
