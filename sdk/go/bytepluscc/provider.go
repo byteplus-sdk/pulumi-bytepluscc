@@ -24,7 +24,7 @@ type Provider struct {
 	CustomerHeaders pulumi.StringPtrOutput `pulumi:"customerHeaders"`
 	// The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
 	FilePath pulumi.StringPtrOutput `pulumi:"filePath"`
-	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 	NoProxy pulumi.StringPtrOutput `pulumi:"noProxy"`
 	// The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
 	Profile pulumi.StringPtrOutput `pulumi:"profile"`
@@ -121,7 +121,7 @@ type providerArgs struct {
 	Endpoints *ProviderEndpoints `pulumi:"endpoints"`
 	// The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
 	FilePath *string `pulumi:"filePath"`
-	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 	NoProxy *string `pulumi:"noProxy"`
 	// The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
 	Profile *string `pulumi:"profile"`
@@ -153,7 +153,7 @@ type ProviderArgs struct {
 	Endpoints ProviderEndpointsPtrInput
 	// The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
 	FilePath pulumi.StringPtrInput
-	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+	// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 	NoProxy pulumi.StringPtrInput
 	// The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
 	Profile pulumi.StringPtrInput
@@ -246,7 +246,7 @@ func (o ProviderOutput) FilePath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.FilePath }).(pulumi.StringPtrOutput)
 }
 
-// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 func (o ProviderOutput) NoProxy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NoProxy }).(pulumi.StringPtrOutput)
 }

@@ -94,7 +94,7 @@ namespace Byteplus.Pulumi.Bytepluscc
 
         private static readonly __Value<string?> _noProxy = new __Value<string?>(() => __config.Get("noProxy"));
         /// <summary>
-        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         /// </summary>
         public static string? NoProxy
         {
@@ -186,9 +186,17 @@ namespace Byteplus.Pulumi.Bytepluscc
             /// </summary>
                 public int? DurationSeconds { get; set; }
             /// <summary>
+            /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level NoProxy and proxy_include_domains.
+            /// </summary>
+                public string? NoProxy { get; set; } = null!;
+            /// <summary>
             /// A more restrictive policy when making the AssumeRole call
             /// </summary>
                 public string? Policy { get; set; } = null!;
+            /// <summary>
+            /// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or HttpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+            /// </summary>
+                public string? ProxyUrl { get; set; } = null!;
             }
 
              public class Endpoints

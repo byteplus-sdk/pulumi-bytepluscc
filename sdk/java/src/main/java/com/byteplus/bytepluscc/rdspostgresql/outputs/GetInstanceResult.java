@@ -76,6 +76,11 @@ public final class GetInstanceResult {
      */
     private String instanceType;
     /**
+     * @return KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    private String kmsTrn;
+    /**
      * @return Instance maintenance window
      * 
      */
@@ -265,6 +270,13 @@ public final class GetInstanceResult {
         return this.instanceType;
     }
     /**
+     * @return KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    public String kmsTrn() {
+        return this.kmsTrn;
+    }
+    /**
      * @return Instance maintenance window
      * 
      */
@@ -439,6 +451,7 @@ public final class GetInstanceResult {
         private String instanceName;
         private String instanceStatus;
         private String instanceType;
+        private String kmsTrn;
         private GetInstanceMaintenanceWindow maintenanceWindow;
         private Double memory;
         private List<GetInstanceNodeInfo> nodeInfos;
@@ -475,6 +488,7 @@ public final class GetInstanceResult {
     	      this.instanceName = defaults.instanceName;
     	      this.instanceStatus = defaults.instanceStatus;
     	      this.instanceType = defaults.instanceType;
+    	      this.kmsTrn = defaults.kmsTrn;
     	      this.maintenanceWindow = defaults.maintenanceWindow;
     	      this.memory = defaults.memory;
     	      this.nodeInfos = defaults.nodeInfos;
@@ -591,6 +605,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "instanceType");
             }
             this.instanceType = instanceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder kmsTrn(String kmsTrn) {
+            if (kmsTrn == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "kmsTrn");
+            }
+            this.kmsTrn = kmsTrn;
             return this;
         }
         @CustomType.Setter
@@ -791,6 +813,7 @@ public final class GetInstanceResult {
             _resultValue.instanceName = instanceName;
             _resultValue.instanceStatus = instanceStatus;
             _resultValue.instanceType = instanceType;
+            _resultValue.kmsTrn = kmsTrn;
             _resultValue.maintenanceWindow = maintenanceWindow;
             _resultValue.memory = memory;
             _resultValue.nodeInfos = nodeInfos;

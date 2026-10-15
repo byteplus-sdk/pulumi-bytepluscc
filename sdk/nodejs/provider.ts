@@ -40,7 +40,7 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly filePath: pulumi.Output<string | undefined>;
     /**
-     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
      */
     declare public readonly noProxy: pulumi.Output<string | undefined>;
     /**
@@ -139,7 +139,7 @@ export interface ProviderArgs {
      */
     filePath?: pulumi.Input<string | undefined>;
     /**
-     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
      */
     noProxy?: pulumi.Input<string | undefined>;
     /**

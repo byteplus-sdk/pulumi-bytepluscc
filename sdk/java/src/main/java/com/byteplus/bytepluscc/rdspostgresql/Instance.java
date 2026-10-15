@@ -232,6 +232,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.instanceType;
     }
     /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    @Export(name="kmsTrn", refs={String.class}, tree="[0]")
+    private Output<String> kmsTrn;
+
+    /**
+     * @return KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    public Output<String> kmsTrn() {
+        return this.kmsTrn;
+    }
+    /**
      * Instance maintenance window
      * 
      */

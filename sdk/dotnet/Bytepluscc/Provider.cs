@@ -38,7 +38,7 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Output<string?> FilePath { get; private set; } = null!;
 
         /// <summary>
-        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         /// </summary>
         [Output("noProxy")]
         public Output<string?> NoProxy { get; private set; } = null!;
@@ -155,7 +155,7 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Input<string>? FilePath { get; set; }
 
         /// <summary>
-        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
         /// </summary>
         [Input("noProxy")]
         public Input<string>? NoProxy { get; set; }

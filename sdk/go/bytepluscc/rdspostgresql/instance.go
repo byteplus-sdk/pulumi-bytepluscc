@@ -87,6 +87,8 @@ type Instance struct {
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
 	// Instance type. Value: HA (high availability edition)
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn pulumi.StringOutput `pulumi:"kmsTrn"`
 	// Instance maintenance window
 	MaintenanceWindow InstanceMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
 	// Memory size, unit: GB
@@ -205,6 +207,8 @@ type instanceState struct {
 	InstanceStatus *string `pulumi:"instanceStatus"`
 	// Instance type. Value: HA (high availability edition)
 	InstanceType *string `pulumi:"instanceType"`
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn *string `pulumi:"kmsTrn"`
 	// Instance maintenance window
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// Memory size, unit: GB
@@ -276,6 +280,8 @@ type InstanceState struct {
 	InstanceStatus pulumi.StringPtrInput
 	// Instance type. Value: HA (high availability edition)
 	InstanceType pulumi.StringPtrInput
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn pulumi.StringPtrInput
 	// Instance maintenance window
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
 	// Memory size, unit: GB
@@ -338,6 +344,8 @@ type instanceArgs struct {
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
 	// Instance name
 	InstanceName *string `pulumi:"instanceName"`
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn *string `pulumi:"kmsTrn"`
 	// Instance maintenance window
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// Instance specification configuration
@@ -375,6 +383,8 @@ type InstanceArgs struct {
 	DbEngineVersion pulumi.StringInput
 	// Instance name
 	InstanceName pulumi.StringPtrInput
+	// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+	KmsTrn pulumi.StringPtrInput
 	// Instance maintenance window
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
 	// Instance specification configuration
@@ -538,6 +548,11 @@ func (o InstanceOutput) InstanceStatus() pulumi.StringOutput {
 // Instance type. Value: HA (high availability edition)
 func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+func (o InstanceOutput) KmsTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.KmsTrn }).(pulumi.StringOutput)
 }
 
 // Instance maintenance window

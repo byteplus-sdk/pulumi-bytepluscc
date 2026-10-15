@@ -124,6 +124,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
+        /// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+        /// </summary>
+        [Output("kmsTrn")]
+        public Output<string> KmsTrn { get; private set; } = null!;
+
+        /// <summary>
         /// Instance maintenance window
         /// </summary>
         [Output("maintenanceWindow")]
@@ -336,6 +342,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
+        /// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+        /// </summary>
+        [Input("kmsTrn")]
+        public Input<string>? KmsTrn { get; set; }
+
+        /// <summary>
         /// Instance maintenance window
         /// </summary>
         [Input("maintenanceWindow")]
@@ -502,6 +514,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
+
+        /// <summary>
+        /// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+        /// </summary>
+        [Input("kmsTrn")]
+        public Input<string>? KmsTrn { get; set; }
 
         /// <summary>
         /// Instance maintenance window

@@ -73,7 +73,7 @@ func GetFilePath(ctx *pulumi.Context) string {
 	return value
 }
 
-// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 func GetNoProxy(ctx *pulumi.Context) string {
 	return config.Get(ctx, "bytepluscc:noProxy")
 }

@@ -24,10 +24,20 @@ public final class AssumeRole {
      */
     private @Nullable Integer durationSeconds;
     /**
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+     * 
+     */
+    private @Nullable String noProxy;
+    /**
      * @return A more restrictive policy when making the AssumeRole call
      * 
      */
     private @Nullable String policy;
+    /**
+     * @return HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+     * 
+     */
+    private @Nullable String proxyUrl;
 
     private AssumeRole() {}
     /**
@@ -45,11 +55,25 @@ public final class AssumeRole {
         return Optional.ofNullable(this.durationSeconds);
     }
     /**
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level&lt;span pulumi-lang-nodejs=&#34; noProxy &#34; pulumi-lang-dotnet=&#34; NoProxy &#34; pulumi-lang-go=&#34; noProxy &#34; pulumi-lang-python=&#34; no_proxy &#34; pulumi-lang-yaml=&#34; noProxy &#34; pulumi-lang-java=&#34; noProxy &#34; pulumi-lang-hcl=&#34; no_proxy &#34;&gt; noProxy &lt;/span&gt;and proxy_include_domains.
+     * 
+     */
+    public Optional<String> noProxy() {
+        return Optional.ofNullable(this.noProxy);
+    }
+    /**
      * @return A more restrictive policy when making the AssumeRole call
      * 
      */
     public Optional<String> policy() {
         return Optional.ofNullable(this.policy);
+    }
+    /**
+     * @return HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or&lt;span pulumi-lang-nodejs=&#34; httpsProxy &#34; pulumi-lang-dotnet=&#34; HttpsProxy &#34; pulumi-lang-go=&#34; httpsProxy &#34; pulumi-lang-python=&#34; https_proxy &#34; pulumi-lang-yaml=&#34; httpsProxy &#34; pulumi-lang-java=&#34; httpsProxy &#34; pulumi-lang-hcl=&#34; https_proxy &#34;&gt; httpsProxy &lt;/span&gt;for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+     * 
+     */
+    public Optional<String> proxyUrl() {
+        return Optional.ofNullable(this.proxyUrl);
     }
 
     public static Builder builder() {
@@ -63,13 +87,17 @@ public final class AssumeRole {
     public static final class Builder {
         private String assumeRoleTrn;
         private @Nullable Integer durationSeconds;
+        private @Nullable String noProxy;
         private @Nullable String policy;
+        private @Nullable String proxyUrl;
         public Builder() {}
         public Builder(AssumeRole defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assumeRoleTrn = defaults.assumeRoleTrn;
     	      this.durationSeconds = defaults.durationSeconds;
+    	      this.noProxy = defaults.noProxy;
     	      this.policy = defaults.policy;
+    	      this.proxyUrl = defaults.proxyUrl;
         }
 
         @CustomType.Setter
@@ -87,16 +115,30 @@ public final class AssumeRole {
             return this;
         }
         @CustomType.Setter
+        public Builder noProxy(@Nullable String noProxy) {
+
+            this.noProxy = noProxy;
+            return this;
+        }
+        @CustomType.Setter
         public Builder policy(@Nullable String policy) {
 
             this.policy = policy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder proxyUrl(@Nullable String proxyUrl) {
+
+            this.proxyUrl = proxyUrl;
             return this;
         }
         public AssumeRole build() {
             final var _resultValue = new AssumeRole();
             _resultValue.assumeRoleTrn = assumeRoleTrn;
             _resultValue.durationSeconds = durationSeconds;
+            _resultValue.noProxy = noProxy;
             _resultValue.policy = policy;
+            _resultValue.proxyUrl = proxyUrl;
             return _resultValue;
         }
     }

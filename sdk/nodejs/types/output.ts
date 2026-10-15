@@ -11904,9 +11904,17 @@ export namespace config {
          */
         durationSeconds?: number;
         /**
+         * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the AssumeRole proxy. Defaults to BYTEPLUS_ASSUME_ROLE_NO_PROXY, NO_PROXY, then no_proxy. An explicit empty string disables inherited bypass rules. Independent of the top-level noProxy and proxy_include_domains.
+         */
+        noProxy?: string;
+        /**
          * A more restrictive policy when making the AssumeRole call
          */
         policy?: string;
+        /**
+         * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for AssumeRole STS requests, including HTTPS requests. Defaults to BYTEPLUS_ASSUME_ROLE_PROXY_URL, then HTTPS_PROXY or httpsProxy for HTTPS STS endpoints. HTTP_PROXY is not used. Honors assume_role.no_proxy and NO_PROXY. An explicit empty string skips proxy environment defaults. Independent of Cloud Control proxy settings.
+         */
+        proxyUrl?: string;
     }
 
     export interface Endpoints {

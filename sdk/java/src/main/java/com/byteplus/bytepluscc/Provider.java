@@ -66,14 +66,14 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.filePath);
     }
     /**
-     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
      * 
      */
     @Export(name="noProxy", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> noProxy;
 
     /**
-     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
      * 
      */
     public Output<Optional<String>> noProxy() {

@@ -178,6 +178,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    @Import(name="kmsTrn")
+    private @Nullable Output<String> kmsTrn;
+
+    /**
+     * @return KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+     * 
+     */
+    public Optional<Output<String>> kmsTrn() {
+        return Optional.ofNullable(this.kmsTrn);
+    }
+
+    /**
      * Instance maintenance window
      * 
      */
@@ -526,6 +541,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.instanceName = $.instanceName;
         this.instanceStatus = $.instanceStatus;
         this.instanceType = $.instanceType;
+        this.kmsTrn = $.kmsTrn;
         this.maintenanceWindow = $.maintenanceWindow;
         this.memory = $.memory;
         this.nodeInfos = $.nodeInfos;
@@ -799,6 +815,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
+        }
+
+        /**
+         * @param kmsTrn KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsTrn(@Nullable Output<String> kmsTrn) {
+            $.kmsTrn = kmsTrn;
+            return this;
+        }
+
+        /**
+         * @param kmsTrn KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsTrn(String kmsTrn) {
+            return kmsTrn(Output.of(kmsTrn));
         }
 
         /**

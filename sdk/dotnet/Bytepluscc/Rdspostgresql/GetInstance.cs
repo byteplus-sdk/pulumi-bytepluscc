@@ -109,6 +109,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         public readonly string InstanceType;
         /// <summary>
+        /// KMS key ring TRN, format: trn:kms:\n\n:\n\n:keyrings/\n\n/keys/\n\n. This parameter is required when TDEEnable is true.
+        /// </summary>
+        public readonly string KmsTrn;
+        /// <summary>
         /// Instance maintenance window
         /// </summary>
         public readonly Outputs.GetInstanceMaintenanceWindowResult MaintenanceWindow;
@@ -221,6 +225,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             string instanceType,
 
+            string kmsTrn,
+
             Outputs.GetInstanceMaintenanceWindowResult maintenanceWindow,
 
             double memory,
@@ -276,6 +282,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             InstanceName = instanceName;
             InstanceStatus = instanceStatus;
             InstanceType = instanceType;
+            KmsTrn = kmsTrn;
             MaintenanceWindow = maintenanceWindow;
             Memory = memory;
             NodeInfos = nodeInfos;

@@ -76,7 +76,7 @@ Object.defineProperty(exports, "filePath", {
 });
 
 /**
- * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+ * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass the configured or environment proxy. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
  */
 export declare const noProxy: string | undefined;
 Object.defineProperty(exports, "noProxy", {
