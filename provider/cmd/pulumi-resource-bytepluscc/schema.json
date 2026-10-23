@@ -63,7 +63,8 @@
                     "environment": [
                         "BYTEPLUS_ACCESS_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:config/assumeRole:assumeRole",
@@ -150,7 +151,8 @@
                     "environment": [
                         "BYTEPLUS_SECRET_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
@@ -159,7 +161,8 @@
                     "environment": [
                         "BYTEPLUS_SESSION_TOKEN"
                     ]
-                }
+                },
+                "secret": true
             }
         }
     },
@@ -66780,7 +66783,8 @@
         "properties": {
             "accessKey": {
                 "type": "string",
-                "description": "The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable"
+                "description": "The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable",
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
@@ -66832,11 +66836,13 @@
             },
             "secretKey": {
                 "type": "string",
-                "description": "The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable"
+                "description": "The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable",
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
-                "description": "The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable"
+                "description": "The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable",
+                "secret": true
             }
         },
         "inputProperties": {
@@ -66847,7 +66853,8 @@
                     "environment": [
                         "BYTEPLUS_ACCESS_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
@@ -66934,7 +66941,8 @@
                     "environment": [
                         "BYTEPLUS_SECRET_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
@@ -66943,7 +66951,8 @@
                     "environment": [
                         "BYTEPLUS_SESSION_TOKEN"
                     ]
-                }
+                },
+                "secret": true
             }
         },
         "methods": {

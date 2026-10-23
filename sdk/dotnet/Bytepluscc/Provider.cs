@@ -100,7 +100,10 @@ namespace Byteplus.Pulumi.Bytepluscc
                 PluginDownloadURL = "github://api.github.com/byteplus-sdk",
                 AdditionalSecretOutputs =
                 {
+                    "accessKey",
                     "proxyAuthorization",
+                    "secretKey",
+                    "sessionToken",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -118,11 +121,21 @@ namespace Byteplus.Pulumi.Bytepluscc
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
+        [Input("accessKey")]
+        private Input<string>? _accessKey;
+
         /// <summary>
         /// The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         /// </summary>
-        [Input("accessKey")]
-        public Input<string>? AccessKey { get; set; }
+        public Input<string>? AccessKey
+        {
+            get => _accessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// An `AssumeRole` block that uses the selected source credentials to obtain target-role credentials. Only one `AssumeRole` block may be in the configuration.
@@ -206,17 +219,37 @@ namespace Byteplus.Pulumi.Bytepluscc
         [Input("region")]
         public Input<string>? Region { get; set; }
 
+        [Input("secretKey")]
+        private Input<string>? _secretKey;
+
         /// <summary>
         /// The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         /// </summary>
-        [Input("secretKey")]
-        public Input<string>? SecretKey { get; set; }
+        public Input<string>? SecretKey
+        {
+            get => _secretKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("sessionToken")]
+        private Input<string>? _sessionToken;
 
         /// <summary>
         /// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
         /// </summary>
-        [Input("sessionToken")]
-        public Input<string>? SessionToken { get; set; }
+        public Input<string>? SessionToken
+        {
+            get => _sessionToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sessionToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public ProviderArgs()
         {

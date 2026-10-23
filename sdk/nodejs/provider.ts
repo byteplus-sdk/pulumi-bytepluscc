@@ -79,7 +79,7 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["accessKey"] = (args?.accessKey) ?? utilities.getEnv("BYTEPLUS_ACCESS_KEY");
+            resourceInputs["accessKey"] = (args?.accessKey ? pulumi.secret(args.accessKey) : undefined) ?? utilities.getEnv("BYTEPLUS_ACCESS_KEY");
             resourceInputs["assumeRole"] = pulumi.output(args?.assumeRole).apply(JSON.stringify);
             resourceInputs["customerHeaders"] = (args?.customerHeaders) ?? utilities.getEnv("BYTEPLUS_CUSTOMER_HEADERS");
             resourceInputs["disableSsl"] = pulumi.output((args?.disableSsl) ?? utilities.getEnvBoolean("BYTEPLUS_DISABLE_SSL")).apply(JSON.stringify);
@@ -91,11 +91,11 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["proxyIncludeDomains"] = pulumi.output(args?.proxyIncludeDomains).apply(JSON.stringify);
             resourceInputs["proxyUrl"] = (args?.proxyUrl) ?? utilities.getEnv("BYTEPLUS_PROXY_URL");
             resourceInputs["region"] = (args?.region) ?? utilities.getEnv("BYTEPLUS_REGION");
-            resourceInputs["secretKey"] = (args?.secretKey) ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
-            resourceInputs["sessionToken"] = (args?.sessionToken) ?? utilities.getEnv("BYTEPLUS_SESSION_TOKEN");
+            resourceInputs["secretKey"] = (args?.secretKey ? pulumi.secret(args.secretKey) : undefined) ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
+            resourceInputs["sessionToken"] = (args?.sessionToken ? pulumi.secret(args.sessionToken) : undefined) ?? utilities.getEnv("BYTEPLUS_SESSION_TOKEN");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["proxyAuthorization"] };
+        const secretOpts = { additionalSecretOutputs: ["accessKey", "proxyAuthorization", "secretKey", "sessionToken"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }

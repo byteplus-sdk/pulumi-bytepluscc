@@ -92,11 +92,23 @@ func NewProvider(ctx *pulumi.Context,
 			args.SessionToken = pulumi.StringPtr(d.(string))
 		}
 	}
+	if args.AccessKey != nil {
+		args.AccessKey = pulumi.ToSecret(args.AccessKey).(pulumi.StringPtrInput)
+	}
 	if args.ProxyAuthorization != nil {
 		args.ProxyAuthorization = pulumi.ToSecret(args.ProxyAuthorization).(pulumi.StringPtrInput)
 	}
+	if args.SecretKey != nil {
+		args.SecretKey = pulumi.ToSecret(args.SecretKey).(pulumi.StringPtrInput)
+	}
+	if args.SessionToken != nil {
+		args.SessionToken = pulumi.ToSecret(args.SessionToken).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"accessKey",
 		"proxyAuthorization",
+		"secretKey",
+		"sessionToken",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
