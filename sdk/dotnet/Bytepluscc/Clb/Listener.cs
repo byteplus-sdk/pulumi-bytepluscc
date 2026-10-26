@@ -447,10 +447,34 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
+        /// CA certificate for mutual authentication.
+        /// </summary>
+        [Input("caCertificateId")]
+        public Input<string>? CaCertificateId { get; set; }
+
+        /// <summary>
         /// Enable mutual authentication. on: enabled. off (default): disabled.
         /// </summary>
         [Input("caEnabled")]
         public Input<string>? CaEnabled { get; set; }
+
+        /// <summary>
+        /// Certificate ID from Certificate Center.
+        /// </summary>
+        [Input("certCenterCertificateId")]
+        public Input<string>? CertCenterCertificateId { get; set; }
+
+        /// <summary>
+        /// Certificate ID from the CLB certificate management module.
+        /// </summary>
+        [Input("certificateId")]
+        public Input<string>? CertificateId { get; set; }
+
+        /// <summary>
+        /// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        /// </summary>
+        [Input("certificateSource")]
+        public Input<string>? CertificateSource { get; set; }
 
         /// <summary>
         /// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.

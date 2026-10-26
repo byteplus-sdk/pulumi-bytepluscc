@@ -82,6 +82,21 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * CA certificate for mutual authentication.
+     * 
+     */
+    @Import(name="caCertificateId")
+    private @Nullable Output<String> caCertificateId;
+
+    /**
+     * @return CA certificate for mutual authentication.
+     * 
+     */
+    public Optional<Output<String>> caCertificateId() {
+        return Optional.ofNullable(this.caCertificateId);
+    }
+
+    /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
      * 
      */
@@ -94,6 +109,51 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> caEnabled() {
         return Optional.ofNullable(this.caEnabled);
+    }
+
+    /**
+     * Certificate ID from Certificate Center.
+     * 
+     */
+    @Import(name="certCenterCertificateId")
+    private @Nullable Output<String> certCenterCertificateId;
+
+    /**
+     * @return Certificate ID from Certificate Center.
+     * 
+     */
+    public Optional<Output<String>> certCenterCertificateId() {
+        return Optional.ofNullable(this.certCenterCertificateId);
+    }
+
+    /**
+     * Certificate ID from the CLB certificate management module.
+     * 
+     */
+    @Import(name="certificateId")
+    private @Nullable Output<String> certificateId;
+
+    /**
+     * @return Certificate ID from the CLB certificate management module.
+     * 
+     */
+    public Optional<Output<String>> certificateId() {
+        return Optional.ofNullable(this.certificateId);
+    }
+
+    /**
+     * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+     * 
+     */
+    @Import(name="certificateSource")
+    private @Nullable Output<String> certificateSource;
+
+    /**
+     * @return Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+     * 
+     */
+    public Optional<Output<String>> certificateSource() {
+        return Optional.ofNullable(this.certificateSource);
     }
 
     /**
@@ -587,7 +647,11 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         this.aclStatus = $.aclStatus;
         this.aclType = $.aclType;
         this.bandwidth = $.bandwidth;
+        this.caCertificateId = $.caCertificateId;
         this.caEnabled = $.caEnabled;
+        this.certCenterCertificateId = $.certCenterCertificateId;
+        this.certificateId = $.certificateId;
+        this.certificateSource = $.certificateSource;
         this.clientBodyTimeout = $.clientBodyTimeout;
         this.clientHeaderTimeout = $.clientHeaderTimeout;
         this.connectionDrainEnabled = $.connectionDrainEnabled;
@@ -735,6 +799,27 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param caCertificateId CA certificate for mutual authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caCertificateId(@Nullable Output<String> caCertificateId) {
+            $.caCertificateId = caCertificateId;
+            return this;
+        }
+
+        /**
+         * @param caCertificateId CA certificate for mutual authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caCertificateId(String caCertificateId) {
+            return caCertificateId(Output.of(caCertificateId));
+        }
+
+        /**
          * @param caEnabled Enable mutual authentication. on: enabled. off (default): disabled.
          * 
          * @return builder
@@ -753,6 +838,69 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder caEnabled(String caEnabled) {
             return caEnabled(Output.of(caEnabled));
+        }
+
+        /**
+         * @param certCenterCertificateId Certificate ID from Certificate Center.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certCenterCertificateId(@Nullable Output<String> certCenterCertificateId) {
+            $.certCenterCertificateId = certCenterCertificateId;
+            return this;
+        }
+
+        /**
+         * @param certCenterCertificateId Certificate ID from Certificate Center.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certCenterCertificateId(String certCenterCertificateId) {
+            return certCenterCertificateId(Output.of(certCenterCertificateId));
+        }
+
+        /**
+         * @param certificateId Certificate ID from the CLB certificate management module.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(@Nullable Output<String> certificateId) {
+            $.certificateId = certificateId;
+            return this;
+        }
+
+        /**
+         * @param certificateId Certificate ID from the CLB certificate management module.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(String certificateId) {
+            return certificateId(Output.of(certificateId));
+        }
+
+        /**
+         * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateSource(@Nullable Output<String> certificateSource) {
+            $.certificateSource = certificateSource;
+            return this;
+        }
+
+        /**
+         * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateSource(String certificateSource) {
+            return certificateSource(Output.of(certificateSource));
         }
 
         /**

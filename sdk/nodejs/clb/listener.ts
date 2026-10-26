@@ -104,7 +104,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * CA certificate for mutual authentication.
      */
-    declare public /*out*/ readonly caCertificateId: pulumi.Output<string>;
+    declare public readonly caCertificateId: pulumi.Output<string>;
     /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
      */
@@ -112,15 +112,15 @@ export class Listener extends pulumi.CustomResource {
     /**
      * Certificate ID from Certificate Center.
      */
-    declare public /*out*/ readonly certCenterCertificateId: pulumi.Output<string>;
+    declare public readonly certCenterCertificateId: pulumi.Output<string>;
     /**
      * Certificate ID from the CLB certificate management module.
      */
-    declare public /*out*/ readonly certificateId: pulumi.Output<string>;
+    declare public readonly certificateId: pulumi.Output<string>;
     /**
      * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
      */
-    declare public /*out*/ readonly certificateSource: pulumi.Output<string>;
+    declare public readonly certificateSource: pulumi.Output<string>;
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */
@@ -359,7 +359,11 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["aclStatus"] = args?.aclStatus;
             resourceInputs["aclType"] = args?.aclType;
             resourceInputs["bandwidth"] = args?.bandwidth;
+            resourceInputs["caCertificateId"] = args?.caCertificateId;
             resourceInputs["caEnabled"] = args?.caEnabled;
+            resourceInputs["certCenterCertificateId"] = args?.certCenterCertificateId;
+            resourceInputs["certificateId"] = args?.certificateId;
+            resourceInputs["certificateSource"] = args?.certificateSource;
             resourceInputs["clientBodyTimeout"] = args?.clientBodyTimeout;
             resourceInputs["clientHeaderTimeout"] = args?.clientHeaderTimeout;
             resourceInputs["connectionDrainEnabled"] = args?.connectionDrainEnabled;
@@ -392,10 +396,6 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["serverGroupId"] = args?.serverGroupId;
             resourceInputs["startPort"] = args?.startPort;
             resourceInputs["tags"] = args?.tags;
-            resourceInputs["caCertificateId"] = undefined /*out*/;
-            resourceInputs["certCenterCertificateId"] = undefined /*out*/;
-            resourceInputs["certificateId"] = undefined /*out*/;
-            resourceInputs["certificateSource"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["listenerId"] = undefined /*out*/;
             resourceInputs["responseCheckEnabled"] = undefined /*out*/;
@@ -630,9 +630,25 @@ export interface ListenerArgs {
      */
     bandwidth?: pulumi.Input<number | undefined>;
     /**
+     * CA certificate for mutual authentication.
+     */
+    caCertificateId?: pulumi.Input<string | undefined>;
+    /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
      */
     caEnabled?: pulumi.Input<string | undefined>;
+    /**
+     * Certificate ID from Certificate Center.
+     */
+    certCenterCertificateId?: pulumi.Input<string | undefined>;
+    /**
+     * Certificate ID from the CLB certificate management module.
+     */
+    certificateId?: pulumi.Input<string | undefined>;
+    /**
+     * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+     */
+    certificateSource?: pulumi.Input<string | undefined>;
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */

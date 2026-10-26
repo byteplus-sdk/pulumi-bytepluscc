@@ -29,7 +29,11 @@ class ListenerArgs:
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -69,7 +73,11 @@ class ListenerArgs:
         :param pulumi.Input[_builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
         :param pulumi.Input[_builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         :param pulumi.Input[_builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[_builtins.str] ca_certificate_id: CA certificate for mutual authentication.
         :param pulumi.Input[_builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[_builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[_builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[_builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         :param pulumi.Input[_builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
@@ -113,8 +121,16 @@ class ListenerArgs:
             pulumi.set(__self__, "acl_type", acl_type)
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
+        if ca_certificate_id is not None:
+            pulumi.set(__self__, "ca_certificate_id", ca_certificate_id)
         if ca_enabled is not None:
             pulumi.set(__self__, "ca_enabled", ca_enabled)
+        if cert_center_certificate_id is not None:
+            pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if certificate_source is not None:
+            pulumi.set(__self__, "certificate_source", certificate_source)
         if client_body_timeout is not None:
             pulumi.set(__self__, "client_body_timeout", client_body_timeout)
         if client_header_timeout is not None:
@@ -269,6 +285,18 @@ class ListenerArgs:
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
+    @pulumi.getter(name="caCertificateId")
+    def ca_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CA certificate for mutual authentication.
+        """
+        return pulumi.get(self, "ca_certificate_id")
+
+    @ca_certificate_id.setter
+    def ca_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ca_certificate_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="caEnabled")
     def ca_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -279,6 +307,42 @@ class ListenerArgs:
     @ca_enabled.setter
     def ca_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certCenterCertificateId")
+    def cert_center_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Certificate ID from Certificate Center.
+        """
+        return pulumi.get(self, "cert_center_certificate_id")
+
+    @cert_center_certificate_id.setter
+    def cert_center_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cert_center_certificate_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Certificate ID from the CLB certificate management module.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateSource")
+    def certificate_source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        """
+        return pulumi.get(self, "certificate_source")
+
+    @certificate_source.setter
+    def certificate_source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate_source", value)
 
     @_builtins.property
     @pulumi.getter(name="clientBodyTimeout")
@@ -1410,7 +1474,11 @@ class Listener(pulumi.CustomResource):
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1501,7 +1569,11 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
         :param pulumi.Input[_builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         :param pulumi.Input[_builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[_builtins.str] ca_certificate_id: CA certificate for mutual authentication.
         :param pulumi.Input[_builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[_builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[_builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[_builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         :param pulumi.Input[_builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
@@ -1613,7 +1685,11 @@ class Listener(pulumi.CustomResource):
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1659,7 +1735,11 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["acl_status"] = acl_status
             __props__.__dict__["acl_type"] = acl_type
             __props__.__dict__["bandwidth"] = bandwidth
+            __props__.__dict__["ca_certificate_id"] = ca_certificate_id
             __props__.__dict__["ca_enabled"] = ca_enabled
+            __props__.__dict__["cert_center_certificate_id"] = cert_center_certificate_id
+            __props__.__dict__["certificate_id"] = certificate_id
+            __props__.__dict__["certificate_source"] = certificate_source
             __props__.__dict__["client_body_timeout"] = client_body_timeout
             __props__.__dict__["client_header_timeout"] = client_header_timeout
             __props__.__dict__["connection_drain_enabled"] = connection_drain_enabled
@@ -1700,10 +1780,6 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["server_group_id"] = server_group_id
             __props__.__dict__["start_port"] = start_port
             __props__.__dict__["tags"] = tags
-            __props__.__dict__["ca_certificate_id"] = None
-            __props__.__dict__["cert_center_certificate_id"] = None
-            __props__.__dict__["certificate_id"] = None
-            __props__.__dict__["certificate_source"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["listener_id"] = None
             __props__.__dict__["response_check_enabled"] = None

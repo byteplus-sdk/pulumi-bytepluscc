@@ -76079,9 +76079,25 @@
                     "type": "integer",
                     "description": "Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.\n"
                 },
+                "caCertificateId": {
+                    "type": "string",
+                    "description": "CA certificate for mutual authentication.\n"
+                },
                 "caEnabled": {
                     "type": "string",
                     "description": "Enable mutual authentication. on: enabled. off (default): disabled.\n"
+                },
+                "certCenterCertificateId": {
+                    "type": "string",
+                    "description": "Certificate ID from Certificate Center.\n"
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "Certificate ID from the CLB certificate management module.\n"
+                },
+                "certificateSource": {
+                    "type": "string",
+                    "description": "Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.\n"
                 },
                 "clientBodyTimeout": {
                     "type": "integer",
