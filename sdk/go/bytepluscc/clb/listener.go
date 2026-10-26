@@ -439,8 +439,16 @@ type listenerArgs struct {
 	AclType *string `pulumi:"aclType"`
 	// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 	Bandwidth *int `pulumi:"bandwidth"`
+	// CA certificate for mutual authentication.
+	CaCertificateId *string `pulumi:"caCertificateId"`
 	// Enable mutual authentication. on: enabled. off (default): disabled.
 	CaEnabled *string `pulumi:"caEnabled"`
+	// Certificate ID from Certificate Center.
+	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
+	// Certificate ID from the CLB certificate management module.
+	CertificateId *string `pulumi:"certificateId"`
+	// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+	CertificateSource *string `pulumi:"certificateSource"`
 	// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientBodyTimeout *int `pulumi:"clientBodyTimeout"`
 	// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
@@ -519,8 +527,16 @@ type ListenerArgs struct {
 	AclType pulumi.StringPtrInput
 	// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 	Bandwidth pulumi.IntPtrInput
+	// CA certificate for mutual authentication.
+	CaCertificateId pulumi.StringPtrInput
 	// Enable mutual authentication. on: enabled. off (default): disabled.
 	CaEnabled pulumi.StringPtrInput
+	// Certificate ID from Certificate Center.
+	CertCenterCertificateId pulumi.StringPtrInput
+	// Certificate ID from the CLB certificate management module.
+	CertificateId pulumi.StringPtrInput
+	// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+	CertificateSource pulumi.StringPtrInput
 	// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientBodyTimeout pulumi.IntPtrInput
 	// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.

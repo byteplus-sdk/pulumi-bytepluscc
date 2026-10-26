@@ -138,8 +138,8 @@ github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68 h1:HBus7SmCF5Pzd84pMQE4699CCM
 github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68/go.mod h1:eqR3bDX3XtdPBcB9vERznOyi0MAcAI1GFAdcRspNMBU=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 h1:rrlsRCitt/isPkfLGPQFHf8G65iyxSgNgG2PbAR5v4Y=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16/go.mod h1:7iCaE+dR9EycrJU0GQyMhptbInLbQhsKXiDKDjNi8Vs=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.60 h1:8hgCo2v5lCNErdhbWQErOhAiM1H3CYZmb8RSxqTSDjM=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.60/go.mod h1:Th6SB50qaCMIqCNOOF7a3MEFT4uR7SC9WjY6XkugSn0=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.61 h1:JTGWYyZAKWEQolEm7vW8tCNfycHC+jtSBxXbri7Hv6k=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.61/go.mod h1:Th6SB50qaCMIqCNOOF7a3MEFT4uR7SC9WjY6XkugSn0=
 github.com/cenkalti/backoff/v4 v4.3.0 h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK343L8=
 github.com/cenkalti/backoff/v4 v4.3.0/go.mod h1:Y3VNntkOUPxTVeUxJ/G5vcM//AlwfmyYozVcomhLiZE=
 github.com/cenkalti/backoff/v5 v5.0.3 h1:ZN+IMa753KfX5hd8vVaMixjnqRZ3y8CuJKRKj1xcsSM=
@@ -479,6 +479,8 @@ github.com/muesli/cancelreader v0.2.2 h1:3I4Kt4BQjOR54NavqnDogx/MIoWBFa0StPA8ELU
 github.com/muesli/cancelreader v0.2.2/go.mod h1:3XuTXfFS2VjM+HTLZY9Ak0l6eUKfijIfMUZ4EgX0QYo=
 github.com/muesli/termenv v0.16.0 h1:S5AlUN9dENB57rsbnkPyfdGuWIlkmzJjbFf0Tf5FWUc=
 github.com/muesli/termenv v0.16.0/go.mod h1:ZRfOIKPFDYQoDFF4Olj7/QJbW60Ol/kL1pU3VfY/Cnk=
+github.com/mxschmitt/golang-combinations v1.0.0 h1:NFoO7CSP8MUcFlHpe1YdewKwMa15dgDbaqkVLC5DUPI=
+github.com/mxschmitt/golang-combinations v1.0.0/go.mod h1:RbMhWvfCelHR6WROvT2bVfxJvZHoEvBj71SKe+H0MYU=
 github.com/natefinch/atomic v1.0.1 h1:ZPYKxkqQOx3KZ+RsbnP/YsgvxWQPGxjC0oBt2AhwV0A=
 github.com/natefinch/atomic v1.0.1/go.mod h1:N/D/ELrljoqDyT3rZrsUmtsuzvHkeB/wWjHV22AZRbM=
 github.com/nightlyone/lockfile v1.0.0 h1:RHep2cFKK4PonZJDdEl4GmkabuhbsRMgk/k3uAmxBiA=

@@ -63,7 +63,8 @@
                     "environment": [
                         "BYTEPLUS_ACCESS_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:config/assumeRole:assumeRole",
@@ -150,7 +151,8 @@
                     "environment": [
                         "BYTEPLUS_SECRET_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
@@ -159,7 +161,8 @@
                     "environment": [
                         "BYTEPLUS_SESSION_TOKEN"
                     ]
-                }
+                },
+                "secret": true
             }
         }
     },
@@ -66780,7 +66783,8 @@
         "properties": {
             "accessKey": {
                 "type": "string",
-                "description": "The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable"
+                "description": "The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable",
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
@@ -66832,11 +66836,13 @@
             },
             "secretKey": {
                 "type": "string",
-                "description": "The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable"
+                "description": "The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable",
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
-                "description": "The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable"
+                "description": "The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable",
+                "secret": true
             }
         },
         "inputProperties": {
@@ -66847,7 +66853,8 @@
                     "environment": [
                         "BYTEPLUS_ACCESS_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "assumeRole": {
                 "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
@@ -66934,7 +66941,8 @@
                     "environment": [
                         "BYTEPLUS_SECRET_KEY"
                     ]
-                }
+                },
+                "secret": true
             },
             "sessionToken": {
                 "type": "string",
@@ -66943,7 +66951,8 @@
                     "environment": [
                         "BYTEPLUS_SESSION_TOKEN"
                     ]
-                }
+                },
+                "secret": true
             }
         },
         "methods": {
@@ -76070,9 +76079,25 @@
                     "type": "integer",
                     "description": "Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.\n"
                 },
+                "caCertificateId": {
+                    "type": "string",
+                    "description": "CA certificate for mutual authentication.\n"
+                },
                 "caEnabled": {
                     "type": "string",
                     "description": "Enable mutual authentication. on: enabled. off (default): disabled.\n"
+                },
+                "certCenterCertificateId": {
+                    "type": "string",
+                    "description": "Certificate ID from Certificate Center.\n"
+                },
+                "certificateId": {
+                    "type": "string",
+                    "description": "Certificate ID from the CLB certificate management module.\n"
+                },
+                "certificateSource": {
+                    "type": "string",
+                    "description": "Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.\n"
                 },
                 "clientBodyTimeout": {
                     "type": "integer",

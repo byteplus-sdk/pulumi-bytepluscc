@@ -366,7 +366,7 @@ class Provider(pulumi.ProviderResource):
 
             if access_key is None:
                 access_key = _utilities.get_env('BYTEPLUS_ACCESS_KEY')
-            __props__.__dict__["access_key"] = access_key
+            __props__.__dict__["access_key"] = None if access_key is None else pulumi.Output.secret(access_key)
             __props__.__dict__["assume_role"] = pulumi.Output.from_input(assume_role).apply(pulumi.runtime.to_json) if assume_role is not None else None
             if customer_headers is None:
                 customer_headers = _utilities.get_env('BYTEPLUS_CUSTOMER_HEADERS')
@@ -392,11 +392,11 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["region"] = region
             if secret_key is None:
                 secret_key = _utilities.get_env('BYTEPLUS_SECRET_KEY')
-            __props__.__dict__["secret_key"] = secret_key
+            __props__.__dict__["secret_key"] = None if secret_key is None else pulumi.Output.secret(secret_key)
             if session_token is None:
                 session_token = _utilities.get_env('BYTEPLUS_SESSION_TOKEN')
-            __props__.__dict__["session_token"] = session_token
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["proxyAuthorization"])
+            __props__.__dict__["session_token"] = None if session_token is None else pulumi.Output.secret(session_token)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accessKey", "proxyAuthorization", "secretKey", "sessionToken"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'bytepluscc',

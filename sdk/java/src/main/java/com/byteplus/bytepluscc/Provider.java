@@ -201,7 +201,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
             .version(Utilities.getVersion())
             .pluginDownloadURL("github://api.github.com/byteplus-sdk")
             .additionalSecretOutputs(List.of(
-                "proxyAuthorization"
+                "accessKey",
+                "proxyAuthorization",
+                "secretKey",
+                "sessionToken"
             ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);

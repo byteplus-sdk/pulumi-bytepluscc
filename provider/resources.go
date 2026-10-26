@@ -69,16 +69,19 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 			"access_key": {
+				Secret: tfbridge.BoolRef(true),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"BYTEPLUS_ACCESS_KEY"},
 				},
 			},
 			"secret_key": {
+				Secret: tfbridge.BoolRef(true),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"BYTEPLUS_SECRET_KEY"},
 				},
 			},
 			"session_token": {
+				Secret: tfbridge.BoolRef(true),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"BYTEPLUS_SESSION_TOKEN"},
 				},
