@@ -4022,6 +4022,240 @@
                     }
                 }
             },
+            "bytepluscc_tos_bucket": {
+                "current": "bytepluscc:tos/bucket:Bucket",
+                "fields": {
+                    "acl": {
+                        "fields": {
+                            "grants": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "lifecycle_config": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "non_current_version_transitions": {
+                                    "maxItemsOne": false
+                                },
+                                "tags": {
+                                    "maxItemsOne": false
+                                },
+                                "transitions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_access_monitor": {
+                "current": "bytepluscc:tos/bucketAccessMonitor:BucketAccessMonitor"
+            },
+            "bytepluscc_tos_bucket_cors": {
+                "current": "bytepluscc:tos/bucketCors:BucketCors",
+                "fields": {
+                    "cors_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allowed_headers": {
+                                    "maxItemsOne": false
+                                },
+                                "allowed_methods": {
+                                    "maxItemsOne": false
+                                },
+                                "allowed_origins": {
+                                    "maxItemsOne": false
+                                },
+                                "expose_headers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_encryption": {
+                "current": "bytepluscc:tos/bucketEncryption:BucketEncryption"
+            },
+            "bytepluscc_tos_bucket_inventory": {
+                "current": "bytepluscc:tos/bucketInventory:BucketInventory",
+                "fields": {
+                    "optional_fields": {
+                        "fields": {
+                            "field": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_mirror_back": {
+                "current": "bytepluscc:tos/bucketMirrorBack:BucketMirrorBack",
+                "fields": {
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "condition": {
+                                    "fields": {
+                                        "allow_host": {
+                                            "maxItemsOne": false
+                                        },
+                                        "http_method": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "redirect": {
+                                    "fields": {
+                                        "fetch_header_to_meta_data_rules": {
+                                            "maxItemsOne": false
+                                        },
+                                        "mirror_header": {
+                                            "fields": {
+                                                "pass": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "remove": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "set": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        },
+                                        "pass_header_from_source": {
+                                            "maxItemsOne": false
+                                        },
+                                        "pass_status_code_from_source": {
+                                            "maxItemsOne": false
+                                        },
+                                        "private_source": {
+                                            "fields": {
+                                                "source_endpoint": {
+                                                    "fields": {
+                                                        "follower": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "primary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "public_source": {
+                                            "fields": {
+                                                "source_endpoint": {
+                                                    "fields": {
+                                                        "follower": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "primary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_notification": {
+                "current": "bytepluscc:tos/bucketNotification:BucketNotification",
+                "fields": {
+                    "notification_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "destination": {
+                                    "fields": {
+                                        "kafka": {
+                                            "maxItemsOne": false
+                                        },
+                                        "rocket_mq": {
+                                            "maxItemsOne": false
+                                        },
+                                        "ve_faa_s": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "events": {
+                                    "maxItemsOne": false
+                                },
+                                "filter": {
+                                    "fields": {
+                                        "tos_key": {
+                                            "fields": {
+                                                "filter_rules": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_realtime_log": {
+                "current": "bytepluscc:tos/bucketRealtimeLog:BucketRealtimeLog"
+            },
+            "bytepluscc_tos_bucket_rename": {
+                "current": "bytepluscc:tos/bucketRename:BucketRename"
+            },
+            "bytepluscc_tos_bucket_replication": {
+                "current": "bytepluscc:tos/bucketReplication:BucketReplication",
+                "fields": {
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "prefix_set": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_website": {
+                "current": "bytepluscc:tos/bucketWebsite:BucketWebsite",
+                "fields": {
+                    "routing_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_object": {
+                "current": "bytepluscc:tos/tosObject:TosObject",
+                "fields": {
+                    "account_acl": {
+                        "maxItemsOne": false
+                    },
+                    "metadata": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "version_i_ds": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_direct_connect_gateway_attachment": {
                 "current": "bytepluscc:transitrouter/directConnectGatewayAttachment:DirectConnectGatewayAttachment",
                 "fields": {
@@ -10933,6 +11167,328 @@
                     }
                 }
             },
+            "bytepluscc_tos_bucket": {
+                "current": "bytepluscc:tos/getBucket:getBucket",
+                "fields": {
+                    "acl": {
+                        "fields": {
+                            "grants": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "lifecycle_config": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "non_current_version_transitions": {
+                                    "maxItemsOne": false
+                                },
+                                "tags": {
+                                    "maxItemsOne": false
+                                },
+                                "transitions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_access_monitor": {
+                "current": "bytepluscc:tos/getBucketAccessMonitor:getBucketAccessMonitor"
+            },
+            "bytepluscc_tos_bucket_access_monitors": {
+                "current": "bytepluscc:tos/getBucketAccessMonitors:getBucketAccessMonitors",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_cors": {
+                "current": "bytepluscc:tos/getBucketCors:getBucketCors",
+                "fields": {
+                    "cors_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allowed_headers": {
+                                    "maxItemsOne": false
+                                },
+                                "allowed_methods": {
+                                    "maxItemsOne": false
+                                },
+                                "allowed_origins": {
+                                    "maxItemsOne": false
+                                },
+                                "expose_headers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_encryption": {
+                "current": "bytepluscc:tos/getBucketEncryption:getBucketEncryption"
+            },
+            "bytepluscc_tos_bucket_encryptions": {
+                "current": "bytepluscc:tos/getBucketEncryptions:getBucketEncryptions",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_inventories": {
+                "current": "bytepluscc:tos/getBucketInventories:getBucketInventories",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_inventory": {
+                "current": "bytepluscc:tos/getBucketInventory:getBucketInventory",
+                "fields": {
+                    "optional_fields": {
+                        "fields": {
+                            "field": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_mirror_back": {
+                "current": "bytepluscc:tos/getBucketMirrorBack:getBucketMirrorBack",
+                "fields": {
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "condition": {
+                                    "fields": {
+                                        "allow_host": {
+                                            "maxItemsOne": false
+                                        },
+                                        "http_method": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "redirect": {
+                                    "fields": {
+                                        "fetch_header_to_meta_data_rules": {
+                                            "maxItemsOne": false
+                                        },
+                                        "mirror_header": {
+                                            "fields": {
+                                                "pass": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "remove": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "set": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        },
+                                        "pass_header_from_source": {
+                                            "maxItemsOne": false
+                                        },
+                                        "pass_status_code_from_source": {
+                                            "maxItemsOne": false
+                                        },
+                                        "private_source": {
+                                            "fields": {
+                                                "source_endpoint": {
+                                                    "fields": {
+                                                        "follower": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "primary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "public_source": {
+                                            "fields": {
+                                                "source_endpoint": {
+                                                    "fields": {
+                                                        "follower": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "primary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_mirror_backs": {
+                "current": "bytepluscc:tos/getBucketMirrorBacks:getBucketMirrorBacks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_notification": {
+                "current": "bytepluscc:tos/getBucketNotification:getBucketNotification",
+                "fields": {
+                    "notification_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "destination": {
+                                    "fields": {
+                                        "kafka": {
+                                            "maxItemsOne": false
+                                        },
+                                        "rocket_mq": {
+                                            "maxItemsOne": false
+                                        },
+                                        "ve_faa_s": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "events": {
+                                    "maxItemsOne": false
+                                },
+                                "filter": {
+                                    "fields": {
+                                        "tos_key": {
+                                            "fields": {
+                                                "filter_rules": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_notifications": {
+                "current": "bytepluscc:tos/getBucketNotifications:getBucketNotifications",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_realtime_log": {
+                "current": "bytepluscc:tos/getBucketRealtimeLog:getBucketRealtimeLog"
+            },
+            "bytepluscc_tos_bucket_realtime_logs": {
+                "current": "bytepluscc:tos/getBucketRealtimeLogs:getBucketRealtimeLogs",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_rename": {
+                "current": "bytepluscc:tos/getBucketRename:getBucketRename"
+            },
+            "bytepluscc_tos_bucket_renames": {
+                "current": "bytepluscc:tos/getBucketRenames:getBucketRenames",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_replication": {
+                "current": "bytepluscc:tos/getBucketReplication:getBucketReplication",
+                "fields": {
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "prefix_set": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_replications": {
+                "current": "bytepluscc:tos/getBucketReplications:getBucketReplications",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_website": {
+                "current": "bytepluscc:tos/getBucketWebsite:getBucketWebsite",
+                "fields": {
+                    "routing_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_bucket_websites": {
+                "current": "bytepluscc:tos/getBucketWebsites:getBucketWebsites",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_buckets": {
+                "current": "bytepluscc:tos/getBuckets:getBuckets",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_object": {
+                "current": "bytepluscc:tos/getObject:getObject",
+                "fields": {
+                    "account_acl": {
+                        "maxItemsOne": false
+                    },
+                    "metadata": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "version_i_ds": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tos_objects": {
+                "current": "bytepluscc:tos/getObjects:getObjects",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_direct_connect_gateway_attachment": {
                 "current": "bytepluscc:transitrouter/getDirectConnectGatewayAttachment:getDirectConnectGatewayAttachment",
                 "fields": {
@@ -12949,6 +13505,18 @@
             "bytepluscc_tls_schedule_sql_task": {},
             "bytepluscc_tls_shipper": {},
             "bytepluscc_tls_topic": {},
+            "bytepluscc_tos_bucket": {},
+            "bytepluscc_tos_bucket_access_monitor": {},
+            "bytepluscc_tos_bucket_cors": {},
+            "bytepluscc_tos_bucket_encryption": {},
+            "bytepluscc_tos_bucket_inventory": {},
+            "bytepluscc_tos_bucket_mirror_back": {},
+            "bytepluscc_tos_bucket_notification": {},
+            "bytepluscc_tos_bucket_realtime_log": {},
+            "bytepluscc_tos_bucket_rename": {},
+            "bytepluscc_tos_bucket_replication": {},
+            "bytepluscc_tos_bucket_website": {},
+            "bytepluscc_tos_object": {},
             "bytepluscc_transitrouter_direct_connect_gateway_attachment": {},
             "bytepluscc_transitrouter_peer_attachment": {},
             "bytepluscc_transitrouter_route_table_propagation": {},

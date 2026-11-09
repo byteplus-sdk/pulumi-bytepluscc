@@ -15356,6 +15356,937 @@ export namespace tls {
     }
 }
 
+export namespace tos {
+    export interface BucketAcl {
+        /**
+         * Enable object default bucket ACL inheritance. true: Enable object default bucket ACL inheritance. false: Disable object default bucket ACL inheritance.
+         */
+        bucketAclDelivered?: pulumi.Input<boolean | undefined>;
+        /**
+         * Root node for object access control permissions
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        grants?: pulumi.Input<pulumi.Input<inputs.tos.BucketAclGrant>[] | undefined>;
+        /**
+         * Object owner
+         */
+        owner?: pulumi.Input<inputs.tos.BucketAclOwner | undefined>;
+    }
+
+    export interface BucketAclGrant {
+        /**
+         * Bucket access permissions. Includes private, public-read, public-read-write, authenticated-read, bucket-owner-read, bucket-owner-full-control, log-delivery-write, bucket-owner-entrusted, default.
+         */
+        acl?: pulumi.Input<string | undefined>;
+        /**
+         * Grant all permissions to the specified user
+         */
+        grantFullControl?: pulumi.Input<string | undefined>;
+        /**
+         * Grant read permission to the specified user
+         */
+        grantRead?: pulumi.Input<string | undefined>;
+        /**
+         * Grant permission to specified user to view bucket ACL
+         */
+        grantReadAcp?: pulumi.Input<string | undefined>;
+        /**
+         * Grant write permission to specified user
+         */
+        grantWrite?: pulumi.Input<string | undefined>;
+        /**
+         * Grant permission to the specified user to modify and delete bucket ACL
+         */
+        grantWriteAcp?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketAclOwner {
+        /**
+         * Display name
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Account ID
+         */
+        ownerId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketCorsCorsRule {
+        /**
+         * Specify the response headers allowed for cross-origin requests.
+         */
+        allowedHeaders?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Specify the allowed methods for cross-origin requests.
+         */
+        allowedMethods?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Specify the allowed origins for cross-origin requests.
+         */
+        allowedOrigins?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Specify additional headers to include in the CORS response to provide extra information to the client.
+         */
+        exposeHeaders?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Specify the cache duration for OPTIONS request responses on the client side, in seconds. Default is 3600.
+         */
+        maxAgeSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Whether to return the Vary: Origin header
+         */
+        responseVary?: pulumi.Input<boolean | undefined>;
+    }
+
+    export interface BucketInventoryDestination {
+        /**
+         * Bucket information related to the inventory files.
+         */
+        tosBucketDestination?: pulumi.Input<inputs.tos.BucketInventoryDestinationTosBucketDestination | undefined>;
+    }
+
+    export interface BucketInventoryDestinationTosBucketDestination {
+        /**
+         * Account ID of the bucket owner.
+         */
+        accountId?: pulumi.Input<string | undefined>;
+        /**
+         * Specify the bucket to store the inventory files.
+         */
+        bucket?: pulumi.Input<string | undefined>;
+        /**
+         * Inventory file format. Value is CSV, meaning the inventory file is in CSV format compressed with GZIP.
+         */
+        format?: pulumi.Input<string | undefined>;
+        /**
+         * Prefix for the storage path of inventory files. By default, files are saved under tos*bucket*inventory/sourceBucketName/inventoryId/YYYY-MM-DDTHH-MMZ/files in the target bucket.
+         */
+        prefix?: pulumi.Input<string | undefined>;
+        /**
+         * Role name used to grant permission to read all files from the source bucket and write files to the target bucket. The role must have TOS read/write and service access permissions. You can also use the default TOS role TosArchiveTOSInventory.
+         */
+        role?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketInventoryFilter {
+        /**
+         * Prefix matching information for exported files. If not set, an inventory of all objects in the bucket is generated by default.
+         */
+        prefix?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketInventoryOptionalFields {
+        /**
+         * Information about exported inventory files.
+         */
+        fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface BucketInventorySchedule {
+        /**
+         * Export frequency for inventory files. Options: Daily: export inventory files daily. Weekly: export inventory files weekly. Once: export inventory files once.
+         */
+        frequency?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketLifecycleConfig {
+        /**
+         * Specify expiration attributes for unmerged multipart tasks (fragments)
+         */
+        abortInCompleteMultipartUpload?: pulumi.Input<inputs.tos.BucketLifecycleConfigAbortInCompleteMultipartUpload | undefined>;
+        /**
+         * Expiration attribute for deleting the latest version object in the lifecycle rule based on last modified time
+         */
+        expiration?: pulumi.Input<inputs.tos.BucketLifecycleConfigExpiration | undefined>;
+        /**
+         * Filter conditions for applying the rule
+         */
+        filter?: pulumi.Input<inputs.tos.BucketLifecycleConfigFilter | undefined>;
+        /**
+         * Rule ID
+         */
+        lifecycleRuleId?: pulumi.Input<string | undefined>;
+        noCurrentVersionExpiration?: pulumi.Input<inputs.tos.BucketLifecycleConfigNoCurrentVersionExpiration | undefined>;
+        /**
+         * Expiration attribute for transitioning historical version objects in the lifecycle rule based on last modified time
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        nonCurrentVersionTransitions?: pulumi.Input<pulumi.Input<inputs.tos.BucketLifecycleConfigNonCurrentVersionTransition>[] | undefined>;
+        /**
+         * Prefix to which the rule applies
+         */
+        prefix?: pulumi.Input<string | undefined>;
+        /**
+         * Enable rule. Includes Enabled, Disabled.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.tos.BucketLifecycleConfigTag>[] | undefined>;
+        /**
+         * Expiration attribute for transitioning the latest version object in the lifecycle rule based on last modified time
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        transitions?: pulumi.Input<pulumi.Input<inputs.tos.BucketLifecycleConfigTransition>[] | undefined>;
+    }
+
+    export interface BucketLifecycleConfigAbortInCompleteMultipartUpload {
+        /**
+         * Specify lifecycle rule for unmerged multipart tasks (fragments), number of days to delete after task initialization
+         */
+        daysAfterInitiation?: pulumi.Input<number | undefined>;
+    }
+
+    export interface BucketLifecycleConfigExpiration {
+        /**
+         * Specific date for deleting the latest version object in the lifecycle rule based on last modified time
+         */
+        date?: pulumi.Input<string | undefined>;
+        /**
+         * Number of days for deleting the latest version object based on last modified time in lifecycle rules
+         */
+        days?: pulumi.Input<number | undefined>;
+    }
+
+    export interface BucketLifecycleConfigFilter {
+        /**
+         * Equality condition status. Includes Enabled, Disabled
+         */
+        greaterThanIncludeEqual?: pulumi.Input<string | undefined>;
+        /**
+         * Equality condition status. Includes Enabled, Disabled
+         */
+        lessThanIncludeEqual?: pulumi.Input<string | undefined>;
+        /**
+         * Apply rule to objects larger than the specified size
+         */
+        objectSizeGreaterThan?: pulumi.Input<number | undefined>;
+        /**
+         * Apply rule to objects smaller than the specified size
+         */
+        objectSizeLessThan?: pulumi.Input<number | undefined>;
+    }
+
+    export interface BucketLifecycleConfigNoCurrentVersionExpiration {
+        /**
+         * Specific date for deleting historical version objects in the lifecycle rule based on last modified time
+         */
+        nonCurrentDate?: pulumi.Input<string | undefined>;
+        /**
+         * Number of days to delete historical version objects in the lifecycle rule based on last modified time
+         */
+        nonCurrentDays?: pulumi.Input<number | undefined>;
+    }
+
+    export interface BucketLifecycleConfigNonCurrentVersionTransition {
+        /**
+         * Specific date for historical version object transition in lifecycle rules based on last modified time
+         */
+        nonCurrentDate?: pulumi.Input<string | undefined>;
+        /**
+         * Number of days to transition historical version objects in the lifecycle rule based on last modified time
+         */
+        nonCurrentDays?: pulumi.Input<number | undefined>;
+        /**
+         * Storage class. Includes STANDARD, IA, ARCHIVE*FR, INTELLIGENT*TIERING, COLD*ARCHIVE, ARCHIVE, DEEP*COLD_ARCHIVE
+         */
+        storageClass?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketLifecycleConfigTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketLifecycleConfigTransition {
+        /**
+         * Specific date for latest version object transition in lifecycle rules based on last modified time
+         */
+        date?: pulumi.Input<string | undefined>;
+        /**
+         * Number of days to transition the latest version object in the lifecycle rule based on last modified time
+         */
+        days?: pulumi.Input<number | undefined>;
+        /**
+         * Storage class for historical version object transition in lifecycle rules based on last modified time. Includes STANDARD, IA, ARCHIVE*FR, INTELLIGENT*TIERING, COLD*ARCHIVE, ARCHIVE, DEEP*COLD_ARCHIVE
+         */
+        storageClass?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRule {
+        /**
+         * Conditions that trigger the back-to-origin function.
+         */
+        condition?: pulumi.Input<inputs.tos.BucketMirrorBackRuleCondition | undefined>;
+        /**
+         * Rule ID. The unique identifier for the back-to-origin rule configured on the current bucket. You can set this yourself to distinguish between multiple rules. Restrictions:
+         * Characters supported: letters, numbers,   - and _.
+         * Maximum length: 32 characters.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Back-to-origin redirect configuration.
+         */
+        redirect?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirect | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleCondition {
+        /**
+         * Supports triggering origin fetch only for specified domains. The domain must be able to access the bucket; it is recommended to use a custom domain bound to the bucket. Limit: supports up to 30 domains.
+         */
+        allowHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Error code that triggers origin fetch. When a download request returns this error code, origin fetch is triggered. Limit: currently only supports 404.
+         */
+        httpCode?: pulumi.Input<number | undefined>;
+        /**
+         * Request types that trigger back-to-origin. Value description:
+         * ["GET","HEAD"]: Both GetObject and HeadObject requests can trigger back-to-origin.
+         * ["GET"]: Only GetObject requests can trigger back-to-origin.
+         * Default is ["GET"].
+         */
+        httpMethods?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Object name prefix for matching origin fetch objects. Limit: supports up to 512 characters.
+         */
+        keyPrefix?: pulumi.Input<string | undefined>;
+        /**
+         * Object name suffix for matching origin fetch objects. Limit: supports up to 512 characters.
+         */
+        keySuffix?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirect {
+        /**
+         * List of rules for writing origin response headers to object metadata.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        fetchHeaderToMetaDataRules?: pulumi.Input<pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectFetchHeaderToMetaDataRule>[] | undefined>;
+        /**
+         * Whether to fetch data from the configured origin after redirection. Value description: true: Fetch data from the configured origin after redirection. false: Do not fetch data from the configured origin after redirection.
+         */
+        fetchSourceOnRedirect?: pulumi.Input<boolean | undefined>;
+        /**
+         * Whether to include request parameters when fetching data after redirection. If not configured, inherits PassQuery settings: true: includes request parameters. false: does not include request parameters.
+         */
+        fetchSourceOnRedirectWithQuery?: pulumi.Input<boolean | undefined>;
+        /**
+         * If the result of mirror origin fetch is 3xx, whether to continue redirecting to the specified Location to fetch data. Value description: true: TOS will continue to request the address corresponding to Location. false: TOS will return 302.
+         */
+        followRedirect?: pulumi.Input<boolean | undefined>;
+        /**
+         * Specify the headers to include when mirroring back to origin.
+         */
+        mirrorHeader?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectMirrorHeader | undefined>;
+        /**
+         * List of origin response headers allowed to be passed through directly.
+         */
+        passHeaderFromSources?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Whether to include request parameters when performing redirect or mirror back-to-origin rules. Value description:
+         * true: Include request parameters.
+         * false: Do not include request parameters.
+         */
+        passQuery?: pulumi.Input<boolean | undefined>;
+        /**
+         * List of origin response status codes allowed to be passed through directly.
+         */
+        passStatusCodeFromSources?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+        /**
+         * Back-to-origin address configuration when the origin server is a private bucket.
+         */
+        privateSource?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSource | undefined>;
+        /**
+         * Back-to-origin address configuration when the origin server is a public bucket.
+         */
+        publicSource?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPublicSource | undefined>;
+        /**
+         * Specify redirect type. Value range: Mirror: Mirror origin fetch. Async: Redirect origin fetch.
+         */
+        redirectType?: pulumi.Input<string | undefined>;
+        /**
+         * Define transformations for the object name when requesting the origin server.
+         */
+        transform?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectTransform | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectFetchHeaderToMetaDataRule {
+        /**
+         * Suffix appended when writing object metadata.
+         */
+        metaDataSuffix?: pulumi.Input<string | undefined>;
+        /**
+         * Origin response header name.
+         */
+        sourceHeader?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectMirrorHeader {
+        /**
+         * Whether to forward all HTTP headers to the origin. Values: true: forwards all HTTP headers to the origin. false: does not forward all HTTP headers to the origin. The following HTTP header types are not supported for forwarding: Host, Content-Length, Date, Authorization.
+         */
+        passAll?: pulumi.Input<boolean | undefined>;
+        /**
+         * Pass the specified headers to the origin server. Limit: up to 64.
+         */
+        passes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Prohibit forwarding specified headers to the origin. Limit: maximum 64.
+         */
+        removes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * List of request headers to add or overwrite during origin fetch.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        sets?: pulumi.Input<pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectMirrorHeaderSet>[] | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectMirrorHeaderSet {
+        /**
+         * Request header name.
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Request header value.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSource {
+        /**
+         * Back-to-origin address configuration when the origin server is a private bucket.
+         */
+        sourceEndpoint?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpoint | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpoint {
+        /**
+         * Backup private origin node list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        followers?: pulumi.Input<pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollower>[] | undefined>;
+        /**
+         * Origin address for requests. Supports up to 5 origin fetch addresses. Required when the origin is a private bucket.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        primaries?: pulumi.Input<pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimary>[] | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollower {
+        /**
+         * Name of the origin fetch bucket. Required when the origin is a private bucket.
+         */
+        bucketName?: pulumi.Input<string | undefined>;
+        /**
+         * Private back-to-origin authentication method. Required when the origin server is a private bucket.
+         */
+        credentialProvider?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollowerCredentialProvider | undefined>;
+        /**
+         * Access domain name of the origin service provider, excluding bucket name, maximum length 255. Required for private buckets.
+         */
+        endpoint?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollowerCredentialProvider {
+        /**
+         * Region where the origin fetch bucket is located. Required when using AK/SK authentication.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * Name of AssumeRole. Only when fetching from a private TOS bucket can AssumeRole be used for authentication. Role authentication and AK/SK authentication are mutually exclusive and cannot be set simultaneously.
+         */
+        role?: pulumi.Input<string | undefined>;
+        /**
+         * Authenticate using AK/SK.
+         */
+        staticCredential?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollowerCredentialProviderStaticCredential | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointFollowerCredentialProviderStaticCredential {
+        /**
+         * AccessKey ID of the origin bucket. Required when using AK/SK authentication.
+         */
+        ak?: pulumi.Input<string | undefined>;
+        /**
+         * SecretKey for the back-to-origin bucket. Required when using AK/SK authentication.
+         */
+        sk?: pulumi.Input<string | undefined>;
+        /**
+         * Encryption method used for SecretKey. Values:
+         * Empty: SecretKey is in plaintext. After receiving the SecretKey, the server will encrypt and store it.
+         * AES256: SecretKey has been encrypted using the AES256 algorithm on the server side. After receiving the SecretKey, the server will parse and encrypt it for storage.
+         * Note: When a back-to-origin rule is created for the first time, the SecretKey is encrypted with AES256. If you modify the back-to-origin rule without changing the SecretKey parameter, you must first decrypt the SecretKey and then re-encrypt it for storage. Therefore, when calling the PutBucketMirrorBack API to modify the back-to-origin rule and only changing other parameters (not the SecretKey), you can set SKEncryptType to AES256.
+         */
+        skEncryptType?: pulumi.Input<string | undefined>;
+        /**
+         * Origin service provider. Values: BOS: Baidu Cloud. S3: Other cloud providers using the S3 storage protocol.
+         */
+        storageVendor?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimary {
+        /**
+         * Name of the origin fetch bucket. Required when the origin is a private bucket.
+         */
+        bucketName?: pulumi.Input<string | undefined>;
+        /**
+         * Private back-to-origin authentication method. Required when the origin server is a private bucket.
+         */
+        credentialProvider?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimaryCredentialProvider | undefined>;
+        /**
+         * Access domain name of the origin service provider, excluding bucket name, maximum length 255. Required for private buckets.
+         */
+        endpoint?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimaryCredentialProvider {
+        /**
+         * Region where the origin fetch bucket is located. Required when using AK/SK authentication.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * Name of AssumeRole. Only when fetching from a private TOS bucket can AssumeRole be used for authentication. Role authentication and AK/SK authentication are mutually exclusive and cannot be set simultaneously.
+         */
+        role?: pulumi.Input<string | undefined>;
+        /**
+         * Authenticate using AK/SK.
+         */
+        staticCredential?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimaryCredentialProviderStaticCredential | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPrivateSourceSourceEndpointPrimaryCredentialProviderStaticCredential {
+        /**
+         * AccessKey ID of the origin bucket. Required when using AK/SK authentication.
+         */
+        ak?: pulumi.Input<string | undefined>;
+        /**
+         * SecretKey for the back-to-origin bucket. Required when using AK/SK authentication.
+         */
+        sk?: pulumi.Input<string | undefined>;
+        /**
+         * Encryption method used for SecretKey. Values:
+         * Empty: SecretKey is in plaintext. After receiving the SecretKey, the server will encrypt and store it.
+         * AES256: SecretKey has been encrypted using the AES256 algorithm on the server side. After receiving the SecretKey, the server will parse and encrypt it for storage.
+         * Note: When a back-to-origin rule is created for the first time, the SecretKey is encrypted with AES256. If you modify the back-to-origin rule without changing the SecretKey parameter, you must first decrypt the SecretKey and then re-encrypt it for storage. Therefore, when calling the PutBucketMirrorBack API to modify the back-to-origin rule and only changing other parameters (not the SecretKey), you can set SKEncryptType to AES256.
+         */
+        skEncryptType?: pulumi.Input<string | undefined>;
+        /**
+         * Origin service provider. Values: BOS: Baidu Cloud. S3: Other cloud providers using the S3 storage protocol.
+         */
+        storageVendor?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPublicSource {
+        /**
+         * Whether to always use the configured origin address.
+         */
+        fixedEndpoint?: pulumi.Input<boolean | undefined>;
+        /**
+         * Publicly accessible origin address.
+         */
+        sourceEndpoint?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectPublicSourceSourceEndpoint | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectPublicSourceSourceEndpoint {
+        /**
+         * Origin address. Limit: Maximum length 255, supports up to 5 origin fetch addresses. When all origin fetches fail in Primary, an origin is selected from this configuration.
+         */
+        followers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Origin address. Limit: Maximum length 255, supports up to 5 origin fetch addresses.
+         */
+        primaries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectTransform {
+        /**
+         * Object name prefix to be replaced when requesting the origin.
+         */
+        replaceKeyPrefix?: pulumi.Input<inputs.tos.BucketMirrorBackRuleRedirectTransformReplaceKeyPrefix | undefined>;
+        /**
+         * Prefix added before the object name when requesting the origin server. Limit: up to 512 characters.
+         */
+        withKeyPrefix?: pulumi.Input<string | undefined>;
+        /**
+         * Prefix added before the object name when requesting the origin server. Limit: up to 512 characters.
+         */
+        withKeySuffix?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketMirrorBackRuleRedirectTransformReplaceKeyPrefix {
+        /**
+         * Object name prefix to be replaced when requesting the origin. Limit: Supports up to 512 characters.
+         */
+        keyPrefix?: pulumi.Input<string | undefined>;
+        /**
+         * Value of the object name prefix after replacement when requesting the origin. Limit: Supports up to 512 characters.
+         */
+        replaceWith?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRule {
+        /**
+         * Event notification delivery targets. Must include at least one target and supports up to five different targets.
+         */
+        destination?: pulumi.Input<inputs.tos.BucketNotificationNotificationRuleDestination | undefined>;
+        /**
+         * Event type. List of events supported by TOS.
+         */
+        events?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Filter rules.
+         */
+        filter?: pulumi.Input<inputs.tos.BucketNotificationNotificationRuleFilter | undefined>;
+        /**
+         * Event notification rule name. Naming rules: Event names created under the same bucket must be unique. Maximum length is 255 characters. If not set, TOS will automatically generate a rule name.
+         */
+        ruleId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleDestination {
+        /**
+         * Event delivery target is Kafka message queue.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        kafkas?: pulumi.Input<pulumi.Input<inputs.tos.BucketNotificationNotificationRuleDestinationKafka>[] | undefined>;
+        /**
+         * Event delivery target is RocketMQ message queue.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        rocketMqs?: pulumi.Input<pulumi.Input<inputs.tos.BucketNotificationNotificationRuleDestinationRocketMq>[] | undefined>;
+        /**
+         * Event delivery target is Function Service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        veFaaS?: pulumi.Input<pulumi.Input<inputs.tos.BucketNotificationNotificationRuleDestinationVeFaa>[] | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleDestinationKafka {
+        /**
+         * Kafka instance ID.
+         */
+        instanceId?: pulumi.Input<string | undefined>;
+        /**
+         * Region where the Kafka instance is located.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * Role TRN, used to authorize TOS to access Kafka service.
+         */
+        role?: pulumi.Input<string | undefined>;
+        /**
+         * Name of the Kafka topic.
+         */
+        topic?: pulumi.Input<string | undefined>;
+        /**
+         * Kafka username.
+         */
+        user?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleDestinationRocketMq {
+        /**
+         * RocketMQ AccessKey。
+         */
+        accessKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * RocketMQ instance ID.
+         */
+        instanceId?: pulumi.Input<string | undefined>;
+        /**
+         * Role TRN, used to authorize TOS to access RocketMQ service.
+         */
+        role?: pulumi.Input<string | undefined>;
+        /**
+         * Name of the RocketMQ topic.
+         */
+        topic?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleDestinationVeFaa {
+        /**
+         * Function ID for event delivery.
+         */
+        functionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleFilter {
+        /**
+         * Object filter information.
+         */
+        tosKey?: pulumi.Input<inputs.tos.BucketNotificationNotificationRuleFilterTosKey | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleFilterTosKey {
+        /**
+         * Object filter information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        filterRules?: pulumi.Input<pulumi.Input<inputs.tos.BucketNotificationNotificationRuleFilterTosKeyFilterRule>[] | undefined>;
+    }
+
+    export interface BucketNotificationNotificationRuleFilterTosKeyFilterRule {
+        /**
+         * Matching conditions. The values are as follows: prefix: prefix; suffix: suffix.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Matched prefix and suffix information.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketObjectLockConfiguration {
+        /**
+         * Enable retention policy Only Enabled is supported, which means the retention policy is enabled
+         */
+        objectLockEnabled?: pulumi.Input<string | undefined>;
+        /**
+         * Bucket retention policy rules
+         */
+        rule?: pulumi.Input<inputs.tos.BucketObjectLockConfigurationRule | undefined>;
+    }
+
+    export interface BucketObjectLockConfigurationRule {
+        /**
+         * Default bucket retention policy
+         */
+        defaultRetention?: pulumi.Input<inputs.tos.BucketObjectLockConfigurationRuleDefaultRetention | undefined>;
+    }
+
+    export interface BucketObjectLockConfigurationRuleDefaultRetention {
+        /**
+         * Object lock days Objects cannot be deleted or overwritten during the specified number of days. Measured in days
+         */
+        days?: pulumi.Input<number | undefined>;
+        /**
+         * Retention policy mode Only COMPLIANCE is supported, which means compliance mode. In this mode, no user can delete or overwrite locked objects during the retention period
+         */
+        mode?: pulumi.Input<string | undefined>;
+        /**
+         * Object lock years Objects cannot be deleted or overwritten during the specified number of years. Measured in years, with one year equal to 365 days
+         */
+        years?: pulumi.Input<number | undefined>;
+    }
+
+    export interface BucketRealtimeLogRealTimeLog {
+        /**
+         * Role name. Used to grant TOS Object Storage permission to create resources such as projects and topics in Log Service TLS and to write logs
+         */
+        role: pulumi.Input<string>;
+        /**
+         * Log project ID
+         */
+        tlsProjectId?: pulumi.Input<string | undefined>;
+        /**
+         * Log topic ID
+         */
+        tlsTopicId?: pulumi.Input<string | undefined>;
+        /**
+         * For topics created using the TOS service, only "true" is allowed as a value
+         */
+        useServiceTopic: pulumi.Input<boolean>;
+    }
+
+    export interface BucketReplicationRule {
+        /**
+         * Object owner management permissions
+         */
+        accessControlTranslation?: pulumi.Input<inputs.tos.BucketReplicationRuleAccessControlTranslation | undefined>;
+        /**
+         * Replication target bucket information
+         */
+        destination: pulumi.Input<inputs.tos.BucketReplicationRuleDestination>;
+        /**
+         * Enable historical object replication. If enabled, historical objects matching this rule will be replicated. Options: Enabled: Enable historical object replication. Disabled: Do not enable historical object replication
+         */
+        historicalObjectReplication: pulumi.Input<string>;
+        /**
+         * Unique identifier for the rule, less than 255 characters
+         */
+        id: pulumi.Input<string>;
+        /**
+         * Object name prefix to which this rule applies
+         */
+        prefixSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Save replication progress
+         */
+        progress?: pulumi.Input<inputs.tos.BucketReplicationRuleProgress | undefined>;
+        /**
+         * Specify whether to enable this rule. Options: Enabled: Enable this rule. Disabled: Do not enable this rule
+         */
+        status: pulumi.Input<string>;
+    }
+
+    export interface BucketReplicationRuleAccessControlTranslation {
+        /**
+         * Object owner management permissions have been granted for replication to the destination bucket, allowing the destination bucket to read objects and grant other accounts permission to read objects
+         */
+        owner?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketReplicationRuleDestination {
+        /**
+         * Name of the bucket storing object replicas identified by the rule
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * Region of the target bucket
+         */
+        location: pulumi.Input<string>;
+        /**
+         * Specify the storage class for objects replicated to the target bucket. Options: STANDARD: Standard storage. STANDARD*IA: Infrequent access storage. GLACIER*IR: Archive instant retrieval storage. INTELLIGENT*TIERING: Intelligent tiering storage. ARCHIVE: Archive storage. COLD*ARCHIVE: Cold archive storage. DEEP*COLD*ARCHIVE: Deep cold archive storage
+         */
+        storageClass?: pulumi.Input<string | undefined>;
+        /**
+         * Set the storage class for objects replicated to the target bucket. Options: SOURCE*OBJECT: Inherit the storage class of the source bucket object. DESTINATION*BUCKET: Inherit the default storage class of the target bucket
+         */
+        storageClassInheritDirective?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketReplicationRuleProgress {
+        /**
+         * Show the percentage of historical data that has been replicated
+         */
+        historicalObject?: pulumi.Input<number | undefined>;
+        /**
+         * Show the timestamp when data is replicated to the target bucket
+         */
+        newObject?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketWebsiteErrorDocument {
+        /**
+         * When a 4xx error occurs, this page is returned
+         */
+        key?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketWebsiteIndexDocument {
+        /**
+         * Whether to support redirecting to the default homepage of a subdirectory. Value description: false (default): Does not support redirecting to the default homepage of a subdirectory. true: Supports redirecting to the default homepage of a subdirectory
+         */
+        forbiddenSubDir?: pulumi.Input<boolean | undefined>;
+        /**
+         * When requesting a directory (ending with /), returns the object specified by Suffix in that directory. For example, if Suffix is set to index.html, accessing document/ returns document/index.html
+         */
+        suffix?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketWebsiteRedirectAllRequestsTo {
+        /**
+         * Redirect site name
+         */
+        hostName?: pulumi.Input<string | undefined>;
+        /**
+         * Protocol used for redirect requests. Supports http and https. Default is http
+         */
+        protocol?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketWebsiteRoutingRule {
+        /**
+         * Set the matching conditions for the redirect rule. The redirect rule only takes effect when all specified conditions are met
+         */
+        condition?: pulumi.Input<inputs.tos.BucketWebsiteRoutingRuleCondition | undefined>;
+        /**
+         * Set redirect rule
+         */
+        redirect?: pulumi.Input<inputs.tos.BucketWebsiteRoutingRuleRedirect | undefined>;
+    }
+
+    export interface BucketWebsiteRoutingRuleCondition {
+        /**
+         * Set the HTTP error code that triggers the redirect rule. For example, if HttpErrorCodeReturnedEquals is set to 404, the rule takes effect when the specified object does not exist. If KeyPrefixEquals is set, the redirect rule only takes effect when both HttpErrorCodeReturnedEquals and KeyPrefixEquals conditions are met
+         */
+        httpErrorCodeReturnedEquals?: pulumi.Input<number | undefined>;
+        /**
+         * Set the object name prefix for the redirect rule to take effect. If HttpErrorCodeReturnedEquals is set, the redirect rule only takes effect when both HttpErrorCodeReturnedEquals and KeyPrefixEquals conditions are met
+         */
+        keyPrefixEquals?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BucketWebsiteRoutingRuleRedirect {
+        /**
+         * Set the redirect site name
+         */
+        hostName?: pulumi.Input<string | undefined>;
+        /**
+         * Status code returned during redirect. Only 3XX status codes can be set; 300 cannot be set. Default is 301
+         */
+        httpRedirectCode?: pulumi.Input<number | undefined>;
+        /**
+         * Protocol used for redirect requests, including http and https. Default is http
+         */
+        protocol?: pulumi.Input<string | undefined>;
+        /**
+         * Object name prefix used for redirect
+         */
+        replaceKeyPrefixWith?: pulumi.Input<string | undefined>;
+        /**
+         * Object name used for redirect
+         */
+        replaceKeyWith?: pulumi.Input<string | undefined>;
+    }
+
+    export interface TosObjectAccountAcl {
+        /**
+         * Authorized account ID.
+         */
+        accountId?: pulumi.Input<string | undefined>;
+        /**
+         * Authorized principal type. Currently, only CanonicalUser is supported.
+         */
+        aclType?: pulumi.Input<string | undefined>;
+        /**
+         * Authorization permission type. Includes FULL*CONTROL, READ, READ*ACP, WRITE, WRITE_ACP.
+         */
+        permission?: pulumi.Input<string | undefined>;
+    }
+
+    export interface TosObjectMetadata {
+        /**
+         * Tag key.
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface TosObjectTag {
+        /**
+         * Tag key.
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+}
+
 export namespace transitrouter {
     export interface DirectConnectGatewayAttachmentTag {
         /**

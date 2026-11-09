@@ -59,9 +59,12 @@ func Provider() tfbridge.ProviderInfo {
 		// for use in Pulumi programs
 		PluginDownloadURL: "github://api.github.com/byteplus-sdk",
 		MetadataInfo:      tfbridge.NewProviderMetadata(metadata),
-		Resources:         map[string]*tfbridge.ResourceInfo{},
-		GitHubHost:        "github.com",
-		GitHubOrg:         "byteplus-sdk",
+		Resources: map[string]*tfbridge.ResourceInfo{
+			// Avoid the Object built-in when generating language SDKs.
+			"bytepluscc_tos_object": {Tok: "bytepluscc:tos/tosObject:TosObject"},
+		},
+		GitHubHost: "github.com",
+		GitHubOrg:  "byteplus-sdk",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"region": {
 				Default: &tfbridge.DefaultInfo{
