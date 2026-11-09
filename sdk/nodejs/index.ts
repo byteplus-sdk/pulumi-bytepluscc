@@ -51,6 +51,7 @@ import * as resourceshare from "./resourceshare";
 import * as securitycenter from "./securitycenter";
 import * as storageebs from "./storageebs";
 import * as tls from "./tls";
+import * as tos from "./tos";
 import * as transitrouter from "./transitrouter";
 import * as types from "./types";
 import * as vedbm from "./vedbm";
@@ -104,6 +105,7 @@ export {
     securitycenter,
     storageebs,
     tls,
+    tos,
     transitrouter,
     types,
     vedbm,

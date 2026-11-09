@@ -93,6 +93,8 @@ if typing.TYPE_CHECKING:
     storageebs = __storageebs
     import pulumi_bytepluscc.tls as __tls
     tls = __tls
+    import pulumi_bytepluscc.tos as __tos
+    tos = __tos
     import pulumi_bytepluscc.transitrouter as __transitrouter
     transitrouter = __transitrouter
     import pulumi_bytepluscc.vedbm as __vedbm
@@ -153,6 +155,7 @@ else:
     securitycenter = _utilities.lazy_import('pulumi_bytepluscc.securitycenter')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     tls = _utilities.lazy_import('pulumi_bytepluscc.tls')
+    tos = _utilities.lazy_import('pulumi_bytepluscc.tos')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
     vedbm = _utilities.lazy_import('pulumi_bytepluscc.vedbm')
     vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
@@ -1844,6 +1847,102 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/topic:Topic": "Topic"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucket",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucket:Bucket": "Bucket"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketAccessMonitor",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketAccessMonitor:BucketAccessMonitor": "BucketAccessMonitor"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketCors",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketCors:BucketCors": "BucketCors"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketEncryption",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketEncryption:BucketEncryption": "BucketEncryption"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketInventory",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketInventory:BucketInventory": "BucketInventory"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketMirrorBack",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketMirrorBack:BucketMirrorBack": "BucketMirrorBack"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketNotification",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketNotification:BucketNotification": "BucketNotification"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketRealtimeLog",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketRealtimeLog:BucketRealtimeLog": "BucketRealtimeLog"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketRename",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketRename:BucketRename": "BucketRename"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketReplication",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketReplication:BucketReplication": "BucketReplication"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/bucketWebsite",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/bucketWebsite:BucketWebsite": "BucketWebsite"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tos/tosObject",
+  "fqn": "pulumi_bytepluscc.tos",
+  "classes": {
+   "bytepluscc:tos/tosObject:TosObject": "TosObject"
   }
  },
  {
