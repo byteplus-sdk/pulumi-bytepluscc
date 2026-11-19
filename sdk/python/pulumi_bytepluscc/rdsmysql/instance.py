@@ -50,7 +50,8 @@ class InstanceArgs:
                  super_account_name: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  sync_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_config: pulumi.Input[Optional['InstanceTdeConfigArgs']] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -86,6 +87,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: RDS MySQL instance tag information
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input['InstanceTdeConfigArgs'] tde_config: Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
         """
         pulumi.set(__self__, "charge_detail", charge_detail)
         pulumi.set(__self__, "db_engine_version", db_engine_version)
@@ -140,6 +142,8 @@ class InstanceArgs:
             pulumi.set(__self__, "sync_mode", sync_mode)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_config is not None:
+            pulumi.set(__self__, "tde_config", tde_config)
 
     @_builtins.property
     @pulumi.getter(name="chargeDetail")
@@ -503,6 +507,18 @@ class InstanceArgs:
     def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Input[Optional['InstanceTdeConfigArgs']]:
+        """
+        Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @tde_config.setter
+    def tde_config(self, value: pulumi.Input[Optional['InstanceTdeConfigArgs']]):
+        pulumi.set(self, "tde_config", value)
+
 
 @pulumi.input_type
 class _InstanceState:
@@ -575,6 +591,7 @@ class _InstanceState:
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  sync_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_config: pulumi.Input[Optional['InstanceTdeConfigArgs']] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  updated_time: pulumi.Input[Optional[_builtins.str]] = None,
                  vcpu: pulumi.Input[Optional[_builtins.int]] = None,
@@ -657,6 +674,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: RDS MySQL instance tag information
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input['InstanceTdeConfigArgs'] tde_config: Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
         :param pulumi.Input[_builtins.str] time_zone: Time zone
         :param pulumi.Input[_builtins.str] updated_time: Instance updates local time.
         :param pulumi.Input[_builtins.int] vcpu: CPU size. For example: 1 means 1U.
@@ -800,6 +818,8 @@ class _InstanceState:
             pulumi.set(__self__, "sync_mode", sync_mode)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_config is not None:
+            pulumi.set(__self__, "tde_config", tde_config)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if updated_time is not None:
@@ -1635,6 +1655,18 @@ class _InstanceState:
         pulumi.set(self, "tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Input[Optional['InstanceTdeConfigArgs']]:
+        """
+        Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @tde_config.setter
+    def tde_config(self, value: pulumi.Input[Optional['InstanceTdeConfigArgs']]):
+        pulumi.set(self, "tde_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1742,6 +1774,7 @@ class Instance(pulumi.CustomResource):
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  sync_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -1850,6 +1883,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: RDS MySQL instance tag information
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']] tde_config: Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
         :param pulumi.Input[_builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
         """
         ...
@@ -1975,6 +2009,7 @@ class Instance(pulumi.CustomResource):
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  sync_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -2026,6 +2061,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["super_account_password"] = super_account_password
             __props__.__dict__["sync_mode"] = sync_mode
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["tde_config"] = tde_config
             if vpc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vpc_id'")
             __props__.__dict__["vpc_id"] = vpc_id
@@ -2151,6 +2187,7 @@ class Instance(pulumi.CustomResource):
             super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
             sync_mode: pulumi.Input[Optional[_builtins.str]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+            tde_config: pulumi.Input[Optional[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             vcpu: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2237,6 +2274,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: RDS MySQL instance tag information
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Union['InstanceTdeConfigArgs', 'InstanceTdeConfigArgsDict']] tde_config: Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
         :param pulumi.Input[_builtins.str] time_zone: Time zone
         :param pulumi.Input[_builtins.str] updated_time: Instance updates local time.
         :param pulumi.Input[_builtins.int] vcpu: CPU size. For example: 1 means 1U.
@@ -2316,6 +2354,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["super_account_password"] = super_account_password
         __props__.__dict__["sync_mode"] = sync_mode
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["tde_config"] = tde_config
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["updated_time"] = updated_time
         __props__.__dict__["vcpu"] = vcpu
@@ -2872,6 +2911,14 @@ class Instance(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> pulumi.Output['outputs.InstanceTdeConfig']:
+        """
+        Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        """
+        return pulumi.get(self, "tde_config")
 
     @_builtins.property
     @pulumi.getter(name="timeZone")

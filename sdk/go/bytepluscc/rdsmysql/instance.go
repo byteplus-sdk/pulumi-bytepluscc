@@ -246,6 +246,8 @@ type Instance struct {
 	// RDS MySQL instance tag information
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayOutput `pulumi:"tags"`
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig InstanceTdeConfigOutput `pulumi:"tdeConfig"`
 	// Time zone
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// Instance updates local time.
@@ -452,6 +454,8 @@ type instanceState struct {
 	// RDS MySQL instance tag information
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig *InstanceTdeConfig `pulumi:"tdeConfig"`
 	// Time zone
 	TimeZone *string `pulumi:"timeZone"`
 	// Instance updates local time.
@@ -608,6 +612,8 @@ type InstanceState struct {
 	// RDS MySQL instance tag information
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig InstanceTdeConfigPtrInput
 	// Time zone
 	TimeZone pulumi.StringPtrInput
 	// Instance updates local time.
@@ -687,6 +693,8 @@ type instanceArgs struct {
 	// RDS MySQL instance tag information
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig *InstanceTdeConfig `pulumi:"tdeConfig"`
 	// VPC (Virtual Private Cloud) ID.
 	VpcId string `pulumi:"vpcId"`
 }
@@ -753,6 +761,8 @@ type InstanceArgs struct {
 	// RDS MySQL instance tag information
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig InstanceTdeConfigPtrInput
 	// VPC (Virtual Private Cloud) ID.
 	VpcId pulumi.StringInput
 }
@@ -1187,6 +1197,11 @@ func (o InstanceOutput) SyncMode() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
+}
+
+// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+func (o InstanceOutput) TdeConfig() InstanceTdeConfigOutput {
+	return o.ApplyT(func(v *Instance) InstanceTdeConfigOutput { return v.TdeConfig }).(InstanceTdeConfigOutput)
 }
 
 // Time zone

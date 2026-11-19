@@ -27,7 +27,7 @@ class GetObjectGroupResult:
     """
     A collection of values returned by getObjectGroup.
     """
-    def __init__(__self__, alert_template_id=None, alert_template_name=None, created_at=None, group_id=None, id=None, name=None, objects=None, updated_at=None):
+    def __init__(__self__, alert_template_id=None, alert_template_name=None, created_at=None, group_id=None, id=None, name=None, objects=None, template_details=None, updated_at=None):
         if alert_template_id and not isinstance(alert_template_id, str):
             raise TypeError("Expected argument 'alert_template_id' to be a str")
         pulumi.set(__self__, "alert_template_id", alert_template_id)
@@ -49,6 +49,9 @@ class GetObjectGroupResult:
         if objects and not isinstance(objects, list):
             raise TypeError("Expected argument 'objects' to be a list")
         pulumi.set(__self__, "objects", objects)
+        if template_details and not isinstance(template_details, list):
+            raise TypeError("Expected argument 'template_details' to be a list")
+        pulumi.set(__self__, "template_details", template_details)
         if updated_at and not isinstance(updated_at, str):
             raise TypeError("Expected argument 'updated_at' to be a str")
         pulumi.set(__self__, "updated_at", updated_at)
@@ -110,6 +113,14 @@ class GetObjectGroupResult:
         return pulumi.get(self, "objects")
 
     @_builtins.property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> Sequence['outputs.GetObjectGroupTemplateDetailResult']:
+        """
+        List of alarm template information associated with the object group, returned by the server.
+        """
+        return pulumi.get(self, "template_details")
+
+    @_builtins.property
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> _builtins.str:
         """
@@ -131,6 +142,7 @@ class AwaitableGetObjectGroupResult(GetObjectGroupResult):
             id=self.id,
             name=self.name,
             objects=self.objects,
+            template_details=self.template_details,
             updated_at=self.updated_at)
 
 
@@ -155,6 +167,7 @@ def get_object_group(id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         objects=pulumi.get(__ret__, 'objects'),
+        template_details=pulumi.get(__ret__, 'template_details'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
 def get_object_group_output(id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectGroupResult]:
@@ -176,4 +189,5 @@ def get_object_group_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         objects=pulumi.get(__response__, 'objects'),
+        template_details=pulumi.get(__response__, 'template_details'),
         updated_at=pulumi.get(__response__, 'updated_at')))

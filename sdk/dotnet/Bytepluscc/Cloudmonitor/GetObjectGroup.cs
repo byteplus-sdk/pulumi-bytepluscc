@@ -93,6 +93,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly ImmutableArray<Outputs.GetObjectGroupObjectResult> Objects;
         /// <summary>
+        /// List of alarm template information associated with the object group, returned by the server.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetObjectGroupTemplateDetailResult> TemplateDetails;
+        /// <summary>
         /// Object group last update time
         /// </summary>
         public readonly string UpdatedAt;
@@ -113,6 +117,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 
             ImmutableArray<Outputs.GetObjectGroupObjectResult> objects,
 
+            ImmutableArray<Outputs.GetObjectGroupTemplateDetailResult> templateDetails,
+
             string updatedAt)
         {
             AlertTemplateId = alertTemplateId;
@@ -122,6 +128,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             Id = id;
             Name = name;
             Objects = objects;
+            TemplateDetails = templateDetails;
             UpdatedAt = updatedAt;
         }
     }

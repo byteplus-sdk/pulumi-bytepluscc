@@ -5600,6 +5600,11 @@ export namespace cloudmonitor {
          */
         region?: pulumi.Input<string | undefined>;
         /**
+         * List of alarm rules associated with the monitored object, returned by the server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        rules?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.ObjectGroupObjectRule>[] | undefined>;
+        /**
          * Object access method, such as `Dimension` / `DimensionCondition`
          */
         type?: pulumi.Input<string | undefined>;
@@ -5694,6 +5699,36 @@ export namespace cloudmonitor {
          * Resource ID list
          */
         resourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface ObjectGroupObjectRule {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId?: pulumi.Input<string | undefined>;
+        /**
+         * Alarm Rule ID
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Alarm Rule Name
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Rule ID in Alarm Template
+         */
+        templateRuleId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ObjectGroupTemplateDetail {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId?: pulumi.Input<string | undefined>;
+        /**
+         * Associated Alarm Template Name
+         */
+        alertTemplateName?: pulumi.Input<string | undefined>;
     }
 
     export interface RuleCondition {
@@ -12199,6 +12234,25 @@ export namespace rdsmysql {
          * Tag value.
          */
         value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface InstanceTdeConfig {
+        /**
+         * Custom key name. When using a custom key, you must set KeyringName at the same time.
+         */
+        keyName?: pulumi.Input<string | undefined>;
+        /**
+         * Custom keyring name. When using a custom key, you must set KeyName at the same time.
+         */
+        keyringName?: pulumi.Input<string | undefined>;
+        /**
+         * TDE activation time. Only Immediate is supported, which means immediate execution.
+         */
+        switchType?: pulumi.Input<string | undefined>;
+        /**
+         * Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+         */
+        tdeStatus?: pulumi.Input<string | undefined>;
     }
 
     export interface ParameterTemplateTemplateParam {

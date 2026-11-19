@@ -341,6 +341,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
+        /// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        /// </summary>
+        public readonly Outputs.GetInstanceTdeConfigResult TdeConfig;
+        /// <summary>
         /// Time zone
         /// </summary>
         public readonly string TimeZone;
@@ -505,6 +509,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 
             ImmutableArray<Outputs.GetInstanceTagResult> tags,
 
+            Outputs.GetInstanceTdeConfigResult tdeConfig,
+
             string timeZone,
 
             string updatedTime,
@@ -586,6 +592,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             SuperAccountPassword = superAccountPassword;
             SyncMode = syncMode;
             Tags = tags;
+            TdeConfig = tdeConfig;
             TimeZone = timeZone;
             UpdatedTime = updatedTime;
             Vcpu = vcpu;

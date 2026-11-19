@@ -59,6 +59,10 @@ export interface GetObjectGroupResult {
      */
     readonly objects: outputs.cloudmonitor.GetObjectGroupObject[];
     /**
+     * List of alarm template information associated with the object group, returned by the server.
+     */
+    readonly templateDetails: outputs.cloudmonitor.GetObjectGroupTemplateDetail[];
+    /**
      * Object group last update time
      */
     readonly updatedAt: string;

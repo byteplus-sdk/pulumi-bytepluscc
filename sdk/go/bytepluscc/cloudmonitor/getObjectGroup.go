@@ -44,6 +44,8 @@ type LookupObjectGroupResult struct {
 	Name string `pulumi:"name"`
 	// List of monitoring objects contained in the object group
 	Objects []GetObjectGroupObject `pulumi:"objects"`
+	// List of alarm template information associated with the object group, returned by the server.
+	TemplateDetails []GetObjectGroupTemplateDetail `pulumi:"templateDetails"`
 	// Object group last update time
 	UpdatedAt string `pulumi:"updatedAt"`
 }
@@ -115,6 +117,11 @@ func (o LookupObjectGroupResultOutput) Name() pulumi.StringOutput {
 // List of monitoring objects contained in the object group
 func (o LookupObjectGroupResultOutput) Objects() GetObjectGroupObjectArrayOutput {
 	return o.ApplyT(func(v LookupObjectGroupResult) []GetObjectGroupObject { return v.Objects }).(GetObjectGroupObjectArrayOutput)
+}
+
+// List of alarm template information associated with the object group, returned by the server.
+func (o LookupObjectGroupResultOutput) TemplateDetails() GetObjectGroupTemplateDetailArrayOutput {
+	return o.ApplyT(func(v LookupObjectGroupResult) []GetObjectGroupTemplateDetail { return v.TemplateDetails }).(GetObjectGroupTemplateDetailArrayOutput)
 }
 
 // Object group last update time

@@ -385,6 +385,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly tags: pulumi.Output<outputs.rdsmysql.InstanceTag[]>;
     /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     */
+    declare public readonly tdeConfig: pulumi.Output<outputs.rdsmysql.InstanceTdeConfig>;
+    /**
      * Time zone
      */
     declare public /*out*/ readonly timeZone: pulumi.Output<string>;
@@ -490,6 +494,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["superAccountPassword"] = state?.superAccountPassword;
             resourceInputs["syncMode"] = state?.syncMode;
             resourceInputs["tags"] = state?.tags;
+            resourceInputs["tdeConfig"] = state?.tdeConfig;
             resourceInputs["timeZone"] = state?.timeZone;
             resourceInputs["updatedTime"] = state?.updatedTime;
             resourceInputs["vcpu"] = state?.vcpu;
@@ -548,6 +553,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["superAccountPassword"] = args?.superAccountPassword;
             resourceInputs["syncMode"] = args?.syncMode;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["tdeConfig"] = args?.tdeConfig;
             resourceInputs["vpcId"] = args?.vpcId;
             resourceInputs["addressObjects"] = undefined /*out*/;
             resourceInputs["allowListVersion"] = undefined /*out*/;
@@ -881,6 +887,10 @@ export interface InstanceState {
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceTag>[] | undefined>;
     /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     */
+    tdeConfig?: pulumi.Input<inputs.rdsmysql.InstanceTdeConfig | undefined>;
+    /**
      * Time zone
      */
     timeZone?: pulumi.Input<string | undefined>;
@@ -1028,6 +1038,10 @@ export interface InstanceArgs {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceTag>[] | undefined>;
+    /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     */
+    tdeConfig?: pulumi.Input<inputs.rdsmysql.InstanceTdeConfig | undefined>;
     /**
      * VPC (Virtual Private Cloud) ID.
      */

@@ -16,6 +16,7 @@ import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceMaintenanceWindow;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceNode;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceProxyDetail;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceTag;
+import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceTdeConfig;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -1091,6 +1092,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
+    }
+    /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     * 
+     */
+    @Export(name="tdeConfig", refs={InstanceTdeConfig.class}, tree="[0]")
+    private Output<InstanceTdeConfig> tdeConfig;
+
+    /**
+     * @return Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     * 
+     */
+    public Output<InstanceTdeConfig> tdeConfig() {
+        return this.tdeConfig;
     }
     /**
      * Time zone

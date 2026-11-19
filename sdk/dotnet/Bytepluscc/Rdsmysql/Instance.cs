@@ -522,6 +522,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
+        /// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        /// </summary>
+        [Output("tdeConfig")]
+        public Output<Outputs.InstanceTdeConfig> TdeConfig { get; private set; } = null!;
+
+        /// <summary>
         /// Time zone
         /// </summary>
         [Output("timeZone")]
@@ -797,6 +803,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             get => _tags ?? (_tags = new InputList<Inputs.InstanceTagArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        /// </summary>
+        [Input("tdeConfig")]
+        public Input<Inputs.InstanceTdeConfigArgs>? TdeConfig { get; set; }
 
         /// <summary>
         /// VPC (Virtual Private Cloud) ID.
@@ -1260,6 +1272,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             get => _tags ?? (_tags = new InputList<Inputs.InstanceTagGetArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        /// </summary>
+        [Input("tdeConfig")]
+        public Input<Inputs.InstanceTdeConfigGetArgs>? TdeConfig { get; set; }
 
         /// <summary>
         /// Time zone

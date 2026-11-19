@@ -4774,6 +4774,200 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type InstanceTdeConfig struct {
+	// Custom key name. When using a custom key, you must set KeyringName at the same time.
+	KeyName *string `pulumi:"keyName"`
+	// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+	KeyringName *string `pulumi:"keyringName"`
+	// TDE activation time. Only Immediate is supported, which means immediate execution.
+	SwitchType *string `pulumi:"switchType"`
+	// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+	TdeStatus *string `pulumi:"tdeStatus"`
+}
+
+// InstanceTdeConfigInput is an input type that accepts InstanceTdeConfigArgs and InstanceTdeConfigOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigInput` via:
+//
+//	InstanceTdeConfigArgs{...}
+type InstanceTdeConfigInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigOutput() InstanceTdeConfigOutput
+	ToInstanceTdeConfigOutputWithContext(context.Context) InstanceTdeConfigOutput
+}
+
+type InstanceTdeConfigArgs struct {
+	// Custom key name. When using a custom key, you must set KeyringName at the same time.
+	KeyName pulumi.StringPtrInput `pulumi:"keyName"`
+	// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+	KeyringName pulumi.StringPtrInput `pulumi:"keyringName"`
+	// TDE activation time. Only Immediate is supported, which means immediate execution.
+	SwitchType pulumi.StringPtrInput `pulumi:"switchType"`
+	// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+	TdeStatus pulumi.StringPtrInput `pulumi:"tdeStatus"`
+}
+
+func (InstanceTdeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfig)(nil)).Elem()
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigOutput() InstanceTdeConfigOutput {
+	return i.ToInstanceTdeConfigOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigOutputWithContext(ctx context.Context) InstanceTdeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigOutput)
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return i.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigOutput).ToInstanceTdeConfigPtrOutputWithContext(ctx)
+}
+
+// InstanceTdeConfigPtrInput is an input type that accepts InstanceTdeConfigArgs, InstanceTdeConfigPtr and InstanceTdeConfigPtrOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigPtrInput` via:
+//
+//	        InstanceTdeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceTdeConfigPtrInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput
+	ToInstanceTdeConfigPtrOutputWithContext(context.Context) InstanceTdeConfigPtrOutput
+}
+
+type instanceTdeConfigPtrType InstanceTdeConfigArgs
+
+func InstanceTdeConfigPtr(v *InstanceTdeConfigArgs) InstanceTdeConfigPtrInput {
+	return (*instanceTdeConfigPtrType)(v)
+}
+
+func (*instanceTdeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceTdeConfig)(nil)).Elem()
+}
+
+func (i *instanceTdeConfigPtrType) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return i.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceTdeConfigPtrType) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigPtrOutput)
+}
+
+type InstanceTdeConfigOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfig)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigOutput() InstanceTdeConfigOutput {
+	return o
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigOutputWithContext(ctx context.Context) InstanceTdeConfigOutput {
+	return o
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return o.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceTdeConfig) *InstanceTdeConfig {
+		return &v
+	}).(InstanceTdeConfigPtrOutput)
+}
+
+// Custom key name. When using a custom key, you must set KeyringName at the same time.
+func (o InstanceTdeConfigOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.KeyName }).(pulumi.StringPtrOutput)
+}
+
+// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+func (o InstanceTdeConfigOutput) KeyringName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.KeyringName }).(pulumi.StringPtrOutput)
+}
+
+// TDE activation time. Only Immediate is supported, which means immediate execution.
+func (o InstanceTdeConfigOutput) SwitchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.SwitchType }).(pulumi.StringPtrOutput)
+}
+
+// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+func (o InstanceTdeConfigOutput) TdeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.TdeStatus }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTdeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceTdeConfig)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigPtrOutput) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return o
+}
+
+func (o InstanceTdeConfigPtrOutput) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return o
+}
+
+func (o InstanceTdeConfigPtrOutput) Elem() InstanceTdeConfigOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) InstanceTdeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceTdeConfig
+		return ret
+	}).(InstanceTdeConfigOutput)
+}
+
+// Custom key name. When using a custom key, you must set KeyringName at the same time.
+func (o InstanceTdeConfigPtrOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+func (o InstanceTdeConfigPtrOutput) KeyringName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyringName
+	}).(pulumi.StringPtrOutput)
+}
+
+// TDE activation time. Only Immediate is supported, which means immediate execution.
+func (o InstanceTdeConfigPtrOutput) SwitchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SwitchType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+func (o InstanceTdeConfigPtrOutput) TdeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TdeStatus
+	}).(pulumi.StringPtrOutput)
+}
+
 type ParameterTemplateTemplateParam struct {
 	// Instance parameter name
 	Name string `pulumi:"name"`
@@ -8536,6 +8730,85 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetInstanceTdeConfig struct {
+	// Custom key name. When using a custom key, you must set KeyringName at the same time.
+	KeyName string `pulumi:"keyName"`
+	// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+	KeyringName string `pulumi:"keyringName"`
+	// TDE activation time. Only Immediate is supported, which means immediate execution.
+	SwitchType string `pulumi:"switchType"`
+	// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+	TdeStatus string `pulumi:"tdeStatus"`
+}
+
+// GetInstanceTdeConfigInput is an input type that accepts GetInstanceTdeConfigArgs and GetInstanceTdeConfigOutput values.
+// You can construct a concrete instance of `GetInstanceTdeConfigInput` via:
+//
+//	GetInstanceTdeConfigArgs{...}
+type GetInstanceTdeConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput
+	ToGetInstanceTdeConfigOutputWithContext(context.Context) GetInstanceTdeConfigOutput
+}
+
+type GetInstanceTdeConfigArgs struct {
+	// Custom key name. When using a custom key, you must set KeyringName at the same time.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+	KeyringName pulumi.StringInput `pulumi:"keyringName"`
+	// TDE activation time. Only Immediate is supported, which means immediate execution.
+	SwitchType pulumi.StringInput `pulumi:"switchType"`
+	// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+	TdeStatus pulumi.StringInput `pulumi:"tdeStatus"`
+}
+
+func (GetInstanceTdeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceTdeConfigArgs) ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput {
+	return i.ToGetInstanceTdeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTdeConfigArgs) ToGetInstanceTdeConfigOutputWithContext(ctx context.Context) GetInstanceTdeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTdeConfigOutput)
+}
+
+type GetInstanceTdeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTdeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceTdeConfigOutput) ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput {
+	return o
+}
+
+func (o GetInstanceTdeConfigOutput) ToGetInstanceTdeConfigOutputWithContext(ctx context.Context) GetInstanceTdeConfigOutput {
+	return o
+}
+
+// Custom key name. When using a custom key, you must set KeyringName at the same time.
+func (o GetInstanceTdeConfigOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// Custom keyring name. When using a custom key, you must set KeyName at the same time.
+func (o GetInstanceTdeConfigOutput) KeyringName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.KeyringName }).(pulumi.StringOutput)
+}
+
+// TDE activation time. Only Immediate is supported, which means immediate execution.
+func (o GetInstanceTdeConfigOutput) SwitchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.SwitchType }).(pulumi.StringOutput)
+}
+
+// Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+func (o GetInstanceTdeConfigOutput) TdeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.TdeStatus }).(pulumi.StringOutput)
+}
+
 type GetParameterTemplateTemplateParam struct {
 	// Default value of the parameter
 	DefaultValue string `pulumi:"defaultValue"`
@@ -8746,6 +9019,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoPtrInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigInput)(nil)).Elem(), InstanceTdeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigPtrInput)(nil)).Elem(), InstanceTdeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ParameterTemplateTemplateParamInput)(nil)).Elem(), ParameterTemplateTemplateParamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ParameterTemplateTemplateParamArrayInput)(nil)).Elem(), ParameterTemplateTemplateParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
@@ -8797,6 +9072,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), GetInstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTdeConfigInput)(nil)).Elem(), GetInstanceTdeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterTemplateTemplateParamInput)(nil)).Elem(), GetParameterTemplateTemplateParamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterTemplateTemplateParamArrayInput)(nil)).Elem(), GetParameterTemplateTemplateParamArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
@@ -8857,6 +9133,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ParameterTemplateTemplateParamOutput{})
 	pulumi.RegisterOutputType(ParameterTemplateTemplateParamArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
@@ -8908,6 +9186,7 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceProxyDetailProxyResourceInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceTdeConfigOutput{})
 	pulumi.RegisterOutputType(GetParameterTemplateTemplateParamOutput{})
 	pulumi.RegisterOutputType(GetParameterTemplateTemplateParamArrayOutput{})
 }

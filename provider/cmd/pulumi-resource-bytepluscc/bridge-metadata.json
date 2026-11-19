@@ -1398,9 +1398,15 @@
                                             "maxItemsOne": false
                                         }
                                     }
+                                },
+                                "rules": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
+                    },
+                    "template_details": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -2943,6 +2949,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_organization_delegated_administrator": {
+                "current": "bytepluscc:organization/delegatedAdministrator:DelegatedAdministrator"
             },
             "bytepluscc_organization_organization": {
                 "current": "bytepluscc:organization/organization:Organization"
@@ -7213,9 +7222,15 @@
                                             "maxItemsOne": false
                                         }
                                     }
+                                },
+                                "rules": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
+                    },
+                    "template_details": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -9467,6 +9482,17 @@
             },
             "bytepluscc_organization_accounts": {
                 "current": "bytepluscc:organization/getAccounts:getAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_organization_delegated_administrator": {
+                "current": "bytepluscc:organization/getDelegatedAdministrator:getDelegatedAdministrator"
+            },
+            "bytepluscc_organization_delegated_administrators": {
+                "current": "bytepluscc:organization/getDelegatedAdministrators:getDelegatedAdministrators",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -13437,6 +13463,7 @@
             "bytepluscc_natgateway_ngw": {},
             "bytepluscc_natgateway_snatentry": {},
             "bytepluscc_organization_account": {},
+            "bytepluscc_organization_delegated_administrator": {},
             "bytepluscc_organization_organization": {},
             "bytepluscc_organization_service_control_policy": {},
             "bytepluscc_organization_service_control_policy_enabler": {},

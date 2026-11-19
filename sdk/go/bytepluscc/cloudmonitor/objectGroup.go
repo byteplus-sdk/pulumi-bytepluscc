@@ -84,6 +84,9 @@ type ObjectGroup struct {
 	// List of monitoring objects contained in the object group
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Objects ObjectGroupObjectArrayOutput `pulumi:"objects"`
+	// List of alarm template information associated with the object group, returned by the server.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	TemplateDetails ObjectGroupTemplateDetailArrayOutput `pulumi:"templateDetails"`
 	// Object group last update time
 	UpdatedAt pulumi.StringOutput `pulumi:"updatedAt"`
 }
@@ -134,6 +137,9 @@ type objectGroupState struct {
 	// List of monitoring objects contained in the object group
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Objects []ObjectGroupObject `pulumi:"objects"`
+	// List of alarm template information associated with the object group, returned by the server.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	TemplateDetails []ObjectGroupTemplateDetail `pulumi:"templateDetails"`
 	// Object group last update time
 	UpdatedAt *string `pulumi:"updatedAt"`
 }
@@ -152,6 +158,9 @@ type ObjectGroupState struct {
 	// List of monitoring objects contained in the object group
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Objects ObjectGroupObjectArrayInput
+	// List of alarm template information associated with the object group, returned by the server.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	TemplateDetails ObjectGroupTemplateDetailArrayInput
 	// Object group last update time
 	UpdatedAt pulumi.StringPtrInput
 }
@@ -293,6 +302,12 @@ func (o ObjectGroupOutput) Name() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o ObjectGroupOutput) Objects() ObjectGroupObjectArrayOutput {
 	return o.ApplyT(func(v *ObjectGroup) ObjectGroupObjectArrayOutput { return v.Objects }).(ObjectGroupObjectArrayOutput)
+}
+
+// List of alarm template information associated with the object group, returned by the server.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupOutput) TemplateDetails() ObjectGroupTemplateDetailArrayOutput {
+	return o.ApplyT(func(v *ObjectGroup) ObjectGroupTemplateDetailArrayOutput { return v.TemplateDetails }).(ObjectGroupTemplateDetailArrayOutput)
 }
 
 // Object group last update time

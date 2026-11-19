@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.organization;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.organization.inputs.GetAccountArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetAccountPlainArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetDelegatedAdministratorArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetDelegatedAdministratorPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetOrganizationArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetOrganizationPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetServiceControlPolicyArgs;
@@ -16,6 +18,8 @@ import com.byteplus.bytepluscc.organization.inputs.GetUnitArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetUnitPlainArgs;
 import com.byteplus.bytepluscc.organization.outputs.GetAccountResult;
 import com.byteplus.bytepluscc.organization.outputs.GetAccountsResult;
+import com.byteplus.bytepluscc.organization.outputs.GetDelegatedAdministratorResult;
+import com.byteplus.bytepluscc.organization.outputs.GetDelegatedAdministratorsResult;
 import com.byteplus.bytepluscc.organization.outputs.GetOrganizationResult;
 import com.byteplus.bytepluscc.organization.outputs.GetOrganizationsResult;
 import com.byteplus.bytepluscc.organization.outputs.GetServiceControlPoliciesResult;
@@ -116,6 +120,90 @@ public final class OrganizationFunctions {
      */
     public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:organization/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorResult> getDelegatedAdministrator(GetDelegatedAdministratorArgs args) {
+        return getDelegatedAdministrator(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static CompletableFuture<GetDelegatedAdministratorResult> getDelegatedAdministratorPlain(GetDelegatedAdministratorPlainArgs args) {
+        return getDelegatedAdministratorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorResult> getDelegatedAdministrator(GetDelegatedAdministratorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getDelegatedAdministrator:getDelegatedAdministrator", TypeShape.of(GetDelegatedAdministratorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorResult> getDelegatedAdministrator(GetDelegatedAdministratorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getDelegatedAdministrator:getDelegatedAdministrator", TypeShape.of(GetDelegatedAdministratorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static CompletableFuture<GetDelegatedAdministratorResult> getDelegatedAdministratorPlain(GetDelegatedAdministratorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getDelegatedAdministrator:getDelegatedAdministrator", TypeShape.of(GetDelegatedAdministratorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorsResult> getDelegatedAdministrators() {
+        return getDelegatedAdministrators(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static CompletableFuture<GetDelegatedAdministratorsResult> getDelegatedAdministratorsPlain() {
+        return getDelegatedAdministratorsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorsResult> getDelegatedAdministrators(InvokeArgs args) {
+        return getDelegatedAdministrators(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static CompletableFuture<GetDelegatedAdministratorsResult> getDelegatedAdministratorsPlain(InvokeArgs args) {
+        return getDelegatedAdministratorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorsResult> getDelegatedAdministrators(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getDelegatedAdministrators:getDelegatedAdministrators", TypeShape.of(GetDelegatedAdministratorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static Output<GetDelegatedAdministratorsResult> getDelegatedAdministrators(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getDelegatedAdministrators:getDelegatedAdministrators", TypeShape.of(GetDelegatedAdministratorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator
+     * 
+     */
+    public static CompletableFuture<GetDelegatedAdministratorsResult> getDelegatedAdministratorsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getDelegatedAdministrators:getDelegatedAdministrators", TypeShape.of(GetDelegatedAdministratorsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Organization::Organization

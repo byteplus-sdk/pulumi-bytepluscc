@@ -108,6 +108,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.ObjectGroupObject>> Objects { get; private set; } = null!;
 
         /// <summary>
+        /// List of alarm template information associated with the object group, returned by the server.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        [Output("templateDetails")]
+        public Output<ImmutableArray<Outputs.ObjectGroupTemplateDetail>> TemplateDetails { get; private set; } = null!;
+
+        /// <summary>
         /// Object group last update time
         /// </summary>
         [Output("updatedAt")]
@@ -228,6 +235,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         {
             get => _objects ?? (_objects = new InputList<Inputs.ObjectGroupObjectGetArgs>());
             set => _objects = value;
+        }
+
+        [Input("templateDetails")]
+        private InputList<Inputs.ObjectGroupTemplateDetailGetArgs>? _templateDetails;
+
+        /// <summary>
+        /// List of alarm template information associated with the object group, returned by the server.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.ObjectGroupTemplateDetailGetArgs> TemplateDetails
+        {
+            get => _templateDetails ?? (_templateDetails = new InputList<Inputs.ObjectGroupTemplateDetailGetArgs>());
+            set => _templateDetails = value;
         }
 
         /// <summary>

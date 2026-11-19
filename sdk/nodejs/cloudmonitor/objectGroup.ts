@@ -97,6 +97,11 @@ export class ObjectGroup extends pulumi.CustomResource {
      */
     declare public readonly objects: pulumi.Output<outputs.cloudmonitor.ObjectGroupObject[]>;
     /**
+     * List of alarm template information associated with the object group, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public /*out*/ readonly templateDetails: pulumi.Output<outputs.cloudmonitor.ObjectGroupTemplateDetail[]>;
+    /**
      * Object group last update time
      */
     declare public /*out*/ readonly updatedAt: pulumi.Output<string>;
@@ -120,6 +125,7 @@ export class ObjectGroup extends pulumi.CustomResource {
             resourceInputs["groupId"] = state?.groupId;
             resourceInputs["name"] = state?.name;
             resourceInputs["objects"] = state?.objects;
+            resourceInputs["templateDetails"] = state?.templateDetails;
             resourceInputs["updatedAt"] = state?.updatedAt;
         } else {
             const args = argsOrState as ObjectGroupArgs | undefined;
@@ -132,6 +138,7 @@ export class ObjectGroup extends pulumi.CustomResource {
             resourceInputs["alertTemplateName"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["groupId"] = undefined /*out*/;
+            resourceInputs["templateDetails"] = undefined /*out*/;
             resourceInputs["updatedAt"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -168,6 +175,11 @@ export interface ObjectGroupState {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     objects?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.ObjectGroupObject>[] | undefined>;
+    /**
+     * List of alarm template information associated with the object group, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    templateDetails?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.ObjectGroupTemplateDetail>[] | undefined>;
     /**
      * Object group last update time
      */

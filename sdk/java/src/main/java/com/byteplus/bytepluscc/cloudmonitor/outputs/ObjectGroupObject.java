@@ -5,8 +5,10 @@ package com.byteplus.bytepluscc.cloudmonitor.outputs;
 
 import com.byteplus.bytepluscc.cloudmonitor.outputs.ObjectGroupObjectDimensionConditions;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.ObjectGroupObjectDimensions;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.ObjectGroupObjectRule;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -38,6 +40,12 @@ public final class ObjectGroupObject {
      * 
      */
     private @Nullable String region;
+    /**
+     * @return List of alarm rules associated with the monitored object, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    private @Nullable List<ObjectGroupObjectRule> rules;
     /**
      * @return Object access method, such as `Dimension` / `DimensionCondition`
      * 
@@ -81,6 +89,14 @@ public final class ObjectGroupObject {
         return Optional.ofNullable(this.region);
     }
     /**
+     * @return List of alarm rules associated with the monitored object, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public List<ObjectGroupObjectRule> rules() {
+        return this.rules == null ? List.of() : this.rules;
+    }
+    /**
      * @return Object access method, such as `Dimension` / `DimensionCondition`
      * 
      */
@@ -102,6 +118,7 @@ public final class ObjectGroupObject {
         private @Nullable String id;
         private @Nullable String namespace;
         private @Nullable String region;
+        private @Nullable List<ObjectGroupObjectRule> rules;
         private @Nullable String type;
         public Builder() {}
         public Builder(ObjectGroupObject defaults) {
@@ -111,6 +128,7 @@ public final class ObjectGroupObject {
     	      this.id = defaults.id;
     	      this.namespace = defaults.namespace;
     	      this.region = defaults.region;
+    	      this.rules = defaults.rules;
     	      this.type = defaults.type;
         }
 
@@ -145,6 +163,15 @@ public final class ObjectGroupObject {
             return this;
         }
         @CustomType.Setter
+        public Builder rules(@Nullable List<ObjectGroupObjectRule> rules) {
+
+            this.rules = rules;
+            return this;
+        }
+        public Builder rules(ObjectGroupObjectRule... rules) {
+            return rules(List.of(rules));
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
 
             this.type = type;
@@ -157,6 +184,7 @@ public final class ObjectGroupObject {
             _resultValue.id = id;
             _resultValue.namespace = namespace;
             _resultValue.region = region;
+            _resultValue.rules = rules;
             _resultValue.type = type;
             return _resultValue;
         }
