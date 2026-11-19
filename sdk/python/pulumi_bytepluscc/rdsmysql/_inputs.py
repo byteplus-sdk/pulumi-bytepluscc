@@ -73,6 +73,8 @@ __all__ = [
     'InstanceProxyDetailProxyResourceInfoArgsDict',
     'InstanceTagArgs',
     'InstanceTagArgsDict',
+    'InstanceTdeConfigArgs',
+    'InstanceTdeConfigArgsDict',
     'ParameterTemplateTemplateParamArgs',
     'ParameterTemplateTemplateParamArgsDict',
 ]
@@ -3270,6 +3272,95 @@ class InstanceTagArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class InstanceTdeConfigArgsDict(TypedDict):
+    key_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Custom key name. When using a custom key, you must set KeyringName at the same time.
+    """
+    keyring_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Custom keyring name. When using a custom key, you must set KeyName at the same time.
+    """
+    switch_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TDE activation time. Only Immediate is supported, which means immediate execution.
+    """
+    tde_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+    """
+
+@pulumi.input_type
+class InstanceTdeConfigArgs:
+    def __init__(__self__, *,
+                 key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 keyring_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 switch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key_name: Custom key name. When using a custom key, you must set KeyringName at the same time.
+        :param pulumi.Input[_builtins.str] keyring_name: Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        :param pulumi.Input[_builtins.str] switch_type: TDE activation time. Only Immediate is supported, which means immediate execution.
+        :param pulumi.Input[_builtins.str] tde_status: Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if keyring_name is not None:
+            pulumi.set(__self__, "keyring_name", keyring_name)
+        if switch_type is not None:
+            pulumi.set(__self__, "switch_type", switch_type)
+        if tde_status is not None:
+            pulumi.set(__self__, "tde_status", tde_status)
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Custom key name. When using a custom key, you must set KeyringName at the same time.
+        """
+        return pulumi.get(self, "key_name")
+
+    @key_name.setter
+    def key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyringName")
+    def keyring_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        """
+        return pulumi.get(self, "keyring_name")
+
+    @keyring_name.setter
+    def keyring_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "keyring_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="switchType")
+    def switch_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TDE activation time. Only Immediate is supported, which means immediate execution.
+        """
+        return pulumi.get(self, "switch_type")
+
+    @switch_type.setter
+    def switch_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "switch_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tdeStatus")
+    def tde_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_status")
+
+    @tde_status.setter
+    def tde_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tde_status", value)
 
 
 class ParameterTemplateTemplateParamArgsDict(TypedDict):

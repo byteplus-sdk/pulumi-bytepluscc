@@ -43,6 +43,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
         [Input("region")]
         public Input<string>? Region { get; set; }
 
+        [Input("rules")]
+        private InputList<Inputs.ObjectGroupObjectRuleGetArgs>? _rules;
+
+        /// <summary>
+        /// List of alarm rules associated with the monitored object, returned by the server.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.ObjectGroupObjectRuleGetArgs> Rules
+        {
+            get => _rules ?? (_rules = new InputList<Inputs.ObjectGroupObjectRuleGetArgs>());
+            set => _rules = value;
+        }
+
         /// <summary>
         /// Object access method, such as `Dimension` / `DimensionCondition`
         /// </summary>

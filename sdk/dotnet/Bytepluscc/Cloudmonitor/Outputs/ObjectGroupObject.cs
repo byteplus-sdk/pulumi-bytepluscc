@@ -35,6 +35,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
         /// </summary>
         public readonly string? Region;
         /// <summary>
+        /// List of alarm rules associated with the monitored object, returned by the server.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ObjectGroupObjectRule> Rules;
+        /// <summary>
         /// Object access method, such as `Dimension` / `DimensionCondition`
         /// </summary>
         public readonly string? Type;
@@ -51,6 +56,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
 
             string? region,
 
+            ImmutableArray<Outputs.ObjectGroupObjectRule> rules,
+
             string? type)
         {
             DimensionConditions = dimensionConditions;
@@ -58,6 +65,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
             Id = id;
             Namespace = @namespace;
             Region = region;
+            Rules = rules;
             Type = type;
         }
     }

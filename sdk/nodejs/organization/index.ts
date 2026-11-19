@@ -10,6 +10,11 @@ export type Account = import("./account").Account;
 export const Account: typeof import("./account").Account = null as any;
 utilities.lazyLoad(exports, ["Account"], () => require("./account"));
 
+export { DelegatedAdministratorArgs, DelegatedAdministratorState } from "./delegatedAdministrator";
+export type DelegatedAdministrator = import("./delegatedAdministrator").DelegatedAdministrator;
+export const DelegatedAdministrator: typeof import("./delegatedAdministrator").DelegatedAdministrator = null as any;
+utilities.lazyLoad(exports, ["DelegatedAdministrator"], () => require("./delegatedAdministrator"));
+
 export { GetAccountArgs, GetAccountResult, GetAccountOutputArgs } from "./getAccount";
 export const getAccount: typeof import("./getAccount").getAccount = null as any;
 export const getAccountOutput: typeof import("./getAccount").getAccountOutput = null as any;
@@ -19,6 +24,16 @@ export { GetAccountsResult } from "./getAccounts";
 export const getAccounts: typeof import("./getAccounts").getAccounts = null as any;
 export const getAccountsOutput: typeof import("./getAccounts").getAccountsOutput = null as any;
 utilities.lazyLoad(exports, ["getAccounts","getAccountsOutput"], () => require("./getAccounts"));
+
+export { GetDelegatedAdministratorArgs, GetDelegatedAdministratorResult, GetDelegatedAdministratorOutputArgs } from "./getDelegatedAdministrator";
+export const getDelegatedAdministrator: typeof import("./getDelegatedAdministrator").getDelegatedAdministrator = null as any;
+export const getDelegatedAdministratorOutput: typeof import("./getDelegatedAdministrator").getDelegatedAdministratorOutput = null as any;
+utilities.lazyLoad(exports, ["getDelegatedAdministrator","getDelegatedAdministratorOutput"], () => require("./getDelegatedAdministrator"));
+
+export { GetDelegatedAdministratorsResult } from "./getDelegatedAdministrators";
+export const getDelegatedAdministrators: typeof import("./getDelegatedAdministrators").getDelegatedAdministrators = null as any;
+export const getDelegatedAdministratorsOutput: typeof import("./getDelegatedAdministrators").getDelegatedAdministratorsOutput = null as any;
+utilities.lazyLoad(exports, ["getDelegatedAdministrators","getDelegatedAdministratorsOutput"], () => require("./getDelegatedAdministrators"));
 
 export { GetOrganizationArgs, GetOrganizationResult, GetOrganizationOutputArgs } from "./getOrganization";
 export const getOrganization: typeof import("./getOrganization").getOrganization = null as any;
@@ -87,6 +102,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:organization/account:Account":
                 return new Account(name, <any>undefined, { urn })
+            case "bytepluscc:organization/delegatedAdministrator:DelegatedAdministrator":
+                return new DelegatedAdministrator(name, <any>undefined, { urn })
             case "bytepluscc:organization/organization:Organization":
                 return new Organization(name, <any>undefined, { urn })
             case "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy":
@@ -101,6 +118,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/account", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "organization/delegatedAdministrator", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/organization", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/serviceControlPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/serviceControlPolicyEnabler", _module)

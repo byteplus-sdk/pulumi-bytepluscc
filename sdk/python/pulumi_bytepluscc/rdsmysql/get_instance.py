@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_policy=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, enable_external_replication=None, endpoints=None, engine_type=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, port=None, private_ip_address=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
+    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_policy=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, enable_external_replication=None, endpoints=None, engine_type=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, port=None, private_ip_address=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, tde_config=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
         if address_objects and not isinstance(address_objects, list):
             raise TypeError("Expected argument 'address_objects' to be a list")
         pulumi.set(__self__, "address_objects", address_objects)
@@ -235,6 +235,9 @@ class GetInstanceResult:
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
+        if tde_config and not isinstance(tde_config, dict):
+            raise TypeError("Expected argument 'tde_config' to be a dict")
+        pulumi.set(__self__, "tde_config", tde_config)
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
@@ -807,6 +810,14 @@ class GetInstanceResult:
         return pulumi.get(self, "tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> 'outputs.GetInstanceTdeConfigResult':
+        """
+        Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> _builtins.str:
         """
@@ -930,6 +941,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             super_account_password=self.super_account_password,
             sync_mode=self.sync_mode,
             tags=self.tags,
+            tde_config=self.tde_config,
             time_zone=self.time_zone,
             updated_time=self.updated_time,
             vcpu=self.vcpu,
@@ -1021,6 +1033,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         super_account_password=pulumi.get(__ret__, 'super_account_password'),
         sync_mode=pulumi.get(__ret__, 'sync_mode'),
         tags=pulumi.get(__ret__, 'tags'),
+        tde_config=pulumi.get(__ret__, 'tde_config'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         updated_time=pulumi.get(__ret__, 'updated_time'),
         vcpu=pulumi.get(__ret__, 'vcpu'),
@@ -1109,6 +1122,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         super_account_password=pulumi.get(__response__, 'super_account_password'),
         sync_mode=pulumi.get(__response__, 'sync_mode'),
         tags=pulumi.get(__response__, 'tags'),
+        tde_config=pulumi.get(__response__, 'tde_config'),
         time_zone=pulumi.get(__response__, 'time_zone'),
         updated_time=pulumi.get(__response__, 'updated_time'),
         vcpu=pulumi.get(__response__, 'vcpu'),

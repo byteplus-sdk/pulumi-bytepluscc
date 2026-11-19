@@ -19539,6 +19539,13 @@
                     "type": "string",
                     "description": "Region of the monitoring object\n"
                 },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/ObjectGroupObjectRule:ObjectGroupObjectRule"
+                    },
+                    "description": "List of alarm rules associated with the monitored object, returned by the server.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
                 "type": {
                     "type": "string",
                     "description": "Object access method, such as `Dimension` / `DimensionCondition`\n"
@@ -19553,6 +19560,7 @@
                         "id",
                         "namespace",
                         "region",
+                        "rules",
                         "type"
                     ]
                 }
@@ -19734,6 +19742,58 @@
                 "nodejs": {
                     "requiredOutputs": [
                         "resourceIds"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/ObjectGroupObjectRule:ObjectGroupObjectRule": {
+            "properties": {
+                "alertTemplateId": {
+                    "type": "string",
+                    "description": "Associated Alarm Template ID\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Alarm Rule ID\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Alarm Rule Name\n"
+                },
+                "templateRuleId": {
+                    "type": "string",
+                    "description": "Rule ID in Alarm Template\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "alertTemplateId",
+                        "id",
+                        "name",
+                        "templateRuleId"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/ObjectGroupTemplateDetail:ObjectGroupTemplateDetail": {
+            "properties": {
+                "alertTemplateId": {
+                    "type": "string",
+                    "description": "Associated Alarm Template ID\n"
+                },
+                "alertTemplateName": {
+                    "type": "string",
+                    "description": "Associated Alarm Template Name\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "alertTemplateId",
+                        "alertTemplateName"
                     ]
                 }
             }
@@ -20526,6 +20586,13 @@
                     "type": "string",
                     "description": "Region of the monitoring object\n"
                 },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/getObjectGroupObjectRule:getObjectGroupObjectRule"
+                    },
+                    "description": "List of alarm rules associated with the monitored object, returned by the server.\n"
+                },
                 "type": {
                     "type": "string",
                     "description": "Object access method, such as `Dimension` / `DimensionCondition`\n"
@@ -20538,6 +20605,7 @@
                 "id",
                 "namespace",
                 "region",
+                "rules",
                 "type"
             ],
             "language": {
@@ -20726,6 +20794,60 @@
             "type": "object",
             "required": [
                 "resourceIds"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/getObjectGroupObjectRule:getObjectGroupObjectRule": {
+            "properties": {
+                "alertTemplateId": {
+                    "type": "string",
+                    "description": "Associated Alarm Template ID\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Alarm Rule ID\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Alarm Rule Name\n"
+                },
+                "templateRuleId": {
+                    "type": "string",
+                    "description": "Rule ID in Alarm Template\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "alertTemplateId",
+                "id",
+                "name",
+                "templateRuleId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/getObjectGroupTemplateDetail:getObjectGroupTemplateDetail": {
+            "properties": {
+                "alertTemplateId": {
+                    "type": "string",
+                    "description": "Associated Alarm Template ID\n"
+                },
+                "alertTemplateName": {
+                    "type": "string",
+                    "description": "Associated Alarm Template Name\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "alertTemplateId",
+                "alertTemplateName"
             ],
             "language": {
                 "nodejs": {
@@ -41080,6 +41202,37 @@
                 }
             }
         },
+        "bytepluscc:rdsmysql/InstanceTdeConfig:InstanceTdeConfig": {
+            "properties": {
+                "keyName": {
+                    "type": "string",
+                    "description": "Custom key name. When using a custom key, you must set KeyringName at the same time.\n"
+                },
+                "keyringName": {
+                    "type": "string",
+                    "description": "Custom keyring name. When using a custom key, you must set KeyName at the same time.\n"
+                },
+                "switchType": {
+                    "type": "string",
+                    "description": "TDE activation time. Only Immediate is supported, which means immediate execution.\n"
+                },
+                "tdeStatus": {
+                    "type": "string",
+                    "description": "Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "keyName",
+                        "keyringName",
+                        "switchType",
+                        "tdeStatus"
+                    ]
+                }
+            }
+        },
         "bytepluscc:rdsmysql/ParameterTemplateTemplateParam:ParameterTemplateTemplateParam": {
             "properties": {
                 "name": {
@@ -42324,6 +42477,38 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceTdeConfig:getInstanceTdeConfig": {
+            "properties": {
+                "keyName": {
+                    "type": "string",
+                    "description": "Custom key name. When using a custom key, you must set KeyringName at the same time.\n"
+                },
+                "keyringName": {
+                    "type": "string",
+                    "description": "Custom keyring name. When using a custom key, you must set KeyName at the same time.\n"
+                },
+                "switchType": {
+                    "type": "string",
+                    "description": "TDE activation time. Only Immediate is supported, which means immediate execution.\n"
+                },
+                "tdeStatus": {
+                    "type": "string",
+                    "description": "Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "keyName",
+                "keyringName",
+                "switchType",
+                "tdeStatus"
             ],
             "language": {
                 "nodejs": {
@@ -82780,6 +82965,13 @@
                     },
                     "description": "List of monitoring objects contained in the object group\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                 },
+                "templateDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/ObjectGroupTemplateDetail:ObjectGroupTemplateDetail"
+                    },
+                    "description": "List of alarm template information associated with the object group, returned by the server.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
                 "updatedAt": {
                     "type": "string",
                     "description": "Object group last update time\n"
@@ -82792,6 +82984,7 @@
                 "groupId",
                 "name",
                 "objects",
+                "templateDetails",
                 "updatedAt"
             ],
             "inputProperties": {
@@ -82839,6 +83032,13 @@
                             "$ref": "#/types/bytepluscc:cloudmonitor/ObjectGroupObject:ObjectGroupObject"
                         },
                         "description": "List of monitoring objects contained in the object group\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "templateDetails": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/ObjectGroupTemplateDetail:ObjectGroupTemplateDetail"
+                        },
+                        "description": "List of alarm template information associated with the object group, returned by the server.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                     },
                     "updatedAt": {
                         "type": "string",
@@ -101954,6 +102154,96 @@
                 "type": "object"
             }
         },
+        "bytepluscc:organization/delegatedAdministrator:DelegatedAdministrator": {
+            "description": "Delegated administrator account for the specified trusted service.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.organization.DelegatedAdministrator(\"example\", {\n    accountId: \"20222222222\",\n    servicePrincipal: \"resourtest\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.organization.DelegatedAdministrator(\"example\",\n    account_id=\"20222222222\",\n    service_principal=\"resourtest\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Organization.DelegatedAdministrator(\"example\", new()\n    {\n        AccountId = \"20222222222\",\n        ServicePrincipal = \"resourtest\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/organization\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := organization.NewDelegatedAdministrator(ctx, \"example\", \u0026organization.DelegatedAdministratorArgs{\n\t\t\tAccountId:        pulumi.String(\"20222222222\"),\n\t\t\tServicePrincipal: pulumi.String(\"resourtest\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_organization_delegatedadministrator\" \"example\" {\n  account_id        = \"20222222222\"\n  service_principal = \"resourtest\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.organization.DelegatedAdministrator;\nimport com.byteplus.bytepluscc.organization.DelegatedAdministratorArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new DelegatedAdministrator(\"example\", DelegatedAdministratorArgs.builder()\n            .accountId(\"20222222222\")\n            .servicePrincipal(\"resourtest\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:organization:DelegatedAdministrator\n    properties:\n      accountId: '20222222222'\n      servicePrincipal: resourtest\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:organization/delegatedAdministrator:DelegatedAdministrator example \"account_id|service_principal\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Member account ID of the delegated administrator.\n"
+                },
+                "accountName": {
+                    "type": "string",
+                    "description": "Member account name.\n"
+                },
+                "delegationEnabledTime": {
+                    "type": "string",
+                    "description": "Timestamp when the account was set as the delegated administrator.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Member account display name.\n"
+                },
+                "joinMethod": {
+                    "type": "string",
+                    "description": "Method by which the member joined the organization.\n"
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "Organization owner account ID.\n"
+                },
+                "servicePrincipal": {
+                    "type": "string",
+                    "description": "Trusted service identifier.\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "accountName",
+                "delegationEnabledTime",
+                "displayName",
+                "joinMethod",
+                "owner",
+                "servicePrincipal"
+            ],
+            "inputProperties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Member account ID of the delegated administrator.\n"
+                },
+                "servicePrincipal": {
+                    "type": "string",
+                    "description": "Trusted service identifier.\n"
+                }
+            },
+            "requiredInputs": [
+                "accountId",
+                "servicePrincipal"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DelegatedAdministrator resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Member account ID of the delegated administrator.\n"
+                    },
+                    "accountName": {
+                        "type": "string",
+                        "description": "Member account name.\n"
+                    },
+                    "delegationEnabledTime": {
+                        "type": "string",
+                        "description": "Timestamp when the account was set as the delegated administrator.\n"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Member account display name.\n"
+                    },
+                    "joinMethod": {
+                        "type": "string",
+                        "description": "Method by which the member joined the organization.\n"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "description": "Organization owner account ID.\n"
+                    },
+                    "servicePrincipal": {
+                        "type": "string",
+                        "description": "Trusted service identifier.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:organization/organization:Organization": {
             "description": "Enterprise Organization Management\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst organizationDemo = new bytepluscc.organization.Organization(\"organizationDemo\", {});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\norganization_demo = bytepluscc.organization.Organization(\"organizationDemo\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var organizationDemo = new Bytepluscc.Organization.Organization(\"organizationDemo\");\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/organization\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := organization.NewOrganization(ctx, \"organizationDemo\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_organization_organization\" \"organizationDemo\" {\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.organization.Organization;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var organizationDemo = new Organization(\"organizationDemo\");\n\n    }\n}\n```\n```yaml\nresources:\n  organizationDemo:\n    type: bytepluscc:organization:Organization\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:organization/organization:Organization example \"organization_id\"\n```\n\n",
             "properties": {
@@ -107516,6 +107806,10 @@
                     },
                     "description": "RDS MySQL instance tag information\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                 },
+                "tdeConfig": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceTdeConfig:InstanceTdeConfig",
+                    "description": "Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.\n"
+                },
                 "timeZone": {
                     "type": "string",
                     "description": "Time zone\n"
@@ -107613,6 +107907,7 @@
                 "superAccountPassword",
                 "syncMode",
                 "tags",
+                "tdeConfig",
                 "timeZone",
                 "updatedTime",
                 "vcpu",
@@ -107745,6 +108040,10 @@
                         "$ref": "#/types/bytepluscc:rdsmysql/InstanceTag:InstanceTag"
                     },
                     "description": "RDS MySQL instance tag information\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "tdeConfig": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceTdeConfig:InstanceTdeConfig",
+                    "description": "Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.\n"
                 },
                 "vpcId": {
                     "type": "string",
@@ -108052,6 +108351,10 @@
                             "$ref": "#/types/bytepluscc:rdsmysql/InstanceTag:InstanceTag"
                         },
                         "description": "RDS MySQL instance tag information\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "tdeConfig": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceTdeConfig:InstanceTdeConfig",
+                        "description": "Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.\n"
                     },
                     "timeZone": {
                         "type": "string",
@@ -142730,6 +143033,13 @@
                         },
                         "type": "array"
                     },
+                    "templateDetails": {
+                        "description": "List of alarm template information associated with the object group, returned by the server.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/getObjectGroupTemplateDetail:getObjectGroupTemplateDetail"
+                        },
+                        "type": "array"
+                    },
                     "updatedAt": {
                         "description": "Object group last update time\n",
                         "type": "string"
@@ -142743,6 +143053,7 @@
                     "id",
                     "name",
                     "objects",
+                    "templateDetails",
                     "updatedAt"
                 ],
                 "type": "object"
@@ -154825,6 +155136,94 @@
                 "type": "object"
             }
         },
+        "bytepluscc:organization/getDelegatedAdministrator:getDelegatedAdministrator": {
+            "description": "Data Source schema for Byteplus::Organization::DelegatedAdministrator\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getDelegatedAdministrator.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDelegatedAdministrator.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "Member account ID of the delegated administrator.\n",
+                        "type": "string"
+                    },
+                    "accountName": {
+                        "description": "Member account name.\n",
+                        "type": "string"
+                    },
+                    "delegationEnabledTime": {
+                        "description": "Timestamp when the account was set as the delegated administrator.\n",
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "description": "Member account display name.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "joinMethod": {
+                        "description": "Method by which the member joined the organization.\n",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "Organization owner account ID.\n",
+                        "type": "string"
+                    },
+                    "servicePrincipal": {
+                        "description": "Trusted service identifier.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "accountName",
+                    "delegationEnabledTime",
+                    "displayName",
+                    "id",
+                    "joinMethod",
+                    "owner",
+                    "servicePrincipal"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:organization/getDelegatedAdministrators:getDelegatedAdministrators": {
+            "description": "Plural Data Source schema for Byteplus::Organization::DelegatedAdministrator\n",
+            "outputs": {
+                "description": "A collection of values returned by getDelegatedAdministrators.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:organization/getOrganization:getOrganization": {
             "description": "Data Source schema for Byteplus::Organization::Organization\n",
             "inputs": {
@@ -158594,6 +158993,10 @@
                         },
                         "type": "array"
                     },
+                    "tdeConfig": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceTdeConfig:getInstanceTdeConfig",
+                        "description": "Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.\n"
+                    },
                     "timeZone": {
                         "description": "Time zone\n",
                         "type": "string"
@@ -158692,6 +159095,7 @@
                     "superAccountPassword",
                     "syncMode",
                     "tags",
+                    "tdeConfig",
                     "timeZone",
                     "updatedTime",
                     "vcpu",

@@ -307,6 +307,10 @@ export interface GetInstanceResult {
      */
     readonly tags: outputs.rdsmysql.GetInstanceTag[];
     /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     */
+    readonly tdeConfig: outputs.rdsmysql.GetInstanceTdeConfig;
+    /**
      * Time zone
      */
     readonly timeZone: string;

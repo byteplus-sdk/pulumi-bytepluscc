@@ -7,8 +7,11 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .account import *
+from .delegated_administrator import *
 from .get_account import *
 from .get_accounts import *
+from .get_delegated_administrator import *
+from .get_delegated_administrators import *
 from .get_organization import *
 from .get_organizations import *
 from .get_service_control_policies import *

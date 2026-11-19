@@ -5,9 +5,11 @@ package com.byteplus.bytepluscc.cloudmonitor.outputs;
 
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupObjectDimensionConditions;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupObjectDimensions;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupObjectRule;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -37,6 +39,11 @@ public final class GetObjectGroupObject {
      * 
      */
     private String region;
+    /**
+     * @return List of alarm rules associated with the monitored object, returned by the server.
+     * 
+     */
+    private List<GetObjectGroupObjectRule> rules;
     /**
      * @return Object access method, such as `Dimension` / `DimensionCondition`
      * 
@@ -80,6 +87,13 @@ public final class GetObjectGroupObject {
         return this.region;
     }
     /**
+     * @return List of alarm rules associated with the monitored object, returned by the server.
+     * 
+     */
+    public List<GetObjectGroupObjectRule> rules() {
+        return this.rules;
+    }
+    /**
      * @return Object access method, such as `Dimension` / `DimensionCondition`
      * 
      */
@@ -101,6 +115,7 @@ public final class GetObjectGroupObject {
         private String id;
         private String namespace;
         private String region;
+        private List<GetObjectGroupObjectRule> rules;
         private String type;
         public Builder() {}
         public Builder(GetObjectGroupObject defaults) {
@@ -110,6 +125,7 @@ public final class GetObjectGroupObject {
     	      this.id = defaults.id;
     	      this.namespace = defaults.namespace;
     	      this.region = defaults.region;
+    	      this.rules = defaults.rules;
     	      this.type = defaults.type;
         }
 
@@ -154,6 +170,17 @@ public final class GetObjectGroupObject {
             return this;
         }
         @CustomType.Setter
+        public Builder rules(List<GetObjectGroupObjectRule> rules) {
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetObjectGroupObject", "rules");
+            }
+            this.rules = rules;
+            return this;
+        }
+        public Builder rules(GetObjectGroupObjectRule... rules) {
+            return rules(List.of(rules));
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetObjectGroupObject", "type");
@@ -168,6 +195,7 @@ public final class GetObjectGroupObject {
             _resultValue.id = id;
             _resultValue.namespace = namespace;
             _resultValue.region = region;
+            _resultValue.rules = rules;
             _resultValue.type = type;
             return _resultValue;
         }

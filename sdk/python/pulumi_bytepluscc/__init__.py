@@ -1307,6 +1307,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "organization/delegatedAdministrator",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/delegatedAdministrator:DelegatedAdministrator": "DelegatedAdministrator"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "organization/organization",
   "fqn": "pulumi_bytepluscc.organization",
   "classes": {

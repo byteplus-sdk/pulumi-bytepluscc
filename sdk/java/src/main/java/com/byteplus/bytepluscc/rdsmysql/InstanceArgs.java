@@ -9,6 +9,7 @@ import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceChargeDetailArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceMaintenanceWindowArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceNodeArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceTagArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceTdeConfigArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -465,6 +466,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     * 
+     */
+    @Import(name="tdeConfig")
+    private @Nullable Output<InstanceTdeConfigArgs> tdeConfig;
+
+    /**
+     * @return Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+     * 
+     */
+    public Optional<Output<InstanceTdeConfigArgs>> tdeConfig() {
+        return Optional.ofNullable(this.tdeConfig);
+    }
+
+    /**
      * VPC (Virtual Private Cloud) ID.
      * 
      */
@@ -511,6 +527,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.superAccountPassword = $.superAccountPassword;
         this.syncMode = $.syncMode;
         this.tags = $.tags;
+        this.tdeConfig = $.tdeConfig;
         this.vpcId = $.vpcId;
     }
 
@@ -1175,6 +1192,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tdeConfig Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(@Nullable Output<InstanceTdeConfigArgs> tdeConfig) {
+            $.tdeConfig = tdeConfig;
+            return this;
+        }
+
+        /**
+         * @param tdeConfig Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeConfig(InstanceTdeConfigArgs tdeConfig) {
+            return tdeConfig(Output.of(tdeConfig));
         }
 
         /**

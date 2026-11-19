@@ -45,6 +45,7 @@ __all__ = [
     'InstanceProxyDetail',
     'InstanceProxyDetailProxyResourceInfo',
     'InstanceTag',
+    'InstanceTdeConfig',
     'ParameterTemplateTemplateParam',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
@@ -75,6 +76,7 @@ __all__ = [
     'GetInstanceProxyDetailResult',
     'GetInstanceProxyDetailProxyResourceInfoResult',
     'GetInstanceTagResult',
+    'GetInstanceTdeConfigResult',
     'GetParameterTemplateTemplateParamResult',
 ]
 
@@ -2686,6 +2688,84 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class InstanceTdeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keyName":
+            suggest = "key_name"
+        elif key == "keyringName":
+            suggest = "keyring_name"
+        elif key == "switchType":
+            suggest = "switch_type"
+        elif key == "tdeStatus":
+            suggest = "tde_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceTdeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceTdeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceTdeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key_name: Optional[_builtins.str] = None,
+                 keyring_name: Optional[_builtins.str] = None,
+                 switch_type: Optional[_builtins.str] = None,
+                 tde_status: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key_name: Custom key name. When using a custom key, you must set KeyringName at the same time.
+        :param _builtins.str keyring_name: Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        :param _builtins.str switch_type: TDE activation time. Only Immediate is supported, which means immediate execution.
+        :param _builtins.str tde_status: Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if keyring_name is not None:
+            pulumi.set(__self__, "keyring_name", keyring_name)
+        if switch_type is not None:
+            pulumi.set(__self__, "switch_type", switch_type)
+        if tde_status is not None:
+            pulumi.set(__self__, "tde_status", tde_status)
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[_builtins.str]:
+        """
+        Custom key name. When using a custom key, you must set KeyringName at the same time.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="keyringName")
+    def keyring_name(self) -> Optional[_builtins.str]:
+        """
+        Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        """
+        return pulumi.get(self, "keyring_name")
+
+    @_builtins.property
+    @pulumi.getter(name="switchType")
+    def switch_type(self) -> Optional[_builtins.str]:
+        """
+        TDE activation time. Only Immediate is supported, which means immediate execution.
+        """
+        return pulumi.get(self, "switch_type")
+
+    @_builtins.property
+    @pulumi.getter(name="tdeStatus")
+    def tde_status(self) -> Optional[_builtins.str]:
+        """
+        Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_status")
+
+
+@pulumi.output_type
 class ParameterTemplateTemplateParam(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4769,6 +4849,57 @@ class GetInstanceTagResult(dict):
         Tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetInstanceTdeConfigResult(dict):
+    def __init__(__self__, *,
+                 key_name: _builtins.str,
+                 keyring_name: _builtins.str,
+                 switch_type: _builtins.str,
+                 tde_status: _builtins.str):
+        """
+        :param _builtins.str key_name: Custom key name. When using a custom key, you must set KeyringName at the same time.
+        :param _builtins.str keyring_name: Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        :param _builtins.str switch_type: TDE activation time. Only Immediate is supported, which means immediate execution.
+        :param _builtins.str tde_status: Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "keyring_name", keyring_name)
+        pulumi.set(__self__, "switch_type", switch_type)
+        pulumi.set(__self__, "tde_status", tde_status)
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        Custom key name. When using a custom key, you must set KeyringName at the same time.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="keyringName")
+    def keyring_name(self) -> _builtins.str:
+        """
+        Custom keyring name. When using a custom key, you must set KeyName at the same time.
+        """
+        return pulumi.get(self, "keyring_name")
+
+    @_builtins.property
+    @pulumi.getter(name="switchType")
+    def switch_type(self) -> _builtins.str:
+        """
+        TDE activation time. Only Immediate is supported, which means immediate execution.
+        """
+        return pulumi.get(self, "switch_type")
+
+    @_builtins.property
+    @pulumi.getter(name="tdeStatus")
+    def tde_status(self) -> _builtins.str:
+        """
+        Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_status")
 
 
 @pulumi.output_type

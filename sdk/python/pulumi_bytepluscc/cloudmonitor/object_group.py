@@ -69,6 +69,7 @@ class _ObjectGroupState:
                  group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  objects: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectGroupObjectArgs']]]] = None,
+                 template_details: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectGroupTemplateDetailArgs']]]] = None,
                  updated_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ObjectGroup resources.
@@ -79,6 +80,8 @@ class _ObjectGroupState:
         :param pulumi.Input[_builtins.str] group_id: Object group ID
         :param pulumi.Input[_builtins.str] name: Object group name
         :param pulumi.Input[Sequence[pulumi.Input['ObjectGroupObjectArgs']]] objects: List of monitoring objects contained in the object group
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Sequence[pulumi.Input['ObjectGroupTemplateDetailArgs']]] template_details: List of alarm template information associated with the object group, returned by the server.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] updated_at: Object group last update time
         """
@@ -94,6 +97,8 @@ class _ObjectGroupState:
             pulumi.set(__self__, "name", name)
         if objects is not None:
             pulumi.set(__self__, "objects", objects)
+        if template_details is not None:
+            pulumi.set(__self__, "template_details", template_details)
         if updated_at is not None:
             pulumi.set(__self__, "updated_at", updated_at)
 
@@ -169,6 +174,19 @@ class _ObjectGroupState:
     @objects.setter
     def objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectGroupObjectArgs']]]]):
         pulumi.set(self, "objects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectGroupTemplateDetailArgs']]]]:
+        """
+        List of alarm template information associated with the object group, returned by the server.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "template_details")
+
+    @template_details.setter
+    def template_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectGroupTemplateDetailArgs']]]]):
+        pulumi.set(self, "template_details", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
@@ -312,6 +330,7 @@ class ObjectGroup(pulumi.CustomResource):
             __props__.__dict__["alert_template_name"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["group_id"] = None
+            __props__.__dict__["template_details"] = None
             __props__.__dict__["updated_at"] = None
         super(ObjectGroup, __self__).__init__(
             'bytepluscc:cloudmonitor/objectGroup:ObjectGroup',
@@ -329,6 +348,7 @@ class ObjectGroup(pulumi.CustomResource):
             group_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectGroupObjectArgs', 'ObjectGroupObjectArgsDict']]]]] = None,
+            template_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectGroupTemplateDetailArgs', 'ObjectGroupTemplateDetailArgsDict']]]]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ObjectGroup':
         """
         Get an existing ObjectGroup resource's state with the given name, id, and optional extra
@@ -344,6 +364,8 @@ class ObjectGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Object group name
         :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectGroupObjectArgs', 'ObjectGroupObjectArgsDict']]]] objects: List of monitoring objects contained in the object group
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectGroupTemplateDetailArgs', 'ObjectGroupTemplateDetailArgsDict']]]] template_details: List of alarm template information associated with the object group, returned by the server.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] updated_at: Object group last update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -356,6 +378,7 @@ class ObjectGroup(pulumi.CustomResource):
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["name"] = name
         __props__.__dict__["objects"] = objects
+        __props__.__dict__["template_details"] = template_details
         __props__.__dict__["updated_at"] = updated_at
         return ObjectGroup(resource_name, opts=opts, __props__=__props__)
 
@@ -407,6 +430,15 @@ class ObjectGroup(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "objects")
+
+    @_builtins.property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> pulumi.Output[Sequence['outputs.ObjectGroupTemplateDetail']]:
+        """
+        List of alarm template information associated with the object group, returned by the server.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "template_details")
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")

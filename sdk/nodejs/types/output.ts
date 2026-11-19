@@ -11232,6 +11232,10 @@ export namespace cloudmonitor {
          */
         region: string;
         /**
+         * List of alarm rules associated with the monitored object, returned by the server.
+         */
+        rules: outputs.cloudmonitor.GetObjectGroupObjectRule[];
+        /**
          * Object access method, such as `Dimension` / `DimensionCondition`
          */
         type: string;
@@ -11324,6 +11328,36 @@ export namespace cloudmonitor {
          * Resource ID list
          */
         resourceIds: string[];
+    }
+
+    export interface GetObjectGroupObjectRule {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId: string;
+        /**
+         * Alarm Rule ID
+         */
+        id: string;
+        /**
+         * Alarm Rule Name
+         */
+        name: string;
+        /**
+         * Rule ID in Alarm Template
+         */
+        templateRuleId: string;
+    }
+
+    export interface GetObjectGroupTemplateDetail {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId: string;
+        /**
+         * Associated Alarm Template Name
+         */
+        alertTemplateName: string;
     }
 
     export interface GetRuleCondition {
@@ -11574,6 +11608,11 @@ export namespace cloudmonitor {
          */
         region: string;
         /**
+         * List of alarm rules associated with the monitored object, returned by the server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        rules: outputs.cloudmonitor.ObjectGroupObjectRule[];
+        /**
          * Object access method, such as `Dimension` / `DimensionCondition`
          */
         type: string;
@@ -11668,6 +11707,36 @@ export namespace cloudmonitor {
          * Resource ID list
          */
         resourceIds: string[];
+    }
+
+    export interface ObjectGroupObjectRule {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId: string;
+        /**
+         * Alarm Rule ID
+         */
+        id: string;
+        /**
+         * Alarm Rule Name
+         */
+        name: string;
+        /**
+         * Rule ID in Alarm Template
+         */
+        templateRuleId: string;
+    }
+
+    export interface ObjectGroupTemplateDetail {
+        /**
+         * Associated Alarm Template ID
+         */
+        alertTemplateId: string;
+        /**
+         * Associated Alarm Template Name
+         */
+        alertTemplateName: string;
     }
 
     export interface RuleCondition {
@@ -24280,6 +24349,25 @@ export namespace rdsmysql {
         value: string;
     }
 
+    export interface GetInstanceTdeConfig {
+        /**
+         * Custom key name. When using a custom key, you must set KeyringName at the same time.
+         */
+        keyName: string;
+        /**
+         * Custom keyring name. When using a custom key, you must set KeyName at the same time.
+         */
+        keyringName: string;
+        /**
+         * TDE activation time. Only Immediate is supported, which means immediate execution.
+         */
+        switchType: string;
+        /**
+         * Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+         */
+        tdeStatus: string;
+    }
+
     export interface GetParameterTemplateTemplateParam {
         /**
          * Default value of the parameter
@@ -24820,6 +24908,25 @@ export namespace rdsmysql {
          * Tag value.
          */
         value: string;
+    }
+
+    export interface InstanceTdeConfig {
+        /**
+         * Custom key name. When using a custom key, you must set KeyringName at the same time.
+         */
+        keyName: string;
+        /**
+         * Custom keyring name. When using a custom key, you must set KeyName at the same time.
+         */
+        keyringName: string;
+        /**
+         * TDE activation time. Only Immediate is supported, which means immediate execution.
+         */
+        switchType: string;
+        /**
+         * Status of transparent data encryption. Only Enable is supported; once enabled, it cannot be disabled.
+         */
+        tdeStatus: string;
     }
 
     export interface ParameterTemplateTemplateParam {

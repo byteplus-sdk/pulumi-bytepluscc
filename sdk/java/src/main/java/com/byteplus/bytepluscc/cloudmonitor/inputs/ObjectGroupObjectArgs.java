@@ -5,9 +5,11 @@ package com.byteplus.bytepluscc.cloudmonitor.inputs;
 
 import com.byteplus.bytepluscc.cloudmonitor.inputs.ObjectGroupObjectDimensionConditionsArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.ObjectGroupObjectDimensionsArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.ObjectGroupObjectRuleArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -93,6 +95,23 @@ public final class ObjectGroupObjectArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * List of alarm rules associated with the monitored object, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Import(name="rules")
+    private @Nullable Output<List<ObjectGroupObjectRuleArgs>> rules;
+
+    /**
+     * @return List of alarm rules associated with the monitored object, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<ObjectGroupObjectRuleArgs>>> rules() {
+        return Optional.ofNullable(this.rules);
+    }
+
+    /**
      * Object access method, such as `Dimension` / `DimensionCondition`
      * 
      */
@@ -115,6 +134,7 @@ public final class ObjectGroupObjectArgs extends com.pulumi.resources.ResourceAr
         this.id = $.id;
         this.namespace = $.namespace;
         this.region = $.region;
+        this.rules = $.rules;
         this.type = $.type;
     }
 
@@ -239,6 +259,40 @@ public final class ObjectGroupObjectArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder region(String region) {
             return region(Output.of(region));
+        }
+
+        /**
+         * @param rules List of alarm rules associated with the monitored object, returned by the server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rules(@Nullable Output<List<ObjectGroupObjectRuleArgs>> rules) {
+            $.rules = rules;
+            return this;
+        }
+
+        /**
+         * @param rules List of alarm rules associated with the monitored object, returned by the server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rules(List<ObjectGroupObjectRuleArgs> rules) {
+            return rules(Output.of(rules));
+        }
+
+        /**
+         * @param rules List of alarm rules associated with the monitored object, returned by the server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rules(ObjectGroupObjectRuleArgs... rules) {
+            return rules(List.of(rules));
         }
 
         /**

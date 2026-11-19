@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.cloudmonitor.ObjectGroupArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.ObjectGroupState;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.ObjectGroupObject;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.ObjectGroupTemplateDetail;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -165,6 +166,22 @@ public class ObjectGroup extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ObjectGroupObject>> objects() {
         return this.objects;
+    }
+    /**
+     * List of alarm template information associated with the object group, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="templateDetails", refs={List.class,ObjectGroupTemplateDetail.class}, tree="[0,1]")
+    private Output<List<ObjectGroupTemplateDetail>> templateDetails;
+
+    /**
+     * @return List of alarm template information associated with the object group, returned by the server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<ObjectGroupTemplateDetail>> templateDetails() {
+        return this.templateDetails;
     }
     /**
      * Object group last update time

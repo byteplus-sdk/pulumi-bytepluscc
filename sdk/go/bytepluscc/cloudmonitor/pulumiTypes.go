@@ -1465,6 +1465,9 @@ type ObjectGroupObject struct {
 	Namespace *string `pulumi:"namespace"`
 	// Region of the monitoring object
 	Region *string `pulumi:"region"`
+	// List of alarm rules associated with the monitored object, returned by the server.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Rules []ObjectGroupObjectRule `pulumi:"rules"`
 	// Object access method, such as `Dimension` / `DimensionCondition`
 	Type *string `pulumi:"type"`
 }
@@ -1491,6 +1494,9 @@ type ObjectGroupObjectArgs struct {
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Region of the monitoring object
 	Region pulumi.StringPtrInput `pulumi:"region"`
+	// List of alarm rules associated with the monitored object, returned by the server.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Rules ObjectGroupObjectRuleArrayInput `pulumi:"rules"`
 	// Object access method, such as `Dimension` / `DimensionCondition`
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
@@ -1569,6 +1575,12 @@ func (o ObjectGroupObjectOutput) Namespace() pulumi.StringPtrOutput {
 // Region of the monitoring object
 func (o ObjectGroupObjectOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ObjectGroupObject) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// List of alarm rules associated with the monitored object, returned by the server.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ObjectGroupObjectOutput) Rules() ObjectGroupObjectRuleArrayOutput {
+	return o.ApplyT(func(v ObjectGroupObject) []ObjectGroupObjectRule { return v.Rules }).(ObjectGroupObjectRuleArrayOutput)
 }
 
 // Object access method, such as `Dimension` / `DimensionCondition`
@@ -2641,6 +2653,236 @@ func (o ObjectGroupObjectDimensionsPtrOutput) ResourceIds() pulumi.StringArrayOu
 		}
 		return v.ResourceIds
 	}).(pulumi.StringArrayOutput)
+}
+
+type ObjectGroupObjectRule struct {
+	// Associated Alarm Template ID
+	AlertTemplateId *string `pulumi:"alertTemplateId"`
+	// Alarm Rule ID
+	Id *string `pulumi:"id"`
+	// Alarm Rule Name
+	Name *string `pulumi:"name"`
+	// Rule ID in Alarm Template
+	TemplateRuleId *string `pulumi:"templateRuleId"`
+}
+
+// ObjectGroupObjectRuleInput is an input type that accepts ObjectGroupObjectRuleArgs and ObjectGroupObjectRuleOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectRuleInput` via:
+//
+//	ObjectGroupObjectRuleArgs{...}
+type ObjectGroupObjectRuleInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectRuleOutput() ObjectGroupObjectRuleOutput
+	ToObjectGroupObjectRuleOutputWithContext(context.Context) ObjectGroupObjectRuleOutput
+}
+
+type ObjectGroupObjectRuleArgs struct {
+	// Associated Alarm Template ID
+	AlertTemplateId pulumi.StringPtrInput `pulumi:"alertTemplateId"`
+	// Alarm Rule ID
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Alarm Rule Name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Rule ID in Alarm Template
+	TemplateRuleId pulumi.StringPtrInput `pulumi:"templateRuleId"`
+}
+
+func (ObjectGroupObjectRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectRuleArgs) ToObjectGroupObjectRuleOutput() ObjectGroupObjectRuleOutput {
+	return i.ToObjectGroupObjectRuleOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectRuleArgs) ToObjectGroupObjectRuleOutputWithContext(ctx context.Context) ObjectGroupObjectRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectRuleOutput)
+}
+
+// ObjectGroupObjectRuleArrayInput is an input type that accepts ObjectGroupObjectRuleArray and ObjectGroupObjectRuleArrayOutput values.
+// You can construct a concrete instance of `ObjectGroupObjectRuleArrayInput` via:
+//
+//	ObjectGroupObjectRuleArray{ ObjectGroupObjectRuleArgs{...} }
+type ObjectGroupObjectRuleArrayInput interface {
+	pulumi.Input
+
+	ToObjectGroupObjectRuleArrayOutput() ObjectGroupObjectRuleArrayOutput
+	ToObjectGroupObjectRuleArrayOutputWithContext(context.Context) ObjectGroupObjectRuleArrayOutput
+}
+
+type ObjectGroupObjectRuleArray []ObjectGroupObjectRuleInput
+
+func (ObjectGroupObjectRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (i ObjectGroupObjectRuleArray) ToObjectGroupObjectRuleArrayOutput() ObjectGroupObjectRuleArrayOutput {
+	return i.ToObjectGroupObjectRuleArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupObjectRuleArray) ToObjectGroupObjectRuleArrayOutputWithContext(ctx context.Context) ObjectGroupObjectRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupObjectRuleArrayOutput)
+}
+
+type ObjectGroupObjectRuleOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectRuleOutput) ToObjectGroupObjectRuleOutput() ObjectGroupObjectRuleOutput {
+	return o
+}
+
+func (o ObjectGroupObjectRuleOutput) ToObjectGroupObjectRuleOutputWithContext(ctx context.Context) ObjectGroupObjectRuleOutput {
+	return o
+}
+
+// Associated Alarm Template ID
+func (o ObjectGroupObjectRuleOutput) AlertTemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectRule) *string { return v.AlertTemplateId }).(pulumi.StringPtrOutput)
+}
+
+// Alarm Rule ID
+func (o ObjectGroupObjectRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectRule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Alarm Rule Name
+func (o ObjectGroupObjectRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Rule ID in Alarm Template
+func (o ObjectGroupObjectRuleOutput) TemplateRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupObjectRule) *string { return v.TemplateRuleId }).(pulumi.StringPtrOutput)
+}
+
+type ObjectGroupObjectRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupObjectRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (o ObjectGroupObjectRuleArrayOutput) ToObjectGroupObjectRuleArrayOutput() ObjectGroupObjectRuleArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectRuleArrayOutput) ToObjectGroupObjectRuleArrayOutputWithContext(ctx context.Context) ObjectGroupObjectRuleArrayOutput {
+	return o
+}
+
+func (o ObjectGroupObjectRuleArrayOutput) Index(i pulumi.IntInput) ObjectGroupObjectRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectGroupObjectRule {
+		return vs[0].([]ObjectGroupObjectRule)[vs[1].(int)]
+	}).(ObjectGroupObjectRuleOutput)
+}
+
+type ObjectGroupTemplateDetail struct {
+	// Associated Alarm Template ID
+	AlertTemplateId *string `pulumi:"alertTemplateId"`
+	// Associated Alarm Template Name
+	AlertTemplateName *string `pulumi:"alertTemplateName"`
+}
+
+// ObjectGroupTemplateDetailInput is an input type that accepts ObjectGroupTemplateDetailArgs and ObjectGroupTemplateDetailOutput values.
+// You can construct a concrete instance of `ObjectGroupTemplateDetailInput` via:
+//
+//	ObjectGroupTemplateDetailArgs{...}
+type ObjectGroupTemplateDetailInput interface {
+	pulumi.Input
+
+	ToObjectGroupTemplateDetailOutput() ObjectGroupTemplateDetailOutput
+	ToObjectGroupTemplateDetailOutputWithContext(context.Context) ObjectGroupTemplateDetailOutput
+}
+
+type ObjectGroupTemplateDetailArgs struct {
+	// Associated Alarm Template ID
+	AlertTemplateId pulumi.StringPtrInput `pulumi:"alertTemplateId"`
+	// Associated Alarm Template Name
+	AlertTemplateName pulumi.StringPtrInput `pulumi:"alertTemplateName"`
+}
+
+func (ObjectGroupTemplateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (i ObjectGroupTemplateDetailArgs) ToObjectGroupTemplateDetailOutput() ObjectGroupTemplateDetailOutput {
+	return i.ToObjectGroupTemplateDetailOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupTemplateDetailArgs) ToObjectGroupTemplateDetailOutputWithContext(ctx context.Context) ObjectGroupTemplateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupTemplateDetailOutput)
+}
+
+// ObjectGroupTemplateDetailArrayInput is an input type that accepts ObjectGroupTemplateDetailArray and ObjectGroupTemplateDetailArrayOutput values.
+// You can construct a concrete instance of `ObjectGroupTemplateDetailArrayInput` via:
+//
+//	ObjectGroupTemplateDetailArray{ ObjectGroupTemplateDetailArgs{...} }
+type ObjectGroupTemplateDetailArrayInput interface {
+	pulumi.Input
+
+	ToObjectGroupTemplateDetailArrayOutput() ObjectGroupTemplateDetailArrayOutput
+	ToObjectGroupTemplateDetailArrayOutputWithContext(context.Context) ObjectGroupTemplateDetailArrayOutput
+}
+
+type ObjectGroupTemplateDetailArray []ObjectGroupTemplateDetailInput
+
+func (ObjectGroupTemplateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (i ObjectGroupTemplateDetailArray) ToObjectGroupTemplateDetailArrayOutput() ObjectGroupTemplateDetailArrayOutput {
+	return i.ToObjectGroupTemplateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ObjectGroupTemplateDetailArray) ToObjectGroupTemplateDetailArrayOutputWithContext(ctx context.Context) ObjectGroupTemplateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ObjectGroupTemplateDetailArrayOutput)
+}
+
+type ObjectGroupTemplateDetailOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupTemplateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (o ObjectGroupTemplateDetailOutput) ToObjectGroupTemplateDetailOutput() ObjectGroupTemplateDetailOutput {
+	return o
+}
+
+func (o ObjectGroupTemplateDetailOutput) ToObjectGroupTemplateDetailOutputWithContext(ctx context.Context) ObjectGroupTemplateDetailOutput {
+	return o
+}
+
+// Associated Alarm Template ID
+func (o ObjectGroupTemplateDetailOutput) AlertTemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupTemplateDetail) *string { return v.AlertTemplateId }).(pulumi.StringPtrOutput)
+}
+
+// Associated Alarm Template Name
+func (o ObjectGroupTemplateDetailOutput) AlertTemplateName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ObjectGroupTemplateDetail) *string { return v.AlertTemplateName }).(pulumi.StringPtrOutput)
+}
+
+type ObjectGroupTemplateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ObjectGroupTemplateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (o ObjectGroupTemplateDetailArrayOutput) ToObjectGroupTemplateDetailArrayOutput() ObjectGroupTemplateDetailArrayOutput {
+	return o
+}
+
+func (o ObjectGroupTemplateDetailArrayOutput) ToObjectGroupTemplateDetailArrayOutputWithContext(ctx context.Context) ObjectGroupTemplateDetailArrayOutput {
+	return o
+}
+
+func (o ObjectGroupTemplateDetailArrayOutput) Index(i pulumi.IntInput) ObjectGroupTemplateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ObjectGroupTemplateDetail {
+		return vs[0].([]ObjectGroupTemplateDetail)[vs[1].(int)]
+	}).(ObjectGroupTemplateDetailOutput)
 }
 
 type RuleCondition struct {
@@ -5830,6 +6072,8 @@ type GetObjectGroupObject struct {
 	Namespace string `pulumi:"namespace"`
 	// Region of the monitoring object
 	Region string `pulumi:"region"`
+	// List of alarm rules associated with the monitored object, returned by the server.
+	Rules []GetObjectGroupObjectRule `pulumi:"rules"`
 	// Object access method, such as `Dimension` / `DimensionCondition`
 	Type string `pulumi:"type"`
 }
@@ -5856,6 +6100,8 @@ type GetObjectGroupObjectArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Region of the monitoring object
 	Region pulumi.StringInput `pulumi:"region"`
+	// List of alarm rules associated with the monitored object, returned by the server.
+	Rules GetObjectGroupObjectRuleArrayInput `pulumi:"rules"`
 	// Object access method, such as `Dimension` / `DimensionCondition`
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -5934,6 +6180,11 @@ func (o GetObjectGroupObjectOutput) Namespace() pulumi.StringOutput {
 // Region of the monitoring object
 func (o GetObjectGroupObjectOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetObjectGroupObject) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// List of alarm rules associated with the monitored object, returned by the server.
+func (o GetObjectGroupObjectOutput) Rules() GetObjectGroupObjectRuleArrayOutput {
+	return o.ApplyT(func(v GetObjectGroupObject) []GetObjectGroupObjectRule { return v.Rules }).(GetObjectGroupObjectRuleArrayOutput)
 }
 
 // Object access method, such as `Dimension` / `DimensionCondition`
@@ -6513,6 +6764,236 @@ func (o GetObjectGroupObjectDimensionsOutput) ToGetObjectGroupObjectDimensionsOu
 // Resource ID list
 func (o GetObjectGroupObjectDimensionsOutput) ResourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetObjectGroupObjectDimensions) []string { return v.ResourceIds }).(pulumi.StringArrayOutput)
+}
+
+type GetObjectGroupObjectRule struct {
+	// Associated Alarm Template ID
+	AlertTemplateId string `pulumi:"alertTemplateId"`
+	// Alarm Rule ID
+	Id string `pulumi:"id"`
+	// Alarm Rule Name
+	Name string `pulumi:"name"`
+	// Rule ID in Alarm Template
+	TemplateRuleId string `pulumi:"templateRuleId"`
+}
+
+// GetObjectGroupObjectRuleInput is an input type that accepts GetObjectGroupObjectRuleArgs and GetObjectGroupObjectRuleOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectRuleInput` via:
+//
+//	GetObjectGroupObjectRuleArgs{...}
+type GetObjectGroupObjectRuleInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectRuleOutput() GetObjectGroupObjectRuleOutput
+	ToGetObjectGroupObjectRuleOutputWithContext(context.Context) GetObjectGroupObjectRuleOutput
+}
+
+type GetObjectGroupObjectRuleArgs struct {
+	// Associated Alarm Template ID
+	AlertTemplateId pulumi.StringInput `pulumi:"alertTemplateId"`
+	// Alarm Rule ID
+	Id pulumi.StringInput `pulumi:"id"`
+	// Alarm Rule Name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Rule ID in Alarm Template
+	TemplateRuleId pulumi.StringInput `pulumi:"templateRuleId"`
+}
+
+func (GetObjectGroupObjectRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectRuleArgs) ToGetObjectGroupObjectRuleOutput() GetObjectGroupObjectRuleOutput {
+	return i.ToGetObjectGroupObjectRuleOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectRuleArgs) ToGetObjectGroupObjectRuleOutputWithContext(ctx context.Context) GetObjectGroupObjectRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectRuleOutput)
+}
+
+// GetObjectGroupObjectRuleArrayInput is an input type that accepts GetObjectGroupObjectRuleArray and GetObjectGroupObjectRuleArrayOutput values.
+// You can construct a concrete instance of `GetObjectGroupObjectRuleArrayInput` via:
+//
+//	GetObjectGroupObjectRuleArray{ GetObjectGroupObjectRuleArgs{...} }
+type GetObjectGroupObjectRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupObjectRuleArrayOutput() GetObjectGroupObjectRuleArrayOutput
+	ToGetObjectGroupObjectRuleArrayOutputWithContext(context.Context) GetObjectGroupObjectRuleArrayOutput
+}
+
+type GetObjectGroupObjectRuleArray []GetObjectGroupObjectRuleInput
+
+func (GetObjectGroupObjectRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (i GetObjectGroupObjectRuleArray) ToGetObjectGroupObjectRuleArrayOutput() GetObjectGroupObjectRuleArrayOutput {
+	return i.ToGetObjectGroupObjectRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupObjectRuleArray) ToGetObjectGroupObjectRuleArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupObjectRuleArrayOutput)
+}
+
+type GetObjectGroupObjectRuleOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectRuleOutput) ToGetObjectGroupObjectRuleOutput() GetObjectGroupObjectRuleOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectRuleOutput) ToGetObjectGroupObjectRuleOutputWithContext(ctx context.Context) GetObjectGroupObjectRuleOutput {
+	return o
+}
+
+// Associated Alarm Template ID
+func (o GetObjectGroupObjectRuleOutput) AlertTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectRule) string { return v.AlertTemplateId }).(pulumi.StringOutput)
+}
+
+// Alarm Rule ID
+func (o GetObjectGroupObjectRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Alarm Rule Name
+func (o GetObjectGroupObjectRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Rule ID in Alarm Template
+func (o GetObjectGroupObjectRuleOutput) TemplateRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupObjectRule) string { return v.TemplateRuleId }).(pulumi.StringOutput)
+}
+
+type GetObjectGroupObjectRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupObjectRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupObjectRule)(nil)).Elem()
+}
+
+func (o GetObjectGroupObjectRuleArrayOutput) ToGetObjectGroupObjectRuleArrayOutput() GetObjectGroupObjectRuleArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectRuleArrayOutput) ToGetObjectGroupObjectRuleArrayOutputWithContext(ctx context.Context) GetObjectGroupObjectRuleArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupObjectRuleArrayOutput) Index(i pulumi.IntInput) GetObjectGroupObjectRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectGroupObjectRule {
+		return vs[0].([]GetObjectGroupObjectRule)[vs[1].(int)]
+	}).(GetObjectGroupObjectRuleOutput)
+}
+
+type GetObjectGroupTemplateDetail struct {
+	// Associated Alarm Template ID
+	AlertTemplateId string `pulumi:"alertTemplateId"`
+	// Associated Alarm Template Name
+	AlertTemplateName string `pulumi:"alertTemplateName"`
+}
+
+// GetObjectGroupTemplateDetailInput is an input type that accepts GetObjectGroupTemplateDetailArgs and GetObjectGroupTemplateDetailOutput values.
+// You can construct a concrete instance of `GetObjectGroupTemplateDetailInput` via:
+//
+//	GetObjectGroupTemplateDetailArgs{...}
+type GetObjectGroupTemplateDetailInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupTemplateDetailOutput() GetObjectGroupTemplateDetailOutput
+	ToGetObjectGroupTemplateDetailOutputWithContext(context.Context) GetObjectGroupTemplateDetailOutput
+}
+
+type GetObjectGroupTemplateDetailArgs struct {
+	// Associated Alarm Template ID
+	AlertTemplateId pulumi.StringInput `pulumi:"alertTemplateId"`
+	// Associated Alarm Template Name
+	AlertTemplateName pulumi.StringInput `pulumi:"alertTemplateName"`
+}
+
+func (GetObjectGroupTemplateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (i GetObjectGroupTemplateDetailArgs) ToGetObjectGroupTemplateDetailOutput() GetObjectGroupTemplateDetailOutput {
+	return i.ToGetObjectGroupTemplateDetailOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupTemplateDetailArgs) ToGetObjectGroupTemplateDetailOutputWithContext(ctx context.Context) GetObjectGroupTemplateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupTemplateDetailOutput)
+}
+
+// GetObjectGroupTemplateDetailArrayInput is an input type that accepts GetObjectGroupTemplateDetailArray and GetObjectGroupTemplateDetailArrayOutput values.
+// You can construct a concrete instance of `GetObjectGroupTemplateDetailArrayInput` via:
+//
+//	GetObjectGroupTemplateDetailArray{ GetObjectGroupTemplateDetailArgs{...} }
+type GetObjectGroupTemplateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectGroupTemplateDetailArrayOutput() GetObjectGroupTemplateDetailArrayOutput
+	ToGetObjectGroupTemplateDetailArrayOutputWithContext(context.Context) GetObjectGroupTemplateDetailArrayOutput
+}
+
+type GetObjectGroupTemplateDetailArray []GetObjectGroupTemplateDetailInput
+
+func (GetObjectGroupTemplateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (i GetObjectGroupTemplateDetailArray) ToGetObjectGroupTemplateDetailArrayOutput() GetObjectGroupTemplateDetailArrayOutput {
+	return i.ToGetObjectGroupTemplateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectGroupTemplateDetailArray) ToGetObjectGroupTemplateDetailArrayOutputWithContext(ctx context.Context) GetObjectGroupTemplateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectGroupTemplateDetailArrayOutput)
+}
+
+type GetObjectGroupTemplateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupTemplateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (o GetObjectGroupTemplateDetailOutput) ToGetObjectGroupTemplateDetailOutput() GetObjectGroupTemplateDetailOutput {
+	return o
+}
+
+func (o GetObjectGroupTemplateDetailOutput) ToGetObjectGroupTemplateDetailOutputWithContext(ctx context.Context) GetObjectGroupTemplateDetailOutput {
+	return o
+}
+
+// Associated Alarm Template ID
+func (o GetObjectGroupTemplateDetailOutput) AlertTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupTemplateDetail) string { return v.AlertTemplateId }).(pulumi.StringOutput)
+}
+
+// Associated Alarm Template Name
+func (o GetObjectGroupTemplateDetailOutput) AlertTemplateName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectGroupTemplateDetail) string { return v.AlertTemplateName }).(pulumi.StringOutput)
+}
+
+type GetObjectGroupTemplateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectGroupTemplateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectGroupTemplateDetail)(nil)).Elem()
+}
+
+func (o GetObjectGroupTemplateDetailArrayOutput) ToGetObjectGroupTemplateDetailArrayOutput() GetObjectGroupTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupTemplateDetailArrayOutput) ToGetObjectGroupTemplateDetailArrayOutputWithContext(ctx context.Context) GetObjectGroupTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetObjectGroupTemplateDetailArrayOutput) Index(i pulumi.IntInput) GetObjectGroupTemplateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectGroupTemplateDetail {
+		return vs[0].([]GetObjectGroupTemplateDetail)[vs[1].(int)]
+	}).(GetObjectGroupTemplateDetailOutput)
 }
 
 type GetRuleCondition struct {
@@ -7889,6 +8370,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionConditionsTagConditionTagArrayInput)(nil)).Elem(), ObjectGroupObjectDimensionConditionsTagConditionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionsInput)(nil)).Elem(), ObjectGroupObjectDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectDimensionsPtrInput)(nil)).Elem(), ObjectGroupObjectDimensionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectRuleInput)(nil)).Elem(), ObjectGroupObjectRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupObjectRuleArrayInput)(nil)).Elem(), ObjectGroupObjectRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupTemplateDetailInput)(nil)).Elem(), ObjectGroupTemplateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ObjectGroupTemplateDetailArrayInput)(nil)).Elem(), ObjectGroupTemplateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionInput)(nil)).Elem(), RuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionArrayInput)(nil)).Elem(), RuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleDimensionConditionsInput)(nil)).Elem(), RuleDimensionConditionsArgs{})
@@ -7945,6 +8430,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTagInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsTagConditionTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionConditionsTagConditionTagArrayInput)(nil)).Elem(), GetObjectGroupObjectDimensionConditionsTagConditionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectDimensionsInput)(nil)).Elem(), GetObjectGroupObjectDimensionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectRuleInput)(nil)).Elem(), GetObjectGroupObjectRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupObjectRuleArrayInput)(nil)).Elem(), GetObjectGroupObjectRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupTemplateDetailInput)(nil)).Elem(), GetObjectGroupTemplateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectGroupTemplateDetailArrayInput)(nil)).Elem(), GetObjectGroupTemplateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionInput)(nil)).Elem(), GetRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionArrayInput)(nil)).Elem(), GetRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleDimensionConditionsInput)(nil)).Elem(), GetRuleDimensionConditionsArgs{})
@@ -8002,6 +8491,10 @@ func init() {
 	pulumi.RegisterOutputType(ObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput{})
 	pulumi.RegisterOutputType(ObjectGroupObjectDimensionsOutput{})
 	pulumi.RegisterOutputType(ObjectGroupObjectDimensionsPtrOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectRuleOutput{})
+	pulumi.RegisterOutputType(ObjectGroupObjectRuleArrayOutput{})
+	pulumi.RegisterOutputType(ObjectGroupTemplateDetailOutput{})
+	pulumi.RegisterOutputType(ObjectGroupTemplateDetailArrayOutput{})
 	pulumi.RegisterOutputType(RuleConditionOutput{})
 	pulumi.RegisterOutputType(RuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(RuleDimensionConditionsOutput{})
@@ -8058,6 +8551,10 @@ func init() {
 	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsTagConditionTagOutput{})
 	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionConditionsTagConditionTagArrayOutput{})
 	pulumi.RegisterOutputType(GetObjectGroupObjectDimensionsOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectRuleOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupObjectRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupTemplateDetailOutput{})
+	pulumi.RegisterOutputType(GetObjectGroupTemplateDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleDimensionConditionsOutput{})

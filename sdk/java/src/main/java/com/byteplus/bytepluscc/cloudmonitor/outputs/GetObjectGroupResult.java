@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.cloudmonitor.outputs;
 
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupObject;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetObjectGroupTemplateDetail;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
@@ -47,6 +48,11 @@ public final class GetObjectGroupResult {
      * 
      */
     private List<GetObjectGroupObject> objects;
+    /**
+     * @return List of alarm template information associated with the object group, returned by the server.
+     * 
+     */
+    private List<GetObjectGroupTemplateDetail> templateDetails;
     /**
      * @return Object group last update time
      * 
@@ -104,6 +110,13 @@ public final class GetObjectGroupResult {
         return this.objects;
     }
     /**
+     * @return List of alarm template information associated with the object group, returned by the server.
+     * 
+     */
+    public List<GetObjectGroupTemplateDetail> templateDetails() {
+        return this.templateDetails;
+    }
+    /**
      * @return Object group last update time
      * 
      */
@@ -127,6 +140,7 @@ public final class GetObjectGroupResult {
         private String id;
         private String name;
         private List<GetObjectGroupObject> objects;
+        private List<GetObjectGroupTemplateDetail> templateDetails;
         private String updatedAt;
         public Builder() {}
         public Builder(GetObjectGroupResult defaults) {
@@ -138,6 +152,7 @@ public final class GetObjectGroupResult {
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.objects = defaults.objects;
+    	      this.templateDetails = defaults.templateDetails;
     	      this.updatedAt = defaults.updatedAt;
         }
 
@@ -201,6 +216,17 @@ public final class GetObjectGroupResult {
             return objects(List.of(objects));
         }
         @CustomType.Setter
+        public Builder templateDetails(List<GetObjectGroupTemplateDetail> templateDetails) {
+            if (templateDetails == null) {
+              throw new MissingRequiredPropertyException("GetObjectGroupResult", "templateDetails");
+            }
+            this.templateDetails = templateDetails;
+            return this;
+        }
+        public Builder templateDetails(GetObjectGroupTemplateDetail... templateDetails) {
+            return templateDetails(List.of(templateDetails));
+        }
+        @CustomType.Setter
         public Builder updatedAt(String updatedAt) {
             if (updatedAt == null) {
               throw new MissingRequiredPropertyException("GetObjectGroupResult", "updatedAt");
@@ -217,6 +243,7 @@ public final class GetObjectGroupResult {
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.objects = objects;
+            _resultValue.templateDetails = templateDetails;
             _resultValue.updatedAt = updatedAt;
             return _resultValue;
         }

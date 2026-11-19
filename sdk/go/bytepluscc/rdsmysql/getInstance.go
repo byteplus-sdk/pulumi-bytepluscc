@@ -168,6 +168,8 @@ type LookupInstanceResult struct {
 	SyncMode string `pulumi:"syncMode"`
 	// RDS MySQL instance tag information
 	Tags []GetInstanceTag `pulumi:"tags"`
+	// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+	TdeConfig GetInstanceTdeConfig `pulumi:"tdeConfig"`
 	// Time zone
 	TimeZone string `pulumi:"timeZone"`
 	// Instance updates local time.
@@ -559,6 +561,11 @@ func (o LookupInstanceResultOutput) SyncMode() pulumi.StringOutput {
 // RDS MySQL instance tag information
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
+}
+
+// Instance transparent data encryption TDE configuration. TDE cannot be disabled after it is enabled. Enabling transparent data encryption TDE requires restarting the instance.
+func (o LookupInstanceResultOutput) TdeConfig() GetInstanceTdeConfigOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceTdeConfig { return v.TdeConfig }).(GetInstanceTdeConfigOutput)
 }
 
 // Time zone
