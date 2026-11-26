@@ -15,6 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AggregationPolicyAggregationArgs',
+    'AggregationPolicyAggregationArgsDict',
+    'AggregationPolicyAggregationRepeatDowngradeArgs',
+    'AggregationPolicyAggregationRepeatDowngradeArgsDict',
+    'AggregationPolicyAssociatedAttributeArgs',
+    'AggregationPolicyAssociatedAttributeArgsDict',
     'AlertTemplateNoDataArgs',
     'AlertTemplateNoDataArgsDict',
     'AlertTemplateObjectGroupArgs',
@@ -84,6 +90,253 @@ __all__ = [
     'RuleTagArgs',
     'RuleTagArgsDict',
 ]
+
+class AggregationPolicyAggregationArgsDict(TypedDict):
+    group_bies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+    """
+    group_interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+    """
+    group_wait: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+    """
+    level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+    """
+    repeat_downgrade: NotRequired[pulumi.Input[Optional['AggregationPolicyAggregationRepeatDowngradeArgsDict']]]
+    """
+    Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+    """
+    repeat_interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+    """
+
+@pulumi.input_type
+class AggregationPolicyAggregationArgs:
+    def __init__(__self__, *,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 group_wait: pulumi.Input[Optional[_builtins.int]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_downgrade: pulumi.Input[Optional['AggregationPolicyAggregationRepeatDowngradeArgs']] = None,
+                 repeat_interval: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_bies: Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+        :param pulumi.Input[_builtins.int] group_interval: Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+        :param pulumi.Input[_builtins.int] group_wait: Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+        :param pulumi.Input[_builtins.str] level: Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+        :param pulumi.Input['AggregationPolicyAggregationRepeatDowngradeArgs'] repeat_downgrade: Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+        :param pulumi.Input[_builtins.int] repeat_interval: Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+        """
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_interval is not None:
+            pulumi.set(__self__, "group_interval", group_interval)
+        if group_wait is not None:
+            pulumi.set(__self__, "group_wait", group_wait)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if repeat_downgrade is not None:
+            pulumi.set(__self__, "repeat_downgrade", repeat_downgrade)
+        if repeat_interval is not None:
+            pulumi.set(__self__, "repeat_interval", repeat_interval)
+
+    @_builtins.property
+    @pulumi.getter(name="groupBies")
+    def group_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+        """
+        return pulumi.get(self, "group_bies")
+
+    @group_bies.setter
+    def group_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "group_bies", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupInterval")
+    def group_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+        """
+        return pulumi.get(self, "group_interval")
+
+    @group_interval.setter
+    def group_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "group_interval", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupWait")
+    def group_wait(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+        """
+        return pulumi.get(self, "group_wait")
+
+    @group_wait.setter
+    def group_wait(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "group_wait", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+        """
+        return pulumi.get(self, "level")
+
+    @level.setter
+    def level(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "level", value)
+
+    @_builtins.property
+    @pulumi.getter(name="repeatDowngrade")
+    def repeat_downgrade(self) -> pulumi.Input[Optional['AggregationPolicyAggregationRepeatDowngradeArgs']]:
+        """
+        Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+        """
+        return pulumi.get(self, "repeat_downgrade")
+
+    @repeat_downgrade.setter
+    def repeat_downgrade(self, value: pulumi.Input[Optional['AggregationPolicyAggregationRepeatDowngradeArgs']]):
+        pulumi.set(self, "repeat_downgrade", value)
+
+    @_builtins.property
+    @pulumi.getter(name="repeatInterval")
+    def repeat_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+        """
+        return pulumi.get(self, "repeat_interval")
+
+    @repeat_interval.setter
+    def repeat_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "repeat_interval", value)
+
+
+class AggregationPolicyAggregationRepeatDowngradeArgsDict(TypedDict):
+    enable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Enable notification frequency reduction.
+    """
+    max_repeat_interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+    """
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+    """
+
+@pulumi.input_type
+class AggregationPolicyAggregationRepeatDowngradeArgs:
+    def __init__(__self__, *,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_repeat_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] enable: Enable notification frequency reduction.
+        :param pulumi.Input[_builtins.int] max_repeat_interval: Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+        :param pulumi.Input[_builtins.str] mode: Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if max_repeat_interval is not None:
+            pulumi.set(__self__, "max_repeat_interval", max_repeat_interval)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enable notification frequency reduction.
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maxRepeatInterval")
+    def max_repeat_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+        """
+        return pulumi.get(self, "max_repeat_interval")
+
+    @max_repeat_interval.setter
+    def max_repeat_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "max_repeat_interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+
+class AggregationPolicyAssociatedAttributeArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+    """
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of attribute values.
+    """
+
+@pulumi.input_type
+class AggregationPolicyAssociatedAttributeArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: List of attribute values.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of attribute values.
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
+
 
 class AlertTemplateNoDataArgsDict(TypedDict):
     enable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]

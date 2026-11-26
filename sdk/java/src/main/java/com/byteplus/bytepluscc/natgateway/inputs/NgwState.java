@@ -311,6 +311,25 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    @Import(name="renewType")
+    private @Nullable Output<Integer> renewType;
+
+    /**
+     * @return Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    public Optional<Output<Integer>> renewType() {
+        return Optional.ofNullable(this.renewType);
+    }
+
+    /**
      * Whether to enable intelligent scheduling
      * 
      */
@@ -484,6 +503,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         this.period = $.period;
         this.periodUnit = $.periodUnit;
         this.projectName = $.projectName;
+        this.renewType = $.renewType;
         this.smartScheduleEnabled = $.smartScheduleEnabled;
         this.smartScheduleRule = $.smartScheduleRule;
         this.snatEntryIds = $.snatEntryIds;
@@ -947,6 +967,31 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
+        }
+
+        /**
+         * @param renewType Renewal methods for prepaid NAT instances. Possible values:
+         * -0 (default): Manual renewal
+         * -2: Automatic renewal
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewType(@Nullable Output<Integer> renewType) {
+            $.renewType = renewType;
+            return this;
+        }
+
+        /**
+         * @param renewType Renewal methods for prepaid NAT instances. Possible values:
+         * -0 (default): Manual renewal
+         * -2: Automatic renewal
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewType(Integer renewType) {
+            return renewType(Output.of(renewType));
         }
 
         /**

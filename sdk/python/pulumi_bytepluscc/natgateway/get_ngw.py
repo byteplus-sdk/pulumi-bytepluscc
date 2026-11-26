@@ -27,7 +27,7 @@ class GetNgwResult:
     """
     A collection of values returned by getNgw.
     """
-    def __init__(__self__, billing_type=None, business_status=None, created_time=None, deleted_time=None, description=None, direct_mode=None, dnat_entry_ids=None, eip_addresses=None, expired_time=None, id=None, lock_reason=None, nat_gateway_id=None, nat_gateway_name=None, nat_ip_addresses=None, network_interface_id=None, network_type=None, overdue_time=None, period=None, period_unit=None, project_name=None, smart_schedule_enabled=None, smart_schedule_rule=None, snat_entry_ids=None, spec=None, status=None, subnet_id=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, billing_type=None, business_status=None, created_time=None, deleted_time=None, description=None, direct_mode=None, dnat_entry_ids=None, eip_addresses=None, expired_time=None, id=None, lock_reason=None, nat_gateway_id=None, nat_gateway_name=None, nat_ip_addresses=None, network_interface_id=None, network_type=None, overdue_time=None, period=None, period_unit=None, project_name=None, renew_type=None, smart_schedule_enabled=None, smart_schedule_rule=None, snat_entry_ids=None, spec=None, status=None, subnet_id=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
         if billing_type and not isinstance(billing_type, int):
             raise TypeError("Expected argument 'billing_type' to be a int")
         pulumi.set(__self__, "billing_type", billing_type)
@@ -88,6 +88,9 @@ class GetNgwResult:
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
+        if renew_type and not isinstance(renew_type, int):
+            raise TypeError("Expected argument 'renew_type' to be a int")
+        pulumi.set(__self__, "renew_type", renew_type)
         if smart_schedule_enabled and not isinstance(smart_schedule_enabled, bool):
             raise TypeError("Expected argument 'smart_schedule_enabled' to be a bool")
         pulumi.set(__self__, "smart_schedule_enabled", smart_schedule_enabled)
@@ -280,6 +283,16 @@ class GetNgwResult:
         return pulumi.get(self, "project_name")
 
     @_builtins.property
+    @pulumi.getter(name="renewType")
+    def renew_type(self) -> _builtins.int:
+        """
+        Renewal methods for prepaid NAT instances. Possible values:
+        -0 (default): Manual renewal
+        -2: Automatic renewal
+        """
+        return pulumi.get(self, "renew_type")
+
+    @_builtins.property
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> _builtins.bool:
         """
@@ -386,6 +399,7 @@ class AwaitableGetNgwResult(GetNgwResult):
             period=self.period,
             period_unit=self.period_unit,
             project_name=self.project_name,
+            renew_type=self.renew_type,
             smart_schedule_enabled=self.smart_schedule_enabled,
             smart_schedule_rule=self.smart_schedule_rule,
             snat_entry_ids=self.snat_entry_ids,
@@ -432,6 +446,7 @@ def get_ngw(id: Optional[_builtins.str] = None,
         period=pulumi.get(__ret__, 'period'),
         period_unit=pulumi.get(__ret__, 'period_unit'),
         project_name=pulumi.get(__ret__, 'project_name'),
+        renew_type=pulumi.get(__ret__, 'renew_type'),
         smart_schedule_enabled=pulumi.get(__ret__, 'smart_schedule_enabled'),
         smart_schedule_rule=pulumi.get(__ret__, 'smart_schedule_rule'),
         snat_entry_ids=pulumi.get(__ret__, 'snat_entry_ids'),
@@ -475,6 +490,7 @@ def get_ngw_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         period=pulumi.get(__response__, 'period'),
         period_unit=pulumi.get(__response__, 'period_unit'),
         project_name=pulumi.get(__response__, 'project_name'),
+        renew_type=pulumi.get(__response__, 'renew_type'),
         smart_schedule_enabled=pulumi.get(__response__, 'smart_schedule_enabled'),
         smart_schedule_rule=pulumi.get(__response__, 'smart_schedule_rule'),
         snat_entry_ids=pulumi.get(__response__, 'snat_entry_ids'),

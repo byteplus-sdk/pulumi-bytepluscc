@@ -111,6 +111,12 @@ export interface GetNgwResult {
      */
     readonly projectName: string;
     /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     */
+    readonly renewType: number;
+    /**
      * Whether to enable intelligent scheduling
      */
     readonly smartScheduleEnabled: boolean;

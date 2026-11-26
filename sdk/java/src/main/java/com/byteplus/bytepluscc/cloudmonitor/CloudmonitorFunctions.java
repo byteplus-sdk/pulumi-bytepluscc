@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.cloudmonitor;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAggregationPolicyArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAggregationPolicyPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAlertTemplateArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetAlertTemplatePlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactArgs;
@@ -16,6 +18,8 @@ import com.byteplus.bytepluscc.cloudmonitor.inputs.GetObjectGroupArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetObjectGroupPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAggregationPoliciesResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAggregationPolicyResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAlertTemplateResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetAlertTemplatesResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupResult;
@@ -37,6 +41,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudmonitorFunctions {
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPoliciesResult> getAggregationPolicies() {
+        return getAggregationPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static CompletableFuture<GetAggregationPoliciesResult> getAggregationPoliciesPlain() {
+        return getAggregationPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPoliciesResult> getAggregationPolicies(InvokeArgs args) {
+        return getAggregationPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static CompletableFuture<GetAggregationPoliciesResult> getAggregationPoliciesPlain(InvokeArgs args) {
+        return getAggregationPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPoliciesResult> getAggregationPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAggregationPolicies:getAggregationPolicies", TypeShape.of(GetAggregationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPoliciesResult> getAggregationPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAggregationPolicies:getAggregationPolicies", TypeShape.of(GetAggregationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static CompletableFuture<GetAggregationPoliciesResult> getAggregationPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getAggregationPolicies:getAggregationPolicies", TypeShape.of(GetAggregationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPolicyResult> getAggregationPolicy(GetAggregationPolicyArgs args) {
+        return getAggregationPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static CompletableFuture<GetAggregationPolicyResult> getAggregationPolicyPlain(GetAggregationPolicyPlainArgs args) {
+        return getAggregationPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPolicyResult> getAggregationPolicy(GetAggregationPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAggregationPolicy:getAggregationPolicy", TypeShape.of(GetAggregationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static Output<GetAggregationPolicyResult> getAggregationPolicy(GetAggregationPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getAggregationPolicy:getAggregationPolicy", TypeShape.of(GetAggregationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::AggregationPolicy
+     * 
+     */
+    public static CompletableFuture<GetAggregationPolicyResult> getAggregationPolicyPlain(GetAggregationPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getAggregationPolicy:getAggregationPolicy", TypeShape.of(GetAggregationPolicyResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CloudMonitor::AlertTemplate
      * 

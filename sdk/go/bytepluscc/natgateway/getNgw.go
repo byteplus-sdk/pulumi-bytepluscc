@@ -70,6 +70,10 @@ type LookupNgwResult struct {
 	PeriodUnit string `pulumi:"periodUnit"`
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName string `pulumi:"projectName"`
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType int `pulumi:"renewType"`
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled bool `pulumi:"smartScheduleEnabled"`
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -224,6 +228,13 @@ func (o LookupNgwResultOutput) PeriodUnit() pulumi.StringOutput {
 // Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 func (o LookupNgwResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNgwResult) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Renewal methods for prepaid NAT instances. Possible values:
+// -0 (default): Manual renewal
+// -2: Automatic renewal
+func (o LookupNgwResultOutput) RenewType() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupNgwResult) int { return v.RenewType }).(pulumi.IntOutput)
 }
 
 // Whether to enable intelligent scheduling

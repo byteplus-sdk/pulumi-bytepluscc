@@ -5372,6 +5372,59 @@ export namespace cloudidentity {
 }
 
 export namespace cloudmonitor {
+    export interface AggregationPolicyAggregation {
+        /**
+         * Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+         */
+        groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+         */
+        groupInterval?: pulumi.Input<number | undefined>;
+        /**
+         * Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+         */
+        groupWait?: pulumi.Input<number | undefined>;
+        /**
+         * Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+         */
+        level?: pulumi.Input<string | undefined>;
+        /**
+         * Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+         */
+        repeatDowngrade?: pulumi.Input<inputs.cloudmonitor.AggregationPolicyAggregationRepeatDowngrade | undefined>;
+        /**
+         * Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+         */
+        repeatInterval?: pulumi.Input<number | undefined>;
+    }
+
+    export interface AggregationPolicyAggregationRepeatDowngrade {
+        /**
+         * Enable notification frequency reduction.
+         */
+        enable?: pulumi.Input<boolean | undefined>;
+        /**
+         * Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+         */
+        maxRepeatInterval?: pulumi.Input<number | undefined>;
+        /**
+         * Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+         */
+        mode?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AggregationPolicyAssociatedAttribute {
+        /**
+         * Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * List of attribute values.
+         */
+        values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
     export interface AlertTemplateNoData {
         /**
          * Enable no data alert

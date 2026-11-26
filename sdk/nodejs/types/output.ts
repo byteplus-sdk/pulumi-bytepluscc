@@ -10790,6 +10790,59 @@ export namespace cloudidentity {
 }
 
 export namespace cloudmonitor {
+    export interface AggregationPolicyAggregation {
+        /**
+         * Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+         */
+        groupBies: string[];
+        /**
+         * Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+         */
+        groupInterval: number;
+        /**
+         * Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+         */
+        groupWait: number;
+        /**
+         * Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+         */
+        level: string;
+        /**
+         * Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+         */
+        repeatDowngrade: outputs.cloudmonitor.AggregationPolicyAggregationRepeatDowngrade;
+        /**
+         * Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+         */
+        repeatInterval: number;
+    }
+
+    export interface AggregationPolicyAggregationRepeatDowngrade {
+        /**
+         * Enable notification frequency reduction.
+         */
+        enable: boolean;
+        /**
+         * Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+         */
+        maxRepeatInterval: number;
+        /**
+         * Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+         */
+        mode: string;
+    }
+
+    export interface AggregationPolicyAssociatedAttribute {
+        /**
+         * Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+         */
+        name: string;
+        /**
+         * List of attribute values.
+         */
+        values: string[];
+    }
+
     export interface AlertTemplateNoData {
         /**
          * Enable no data alert
@@ -10994,6 +11047,59 @@ export namespace cloudmonitor {
          * Contact ID
          */
         contactId: string;
+    }
+
+    export interface GetAggregationPolicyAggregation {
+        /**
+         * Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+         */
+        groupBies: string[];
+        /**
+         * Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+         */
+        groupInterval: number;
+        /**
+         * Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+         */
+        groupWait: number;
+        /**
+         * Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+         */
+        level: string;
+        /**
+         * Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+         */
+        repeatDowngrade: outputs.cloudmonitor.GetAggregationPolicyAggregationRepeatDowngrade;
+        /**
+         * Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+         */
+        repeatInterval: number;
+    }
+
+    export interface GetAggregationPolicyAggregationRepeatDowngrade {
+        /**
+         * Enable notification frequency reduction.
+         */
+        enable: boolean;
+        /**
+         * Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+         */
+        maxRepeatInterval: number;
+        /**
+         * Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+         */
+        mode: string;
+    }
+
+    export interface GetAggregationPolicyAssociatedAttribute {
+        /**
+         * Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+         */
+        name: string;
+        /**
+         * List of attribute values.
+         */
+        values: string[];
     }
 
     export interface GetAlertTemplateNoData {

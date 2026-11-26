@@ -172,6 +172,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
+        /// Renewal methods for prepaid NAT instances. Possible values:
+        /// -0 (default): Manual renewal
+        /// -2: Automatic renewal
+        /// </summary>
+        [Output("renewType")]
+        public Output<int> RenewType { get; private set; } = null!;
+
+        /// <summary>
         /// Whether to enable intelligent scheduling
         /// </summary>
         [Output("smartScheduleEnabled")]
@@ -292,6 +300,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+        /// </summary>
+        [Input("directMode")]
+        public Input<bool>? DirectMode { get; set; }
+
+        /// <summary>
         /// Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         /// </summary>
         [Input("natGatewayName")]
@@ -320,6 +334,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// Renewal methods for prepaid NAT instances. Possible values:
+        /// -0 (default): Manual renewal
+        /// -2: Automatic renewal
+        /// </summary>
+        [Input("renewType")]
+        public Input<int>? RenewType { get; set; }
 
         /// <summary>
         /// Whether to enable intelligent scheduling
@@ -505,6 +527,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// Renewal methods for prepaid NAT instances. Possible values:
+        /// -0 (default): Manual renewal
+        /// -2: Automatic renewal
+        /// </summary>
+        [Input("renewType")]
+        public Input<int>? RenewType { get; set; }
 
         /// <summary>
         /// Whether to enable intelligent scheduling

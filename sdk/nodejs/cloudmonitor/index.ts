@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AggregationPolicyArgs, AggregationPolicyState } from "./aggregationPolicy";
+export type AggregationPolicy = import("./aggregationPolicy").AggregationPolicy;
+export const AggregationPolicy: typeof import("./aggregationPolicy").AggregationPolicy = null as any;
+utilities.lazyLoad(exports, ["AggregationPolicy"], () => require("./aggregationPolicy"));
+
 export { AlertTemplateArgs, AlertTemplateState } from "./alertTemplate";
 export type AlertTemplate = import("./alertTemplate").AlertTemplate;
 export const AlertTemplate: typeof import("./alertTemplate").AlertTemplate = null as any;
@@ -24,6 +29,16 @@ export { EventRuleArgs, EventRuleState } from "./eventRule";
 export type EventRule = import("./eventRule").EventRule;
 export const EventRule: typeof import("./eventRule").EventRule = null as any;
 utilities.lazyLoad(exports, ["EventRule"], () => require("./eventRule"));
+
+export { GetAggregationPoliciesResult } from "./getAggregationPolicies";
+export const getAggregationPolicies: typeof import("./getAggregationPolicies").getAggregationPolicies = null as any;
+export const getAggregationPoliciesOutput: typeof import("./getAggregationPolicies").getAggregationPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAggregationPolicies","getAggregationPoliciesOutput"], () => require("./getAggregationPolicies"));
+
+export { GetAggregationPolicyArgs, GetAggregationPolicyResult, GetAggregationPolicyOutputArgs } from "./getAggregationPolicy";
+export const getAggregationPolicy: typeof import("./getAggregationPolicy").getAggregationPolicy = null as any;
+export const getAggregationPolicyOutput: typeof import("./getAggregationPolicy").getAggregationPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAggregationPolicy","getAggregationPolicyOutput"], () => require("./getAggregationPolicy"));
 
 export { GetAlertTemplateArgs, GetAlertTemplateResult, GetAlertTemplateOutputArgs } from "./getAlertTemplate";
 export const getAlertTemplate: typeof import("./getAlertTemplate").getAlertTemplate = null as any;
@@ -100,6 +115,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cloudmonitor/aggregationPolicy:AggregationPolicy":
+                return new AggregationPolicy(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/alertTemplate:AlertTemplate":
                 return new AlertTemplate(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/contact:Contact":
@@ -117,6 +134,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/aggregationPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/alertTemplate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contact", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contactGroup", _module)
