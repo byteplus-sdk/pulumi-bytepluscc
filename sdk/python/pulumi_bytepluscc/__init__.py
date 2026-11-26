@@ -571,6 +571,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/aggregationPolicy",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/aggregationPolicy:AggregationPolicy": "AggregationPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudmonitor/alertTemplate",
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {

@@ -145,6 +145,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
+        /// Renewal methods for prepaid NAT instances. Possible values:
+        /// -0 (default): Manual renewal
+        /// -2: Automatic renewal
+        /// </summary>
+        public readonly int RenewType;
+        /// <summary>
         /// Whether to enable intelligent scheduling
         /// </summary>
         public readonly bool SmartScheduleEnabled;
@@ -227,6 +233,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
 
             string projectName,
 
+            int renewType,
+
             bool smartScheduleEnabled,
 
             string smartScheduleRule,
@@ -267,6 +275,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
             Period = period;
             PeriodUnit = periodUnit;
             ProjectName = projectName;
+            RenewType = renewType;
             SmartScheduleEnabled = smartScheduleEnabled;
             SmartScheduleRule = smartScheduleRule;
             SnatEntryIds = snatEntryIds;

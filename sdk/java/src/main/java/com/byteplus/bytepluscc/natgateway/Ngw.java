@@ -349,6 +349,24 @@ public class Ngw extends com.pulumi.resources.CustomResource {
         return this.projectName;
     }
     /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    @Export(name="renewType", refs={Integer.class}, tree="[0]")
+    private Output<Integer> renewType;
+
+    /**
+     * @return Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    public Output<Integer> renewType() {
+        return this.renewType;
+    }
+    /**
      * Whether to enable intelligent scheduling
      * 
      */

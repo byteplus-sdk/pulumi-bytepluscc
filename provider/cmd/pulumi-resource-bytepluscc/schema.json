@@ -19171,6 +19171,100 @@
                 }
             }
         },
+        "bytepluscc:cloudmonitor/AggregationPolicyAggregation:AggregationPolicyAggregation": {
+            "properties": {
+                "groupBies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.\n"
+                },
+                "groupInterval": {
+                    "type": "integer",
+                    "description": "Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.\n"
+                },
+                "groupWait": {
+                    "type": "integer",
+                    "description": "Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.\n"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the \"all\" fallback strategy must be configured.\n"
+                },
+                "repeatDowngrade": {
+                    "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAggregationRepeatDowngrade:AggregationPolicyAggregationRepeatDowngrade",
+                    "description": "Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.\n"
+                },
+                "repeatInterval": {
+                    "type": "integer",
+                    "description": "Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "groupBies",
+                        "groupInterval",
+                        "groupWait",
+                        "level",
+                        "repeatDowngrade",
+                        "repeatInterval"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/AggregationPolicyAggregationRepeatDowngrade:AggregationPolicyAggregationRepeatDowngrade": {
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": "Enable notification frequency reduction.\n"
+                },
+                "maxRepeatInterval": {
+                    "type": "integer",
+                    "description": "Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).\n"
+                },
+                "mode": {
+                    "type": "string",
+                    "description": "Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "enable",
+                        "maxRepeatInterval",
+                        "mode"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/AggregationPolicyAssociatedAttribute:AggregationPolicyAssociatedAttribute": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.\n"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of attribute values.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "name",
+                        "values"
+                    ]
+                }
+            }
+        },
         "bytepluscc:cloudmonitor/AlertTemplateNoData:AlertTemplateNoData": {
             "properties": {
                 "enable": {
@@ -20190,6 +20284,103 @@
                         "key",
                         "value"
                     ]
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/getAggregationPolicyAggregation:getAggregationPolicyAggregation": {
+            "properties": {
+                "groupBies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.\n"
+                },
+                "groupInterval": {
+                    "type": "integer",
+                    "description": "Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.\n"
+                },
+                "groupWait": {
+                    "type": "integer",
+                    "description": "Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.\n"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the \"all\" fallback strategy must be configured.\n"
+                },
+                "repeatDowngrade": {
+                    "$ref": "#/types/bytepluscc:cloudmonitor/getAggregationPolicyAggregationRepeatDowngrade:getAggregationPolicyAggregationRepeatDowngrade",
+                    "description": "Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.\n"
+                },
+                "repeatInterval": {
+                    "type": "integer",
+                    "description": "Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "groupBies",
+                "groupInterval",
+                "groupWait",
+                "level",
+                "repeatDowngrade",
+                "repeatInterval"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/getAggregationPolicyAggregationRepeatDowngrade:getAggregationPolicyAggregationRepeatDowngrade": {
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": "Enable notification frequency reduction.\n"
+                },
+                "maxRepeatInterval": {
+                    "type": "integer",
+                    "description": "Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).\n"
+                },
+                "mode": {
+                    "type": "string",
+                    "description": "Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "enable",
+                "maxRepeatInterval",
+                "mode"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudmonitor/getAggregationPolicyAssociatedAttribute:getAggregationPolicyAssociatedAttribute": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.\n"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of attribute values.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "values"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
                 }
             }
         },
@@ -82360,6 +82551,155 @@
                 "type": "object"
             }
         },
+        "bytepluscc:cloudmonitor/aggregationPolicy:AggregationPolicy": {
+            "description": "CloudMonitor alert aggregation strategy.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst primaryCloudmonitorAggregationpolicyFull = new bytepluscc.cloudmonitor.AggregationPolicy(\"primary_cloudmonitor_aggregationpolicy_full\", {\n    aggregations: [{\n        group_by: [\n            \"rule_id\",\n            \"region\",\n        ],\n        group_interval: 60,\n        group_wait: 30,\n        level: \"all\",\n        repeat_downgrade: {\n            enable: true,\n            maxRepeatInterval: 3600,\n            mode: \"doubled\",\n        },\n        repeat_interval: 120,\n    }],\n    description: \"完整all兜底及官方示例降频配置\",\n    isDefault: false,\n    name: \"ccapi-agp-9011199b-full\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nprimary_cloudmonitor_aggregationpolicy_full = bytepluscc.cloudmonitor.AggregationPolicy(\"primary_cloudmonitor_aggregationpolicy_full\",\n    aggregations=[{\n        \"group_by\": [\n            \"rule_id\",\n            \"region\",\n        ],\n        \"group_interval\": 60,\n        \"group_wait\": 30,\n        \"level\": \"all\",\n        \"repeat_downgrade\": {\n            \"enable\": True,\n            \"maxRepeatInterval\": 3600,\n            \"mode\": \"doubled\",\n        },\n        \"repeat_interval\": 120,\n    }],\n    description=\"完整all兜底及官方示例降频配置\",\n    is_default=False,\n    name=\"ccapi-agp-9011199b-full\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var primaryCloudmonitorAggregationpolicyFull = new Bytepluscc.Cloudmonitor.AggregationPolicy(\"primary_cloudmonitor_aggregationpolicy_full\", new()\n    {\n        Aggregations = new[]\n        {\n            new Bytepluscc.Cloudmonitor.Inputs.AggregationPolicyAggregationArgs\n            {\n                Group_by = new[]\n                {\n                    \"rule_id\",\n                    \"region\",\n                },\n                Group_interval = 60,\n                Group_wait = 30,\n                Level = \"all\",\n                Repeat_downgrade = \n                {\n                    { \"enable\", true },\n                    { \"maxRepeatInterval\", 3600 },\n                    { \"mode\", \"doubled\" },\n                },\n                Repeat_interval = 120,\n            },\n        },\n        Description = \"完整all兜底及官方示例降频配置\",\n        IsDefault = false,\n        Name = \"ccapi-agp-9011199b-full\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cloudmonitor\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cloudmonitor.NewAggregationPolicy(ctx, \"primary_cloudmonitor_aggregationpolicy_full\", \u0026cloudmonitor.AggregationPolicyArgs{\n\t\t\tAggregations: cloudmonitor.AggregationPolicyAggregationArray{\n\t\t\t\t\u0026cloudmonitor.AggregationPolicyAggregationArgs{\n\t\t\t\t\tGroup_by: []string{\n\t\t\t\t\t\t\"rule_id\",\n\t\t\t\t\t\t\"region\",\n\t\t\t\t\t},\n\t\t\t\t\tGroup_interval: 60,\n\t\t\t\t\tGroup_wait:     30,\n\t\t\t\t\tLevel:          pulumi.String(\"all\"),\n\t\t\t\t\tRepeat_downgrade: map[string]interface{}{\n\t\t\t\t\t\t\"enable\":            true,\n\t\t\t\t\t\t\"maxRepeatInterval\": 3600,\n\t\t\t\t\t\t\"mode\":              \"doubled\",\n\t\t\t\t\t},\n\t\t\t\t\tRepeat_interval: 120,\n\t\t\t\t},\n\t\t\t},\n\t\t\tDescription: pulumi.String(\"完整all兜底及官方示例降频配置\"),\n\t\t\tIsDefault:   pulumi.Bool(false),\n\t\t\tName:        pulumi.String(\"ccapi-agp-9011199b-full\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_cloudmonitor_aggregationpolicy\" \"primary_cloudmonitor_aggregationpolicy_full\" {\n  aggregations {\n    group_by       = [\"rule_id\", \"region\"]\n    group_interval = 60\n    group_wait     = 30\n    level          = \"all\"\n    repeat_downgrade = {\n      \"enable\"            = true\n      \"maxRepeatInterval\" = 3600\n      \"mode\"              = \"doubled\"\n    }\n    repeat_interval = 120\n  }\n  description = \"完整all兜底及官方示例降频配置\"\n  is_default  = false\n  name        = \"ccapi-agp-9011199b-full\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cloudmonitor.AggregationPolicy;\nimport com.byteplus.bytepluscc.cloudmonitor.AggregationPolicyArgs;\nimport com.pulumi.bytepluscc.cloudmonitor.inputs.AggregationPolicyAggregationArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var primaryCloudmonitorAggregationpolicyFull = new AggregationPolicy(\"primaryCloudmonitorAggregationpolicyFull\", AggregationPolicyArgs.builder()\n            .aggregations(AggregationPolicyAggregationArgs.builder()\n                .group_by(Arrays.asList(                \n                    \"rule_id\",\n                    \"region\"))\n                .group_interval(60)\n                .group_wait(30)\n                .level(\"all\")\n                .repeat_downgrade(Map.ofEntries(\n                    Map.entry(\"enable\", true),\n                    Map.entry(\"maxRepeatInterval\", 3600),\n                    Map.entry(\"mode\", \"doubled\")\n                ))\n                .repeat_interval(120)\n                .build())\n            .description(\"完整all兜底及官方示例降频配置\")\n            .isDefault(false)\n            .name(\"ccapi-agp-9011199b-full\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  primaryCloudmonitorAggregationpolicyFull:\n    type: bytepluscc:cloudmonitor:AggregationPolicy\n    name: primary_cloudmonitor_aggregationpolicy_full\n    properties:\n      aggregations:\n        - group_by:\n            - rule_id\n            - region\n          group_interval: 60\n          group_wait: 30\n          level: all\n          repeat_downgrade:\n            enable: true\n            maxRepeatInterval: 3600\n            mode: doubled\n          repeat_interval: 120\n      description: 完整all兜底及官方示例降频配置\n      isDefault: false\n      name: ccapi-agp-9011199b-full\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudmonitor/aggregationPolicy:AggregationPolicy example \"resource_id\"\n```\n\n",
+            "properties": {
+                "aggregations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAggregation:AggregationPolicyAggregation"
+                    },
+                    "description": "List of aggregation rules configured by alert level\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "associatedAttributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAssociatedAttribute:AggregationPolicyAssociatedAttribute"
+                    },
+                    "description": "Associated attributes. RuleIDs: list of associated alert strategy IDs.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "createTime": {
+                    "type": "integer",
+                    "description": "Creation time, Unix timestamp in milliseconds.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "Creator\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of alert aggregation strategy.\n"
+                },
+                "isDefault": {
+                    "type": "boolean",
+                    "description": "Whether it is the default aggregation strategy.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Alert aggregation policy name\n"
+                },
+                "resourceId": {
+                    "type": "string",
+                    "description": "Alert aggregation strategy ID.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Aggregation strategy type. custom: custom; bound: bound to alert strategy (1:1).\n"
+                },
+                "updateTime": {
+                    "type": "integer",
+                    "description": "Update time, Unix timestamp in milliseconds\n"
+                },
+                "updatedBy": {
+                    "type": "string",
+                    "description": "Updated by.\n"
+                }
+            },
+            "required": [
+                "aggregations",
+                "associatedAttributes",
+                "createTime",
+                "createdBy",
+                "description",
+                "isDefault",
+                "name",
+                "resourceId",
+                "type",
+                "updateTime",
+                "updatedBy"
+            ],
+            "inputProperties": {
+                "aggregations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAggregation:AggregationPolicyAggregation"
+                    },
+                    "description": "List of aggregation rules configured by alert level\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of alert aggregation strategy.\n"
+                },
+                "isDefault": {
+                    "type": "boolean",
+                    "description": "Whether it is the default aggregation strategy.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Alert aggregation policy name\n"
+                }
+            },
+            "requiredInputs": [
+                "aggregations",
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AggregationPolicy resources.\n",
+                "properties": {
+                    "aggregations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAggregation:AggregationPolicyAggregation"
+                        },
+                        "description": "List of aggregation rules configured by alert level\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "associatedAttributes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/AggregationPolicyAssociatedAttribute:AggregationPolicyAssociatedAttribute"
+                        },
+                        "description": "Associated attributes. RuleIDs: list of associated alert strategy IDs.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "createTime": {
+                        "type": "integer",
+                        "description": "Creation time, Unix timestamp in milliseconds.\n"
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "Creator\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of alert aggregation strategy.\n"
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "description": "Whether it is the default aggregation strategy.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Alert aggregation policy name\n"
+                    },
+                    "resourceId": {
+                        "type": "string",
+                        "description": "Alert aggregation strategy ID.\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Aggregation strategy type. custom: custom; bound: bound to alert strategy (1:1).\n"
+                    },
+                    "updateTime": {
+                        "type": "integer",
+                        "description": "Update time, Unix timestamp in milliseconds\n"
+                    },
+                    "updatedBy": {
+                        "type": "string",
+                        "description": "Updated by.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:cloudmonitor/alertTemplate:AlertTemplate": {
             "description": "Cloud monitoring alert template. Defines a set of metric alert rules and notification policies, which can be applied to object groups via ApplyObjectGroupsByAlertTemplate\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.cloudmonitor.AlertTemplate(\"example\", {\n    name: \"ccapi-alert-template-full\",\n    description: \"ccapi cloudmonitor alert template full\",\n    notifyMode: \"Resource\",\n    silenceTime: 10,\n    noData: {\n        enable: true,\n        evaluation_count: 3,\n        level: \"notice\",\n    },\n    recoveryNotify: {\n        enable: true,\n    },\n    templateRules: [{\n        condition_operator: \"\u0026\u0026\",\n        evaluation_count: 3,\n        evaluation_interval: 3,\n        level_conditions: [{\n            level: \"warning\",\n            conditions: [{\n                comparisonOperator: \"\u003e\",\n                evaluationWindow: 1,\n                metricName: \"istio_requests_total\",\n                metricUnit: \"Count\",\n                statistics: \"sum\",\n                threshold: \"80\",\n            }],\n        }],\n        multiple_conditions: true,\n        name: \"full-rule\",\n        namespace: \"VCM_AgentKitMcp\",\n        sub_namespace: \"MCP_Service\",\n    }],\n    projectName: \"default\",\n    objectGroups: [{\n        alert_methods: [\n            \"Email\",\n            \"Webhook\",\n        ],\n        contact_group_ids: [\"contact_group_id-xxxx\"],\n        effect_start_at: \"00:00\",\n        effect_end_at: \"23:59\",\n        notify_templates: [{\n            channel: \"email\",\n            notifyTemplateId: \"2049xxxxxxx81664\",\n        }],\n        object_group_id: \"2090xxxxxxxxxx9875456\",\n        webhook_ids: [\"20058xxxxxx87200\"],\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.cloudmonitor.AlertTemplate(\"example\",\n    name=\"ccapi-alert-template-full\",\n    description=\"ccapi cloudmonitor alert template full\",\n    notify_mode=\"Resource\",\n    silence_time=10,\n    no_data={\n        \"enable\": True,\n        \"evaluation_count\": 3,\n        \"level\": \"notice\",\n    },\n    recovery_notify={\n        \"enable\": True,\n    },\n    template_rules=[{\n        \"condition_operator\": \"\u0026\u0026\",\n        \"evaluation_count\": 3,\n        \"evaluation_interval\": 3,\n        \"level_conditions\": [{\n            \"level\": \"warning\",\n            \"conditions\": [{\n                \"comparisonOperator\": \"\u003e\",\n                \"evaluationWindow\": 1,\n                \"metricName\": \"istio_requests_total\",\n                \"metricUnit\": \"Count\",\n                \"statistics\": \"sum\",\n                \"threshold\": \"80\",\n            }],\n        }],\n        \"multiple_conditions\": True,\n        \"name\": \"full-rule\",\n        \"namespace\": \"VCM_AgentKitMcp\",\n        \"sub_namespace\": \"MCP_Service\",\n    }],\n    project_name=\"default\",\n    object_groups=[{\n        \"alert_methods\": [\n            \"Email\",\n            \"Webhook\",\n        ],\n        \"contact_group_ids\": [\"contact_group_id-xxxx\"],\n        \"effect_start_at\": \"00:00\",\n        \"effect_end_at\": \"23:59\",\n        \"notify_templates\": [{\n            \"channel\": \"email\",\n            \"notifyTemplateId\": \"2049xxxxxxx81664\",\n        }],\n        \"object_group_id\": \"2090xxxxxxxxxx9875456\",\n        \"webhook_ids\": [\"20058xxxxxx87200\"],\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Cloudmonitor.AlertTemplate(\"example\", new()\n    {\n        Name = \"ccapi-alert-template-full\",\n        Description = \"ccapi cloudmonitor alert template full\",\n        NotifyMode = \"Resource\",\n        SilenceTime = 10,\n        NoData = new Bytepluscc.Cloudmonitor.Inputs.AlertTemplateNoDataArgs\n        {\n            Enable = true,\n            Evaluation_count = 3,\n            Level = \"notice\",\n        },\n        RecoveryNotify = new Bytepluscc.Cloudmonitor.Inputs.AlertTemplateRecoveryNotifyArgs\n        {\n            Enable = true,\n        },\n        TemplateRules = new[]\n        {\n            new Bytepluscc.Cloudmonitor.Inputs.AlertTemplateTemplateRuleArgs\n            {\n                Condition_operator = \"\u0026\u0026\",\n                Evaluation_count = 3,\n                Evaluation_interval = 3,\n                Level_conditions = new[]\n                {\n                    \n                    {\n                        { \"level\", \"warning\" },\n                        { \"conditions\", new[]\n                        {\n                            \n                            {\n                                { \"comparisonOperator\", \"\u003e\" },\n                                { \"evaluationWindow\", 1 },\n                                { \"metricName\", \"istio_requests_total\" },\n                                { \"metricUnit\", \"Count\" },\n                                { \"statistics\", \"sum\" },\n                                { \"threshold\", \"80\" },\n                            },\n                        } },\n                    },\n                },\n                Multiple_conditions = true,\n                Name = \"full-rule\",\n                Namespace = \"VCM_AgentKitMcp\",\n                Sub_namespace = \"MCP_Service\",\n            },\n        },\n        ProjectName = \"default\",\n        ObjectGroups = new[]\n        {\n            new Bytepluscc.Cloudmonitor.Inputs.AlertTemplateObjectGroupArgs\n            {\n                Alert_methods = new[]\n                {\n                    \"Email\",\n                    \"Webhook\",\n                },\n                Contact_group_ids = new[]\n                {\n                    \"contact_group_id-xxxx\",\n                },\n                Effect_start_at = \"00:00\",\n                Effect_end_at = \"23:59\",\n                Notify_templates = new[]\n                {\n                    \n                    {\n                        { \"channel\", \"email\" },\n                        { \"notifyTemplateId\", \"2049xxxxxxx81664\" },\n                    },\n                },\n                Object_group_id = \"2090xxxxxxxxxx9875456\",\n                Webhook_ids = new[]\n                {\n                    \"20058xxxxxx87200\",\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cloudmonitor\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cloudmonitor.NewAlertTemplate(ctx, \"example\", \u0026cloudmonitor.AlertTemplateArgs{\n\t\t\tName:        pulumi.String(\"ccapi-alert-template-full\"),\n\t\t\tDescription: pulumi.String(\"ccapi cloudmonitor alert template full\"),\n\t\t\tNotifyMode:  pulumi.String(\"Resource\"),\n\t\t\tSilenceTime: pulumi.Int(10),\n\t\t\tNoData: \u0026cloudmonitor.AlertTemplateNoDataArgs{\n\t\t\t\tEnable:           pulumi.Bool(true),\n\t\t\t\tEvaluation_count: 3,\n\t\t\t\tLevel:            pulumi.String(\"notice\"),\n\t\t\t},\n\t\t\tRecoveryNotify: \u0026cloudmonitor.AlertTemplateRecoveryNotifyArgs{\n\t\t\t\tEnable: pulumi.Bool(true),\n\t\t\t},\n\t\t\tTemplateRules: cloudmonitor.AlertTemplateTemplateRuleArray{\n\t\t\t\t\u0026cloudmonitor.AlertTemplateTemplateRuleArgs{\n\t\t\t\t\tCondition_operator:  \"\u0026\u0026\",\n\t\t\t\t\tEvaluation_count:    3,\n\t\t\t\t\tEvaluation_interval: 3,\n\t\t\t\t\tLevel_conditions: []map[string]interface{}{\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"level\": \"warning\",\n\t\t\t\t\t\t\t\"conditions\": []map[string]interface{}{\n\t\t\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\t\t\"comparisonOperator\": \"\u003e\",\n\t\t\t\t\t\t\t\t\t\"evaluationWindow\":   1,\n\t\t\t\t\t\t\t\t\t\"metricName\":         \"istio_requests_total\",\n\t\t\t\t\t\t\t\t\t\"metricUnit\":         \"Count\",\n\t\t\t\t\t\t\t\t\t\"statistics\":         \"sum\",\n\t\t\t\t\t\t\t\t\t\"threshold\":          \"80\",\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tMultiple_conditions: true,\n\t\t\t\t\tName:                pulumi.String(\"full-rule\"),\n\t\t\t\t\tNamespace:           pulumi.String(\"VCM_AgentKitMcp\"),\n\t\t\t\t\tSub_namespace:       \"MCP_Service\",\n\t\t\t\t},\n\t\t\t},\n\t\t\tProjectName: pulumi.String(\"default\"),\n\t\t\tObjectGroups: cloudmonitor.AlertTemplateObjectGroupArray{\n\t\t\t\t\u0026cloudmonitor.AlertTemplateObjectGroupArgs{\n\t\t\t\t\tAlert_methods: []string{\n\t\t\t\t\t\t\"Email\",\n\t\t\t\t\t\t\"Webhook\",\n\t\t\t\t\t},\n\t\t\t\t\tContact_group_ids: []string{\n\t\t\t\t\t\t\"contact_group_id-xxxx\",\n\t\t\t\t\t},\n\t\t\t\t\tEffect_start_at: \"00:00\",\n\t\t\t\t\tEffect_end_at:   \"23:59\",\n\t\t\t\t\tNotify_templates: []map[string]interface{}{\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"channel\":          \"email\",\n\t\t\t\t\t\t\t\"notifyTemplateId\": \"2049xxxxxxx81664\",\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tObject_group_id: \"2090xxxxxxxxxx9875456\",\n\t\t\t\t\tWebhook_ids: []string{\n\t\t\t\t\t\t\"20058xxxxxx87200\",\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_cloudmonitor_alerttemplate\" \"example\" {\n  name         = \"ccapi-alert-template-full\"\n  description  = \"ccapi cloudmonitor alert template full\"\n  notify_mode  = \"Resource\"\n  silence_time = 10\n  no_data = {\n    enable           = true\n    evaluation_count = 3\n    level            = \"notice\"\n  }\n  recovery_notify = {\n    enable = true\n  }\n  template_rules {\n    condition_operator  = \"\u0026\u0026\"\n    evaluation_count    = 3\n    evaluation_interval = 3\n    level_conditions = [{\n      \"level\" = \"warning\"\n      \"conditions\" = [{\n        \"comparisonOperator\" = \"\u003e\"\n        \"evaluationWindow\"   = 1\n        \"metricName\"         = \"istio_requests_total\"\n        \"metricUnit\"         = \"Count\"\n        \"statistics\"         = \"sum\"\n        \"threshold\"          = \"80\"\n      }]\n    }]\n    multiple_conditions = true\n    name                = \"full-rule\"\n    namespace           = \"VCM_AgentKitMcp\"\n    sub_namespace       = \"MCP_Service\"\n  }\n  project_name = \"default\"\n  object_groups {\n    alert_methods     = [\"Email\", \"Webhook\"]\n    contact_group_ids = [\"contact_group_id-xxxx\"]\n    effect_start_at   = \"00:00\"\n    effect_end_at     = \"23:59\"\n    notify_templates = [{\n      \"channel\"          = \"email\"\n      \"notifyTemplateId\" = \"2049xxxxxxx81664\"\n    }]\n    object_group_id = \"2090xxxxxxxxxx9875456\"\n    webhook_ids     = [\"20058xxxxxx87200\"]\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cloudmonitor.AlertTemplate;\nimport com.byteplus.bytepluscc.cloudmonitor.AlertTemplateArgs;\nimport com.pulumi.bytepluscc.cloudmonitor.inputs.AlertTemplateNoDataArgs;\nimport com.pulumi.bytepluscc.cloudmonitor.inputs.AlertTemplateRecoveryNotifyArgs;\nimport com.pulumi.bytepluscc.cloudmonitor.inputs.AlertTemplateTemplateRuleArgs;\nimport com.pulumi.bytepluscc.cloudmonitor.inputs.AlertTemplateObjectGroupArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new AlertTemplate(\"example\", AlertTemplateArgs.builder()\n            .name(\"ccapi-alert-template-full\")\n            .description(\"ccapi cloudmonitor alert template full\")\n            .notifyMode(\"Resource\")\n            .silenceTime(10)\n            .noData(AlertTemplateNoDataArgs.builder()\n                .enable(true)\n                .evaluation_count(3)\n                .level(\"notice\")\n                .build())\n            .recoveryNotify(AlertTemplateRecoveryNotifyArgs.builder()\n                .enable(true)\n                .build())\n            .templateRules(AlertTemplateTemplateRuleArgs.builder()\n                .condition_operator(\"\u0026\u0026\")\n                .evaluation_count(3)\n                .evaluation_interval(3)\n                .level_conditions(Arrays.asList(Map.ofEntries(\n                    Map.entry(\"level\", \"warning\"),\n                    Map.entry(\"conditions\", Arrays.asList(Map.ofEntries(\n                        Map.entry(\"comparisonOperator\", \"\u003e\"),\n                        Map.entry(\"evaluationWindow\", 1),\n                        Map.entry(\"metricName\", \"istio_requests_total\"),\n                        Map.entry(\"metricUnit\", \"Count\"),\n                        Map.entry(\"statistics\", \"sum\"),\n                        Map.entry(\"threshold\", \"80\")\n                    )))\n                )))\n                .multiple_conditions(true)\n                .name(\"full-rule\")\n                .namespace(\"VCM_AgentKitMcp\")\n                .sub_namespace(\"MCP_Service\")\n                .build())\n            .projectName(\"default\")\n            .objectGroups(AlertTemplateObjectGroupArgs.builder()\n                .alert_methods(Arrays.asList(                \n                    \"Email\",\n                    \"Webhook\"))\n                .contact_group_ids(Arrays.asList(\"contact_group_id-xxxx\"))\n                .effect_start_at(\"00:00\")\n                .effect_end_at(\"23:59\")\n                .notify_templates(Arrays.asList(Map.ofEntries(\n                    Map.entry(\"channel\", \"email\"),\n                    Map.entry(\"notifyTemplateId\", \"2049xxxxxxx81664\")\n                )))\n                .object_group_id(\"2090xxxxxxxxxx9875456\")\n                .webhook_ids(Arrays.asList(\"20058xxxxxx87200\"))\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:cloudmonitor:AlertTemplate\n    properties:\n      name: ccapi-alert-template-full\n      description: ccapi cloudmonitor alert template full\n      notifyMode: Resource\n      silenceTime: 10\n      noData:\n        enable: true\n        evaluation_count: 3\n        level: notice\n      recoveryNotify:\n        enable: true\n      templateRules:\n        - condition_operator: '\u0026\u0026'\n          evaluation_count: 3\n          evaluation_interval: 3\n          level_conditions:\n            - level: warning\n              conditions:\n                - comparisonOperator: '\u003e'\n                  evaluationWindow: 1\n                  metricName: istio_requests_total\n                  metricUnit: Count\n                  statistics: sum\n                  threshold: '80'\n          multiple_conditions: true\n          name: full-rule\n          namespace: VCM_AgentKitMcp\n          sub_namespace: MCP_Service\n      projectName: default\n      objectGroups:\n        - alert_methods:\n            - Email\n            - Webhook\n          contact_group_ids:\n            - contact_group_id-xxxx\n          effect_start_at: 00:00\n          effect_end_at: 23:59\n          notify_templates:\n            - channel: email\n              notifyTemplateId: 2049xxxxxxx81664\n          object_group_id: 2090xxxxxxxxxx9875456\n          webhook_ids:\n            - 20058xxxxxx87200\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudmonitor/alertTemplate:AlertTemplate example \"template_id\"\n```\n\n",
             "properties": {
@@ -101458,6 +101798,10 @@
                     "type": "string",
                     "description": "Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.\n"
                 },
+                "renewType": {
+                    "type": "integer",
+                    "description": "Renewal methods for prepaid NAT instances. Possible values:\n-0 (default): Manual renewal\n-2: Automatic renewal\n"
+                },
                 "smartScheduleEnabled": {
                     "type": "boolean",
                     "description": "Whether to enable intelligent scheduling\n"
@@ -101525,6 +101869,7 @@
                 "period",
                 "periodUnit",
                 "projectName",
+                "renewType",
                 "smartScheduleEnabled",
                 "smartScheduleRule",
                 "snatEntryIds",
@@ -101545,6 +101890,10 @@
                     "type": "string",
                     "description": "Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.\n"
                 },
+                "directMode": {
+                    "type": "boolean",
+                    "description": "Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.\n"
+                },
                 "natGatewayName": {
                     "type": "string",
                     "description": "Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.\n"
@@ -101564,6 +101913,10 @@
                 "projectName": {
                     "type": "string",
                     "description": "Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.\n"
+                },
+                "renewType": {
+                    "type": "integer",
+                    "description": "Renewal methods for prepaid NAT instances. Possible values:\n-0 (default): Manual renewal\n-2: Automatic renewal\n"
                 },
                 "smartScheduleEnabled": {
                     "type": "boolean",
@@ -101683,6 +102036,10 @@
                     "projectName": {
                         "type": "string",
                         "description": "Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.\n"
+                    },
+                    "renewType": {
+                        "type": "integer",
+                        "description": "Renewal methods for prepaid NAT instances. Possible values:\n-0 (default): Manual renewal\n-2: Automatic renewal\n"
                     },
                     "smartScheduleEnabled": {
                         "type": "boolean",
@@ -142572,6 +142929,120 @@
                 "type": "object"
             }
         },
+        "bytepluscc:cloudmonitor/getAggregationPolicies:getAggregationPolicies": {
+            "description": "Plural Data Source schema for Byteplus::CloudMonitor::AggregationPolicy\n",
+            "outputs": {
+                "description": "A collection of values returned by getAggregationPolicies.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudmonitor/getAggregationPolicy:getAggregationPolicy": {
+            "description": "Data Source schema for Byteplus::CloudMonitor::AggregationPolicy\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAggregationPolicy.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAggregationPolicy.\n",
+                "properties": {
+                    "aggregations": {
+                        "description": "List of aggregation rules configured by alert level\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/getAggregationPolicyAggregation:getAggregationPolicyAggregation"
+                        },
+                        "type": "array"
+                    },
+                    "associatedAttributes": {
+                        "description": "Associated attributes. RuleIDs: list of associated alert strategy IDs.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudmonitor/getAggregationPolicyAssociatedAttribute:getAggregationPolicyAssociatedAttribute"
+                        },
+                        "type": "array"
+                    },
+                    "createTime": {
+                        "description": "Creation time, Unix timestamp in milliseconds.\n",
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "description": "Creator\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of alert aggregation strategy.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "isDefault": {
+                        "description": "Whether it is the default aggregation strategy.\n",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "Alert aggregation policy name\n",
+                        "type": "string"
+                    },
+                    "resourceId": {
+                        "description": "Alert aggregation strategy ID.\n",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Aggregation strategy type. custom: custom; bound: bound to alert strategy (1:1).\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Update time, Unix timestamp in milliseconds\n",
+                        "type": "integer"
+                    },
+                    "updatedBy": {
+                        "description": "Updated by.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "aggregations",
+                    "associatedAttributes",
+                    "createTime",
+                    "createdBy",
+                    "description",
+                    "id",
+                    "isDefault",
+                    "name",
+                    "resourceId",
+                    "type",
+                    "updateTime",
+                    "updatedBy"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:cloudmonitor/getAlertTemplate:getAlertTemplate": {
             "description": "Data Source schema for Byteplus::CloudMonitor::AlertTemplate\n",
             "inputs": {
@@ -154751,6 +155222,10 @@
                         "description": "Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.\n",
                         "type": "string"
                     },
+                    "renewType": {
+                        "description": "Renewal methods for prepaid NAT instances. Possible values:\n-0 (default): Manual renewal\n-2: Automatic renewal\n",
+                        "type": "integer"
+                    },
                     "smartScheduleEnabled": {
                         "description": "Whether to enable intelligent scheduling\n",
                         "type": "boolean"
@@ -154819,6 +155294,7 @@
                     "period",
                     "periodUnit",
                     "projectName",
+                    "renewType",
                     "smartScheduleEnabled",
                     "smartScheduleRule",
                     "snatEntryIds",

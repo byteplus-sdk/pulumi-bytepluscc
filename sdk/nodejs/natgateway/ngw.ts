@@ -88,7 +88,7 @@ export class Ngw extends pulumi.CustomResource {
     /**
      * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
      */
-    declare public /*out*/ readonly directMode: pulumi.Output<boolean>;
+    declare public readonly directMode: pulumi.Output<boolean>;
     /**
      * DNAT rule ID list.
      */
@@ -143,6 +143,12 @@ export class Ngw extends pulumi.CustomResource {
      * Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
      */
     declare public readonly projectName: pulumi.Output<string>;
+    /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     */
+    declare public readonly renewType: pulumi.Output<number>;
     /**
      * Whether to enable intelligent scheduling
      */
@@ -217,6 +223,7 @@ export class Ngw extends pulumi.CustomResource {
             resourceInputs["period"] = state?.period;
             resourceInputs["periodUnit"] = state?.periodUnit;
             resourceInputs["projectName"] = state?.projectName;
+            resourceInputs["renewType"] = state?.renewType;
             resourceInputs["smartScheduleEnabled"] = state?.smartScheduleEnabled;
             resourceInputs["smartScheduleRule"] = state?.smartScheduleRule;
             resourceInputs["snatEntryIds"] = state?.snatEntryIds;
@@ -234,11 +241,13 @@ export class Ngw extends pulumi.CustomResource {
             }
             resourceInputs["billingType"] = args?.billingType;
             resourceInputs["description"] = args?.description;
+            resourceInputs["directMode"] = args?.directMode;
             resourceInputs["natGatewayName"] = args?.natGatewayName;
             resourceInputs["networkType"] = args?.networkType;
             resourceInputs["period"] = args?.period;
             resourceInputs["periodUnit"] = args?.periodUnit;
             resourceInputs["projectName"] = args?.projectName;
+            resourceInputs["renewType"] = args?.renewType;
             resourceInputs["smartScheduleEnabled"] = args?.smartScheduleEnabled;
             resourceInputs["smartScheduleRule"] = args?.smartScheduleRule;
             resourceInputs["spec"] = args?.spec;
@@ -248,7 +257,6 @@ export class Ngw extends pulumi.CustomResource {
             resourceInputs["businessStatus"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["deletedTime"] = undefined /*out*/;
-            resourceInputs["directMode"] = undefined /*out*/;
             resourceInputs["dnatEntryIds"] = undefined /*out*/;
             resourceInputs["eipAddresses"] = undefined /*out*/;
             resourceInputs["expiredTime"] = undefined /*out*/;
@@ -350,6 +358,12 @@ export interface NgwState {
      */
     projectName?: pulumi.Input<string | undefined>;
     /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     */
+    renewType?: pulumi.Input<number | undefined>;
+    /**
      * Whether to enable intelligent scheduling
      */
     smartScheduleEnabled?: pulumi.Input<boolean | undefined>;
@@ -405,6 +419,10 @@ export interface NgwArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
+     * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+     */
+    directMode?: pulumi.Input<boolean | undefined>;
+    /**
      * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
      */
     natGatewayName?: pulumi.Input<string | undefined>;
@@ -424,6 +442,12 @@ export interface NgwArgs {
      * Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
      */
     projectName?: pulumi.Input<string | undefined>;
+    /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     */
+    renewType?: pulumi.Input<number | undefined>;
     /**
      * Whether to enable intelligent scheduling
      */

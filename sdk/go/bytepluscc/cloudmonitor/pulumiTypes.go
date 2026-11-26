@@ -13,6 +13,431 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AggregationPolicyAggregation struct {
+	// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+	GroupBies []string `pulumi:"groupBies"`
+	// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+	GroupInterval *int `pulumi:"groupInterval"`
+	// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+	GroupWait *int `pulumi:"groupWait"`
+	// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+	Level *string `pulumi:"level"`
+	// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+	RepeatDowngrade *AggregationPolicyAggregationRepeatDowngrade `pulumi:"repeatDowngrade"`
+	// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+	RepeatInterval *int `pulumi:"repeatInterval"`
+}
+
+// AggregationPolicyAggregationInput is an input type that accepts AggregationPolicyAggregationArgs and AggregationPolicyAggregationOutput values.
+// You can construct a concrete instance of `AggregationPolicyAggregationInput` via:
+//
+//	AggregationPolicyAggregationArgs{...}
+type AggregationPolicyAggregationInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAggregationOutput() AggregationPolicyAggregationOutput
+	ToAggregationPolicyAggregationOutputWithContext(context.Context) AggregationPolicyAggregationOutput
+}
+
+type AggregationPolicyAggregationArgs struct {
+	// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+	GroupInterval pulumi.IntPtrInput `pulumi:"groupInterval"`
+	// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+	GroupWait pulumi.IntPtrInput `pulumi:"groupWait"`
+	// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+	Level pulumi.StringPtrInput `pulumi:"level"`
+	// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+	RepeatDowngrade AggregationPolicyAggregationRepeatDowngradePtrInput `pulumi:"repeatDowngrade"`
+	// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+	RepeatInterval pulumi.IntPtrInput `pulumi:"repeatInterval"`
+}
+
+func (AggregationPolicyAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (i AggregationPolicyAggregationArgs) ToAggregationPolicyAggregationOutput() AggregationPolicyAggregationOutput {
+	return i.ToAggregationPolicyAggregationOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAggregationArgs) ToAggregationPolicyAggregationOutputWithContext(ctx context.Context) AggregationPolicyAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAggregationOutput)
+}
+
+// AggregationPolicyAggregationArrayInput is an input type that accepts AggregationPolicyAggregationArray and AggregationPolicyAggregationArrayOutput values.
+// You can construct a concrete instance of `AggregationPolicyAggregationArrayInput` via:
+//
+//	AggregationPolicyAggregationArray{ AggregationPolicyAggregationArgs{...} }
+type AggregationPolicyAggregationArrayInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAggregationArrayOutput() AggregationPolicyAggregationArrayOutput
+	ToAggregationPolicyAggregationArrayOutputWithContext(context.Context) AggregationPolicyAggregationArrayOutput
+}
+
+type AggregationPolicyAggregationArray []AggregationPolicyAggregationInput
+
+func (AggregationPolicyAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (i AggregationPolicyAggregationArray) ToAggregationPolicyAggregationArrayOutput() AggregationPolicyAggregationArrayOutput {
+	return i.ToAggregationPolicyAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAggregationArray) ToAggregationPolicyAggregationArrayOutputWithContext(ctx context.Context) AggregationPolicyAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAggregationArrayOutput)
+}
+
+type AggregationPolicyAggregationOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (o AggregationPolicyAggregationOutput) ToAggregationPolicyAggregationOutput() AggregationPolicyAggregationOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationOutput) ToAggregationPolicyAggregationOutputWithContext(ctx context.Context) AggregationPolicyAggregationOutput {
+	return o
+}
+
+// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+func (o AggregationPolicyAggregationOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+func (o AggregationPolicyAggregationOutput) GroupInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) *int { return v.GroupInterval }).(pulumi.IntPtrOutput)
+}
+
+// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+func (o AggregationPolicyAggregationOutput) GroupWait() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) *int { return v.GroupWait }).(pulumi.IntPtrOutput)
+}
+
+// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+func (o AggregationPolicyAggregationOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
+// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+func (o AggregationPolicyAggregationOutput) RepeatDowngrade() AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) *AggregationPolicyAggregationRepeatDowngrade {
+		return v.RepeatDowngrade
+	}).(AggregationPolicyAggregationRepeatDowngradePtrOutput)
+}
+
+// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+func (o AggregationPolicyAggregationOutput) RepeatInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregation) *int { return v.RepeatInterval }).(pulumi.IntPtrOutput)
+}
+
+type AggregationPolicyAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (o AggregationPolicyAggregationArrayOutput) ToAggregationPolicyAggregationArrayOutput() AggregationPolicyAggregationArrayOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationArrayOutput) ToAggregationPolicyAggregationArrayOutputWithContext(ctx context.Context) AggregationPolicyAggregationArrayOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationArrayOutput) Index(i pulumi.IntInput) AggregationPolicyAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AggregationPolicyAggregation {
+		return vs[0].([]AggregationPolicyAggregation)[vs[1].(int)]
+	}).(AggregationPolicyAggregationOutput)
+}
+
+type AggregationPolicyAggregationRepeatDowngrade struct {
+	// Enable notification frequency reduction.
+	Enable *bool `pulumi:"enable"`
+	// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+	MaxRepeatInterval *int `pulumi:"maxRepeatInterval"`
+	// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+	Mode *string `pulumi:"mode"`
+}
+
+// AggregationPolicyAggregationRepeatDowngradeInput is an input type that accepts AggregationPolicyAggregationRepeatDowngradeArgs and AggregationPolicyAggregationRepeatDowngradeOutput values.
+// You can construct a concrete instance of `AggregationPolicyAggregationRepeatDowngradeInput` via:
+//
+//	AggregationPolicyAggregationRepeatDowngradeArgs{...}
+type AggregationPolicyAggregationRepeatDowngradeInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAggregationRepeatDowngradeOutput() AggregationPolicyAggregationRepeatDowngradeOutput
+	ToAggregationPolicyAggregationRepeatDowngradeOutputWithContext(context.Context) AggregationPolicyAggregationRepeatDowngradeOutput
+}
+
+type AggregationPolicyAggregationRepeatDowngradeArgs struct {
+	// Enable notification frequency reduction.
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+	MaxRepeatInterval pulumi.IntPtrInput `pulumi:"maxRepeatInterval"`
+	// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+}
+
+func (AggregationPolicyAggregationRepeatDowngradeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (i AggregationPolicyAggregationRepeatDowngradeArgs) ToAggregationPolicyAggregationRepeatDowngradeOutput() AggregationPolicyAggregationRepeatDowngradeOutput {
+	return i.ToAggregationPolicyAggregationRepeatDowngradeOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAggregationRepeatDowngradeArgs) ToAggregationPolicyAggregationRepeatDowngradeOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAggregationRepeatDowngradeOutput)
+}
+
+func (i AggregationPolicyAggregationRepeatDowngradeArgs) ToAggregationPolicyAggregationRepeatDowngradePtrOutput() AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return i.ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAggregationRepeatDowngradeArgs) ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAggregationRepeatDowngradeOutput).ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(ctx)
+}
+
+// AggregationPolicyAggregationRepeatDowngradePtrInput is an input type that accepts AggregationPolicyAggregationRepeatDowngradeArgs, AggregationPolicyAggregationRepeatDowngradePtr and AggregationPolicyAggregationRepeatDowngradePtrOutput values.
+// You can construct a concrete instance of `AggregationPolicyAggregationRepeatDowngradePtrInput` via:
+//
+//	        AggregationPolicyAggregationRepeatDowngradeArgs{...}
+//
+//	or:
+//
+//	        nil
+type AggregationPolicyAggregationRepeatDowngradePtrInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAggregationRepeatDowngradePtrOutput() AggregationPolicyAggregationRepeatDowngradePtrOutput
+	ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(context.Context) AggregationPolicyAggregationRepeatDowngradePtrOutput
+}
+
+type aggregationPolicyAggregationRepeatDowngradePtrType AggregationPolicyAggregationRepeatDowngradeArgs
+
+func AggregationPolicyAggregationRepeatDowngradePtr(v *AggregationPolicyAggregationRepeatDowngradeArgs) AggregationPolicyAggregationRepeatDowngradePtrInput {
+	return (*aggregationPolicyAggregationRepeatDowngradePtrType)(v)
+}
+
+func (*aggregationPolicyAggregationRepeatDowngradePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (i *aggregationPolicyAggregationRepeatDowngradePtrType) ToAggregationPolicyAggregationRepeatDowngradePtrOutput() AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return i.ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(context.Background())
+}
+
+func (i *aggregationPolicyAggregationRepeatDowngradePtrType) ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAggregationRepeatDowngradePtrOutput)
+}
+
+type AggregationPolicyAggregationRepeatDowngradeOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAggregationRepeatDowngradeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) ToAggregationPolicyAggregationRepeatDowngradeOutput() AggregationPolicyAggregationRepeatDowngradeOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) ToAggregationPolicyAggregationRepeatDowngradeOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradeOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) ToAggregationPolicyAggregationRepeatDowngradePtrOutput() AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return o.ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(context.Background())
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AggregationPolicyAggregationRepeatDowngrade) *AggregationPolicyAggregationRepeatDowngrade {
+		return &v
+	}).(AggregationPolicyAggregationRepeatDowngradePtrOutput)
+}
+
+// Enable notification frequency reduction.
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregationRepeatDowngrade) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) MaxRepeatInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregationRepeatDowngrade) *int { return v.MaxRepeatInterval }).(pulumi.IntPtrOutput)
+}
+
+// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+func (o AggregationPolicyAggregationRepeatDowngradeOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAggregationRepeatDowngrade) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+type AggregationPolicyAggregationRepeatDowngradePtrOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAggregationRepeatDowngradePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) ToAggregationPolicyAggregationRepeatDowngradePtrOutput() AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) ToAggregationPolicyAggregationRepeatDowngradePtrOutputWithContext(ctx context.Context) AggregationPolicyAggregationRepeatDowngradePtrOutput {
+	return o
+}
+
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) Elem() AggregationPolicyAggregationRepeatDowngradeOutput {
+	return o.ApplyT(func(v *AggregationPolicyAggregationRepeatDowngrade) AggregationPolicyAggregationRepeatDowngrade {
+		if v != nil {
+			return *v
+		}
+		var ret AggregationPolicyAggregationRepeatDowngrade
+		return ret
+	}).(AggregationPolicyAggregationRepeatDowngradeOutput)
+}
+
+// Enable notification frequency reduction.
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AggregationPolicyAggregationRepeatDowngrade) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) MaxRepeatInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AggregationPolicyAggregationRepeatDowngrade) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxRepeatInterval
+	}).(pulumi.IntPtrOutput)
+}
+
+// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+func (o AggregationPolicyAggregationRepeatDowngradePtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AggregationPolicyAggregationRepeatDowngrade) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AggregationPolicyAssociatedAttribute struct {
+	// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+	Name *string `pulumi:"name"`
+	// List of attribute values.
+	Values []string `pulumi:"values"`
+}
+
+// AggregationPolicyAssociatedAttributeInput is an input type that accepts AggregationPolicyAssociatedAttributeArgs and AggregationPolicyAssociatedAttributeOutput values.
+// You can construct a concrete instance of `AggregationPolicyAssociatedAttributeInput` via:
+//
+//	AggregationPolicyAssociatedAttributeArgs{...}
+type AggregationPolicyAssociatedAttributeInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAssociatedAttributeOutput() AggregationPolicyAssociatedAttributeOutput
+	ToAggregationPolicyAssociatedAttributeOutputWithContext(context.Context) AggregationPolicyAssociatedAttributeOutput
+}
+
+type AggregationPolicyAssociatedAttributeArgs struct {
+	// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// List of attribute values.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (AggregationPolicyAssociatedAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (i AggregationPolicyAssociatedAttributeArgs) ToAggregationPolicyAssociatedAttributeOutput() AggregationPolicyAssociatedAttributeOutput {
+	return i.ToAggregationPolicyAssociatedAttributeOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAssociatedAttributeArgs) ToAggregationPolicyAssociatedAttributeOutputWithContext(ctx context.Context) AggregationPolicyAssociatedAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAssociatedAttributeOutput)
+}
+
+// AggregationPolicyAssociatedAttributeArrayInput is an input type that accepts AggregationPolicyAssociatedAttributeArray and AggregationPolicyAssociatedAttributeArrayOutput values.
+// You can construct a concrete instance of `AggregationPolicyAssociatedAttributeArrayInput` via:
+//
+//	AggregationPolicyAssociatedAttributeArray{ AggregationPolicyAssociatedAttributeArgs{...} }
+type AggregationPolicyAssociatedAttributeArrayInput interface {
+	pulumi.Input
+
+	ToAggregationPolicyAssociatedAttributeArrayOutput() AggregationPolicyAssociatedAttributeArrayOutput
+	ToAggregationPolicyAssociatedAttributeArrayOutputWithContext(context.Context) AggregationPolicyAssociatedAttributeArrayOutput
+}
+
+type AggregationPolicyAssociatedAttributeArray []AggregationPolicyAssociatedAttributeInput
+
+func (AggregationPolicyAssociatedAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (i AggregationPolicyAssociatedAttributeArray) ToAggregationPolicyAssociatedAttributeArrayOutput() AggregationPolicyAssociatedAttributeArrayOutput {
+	return i.ToAggregationPolicyAssociatedAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i AggregationPolicyAssociatedAttributeArray) ToAggregationPolicyAssociatedAttributeArrayOutputWithContext(ctx context.Context) AggregationPolicyAssociatedAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AggregationPolicyAssociatedAttributeArrayOutput)
+}
+
+type AggregationPolicyAssociatedAttributeOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAssociatedAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (o AggregationPolicyAssociatedAttributeOutput) ToAggregationPolicyAssociatedAttributeOutput() AggregationPolicyAssociatedAttributeOutput {
+	return o
+}
+
+func (o AggregationPolicyAssociatedAttributeOutput) ToAggregationPolicyAssociatedAttributeOutputWithContext(ctx context.Context) AggregationPolicyAssociatedAttributeOutput {
+	return o
+}
+
+// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+func (o AggregationPolicyAssociatedAttributeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AggregationPolicyAssociatedAttribute) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// List of attribute values.
+func (o AggregationPolicyAssociatedAttributeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AggregationPolicyAssociatedAttribute) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type AggregationPolicyAssociatedAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (AggregationPolicyAssociatedAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (o AggregationPolicyAssociatedAttributeArrayOutput) ToAggregationPolicyAssociatedAttributeArrayOutput() AggregationPolicyAssociatedAttributeArrayOutput {
+	return o
+}
+
+func (o AggregationPolicyAssociatedAttributeArrayOutput) ToAggregationPolicyAssociatedAttributeArrayOutputWithContext(ctx context.Context) AggregationPolicyAssociatedAttributeArrayOutput {
+	return o
+}
+
+func (o AggregationPolicyAssociatedAttributeArrayOutput) Index(i pulumi.IntInput) AggregationPolicyAssociatedAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AggregationPolicyAssociatedAttribute {
+		return vs[0].([]AggregationPolicyAssociatedAttribute)[vs[1].(int)]
+	}).(AggregationPolicyAssociatedAttributeOutput)
+}
+
 type AlertTemplateNoData struct {
 	// Enable no data alert
 	Enable *bool `pulumi:"enable"`
@@ -4896,6 +5321,326 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 	}).(RuleTagOutput)
 }
 
+type GetAggregationPolicyAggregation struct {
+	// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+	GroupBies []string `pulumi:"groupBies"`
+	// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+	GroupInterval int `pulumi:"groupInterval"`
+	// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+	GroupWait int `pulumi:"groupWait"`
+	// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+	Level string `pulumi:"level"`
+	// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+	RepeatDowngrade GetAggregationPolicyAggregationRepeatDowngrade `pulumi:"repeatDowngrade"`
+	// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+	RepeatInterval int `pulumi:"repeatInterval"`
+}
+
+// GetAggregationPolicyAggregationInput is an input type that accepts GetAggregationPolicyAggregationArgs and GetAggregationPolicyAggregationOutput values.
+// You can construct a concrete instance of `GetAggregationPolicyAggregationInput` via:
+//
+//	GetAggregationPolicyAggregationArgs{...}
+type GetAggregationPolicyAggregationInput interface {
+	pulumi.Input
+
+	ToGetAggregationPolicyAggregationOutput() GetAggregationPolicyAggregationOutput
+	ToGetAggregationPolicyAggregationOutputWithContext(context.Context) GetAggregationPolicyAggregationOutput
+}
+
+type GetAggregationPolicyAggregationArgs struct {
+	// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+	GroupInterval pulumi.IntInput `pulumi:"groupInterval"`
+	// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+	GroupWait pulumi.IntInput `pulumi:"groupWait"`
+	// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+	Level pulumi.StringInput `pulumi:"level"`
+	// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+	RepeatDowngrade GetAggregationPolicyAggregationRepeatDowngradeInput `pulumi:"repeatDowngrade"`
+	// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+	RepeatInterval pulumi.IntInput `pulumi:"repeatInterval"`
+}
+
+func (GetAggregationPolicyAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (i GetAggregationPolicyAggregationArgs) ToGetAggregationPolicyAggregationOutput() GetAggregationPolicyAggregationOutput {
+	return i.ToGetAggregationPolicyAggregationOutputWithContext(context.Background())
+}
+
+func (i GetAggregationPolicyAggregationArgs) ToGetAggregationPolicyAggregationOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAggregationPolicyAggregationOutput)
+}
+
+// GetAggregationPolicyAggregationArrayInput is an input type that accepts GetAggregationPolicyAggregationArray and GetAggregationPolicyAggregationArrayOutput values.
+// You can construct a concrete instance of `GetAggregationPolicyAggregationArrayInput` via:
+//
+//	GetAggregationPolicyAggregationArray{ GetAggregationPolicyAggregationArgs{...} }
+type GetAggregationPolicyAggregationArrayInput interface {
+	pulumi.Input
+
+	ToGetAggregationPolicyAggregationArrayOutput() GetAggregationPolicyAggregationArrayOutput
+	ToGetAggregationPolicyAggregationArrayOutputWithContext(context.Context) GetAggregationPolicyAggregationArrayOutput
+}
+
+type GetAggregationPolicyAggregationArray []GetAggregationPolicyAggregationInput
+
+func (GetAggregationPolicyAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (i GetAggregationPolicyAggregationArray) ToGetAggregationPolicyAggregationArrayOutput() GetAggregationPolicyAggregationArrayOutput {
+	return i.ToGetAggregationPolicyAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAggregationPolicyAggregationArray) ToGetAggregationPolicyAggregationArrayOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAggregationPolicyAggregationArrayOutput)
+}
+
+type GetAggregationPolicyAggregationOutput struct{ *pulumi.OutputState }
+
+func (GetAggregationPolicyAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (o GetAggregationPolicyAggregationOutput) ToGetAggregationPolicyAggregationOutput() GetAggregationPolicyAggregationOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAggregationOutput) ToGetAggregationPolicyAggregationOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationOutput {
+	return o
+}
+
+// Alert group fields, default [rule*id+region]. Currently only supports: 1. rule*id+region grouping, i.e., default grouping by severity. 2. Any rule*id+region+* grouping, i.e., each faulty resource forms a separate group, notification cycle is not affected by other faulty resources; in this mode, GroupWait/GroupInterval are not effective, default is 0. 3. rule*id+region+keys grouping based on actual alert group fields, grouped by key match and value. For example, rule_id+region+namespace+cluster+pod, each namespace+cluster+pod combination forms a separate group, notification cycle is not affected by other faulty resources; this method requires configuring a fallback aggregation strategy.
+func (o GetAggregationPolicyAggregationOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// Alert group wait interval for the 2nd to Nth times, in seconds, range is 5 seconds to 24 hours. If there is a new alert or recovery in the alert group, send immediately after GroupInterval and recalculate RepeatInterval.
+func (o GetAggregationPolicyAggregationOutput) GroupInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) int { return v.GroupInterval }).(pulumi.IntOutput)
+}
+
+// Alert group initial wait time, in seconds, range is 5 seconds to 24 hours. If not specified, defaults to GroupInterval.
+func (o GetAggregationPolicyAggregationOutput) GroupWait() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) int { return v.GroupWait }).(pulumi.IntOutput)
+}
+
+// Alert severity, supports p0/p1/p2/all. all indicates the fallback aggregation strategy, meaning alerts are aggregated without distinguishing severity, but messages are still sent separately by severity. If not all p0/p1/p2 levels are configured, the "all" fallback strategy must be configured.
+func (o GetAggregationPolicyAggregationOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) string { return v.Level }).(pulumi.StringOutput)
+}
+
+// Notification frequency reduction configuration. Note: P0 does not support notification frequency reduction, while P1/P2 do.
+func (o GetAggregationPolicyAggregationOutput) RepeatDowngrade() GetAggregationPolicyAggregationRepeatDowngradeOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) GetAggregationPolicyAggregationRepeatDowngrade {
+		return v.RepeatDowngrade
+	}).(GetAggregationPolicyAggregationRepeatDowngradeOutput)
+}
+
+// Alert repeat notification interval, in seconds, range is 1 minute to 24 hours.
+func (o GetAggregationPolicyAggregationOutput) RepeatInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregation) int { return v.RepeatInterval }).(pulumi.IntOutput)
+}
+
+type GetAggregationPolicyAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAggregationPolicyAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAggregationPolicyAggregation)(nil)).Elem()
+}
+
+func (o GetAggregationPolicyAggregationArrayOutput) ToGetAggregationPolicyAggregationArrayOutput() GetAggregationPolicyAggregationArrayOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAggregationArrayOutput) ToGetAggregationPolicyAggregationArrayOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationArrayOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAggregationArrayOutput) Index(i pulumi.IntInput) GetAggregationPolicyAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregationPolicyAggregation {
+		return vs[0].([]GetAggregationPolicyAggregation)[vs[1].(int)]
+	}).(GetAggregationPolicyAggregationOutput)
+}
+
+type GetAggregationPolicyAggregationRepeatDowngrade struct {
+	// Enable notification frequency reduction.
+	Enable bool `pulumi:"enable"`
+	// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+	MaxRepeatInterval int `pulumi:"maxRepeatInterval"`
+	// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+	Mode string `pulumi:"mode"`
+}
+
+// GetAggregationPolicyAggregationRepeatDowngradeInput is an input type that accepts GetAggregationPolicyAggregationRepeatDowngradeArgs and GetAggregationPolicyAggregationRepeatDowngradeOutput values.
+// You can construct a concrete instance of `GetAggregationPolicyAggregationRepeatDowngradeInput` via:
+//
+//	GetAggregationPolicyAggregationRepeatDowngradeArgs{...}
+type GetAggregationPolicyAggregationRepeatDowngradeInput interface {
+	pulumi.Input
+
+	ToGetAggregationPolicyAggregationRepeatDowngradeOutput() GetAggregationPolicyAggregationRepeatDowngradeOutput
+	ToGetAggregationPolicyAggregationRepeatDowngradeOutputWithContext(context.Context) GetAggregationPolicyAggregationRepeatDowngradeOutput
+}
+
+type GetAggregationPolicyAggregationRepeatDowngradeArgs struct {
+	// Enable notification frequency reduction.
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+	MaxRepeatInterval pulumi.IntInput `pulumi:"maxRepeatInterval"`
+	// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+	Mode pulumi.StringInput `pulumi:"mode"`
+}
+
+func (GetAggregationPolicyAggregationRepeatDowngradeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (i GetAggregationPolicyAggregationRepeatDowngradeArgs) ToGetAggregationPolicyAggregationRepeatDowngradeOutput() GetAggregationPolicyAggregationRepeatDowngradeOutput {
+	return i.ToGetAggregationPolicyAggregationRepeatDowngradeOutputWithContext(context.Background())
+}
+
+func (i GetAggregationPolicyAggregationRepeatDowngradeArgs) ToGetAggregationPolicyAggregationRepeatDowngradeOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationRepeatDowngradeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAggregationPolicyAggregationRepeatDowngradeOutput)
+}
+
+type GetAggregationPolicyAggregationRepeatDowngradeOutput struct{ *pulumi.OutputState }
+
+func (GetAggregationPolicyAggregationRepeatDowngradeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAggregationRepeatDowngrade)(nil)).Elem()
+}
+
+func (o GetAggregationPolicyAggregationRepeatDowngradeOutput) ToGetAggregationPolicyAggregationRepeatDowngradeOutput() GetAggregationPolicyAggregationRepeatDowngradeOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAggregationRepeatDowngradeOutput) ToGetAggregationPolicyAggregationRepeatDowngradeOutputWithContext(ctx context.Context) GetAggregationPolicyAggregationRepeatDowngradeOutput {
+	return o
+}
+
+// Enable notification frequency reduction.
+func (o GetAggregationPolicyAggregationRepeatDowngradeOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregationRepeatDowngrade) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// Maximum repeat send interval, in seconds. Frequency reduction stops when this value is exceeded. Default is 24 hours (86400 seconds).
+func (o GetAggregationPolicyAggregationRepeatDowngradeOutput) MaxRepeatInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregationRepeatDowngrade) int { return v.MaxRepeatInterval }).(pulumi.IntOutput)
+}
+
+// Frequency reduction mode, currently only supports doubled. doubled means each time the frequency is reduced, the repeat send interval is multiplied by 2 until MaxRepeatInterval.
+func (o GetAggregationPolicyAggregationRepeatDowngradeOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAggregationRepeatDowngrade) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+type GetAggregationPolicyAssociatedAttribute struct {
+	// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+	Name string `pulumi:"name"`
+	// List of attribute values.
+	Values []string `pulumi:"values"`
+}
+
+// GetAggregationPolicyAssociatedAttributeInput is an input type that accepts GetAggregationPolicyAssociatedAttributeArgs and GetAggregationPolicyAssociatedAttributeOutput values.
+// You can construct a concrete instance of `GetAggregationPolicyAssociatedAttributeInput` via:
+//
+//	GetAggregationPolicyAssociatedAttributeArgs{...}
+type GetAggregationPolicyAssociatedAttributeInput interface {
+	pulumi.Input
+
+	ToGetAggregationPolicyAssociatedAttributeOutput() GetAggregationPolicyAssociatedAttributeOutput
+	ToGetAggregationPolicyAssociatedAttributeOutputWithContext(context.Context) GetAggregationPolicyAssociatedAttributeOutput
+}
+
+type GetAggregationPolicyAssociatedAttributeArgs struct {
+	// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of attribute values.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAggregationPolicyAssociatedAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (i GetAggregationPolicyAssociatedAttributeArgs) ToGetAggregationPolicyAssociatedAttributeOutput() GetAggregationPolicyAssociatedAttributeOutput {
+	return i.ToGetAggregationPolicyAssociatedAttributeOutputWithContext(context.Background())
+}
+
+func (i GetAggregationPolicyAssociatedAttributeArgs) ToGetAggregationPolicyAssociatedAttributeOutputWithContext(ctx context.Context) GetAggregationPolicyAssociatedAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAggregationPolicyAssociatedAttributeOutput)
+}
+
+// GetAggregationPolicyAssociatedAttributeArrayInput is an input type that accepts GetAggregationPolicyAssociatedAttributeArray and GetAggregationPolicyAssociatedAttributeArrayOutput values.
+// You can construct a concrete instance of `GetAggregationPolicyAssociatedAttributeArrayInput` via:
+//
+//	GetAggregationPolicyAssociatedAttributeArray{ GetAggregationPolicyAssociatedAttributeArgs{...} }
+type GetAggregationPolicyAssociatedAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetAggregationPolicyAssociatedAttributeArrayOutput() GetAggregationPolicyAssociatedAttributeArrayOutput
+	ToGetAggregationPolicyAssociatedAttributeArrayOutputWithContext(context.Context) GetAggregationPolicyAssociatedAttributeArrayOutput
+}
+
+type GetAggregationPolicyAssociatedAttributeArray []GetAggregationPolicyAssociatedAttributeInput
+
+func (GetAggregationPolicyAssociatedAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (i GetAggregationPolicyAssociatedAttributeArray) ToGetAggregationPolicyAssociatedAttributeArrayOutput() GetAggregationPolicyAssociatedAttributeArrayOutput {
+	return i.ToGetAggregationPolicyAssociatedAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAggregationPolicyAssociatedAttributeArray) ToGetAggregationPolicyAssociatedAttributeArrayOutputWithContext(ctx context.Context) GetAggregationPolicyAssociatedAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAggregationPolicyAssociatedAttributeArrayOutput)
+}
+
+type GetAggregationPolicyAssociatedAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetAggregationPolicyAssociatedAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (o GetAggregationPolicyAssociatedAttributeOutput) ToGetAggregationPolicyAssociatedAttributeOutput() GetAggregationPolicyAssociatedAttributeOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAssociatedAttributeOutput) ToGetAggregationPolicyAssociatedAttributeOutputWithContext(ctx context.Context) GetAggregationPolicyAssociatedAttributeOutput {
+	return o
+}
+
+// Attribute name. CloudMonitor supports Namespace, SubNamespace; VMP supports WorkspaceID; Cloud probe supports DetectTaskID; APMPlus Server supports ServiceName, Workspace; APMPlus Client TBD.
+func (o GetAggregationPolicyAssociatedAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAssociatedAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of attribute values.
+func (o GetAggregationPolicyAssociatedAttributeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAggregationPolicyAssociatedAttribute) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAggregationPolicyAssociatedAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAggregationPolicyAssociatedAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAggregationPolicyAssociatedAttribute)(nil)).Elem()
+}
+
+func (o GetAggregationPolicyAssociatedAttributeArrayOutput) ToGetAggregationPolicyAssociatedAttributeArrayOutput() GetAggregationPolicyAssociatedAttributeArrayOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAssociatedAttributeArrayOutput) ToGetAggregationPolicyAssociatedAttributeArrayOutputWithContext(ctx context.Context) GetAggregationPolicyAssociatedAttributeArrayOutput {
+	return o
+}
+
+func (o GetAggregationPolicyAssociatedAttributeArrayOutput) Index(i pulumi.IntInput) GetAggregationPolicyAssociatedAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregationPolicyAssociatedAttribute {
+		return vs[0].([]GetAggregationPolicyAssociatedAttribute)[vs[1].(int)]
+	}).(GetAggregationPolicyAssociatedAttributeOutput)
+}
+
 type GetAlertTemplateNoData struct {
 	// Enable no data alert
 	Enable bool `pulumi:"enable"`
@@ -8334,6 +9079,12 @@ func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAggregationInput)(nil)).Elem(), AggregationPolicyAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAggregationArrayInput)(nil)).Elem(), AggregationPolicyAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAggregationRepeatDowngradeInput)(nil)).Elem(), AggregationPolicyAggregationRepeatDowngradeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAggregationRepeatDowngradePtrInput)(nil)).Elem(), AggregationPolicyAggregationRepeatDowngradeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAssociatedAttributeInput)(nil)).Elem(), AggregationPolicyAssociatedAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AggregationPolicyAssociatedAttributeArrayInput)(nil)).Elem(), AggregationPolicyAssociatedAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateNoDataInput)(nil)).Elem(), AlertTemplateNoDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateNoDataPtrInput)(nil)).Elem(), AlertTemplateNoDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTemplateObjectGroupInput)(nil)).Elem(), AlertTemplateObjectGroupArgs{})
@@ -8402,6 +9153,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRecoveryNotifyPtrInput)(nil)).Elem(), RuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagArrayInput)(nil)).Elem(), RuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAggregationPolicyAggregationInput)(nil)).Elem(), GetAggregationPolicyAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAggregationPolicyAggregationArrayInput)(nil)).Elem(), GetAggregationPolicyAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAggregationPolicyAggregationRepeatDowngradeInput)(nil)).Elem(), GetAggregationPolicyAggregationRepeatDowngradeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAggregationPolicyAssociatedAttributeInput)(nil)).Elem(), GetAggregationPolicyAssociatedAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAggregationPolicyAssociatedAttributeArrayInput)(nil)).Elem(), GetAggregationPolicyAssociatedAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateNoDataInput)(nil)).Elem(), GetAlertTemplateNoDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupInput)(nil)).Elem(), GetAlertTemplateObjectGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertTemplateObjectGroupArrayInput)(nil)).Elem(), GetAlertTemplateObjectGroupArray{})
@@ -8455,6 +9211,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRecoveryNotifyInput)(nil)).Elem(), GetRuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
+	pulumi.RegisterOutputType(AggregationPolicyAggregationOutput{})
+	pulumi.RegisterOutputType(AggregationPolicyAggregationArrayOutput{})
+	pulumi.RegisterOutputType(AggregationPolicyAggregationRepeatDowngradeOutput{})
+	pulumi.RegisterOutputType(AggregationPolicyAggregationRepeatDowngradePtrOutput{})
+	pulumi.RegisterOutputType(AggregationPolicyAssociatedAttributeOutput{})
+	pulumi.RegisterOutputType(AggregationPolicyAssociatedAttributeArrayOutput{})
 	pulumi.RegisterOutputType(AlertTemplateNoDataOutput{})
 	pulumi.RegisterOutputType(AlertTemplateNoDataPtrOutput{})
 	pulumi.RegisterOutputType(AlertTemplateObjectGroupOutput{})
@@ -8523,6 +9285,11 @@ func init() {
 	pulumi.RegisterOutputType(RuleRecoveryNotifyPtrOutput{})
 	pulumi.RegisterOutputType(RuleTagOutput{})
 	pulumi.RegisterOutputType(RuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAggregationPolicyAggregationOutput{})
+	pulumi.RegisterOutputType(GetAggregationPolicyAggregationArrayOutput{})
+	pulumi.RegisterOutputType(GetAggregationPolicyAggregationRepeatDowngradeOutput{})
+	pulumi.RegisterOutputType(GetAggregationPolicyAssociatedAttributeOutput{})
+	pulumi.RegisterOutputType(GetAggregationPolicyAssociatedAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertTemplateNoDataOutput{})
 	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupOutput{})
 	pulumi.RegisterOutputType(GetAlertTemplateObjectGroupArrayOutput{})

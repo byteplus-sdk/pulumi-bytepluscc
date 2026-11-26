@@ -1278,6 +1278,31 @@
             "bytepluscc_cloudidentity_user_provisioning": {
                 "current": "bytepluscc:cloudidentity/userProvisioning:UserProvisioning"
             },
+            "bytepluscc_cloudmonitor_aggregation_policy": {
+                "current": "bytepluscc:cloudmonitor/aggregationPolicy:AggregationPolicy",
+                "fields": {
+                    "aggregations": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "group_by": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "associated_attributes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_alert_template": {
                 "current": "bytepluscc:cloudmonitor/alertTemplate:AlertTemplate",
                 "fields": {
@@ -7067,6 +7092,39 @@
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_aggregation_policies": {
+                "current": "bytepluscc:cloudmonitor/getAggregationPolicies:getAggregationPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_aggregation_policy": {
+                "current": "bytepluscc:cloudmonitor/getAggregationPolicy:getAggregationPolicy",
+                "fields": {
+                    "aggregations": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "group_by": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "associated_attributes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -13371,6 +13429,7 @@
             "bytepluscc_cloudidentity_permission_set_provisioning": {},
             "bytepluscc_cloudidentity_user": {},
             "bytepluscc_cloudidentity_user_provisioning": {},
+            "bytepluscc_cloudmonitor_aggregation_policy": {},
             "bytepluscc_cloudmonitor_alert_template": {},
             "bytepluscc_cloudmonitor_contact": {},
             "bytepluscc_cloudmonitor_contact_group": {},

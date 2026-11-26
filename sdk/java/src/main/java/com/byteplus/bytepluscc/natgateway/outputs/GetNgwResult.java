@@ -117,6 +117,13 @@ public final class GetNgwResult {
      */
     private String projectName;
     /**
+     * @return Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    private Integer renewType;
+    /**
      * @return Whether to enable intelligent scheduling
      * 
      */
@@ -309,6 +316,15 @@ public final class GetNgwResult {
         return this.projectName;
     }
     /**
+     * @return Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    public Integer renewType() {
+        return this.renewType;
+    }
+    /**
      * @return Whether to enable intelligent scheduling
      * 
      */
@@ -408,6 +424,7 @@ public final class GetNgwResult {
         private Integer period;
         private String periodUnit;
         private String projectName;
+        private Integer renewType;
         private Boolean smartScheduleEnabled;
         private String smartScheduleRule;
         private List<String> snatEntryIds;
@@ -441,6 +458,7 @@ public final class GetNgwResult {
     	      this.period = defaults.period;
     	      this.periodUnit = defaults.periodUnit;
     	      this.projectName = defaults.projectName;
+    	      this.renewType = defaults.renewType;
     	      this.smartScheduleEnabled = defaults.smartScheduleEnabled;
     	      this.smartScheduleRule = defaults.smartScheduleRule;
     	      this.snatEntryIds = defaults.snatEntryIds;
@@ -623,6 +641,14 @@ public final class GetNgwResult {
             return this;
         }
         @CustomType.Setter
+        public Builder renewType(Integer renewType) {
+            if (renewType == null) {
+              throw new MissingRequiredPropertyException("GetNgwResult", "renewType");
+            }
+            this.renewType = renewType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder smartScheduleEnabled(Boolean smartScheduleEnabled) {
             if (smartScheduleEnabled == null) {
               throw new MissingRequiredPropertyException("GetNgwResult", "smartScheduleEnabled");
@@ -730,6 +756,7 @@ public final class GetNgwResult {
             _resultValue.period = period;
             _resultValue.periodUnit = periodUnit;
             _resultValue.projectName = projectName;
+            _resultValue.renewType = renewType;
             _resultValue.smartScheduleEnabled = smartScheduleEnabled;
             _resultValue.smartScheduleRule = smartScheduleRule;
             _resultValue.snatEntryIds = snatEntryIds;

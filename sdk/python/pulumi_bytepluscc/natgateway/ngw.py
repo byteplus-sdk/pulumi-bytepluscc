@@ -24,11 +24,13 @@ class NgwArgs:
                  vpc_id: pulumi.Input[_builtins.str],
                  billing_type: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 direct_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  nat_gateway_name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_type: pulumi.Input[Optional[_builtins.str]] = None,
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 renew_type: pulumi.Input[Optional[_builtins.int]] = None,
                  smart_schedule_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  smart_schedule_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  spec: pulumi.Input[Optional[_builtins.str]] = None,
@@ -40,11 +42,15 @@ class NgwArgs:
         :param pulumi.Input[_builtins.str] vpc_id: ID of the private network where the NAT Gateway is located
         :param pulumi.Input[_builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         :param pulumi.Input[_builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[_builtins.bool] direct_mode: Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
         :param pulumi.Input[_builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         :param pulumi.Input[_builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         :param pulumi.Input[_builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         :param pulumi.Input[_builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         :param pulumi.Input[_builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[_builtins.int] renew_type: Renewal methods for prepaid NAT instances. Possible values:
+               -0 (default): Manual renewal
+               -2: Automatic renewal
         :param pulumi.Input[_builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
         :param pulumi.Input[_builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         :param pulumi.Input[_builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
@@ -57,6 +63,8 @@ class NgwArgs:
             pulumi.set(__self__, "billing_type", billing_type)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if direct_mode is not None:
+            pulumi.set(__self__, "direct_mode", direct_mode)
         if nat_gateway_name is not None:
             pulumi.set(__self__, "nat_gateway_name", nat_gateway_name)
         if network_type is not None:
@@ -67,6 +75,8 @@ class NgwArgs:
             pulumi.set(__self__, "period_unit", period_unit)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if renew_type is not None:
+            pulumi.set(__self__, "renew_type", renew_type)
         if smart_schedule_enabled is not None:
             pulumi.set(__self__, "smart_schedule_enabled", smart_schedule_enabled)
         if smart_schedule_rule is not None:
@@ -113,6 +123,18 @@ class NgwArgs:
     @description.setter
     def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="directMode")
+    def direct_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+        """
+        return pulumi.get(self, "direct_mode")
+
+    @direct_mode.setter
+    def direct_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "direct_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="natGatewayName")
@@ -173,6 +195,20 @@ class NgwArgs:
     @project_name.setter
     def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="renewType")
+    def renew_type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Renewal methods for prepaid NAT instances. Possible values:
+        -0 (default): Manual renewal
+        -2: Automatic renewal
+        """
+        return pulumi.get(self, "renew_type")
+
+    @renew_type.setter
+    def renew_type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "renew_type", value)
 
     @_builtins.property
     @pulumi.getter(name="smartScheduleEnabled")
@@ -258,6 +294,7 @@ class _NgwState:
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 renew_type: pulumi.Input[Optional[_builtins.int]] = None,
                  smart_schedule_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  smart_schedule_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  snat_entry_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -292,6 +329,9 @@ class _NgwState:
         :param pulumi.Input[_builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         :param pulumi.Input[_builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         :param pulumi.Input[_builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[_builtins.int] renew_type: Renewal methods for prepaid NAT instances. Possible values:
+               -0 (default): Manual renewal
+               -2: Automatic renewal
         :param pulumi.Input[_builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
         :param pulumi.Input[_builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] snat_entry_ids: SNAT rule ID list
@@ -342,6 +382,8 @@ class _NgwState:
             pulumi.set(__self__, "period_unit", period_unit)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if renew_type is not None:
+            pulumi.set(__self__, "renew_type", renew_type)
         if smart_schedule_enabled is not None:
             pulumi.set(__self__, "smart_schedule_enabled", smart_schedule_enabled)
         if smart_schedule_rule is not None:
@@ -594,6 +636,20 @@ class _NgwState:
         pulumi.set(self, "project_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="renewType")
+    def renew_type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Renewal methods for prepaid NAT instances. Possible values:
+        -0 (default): Manual renewal
+        -2: Automatic renewal
+        """
+        return pulumi.get(self, "renew_type")
+
+    @renew_type.setter
+    def renew_type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "renew_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -723,11 +779,13 @@ class Ngw(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  billing_type: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 direct_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  nat_gateway_name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_type: pulumi.Input[Optional[_builtins.str]] = None,
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 renew_type: pulumi.Input[Optional[_builtins.int]] = None,
                  smart_schedule_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  smart_schedule_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  spec: pulumi.Input[Optional[_builtins.str]] = None,
@@ -770,11 +828,15 @@ class Ngw(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         :param pulumi.Input[_builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[_builtins.bool] direct_mode: Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
         :param pulumi.Input[_builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         :param pulumi.Input[_builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         :param pulumi.Input[_builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         :param pulumi.Input[_builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         :param pulumi.Input[_builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[_builtins.int] renew_type: Renewal methods for prepaid NAT instances. Possible values:
+               -0 (default): Manual renewal
+               -2: Automatic renewal
         :param pulumi.Input[_builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
         :param pulumi.Input[_builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         :param pulumi.Input[_builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
@@ -837,11 +899,13 @@ class Ngw(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  billing_type: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 direct_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  nat_gateway_name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_type: pulumi.Input[Optional[_builtins.str]] = None,
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 renew_type: pulumi.Input[Optional[_builtins.int]] = None,
                  smart_schedule_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  smart_schedule_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  spec: pulumi.Input[Optional[_builtins.str]] = None,
@@ -859,11 +923,13 @@ class Ngw(pulumi.CustomResource):
 
             __props__.__dict__["billing_type"] = billing_type
             __props__.__dict__["description"] = description
+            __props__.__dict__["direct_mode"] = direct_mode
             __props__.__dict__["nat_gateway_name"] = nat_gateway_name
             __props__.__dict__["network_type"] = network_type
             __props__.__dict__["period"] = period
             __props__.__dict__["period_unit"] = period_unit
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["renew_type"] = renew_type
             __props__.__dict__["smart_schedule_enabled"] = smart_schedule_enabled
             __props__.__dict__["smart_schedule_rule"] = smart_schedule_rule
             __props__.__dict__["spec"] = spec
@@ -875,7 +941,6 @@ class Ngw(pulumi.CustomResource):
             __props__.__dict__["business_status"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["deleted_time"] = None
-            __props__.__dict__["direct_mode"] = None
             __props__.__dict__["dnat_entry_ids"] = None
             __props__.__dict__["eip_addresses"] = None
             __props__.__dict__["expired_time"] = None
@@ -917,6 +982,7 @@ class Ngw(pulumi.CustomResource):
             period: pulumi.Input[Optional[_builtins.int]] = None,
             period_unit: pulumi.Input[Optional[_builtins.str]] = None,
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
+            renew_type: pulumi.Input[Optional[_builtins.int]] = None,
             smart_schedule_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             smart_schedule_rule: pulumi.Input[Optional[_builtins.str]] = None,
             snat_entry_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -955,6 +1021,9 @@ class Ngw(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         :param pulumi.Input[_builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         :param pulumi.Input[_builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[_builtins.int] renew_type: Renewal methods for prepaid NAT instances. Possible values:
+               -0 (default): Manual renewal
+               -2: Automatic renewal
         :param pulumi.Input[_builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
         :param pulumi.Input[_builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] snat_entry_ids: SNAT rule ID list
@@ -990,6 +1059,7 @@ class Ngw(pulumi.CustomResource):
         __props__.__dict__["period"] = period
         __props__.__dict__["period_unit"] = period_unit
         __props__.__dict__["project_name"] = project_name
+        __props__.__dict__["renew_type"] = renew_type
         __props__.__dict__["smart_schedule_enabled"] = smart_schedule_enabled
         __props__.__dict__["smart_schedule_rule"] = smart_schedule_rule
         __props__.__dict__["snat_entry_ids"] = snat_entry_ids
@@ -1155,6 +1225,16 @@ class Ngw(pulumi.CustomResource):
         Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
         """
         return pulumi.get(self, "project_name")
+
+    @_builtins.property
+    @pulumi.getter(name="renewType")
+    def renew_type(self) -> pulumi.Output[_builtins.int]:
+        """
+        Renewal methods for prepaid NAT instances. Possible values:
+        -0 (default): Manual renewal
+        -2: Automatic renewal
+        """
+        return pulumi.get(self, "renew_type")
 
     @_builtins.property
     @pulumi.getter(name="smartScheduleEnabled")

@@ -6,10 +6,13 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .aggregation_policy import *
 from .alert_template import *
 from .contact import *
 from .contact_group import *
 from .event_rule import *
+from .get_aggregation_policies import *
+from .get_aggregation_policy import *
 from .get_alert_template import *
 from .get_alert_templates import *
 from .get_contact import *

@@ -101,6 +101,10 @@ type Ngw struct {
 	PeriodUnit pulumi.StringOutput `pulumi:"periodUnit"`
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType pulumi.IntOutput `pulumi:"renewType"`
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled pulumi.BoolOutput `pulumi:"smartScheduleEnabled"`
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -197,6 +201,10 @@ type ngwState struct {
 	PeriodUnit *string `pulumi:"periodUnit"`
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName *string `pulumi:"projectName"`
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType *int `pulumi:"renewType"`
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled *bool `pulumi:"smartScheduleEnabled"`
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -261,6 +269,10 @@ type NgwState struct {
 	PeriodUnit pulumi.StringPtrInput
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName pulumi.StringPtrInput
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType pulumi.IntPtrInput
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled pulumi.BoolPtrInput
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -293,6 +305,8 @@ type ngwArgs struct {
 	BillingType *int `pulumi:"billingType"`
 	// Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
+	// Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+	DirectMode *bool `pulumi:"directMode"`
 	// Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
 	NatGatewayName *string `pulumi:"natGatewayName"`
 	// NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
@@ -303,6 +317,10 @@ type ngwArgs struct {
 	PeriodUnit *string `pulumi:"periodUnit"`
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName *string `pulumi:"projectName"`
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType *int `pulumi:"renewType"`
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled *bool `pulumi:"smartScheduleEnabled"`
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -324,6 +342,8 @@ type NgwArgs struct {
 	BillingType pulumi.IntPtrInput
 	// Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
+	// Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+	DirectMode pulumi.BoolPtrInput
 	// Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
 	NatGatewayName pulumi.StringPtrInput
 	// NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
@@ -334,6 +354,10 @@ type NgwArgs struct {
 	PeriodUnit pulumi.StringPtrInput
 	// Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 	ProjectName pulumi.StringPtrInput
+	// Renewal methods for prepaid NAT instances. Possible values:
+	// -0 (default): Manual renewal
+	// -2: Automatic renewal
+	RenewType pulumi.IntPtrInput
 	// Whether to enable intelligent scheduling
 	SmartScheduleEnabled pulumi.BoolPtrInput
 	// Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
@@ -531,6 +555,13 @@ func (o NgwOutput) PeriodUnit() pulumi.StringOutput {
 // Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
 func (o NgwOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ngw) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Renewal methods for prepaid NAT instances. Possible values:
+// -0 (default): Manual renewal
+// -2: Automatic renewal
+func (o NgwOutput) RenewType() pulumi.IntOutput {
+	return o.ApplyT(func(v *Ngw) pulumi.IntOutput { return v.RenewType }).(pulumi.IntOutput)
 }
 
 // Whether to enable intelligent scheduling

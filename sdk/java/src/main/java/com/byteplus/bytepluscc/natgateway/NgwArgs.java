@@ -51,6 +51,21 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+     * 
+     */
+    @Import(name="directMode")
+    private @Nullable Output<Boolean> directMode;
+
+    /**
+     * @return Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+     * 
+     */
+    public Optional<Output<Boolean>> directMode() {
+        return Optional.ofNullable(this.directMode);
+    }
+
+    /**
      * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
      * 
      */
@@ -123,6 +138,25 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
+    }
+
+    /**
+     * Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    @Import(name="renewType")
+    private @Nullable Output<Integer> renewType;
+
+    /**
+     * @return Renewal methods for prepaid NAT instances. Possible values:
+     * -0 (default): Manual renewal
+     * -2: Automatic renewal
+     * 
+     */
+    public Optional<Output<Integer>> renewType() {
+        return Optional.ofNullable(this.renewType);
     }
 
     /**
@@ -222,11 +256,13 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
     private NgwArgs(NgwArgs $) {
         this.billingType = $.billingType;
         this.description = $.description;
+        this.directMode = $.directMode;
         this.natGatewayName = $.natGatewayName;
         this.networkType = $.networkType;
         this.period = $.period;
         this.periodUnit = $.periodUnit;
         this.projectName = $.projectName;
+        this.renewType = $.renewType;
         this.smartScheduleEnabled = $.smartScheduleEnabled;
         this.smartScheduleRule = $.smartScheduleRule;
         this.spec = $.spec;
@@ -293,6 +329,27 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder directMode(@Nullable Output<Boolean> directMode) {
+            $.directMode = directMode;
+            return this;
+        }
+
+        /**
+         * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder directMode(Boolean directMode) {
+            return directMode(Output.of(directMode));
         }
 
         /**
@@ -398,6 +455,31 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
+        }
+
+        /**
+         * @param renewType Renewal methods for prepaid NAT instances. Possible values:
+         * -0 (default): Manual renewal
+         * -2: Automatic renewal
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewType(@Nullable Output<Integer> renewType) {
+            $.renewType = renewType;
+            return this;
+        }
+
+        /**
+         * @param renewType Renewal methods for prepaid NAT instances. Possible values:
+         * -0 (default): Manual renewal
+         * -2: Automatic renewal
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewType(Integer renewType) {
+            return renewType(Output.of(renewType));
         }
 
         /**
